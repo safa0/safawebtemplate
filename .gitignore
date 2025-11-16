@@ -46,3 +46,4 @@ next-env.d.ts
 reference_frame_*
 current_*
 fixed_*
+venv/

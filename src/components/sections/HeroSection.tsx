@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { ScrollTimer } from "@/components/ui/ScrollTimer";
 import { FloatingCard } from "@/components/ui/FloatingCard";
+import { siteConfig } from "@/config/site";
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -67,19 +68,20 @@ export function HeroSection() {
       <div className="bg-khaki-light p-8 md:p-20 flex flex-col justify-between">
         <div className="logo-tagline mb-12">
           <div className="logo flex items-center gap-4 mb-4">
-            <div className="relative w-16 h-16 md:w-20 md:h-20">
+            <div className="relative w-16 h-16 md:w-20 md:h-20 bg-transparent">
               <Image
-                src="/logo.svg"
-                alt="FlowForce Logo"
+                src={siteConfig.logo.path}
+                alt={siteConfig.logo.alt}
                 fill
-                className="object-contain"
+                className="object-contain mix-blend-multiply"
                 priority
+                unoptimized
               />
             </div>
-            <span className="text-4xl md:text-5xl font-serif font-bold text-earth">FlowForce</span>
+            <span className="text-4xl md:text-5xl font-serif font-bold text-earth">{siteConfig.name}</span>
           </div>
           <p className="tagline text-sm text-khaki-dark max-w-xs">
-            Transforming ideas into seamless digital experiences
+            {siteConfig.tagline}
           </p>
         </div>
 

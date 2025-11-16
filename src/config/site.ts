@@ -7,19 +7,19 @@
 
 export const siteConfig = {
   // Brand Identity
-  name: "FlowForce",
+  name: "SigmaFlow",
   tagline: "Transforming ideas into seamless digital experiences",
   description: "Professional digital solutions that flow naturally with your business needs, creating powerful experiences that drive results",
 
   // Logo & Assets
   logo: {
-    path: "/logo.svg",
-    alt: "FlowForce Logo",
+    path: "/logo.png",
+    alt: "SigmaFlow Logo",
   },
 
   // SEO & Metadata
   seo: {
-    title: "FlowForce - Transforming Ideas into Seamless Digital Experiences",
+    title: "SigmaFlow - Transforming Ideas into Seamless Digital Experiences",
     description: "Professional digital solutions that flow naturally with your business needs, creating powerful experiences that drive results",
     keywords: ["digital solutions", "web development", "cloud solutions", "automation", "digital strategy"],
   },

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { siteConfig } from "@/config/site";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -24,15 +25,16 @@ export function Header() {
     >
       <div className="flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <div className="relative w-10 h-10">
+          <div className="relative w-10 h-10 bg-transparent">
             <Image
-              src="/logo.svg"
-              alt="FlowForce Logo"
+              src={siteConfig.logo.path}
+              alt={siteConfig.logo.alt}
               fill
-              className="object-contain"
+              className="object-contain mix-blend-multiply"
+              unoptimized
             />
           </div>
-          <span className="text-xl font-serif font-bold text-earth">FlowForce</span>
+          <span className="text-xl font-serif font-bold text-earth">{siteConfig.name}</span>
         </Link>
 
         <nav className="flex flex-row gap-4 md:gap-8">
