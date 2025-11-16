@@ -17,8 +17,8 @@ export const siteConfig = {
     // Options: "Inter", "Work_Sans", "DM_Sans", "Plus_Jakarta_Sans", "Outfit"
     sans: "Inter",
     // Serif font for headings and accent text
-    // Options: "Playfair_Display", "Merriweather", "Lora", "Cormorant_Garamond"
-    serif: "Playfair_Display",
+    // Options: "Lora", "Merriweather", "Playfair_Display", "Cormorant_Garamond"
+    serif: "Lora",
   },
 
   // Logo & Assets
