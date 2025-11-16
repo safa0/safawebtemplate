@@ -11,6 +11,16 @@ export const siteConfig = {
   tagline: "Transforming ideas into seamless digital experiences",
   description: "Professional digital solutions that flow naturally with your business needs, creating powerful experiences that drive results",
 
+  // Typography
+  fonts: {
+    // Primary font for body text and UI elements
+    // Options: "Inter", "Work_Sans", "DM_Sans", "Plus_Jakarta_Sans", "Outfit"
+    sans: "Inter",
+    // Serif font for headings and accent text
+    // Options: "Playfair_Display", "Merriweather", "Lora", "Cormorant_Garamond"
+    serif: "Playfair_Display",
+  },
+
   // Logo & Assets
   logo: {
     path: "/logo.png",

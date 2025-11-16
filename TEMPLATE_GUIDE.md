@@ -1,4 +1,4 @@
-# FlowForce Template - Customization Guide
+# SigmaFlow Template - Customization Guide
 
 This is a fully customizable horizontal-scrolling website template built with Next.js, TypeScript, and modern animation libraries.
 
@@ -23,7 +23,29 @@ export const siteConfig = {
 }
 ```
 
-### 2. **Logo**
+### 2. **Typography (Fonts)**
+
+Choose from professional Google Fonts (no installation needed):
+
+```typescript
+fonts: {
+  // Primary font for body text and UI elements
+  sans: "Inter",  // Options: "Inter", "Work_Sans", "DM_Sans", "Plus_Jakarta_Sans", "Outfit"
+
+  // Serif font for headings and accent text
+  serif: "Playfair_Display",  // Options: "Playfair_Display", "Merriweather", "Lora", "Cormorant_Garamond"
+},
+```
+
+**Current fonts** (similar to madeinuxstudio.com):
+- **Sans-serif**: Inter - Modern, clean, professional
+- **Serif**: Playfair Display - Elegant headings
+
+**To change fonts**:
+1. Update the font names in `src/config/site.ts`
+2. Update the imports in `src/app/layout.tsx` to match your chosen Google Fonts
+
+### 3. **Logo**
 
 1. Replace `/public/logo.png` with your logo (PNG with transparent background recommended)
 2. Update logo configuration:
@@ -217,16 +239,37 @@ const timeline = gsap.timeline({
 
 ### Changing Fonts
 
-Edit `/src/app/layout.tsx`:
-
+**Easy way** (in `src/config/site.ts`):
 ```typescript
-import { YourFont } from "next/font/google";
+fonts: {
+  sans: "Work_Sans",      // Change to any Google Font
+  serif: "Merriweather",  // Change to any Google Font
+}
+```
 
-const yourFont = YourFont({
+**Advanced way** (in `src/app/layout.tsx`):
+```typescript
+import { Work_Sans, Merriweather } from "next/font/google";
+
+const workSans = Work_Sans({
   subsets: ["latin"],
-  variable: "--font-your-font",
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const merriweather = Merriweather({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  variable: "--font-serif",
+  display: "swap",
 });
 ```
+
+**Popular font combinations**:
+- **Modern**: Inter + Playfair Display (current)
+- **Corporate**: Work Sans + Merriweather
+- **Creative**: DM Sans + Lora
+- **Tech**: Outfit + Cormorant Garamond
 
 ## 📦 Template Structure
 
