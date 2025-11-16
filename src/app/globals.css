@@ -19,7 +19,8 @@
   }
 
   body {
-    @apply font-sans text-gray-800 overflow-x-hidden leading-relaxed;
+    @apply font-sans text-gray-800 leading-relaxed;
+    overflow-x: hidden;
   }
 }
 
@@ -27,5 +28,44 @@
   .animated-element {
     will-change: transform, opacity;
     transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}
+
+/* Horizontal Scroll Styles */
+.horizontal-wrapper {
+  overflow: hidden;
+}
+
+.horizontal-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: fit-content;
+}
+
+[data-horizontal-section] {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Mobile: Revert to vertical scrolling */
+@media (max-width: 768px) {
+  .horizontal-wrapper {
+    overflow: visible;
+  }
+
+  .horizontal-container {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+
+  [data-horizontal-section] {
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
   }
 }

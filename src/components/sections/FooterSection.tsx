@@ -39,7 +39,7 @@ export function FooterSection() {
   return (
     <section
       ref={sectionRef}
-      className="footer-section min-h-screen flex items-center justify-center text-center px-8"
+      className="footer-section w-full h-full flex items-center justify-center text-center px-8"
     >
       <div>
         <h2 className="footer-title font-serif text-5xl md:text-7xl mb-8 text-gray-800 max-w-4xl mx-auto">

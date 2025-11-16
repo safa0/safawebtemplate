@@ -84,12 +84,12 @@ export function ServicesSection() {
   return (
     <section
       ref={sectionRef}
-      className="services-section flex flex-col md:flex-row min-h-screen"
+      className="services-section flex flex-col md:flex-row w-full h-full"
     >
       {services.map((service) => (
         <div
           key={service.number}
-          className="service-card flex-1 min-h-screen relative overflow-hidden flex items-center"
+          className="service-card flex-1 h-full relative overflow-hidden flex items-center"
         >
           <div
             className="absolute inset-0 bg-cover bg-center"

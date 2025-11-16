@@ -22,12 +22,12 @@ export function HeroSection() {
       });
 
       timeline
-        .to(".floating-card-1", { y: -100, opacity: 0, duration: 1 }, 0)
-        .to(".floating-card-2", { y: -80, opacity: 0, duration: 1 }, 0.1)
-        .to(".floating-card-3", { y: -60, opacity: 0, duration: 1 }, 0.2)
-        .to(".hero-right-image", { y: "30%", duration: 1 }, 0)
+        .to(".floating-card-1", { x: -200, opacity: 0, duration: 1 }, 0)
+        .to(".floating-card-2", { x: -180, opacity: 0, duration: 1 }, 0.1)
+        .to(".floating-card-3", { x: -160, opacity: 0, duration: 1 }, 0.2)
+        .to(".hero-right-image", { x: "-20%", duration: 1 }, 0)
         .to(".hero-headline", { opacity: 0.3, scale: 0.95, duration: 1 }, 0)
-        .to(".hero-bottom", { opacity: 0, y: 20, duration: 1 }, 0.3);
+        .to(".hero-bottom", { opacity: 0, x: -30, duration: 1 }, 0.3);
 
       // Load animations
       gsap.from(".logo", {
@@ -48,7 +48,7 @@ export function HeroSection() {
       gsap.from(".floating-card", {
         duration: 1,
         opacity: 0,
-        y: 50,
+        x: 100,
         stagger: 0.15,
         delay: 0.5,
         ease: "back.out(1.7)",
@@ -61,7 +61,7 @@ export function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="hero-section grid md:grid-cols-2 min-h-screen relative"
+      className="hero-section grid md:grid-cols-2 w-full h-full relative"
     >
       {/* Left Panel */}
       <div className="bg-beige p-8 md:p-20 flex flex-col justify-between">
@@ -97,13 +97,13 @@ export function HeroSection() {
 
           <div className="flex items-center gap-4 text-sm text-gray-500">
             <span>Scroll For More</span>
-            <div className="scroll-arrow animate-bounce">↓</div>
+            <div className="scroll-arrow animate-pulse">→</div>
           </div>
         </div>
       </div>
 
       {/* Right Panel */}
-      <div className="relative overflow-hidden min-h-[60vh] md:min-h-full">
+      <div className="relative overflow-hidden h-full">
         <div
           className="hero-right-image absolute inset-0 bg-cover bg-center"
           style={{

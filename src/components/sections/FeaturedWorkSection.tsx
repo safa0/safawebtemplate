@@ -41,7 +41,7 @@ export function FeaturedWorkSection() {
   return (
     <section
       ref={sectionRef}
-      className="featured-work-section min-h-screen flex items-center justify-center relative px-8 md:px-20 py-20"
+      className="featured-work-section w-full h-full flex items-center justify-center relative px-8 md:px-20 py-20"
     >
       <div className="max-w-6xl">
         <h2 className="work-title font-serif text-7xl md:text-9xl mb-12 text-gray-800">
