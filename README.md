@@ -1,263 +1,266 @@
-# Made In UX Studio - Webpage Transitions Implementation
+# Made In UX Studio - Next.js Clone
 
-A complete implementation of sophisticated scroll-based transitions and animations inspired by modern design studio websites.
+A modern, high-performance clone of madeinuxstudio.com built with Next.js, TypeScript, Tailwind CSS, and advanced animation libraries.
 
-## Features
+## 🚀 Tech Stack
 
-### 🎬 Scroll-Based Animations
-- **Hero Section**: Split-screen layout with parallax background and 3D floating cards
-- **Mission Section**: Smooth text reveal with horizontal slide-in animation
-- **Services Cards**: Numbered cards with staggered animations and background transitions
-- **Featured Work**: Circular scroll progress indicator with rotating preview
-- **Page Transitions**: Vertical wipe effect with alternating colored bars
+### Core Framework
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **React 19** - Latest React features
 
-### 🎨 Visual Effects
-- Parallax scrolling on hero background
-- Staggered card animations with 3D perspective
-- Dynamic background swapping based on scroll position
-- Smooth opacity and transform transitions
-- Circular progress ring that fills as you scroll
-- Responsive design for mobile and tablet devices
+### Styling
+- **Tailwind CSS** - Utility-first CSS framework
+- **Google Fonts** - Playfair Display (serif) & Inter (sans-serif)
+- **CSS Custom Properties** - Theme variables
 
-### ⚡ Performance Optimizations
-- GPU-accelerated animations using `transform` and `opacity`
-- `will-change` property for optimized rendering
-- Efficient scroll triggers
-- Responsive media queries for mobile performance
+### Animation & Interactions
+- **Lenis** - Smooth scrolling library (formerly @studio-freight/lenis)
+- **GSAP 3.12** - Professional-grade animation library
+- **ScrollTrigger** - Scroll-based animations
+- **Framer Motion** - React animation library
 
-## File Structure
+## 📁 Project Structure
 
 ```
-guidedweb/
-├── index.html          # Main HTML structure
-├── styles.css          # Complete styling and responsive design
-├── script.js           # GSAP animations and scroll effects
-├── README.md           # This file
-└── webpage-transitions-guide.md  # Original reference guide
+src/
+├── app/
+│   ├── layout.tsx          # Root layout with fonts
+│   ├── page.tsx             # Home page
+│   └── globals.css          # Global styles & Tailwind
+├── components/
+│   ├── providers/
+│   │   └── SmoothScrollProvider.tsx  # Lenis integration
+│   ├── sections/
+│   │   ├── HeroSection.tsx           # Hero with floating cards
+│   │   ├── MissionSection.tsx        # Mission statement
+│   │   ├── ServicesSection.tsx       # Service cards (4 cards)
+│   │   ├── FeaturedWorkSection.tsx   # Work showcase
+│   │   └── FooterSection.tsx         # Footer CTA
+│   └── ui/
+│       ├── Header.tsx                # Navigation header
+│       ├── PageTransition.tsx        # Page wipe transitions
+│       ├── BackgroundManager.tsx     # Dynamic backgrounds
+│       ├── ScrollTimer.tsx           # Scroll progress timer
+│       ├── FloatingCard.tsx          # 3D floating cards
+│       └── CircularScrollIndicator.tsx # Circular progress
+├── lib/                              # Utilities (if needed)
+└── hooks/                            # Custom React hooks (if needed)
 ```
 
-## Technologies Used
+## ✨ Features
 
-- **HTML5**: Semantic structure
-- **CSS3**: Grid layout, custom properties, animations
-- **JavaScript (ES6+)**: Modern JavaScript features
-- **GSAP 3.12.5**: Industry-leading animation library
-- **ScrollTrigger**: GSAP plugin for scroll-based animations
-- **Google Fonts**: Playfair Display (serif) & Inter (sans-serif)
+### Smooth Scrolling
+- **Lenis** integration for buttery-smooth scrolling
+- Synced with GSAP ScrollTrigger for perfect animation timing
+- Customizable easing and duration
 
-## Getting Started
+### Advanced Animations
+- **Hero Section**: 3D floating cards with parallax background
+- **Mission Section**: Text reveal with slide-in animation
+- **Services Section**: 4 numbered cards with staggered animations
+- **Featured Work**: Circular scroll indicator with rotating preview
+- **Page Transitions**: Vertical wipe effect with staggered bars
 
-### Option 1: Quick Start (Simple HTTP Server)
+### Dynamic Backgrounds
+- Fixed background system that changes based on scroll position
+- Smooth opacity transitions between backgrounds
+- Three background states: floral, concrete, neutral
 
-1. Open terminal in the project directory
-2. Start a local server:
-   ```bash
-   # Python 3
-   python3 -m http.server 8000
+### Performance Optimizations
+- **GPU-accelerated** animations using transform and opacity
+- **will-change** properties for optimized rendering
+- **Image optimization** with Next.js Image component
+- **Code splitting** with Next.js App Router
 
-   # Python 2
-   python -m SimpleHTTPServer 8000
+### Responsive Design
+- Mobile-first approach
+- Breakpoints for tablet and desktop
+- Optimized animations for mobile devices
+- Touch-friendly interactions
 
-   # Node.js (if you have http-server installed)
-   npx http-server -p 8000
-   ```
-3. Open browser to `http://localhost:8000`
+## 🛠️ Getting Started
 
-### Option 2: Just Open the File
+### Prerequisites
+- Node.js 18+
+- npm or yarn
 
-Simply double-click `index.html` to open in your default browser. All dependencies are loaded via CDN.
+### Installation
 
-## Customization Guide
+```bash
+# Install dependencies
+npm install
 
-### Changing Colors
+# Run development server
+npm run dev
 
-Edit the CSS custom properties in `styles.css`:
+# Build for production
+npm run build
 
-```css
-:root {
-    --color-beige: #E8E3D8;
-    --color-light: #F5F3EE;
-    --color-dark: #333;
-    --color-accent: #B8B5A8;
-}
+# Start production server
+npm start
 ```
 
-### Changing Background Images
+The development server will start at **http://localhost:3000**
 
-Replace the Unsplash URLs in `index.html`:
+## 📝 Configuration
 
-```html
-<!-- Fixed Backgrounds -->
-<div class="section-background active" data-bg="floral"
-     style="background-image: url('YOUR_IMAGE_URL');"></div>
-```
+### Tailwind Theme
+Edit `tailwind.config.ts` to customize colors, fonts, and other design tokens:
 
-Or in `styles.css` for the hero section:
-
-```css
-.hero-right-image {
-    background-image: url('YOUR_IMAGE_URL');
-}
-```
-
-### Adjusting Animation Speed
-
-Modify the GSAP timeline durations in `script.js`:
-
-```javascript
-// Slower animations (increase duration)
-heroTimeline
-    .to('.floating-card-1', { y: -100, opacity: 0, duration: 2 }, 0)
-
-// Faster animations (decrease duration)
-heroTimeline
-    .to('.floating-card-1', { y: -100, opacity: 0, duration: 0.5 }, 0)
-```
-
-### Changing Scroll Trigger Points
-
-Edit the ScrollTrigger configuration:
-
-```javascript
-scrollTrigger: {
-    trigger: '.hero-section',
-    start: 'top top',      // When trigger hits viewport top
-    end: 'bottom top',     // When trigger bottom hits viewport top
-    scrub: 1               // Smooth scrubbing (1 second delay)
-}
-```
-
-### Adding More Sections
-
-1. Add HTML section in `index.html`:
-```html
-<section class="my-section page-section" data-bg-index="1">
-    <div class="my-content">
-        <h2>My New Section</h2>
-        <p>Content here...</p>
-    </div>
-</section>
-```
-
-2. Add styles in `styles.css`:
-```css
-.my-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-```
-
-3. Add animation in `script.js`:
-```javascript
-gsap.from('.my-content', {
-    scrollTrigger: {
-        trigger: '.my-section',
-        start: 'top 80%',
-        end: 'top 30%',
-        scrub: 1
+```typescript
+theme: {
+  extend: {
+    colors: {
+      beige: {
+        DEFAULT: '#E8E3D8',
+        light: '#F5F3EE',
+        dark: '#D4D1C6',
+      },
+      accent: '#B8B5A8',
     },
-    y: 100,
-    opacity: 0
+  },
+}
+```
+
+### Lenis Smooth Scroll
+Customize scroll behavior in `src/components/providers/SmoothScrollProvider.tsx`:
+
+```typescript
+const lenis = new Lenis({
+  duration: 1.2,          // Scroll duration
+  easing: (t) => ...,     // Easing function
+  smoothWheel: true,      // Enable smooth wheel
+  wheelMultiplier: 1,     // Scroll speed multiplier
 });
 ```
 
-## Animation Details
+### GSAP Animations
+All GSAP animations are defined in individual section components using `useEffect` hooks for proper cleanup.
 
-### Hero Section Animations
-- **Floating cards**: Fade out and move up with stagger delay
-- **Background**: Parallax effect (moves slower than scroll)
-- **Headline**: Fades and scales down
-- **Bottom content**: Fades out
+## 🎨 Component Guide
 
-### Mission Section
-- Text slides in from right with fade-in effect
-- Activates when section is 80% into viewport
+### SmoothScrollProvider
+Wraps the app with Lenis smooth scrolling and syncs with GSAP ScrollTrigger.
+
+### BackgroundManager
+Manages fixed backgrounds that change based on scroll position using ScrollTrigger.
+
+### HeroSection
+- Split-screen layout with grid
+- 3D floating cards with perspective transforms
+- Scroll-based parallax effects
+- Initial load animations
 
 ### Services Section
-- Cards stagger in from bottom
-- Large numbers scale and fade in
-- Background images transition smoothly
+All 4 service cards:
+1. UX/UI Design
+2. Dashboard Design
+3. Web & App Design
+4. Branding Identity
 
-### Featured Work
-- Title slides in from left
-- Laptop mockup zooms in from bottom
-- Circular indicator rotates and fills with scroll progress
+Each card has:
+- Large number overlay
+- Title and description
+- Optional mockup image
+- Staggered scroll animations
 
-### Page Transitions
-- 8 vertical bars slide in with stagger
-- Alternating light/dark colors
-- Complete wipe effect in ~800ms
+### CircularScrollIndicator
+- SVG-based circular progress ring
+- Rotating preview image
+- "View Project" CTA button
+- Scroll percentage counter
 
-## Browser Support
+## 🚢 Deployment
 
-- ✅ Chrome/Edge (90+)
-- ✅ Firefox (88+)
-- ✅ Safari (14+)
-- ✅ Mobile browsers (iOS Safari 14+, Chrome Mobile)
+### Vercel (Recommended)
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-## Performance Tips
-
-1. **Images**: Use optimized images (WebP format recommended)
-2. **Loading**: Images are loaded via CDN - consider hosting locally for production
-3. **Mobile**: Parallax effects are reduced on mobile for better performance
-4. **Lazy Loading**: Add `loading="lazy"` to images below the fold
-
-## Debugging
-
-Enable ScrollTrigger markers to visualize trigger points:
-
-```javascript
-// In script.js, uncomment:
-ScrollTrigger.getAll().forEach(trigger => {
-    trigger.vars.markers = true;
-});
+# Deploy
+vercel
 ```
 
-Check console for initialization info:
+### Other Platforms
+Build the project and deploy the `.next` folder:
+
+```bash
+npm run build
 ```
-🎨 Made In UX Studio - Scroll Animations Initialized
-📊 Active ScrollTriggers: [number]
+
+## 📦 Dependencies
+
+```json
+{
+  "dependencies": {
+    "next": "^15.1.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "lenis": "^1.3.15",
+    "gsap": "^3.12.5",
+    "framer-motion": "^11.15.0"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^9",
+    "eslint-config-next": "^15.1.5"
+  }
+}
 ```
 
-## Known Issues & Solutions
+## 🎯 Next Steps
 
-**Issue**: Animations feel jerky on scroll
-- **Solution**: Increase `scrub` value in ScrollTrigger config (e.g., `scrub: 2`)
+### Enhancements
+- [ ] Add project detail pages with routing
+- [ ] Implement contact form
+- [ ] Add more page transitions
+- [ ] Create additional sections
+- [ ] Add loading states and Suspense
+- [ ] Implement dark mode toggle
+- [ ] Add micro-interactions
+- [ ] Optimize images (use WebP)
 
-**Issue**: Floating cards not visible
-- **Solution**: Check browser console for image loading errors
+### SEO & Performance
+- [ ] Add meta tags and OpenGraph
+- [ ] Implement sitemap
+- [ ] Add analytics
+- [ ] Optimize for Core Web Vitals
+- [ ] Add robots.txt
 
-**Issue**: Scroll not smooth
-- **Solution**: Ensure you're using a modern browser with smooth scrolling support
+### Accessibility
+- [ ] ARIA labels for all interactive elements
+- [ ] Keyboard navigation
+- [ ] Screen reader optimization
+- [ ] Focus states
+- [ ] Reduced motion support
 
-## Credits
+## 📄 License
 
+This is a demonstration project. Feel free to use and modify.
+
+## 🙏 Credits
+
+- **Original Design**: madeinuxstudio.com
 - **GSAP**: GreenSock Animation Platform
-- **Images**: Unsplash (placeholder images - replace for production)
-- **Fonts**: Google Fonts
-- **Inspiration**: Modern design studio websites
+- **Lenis**: Studio Freight (now community-maintained)
+- **Next.js**: Vercel
+- **Images**: Unsplash (replace with real images for production)
 
-## License
+## 🐛 Known Issues
 
-This is a demonstration project. Feel free to use and modify for your own projects.
+- Circular scroll indicator is hidden on mobile for performance
+- Page transitions are structural only (trigger functionality to be added)
 
-## Next Steps
+## 📞 Support
 
-1. **Replace Images**: Use your own high-quality images
-2. **Add Content**: Replace placeholder text with real content
-3. **Customize Colors**: Match your brand identity
-4. **Add Pages**: Create additional pages with page transitions
-5. **Optimize**: Compress images and minify CSS/JS for production
-6. **SEO**: Add meta tags, alt text, and semantic HTML improvements
-
-## Support
-
-For issues or questions about GSAP:
-- [GSAP Documentation](https://greensock.com/docs/)
-- [GSAP Forums](https://greensock.com/forums/)
+For Next.js issues: [Next.js Documentation](https://nextjs.org/docs)
+For GSAP issues: [GSAP Documentation](https://greensock.com/docs/)
+For Lenis issues: [Lenis GitHub](https://github.com/darkroomengineering/lenis)
 
 ---
 
-**Built with ❤️ using GSAP and modern web technologies**
+**Built with ❤️ using Next.js and modern web technologies**
