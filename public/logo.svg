@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .logo-line { stroke: #000000; stroke-width: 12.8; stroke-linecap: round; }
+      .logo-node { fill: #000000; }
+    </style>
+  </defs>
+
+  <g id="flowforce-logo">
+    <!-- Branch 1 -->
+    <line x1="256.0" y1="256.0" x2="460.8" y2="256.0" class="logo-line"/>
+    <circle cx="460.8" cy="256.0" r="30.72" class="logo-node"/>
+    <circle cx="391.168" cy="256.0" r="23.04" class="logo-node"/>
+    <circle cx="323.584" cy="256.0" r="23.04" class="logo-node"/>
+    <!-- Branch 2 -->
+    <line x1="256.0" y1="256.0" x2="400.815468787005" y2="400.81546878700493" class="logo-line"/>
+    <circle cx="400.815468787005" cy="400.81546878700493" r="30.72" class="logo-node"/>
+    <circle cx="351.57820939942326" cy="351.57820939942326" r="23.04" class="logo-node"/>
+    <circle cx="303.78910469971163" cy="303.78910469971163" r="23.04" class="logo-node"/>
+    <!-- Branch 3 -->
+    <line x1="256.0" y1="256.0" x2="256.0" y2="460.8" class="logo-line"/>
+    <circle cx="256.0" cy="460.8" r="30.72" class="logo-node"/>
+    <circle cx="256.0" cy="391.168" r="23.04" class="logo-node"/>
+    <circle cx="256.0" cy="323.584" r="23.04" class="logo-node"/>
+    <!-- Branch 4 -->
+    <line x1="256.0" y1="256.0" x2="111.18453121299507" y2="400.815468787005" class="logo-line"/>
+    <circle cx="111.18453121299507" cy="400.815468787005" r="30.72" class="logo-node"/>
+    <circle cx="160.42179060057674" cy="351.57820939942326" r="23.04" class="logo-node"/>
+    <circle cx="208.21089530028837" cy="303.78910469971163" r="23.04" class="logo-node"/>
+    <!-- Branch 5 -->
+    <line x1="256.0" y1="256.0" x2="51.19999999999999" y2="256.0" class="logo-line"/>
+    <circle cx="51.19999999999999" cy="256.0" r="30.72" class="logo-node"/>
+    <circle cx="120.832" cy="256.0" r="23.04" class="logo-node"/>
+    <circle cx="188.416" cy="256.0" r="23.04" class="logo-node"/>
+    <!-- Branch 6 -->
+    <line x1="256.0" y1="256.0" x2="111.18453121299504" y2="111.18453121299507" class="logo-line"/>
+    <circle cx="111.18453121299504" cy="111.18453121299507" r="30.72" class="logo-node"/>
+    <circle cx="160.4217906005767" cy="160.42179060057674" r="23.04" class="logo-node"/>
+    <circle cx="208.21089530028837" cy="208.21089530028837" r="23.04" class="logo-node"/>
+    <!-- Branch 7 -->
+    <line x1="256.0" y1="256.0" x2="255.99999999999997" y2="51.19999999999999" class="logo-line"/>
+    <circle cx="255.99999999999997" cy="51.19999999999999" r="30.72" class="logo-node"/>
+    <circle cx="255.99999999999997" cy="120.832" r="23.04" class="logo-node"/>
+    <circle cx="256.0" cy="188.416" r="23.04" class="logo-node"/>
+    <!-- Branch 8 -->
+    <line x1="256.0" y1="256.0" x2="400.8154687870049" y2="111.18453121299504" class="logo-line"/>
+    <circle cx="400.8154687870049" cy="111.18453121299504" r="30.72" class="logo-node"/>
+    <circle cx="351.57820939942326" cy="160.4217906005767" r="23.04" class="logo-node"/>
+    <circle cx="303.78910469971163" cy="208.21089530028837" r="23.04" class="logo-node"/>
+
+    <!-- Center node -->
+    <circle cx="256.0" cy="256.0" r="25.6" class="logo-node"/>
+  </g>
+</svg>

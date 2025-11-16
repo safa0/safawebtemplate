@@ -13,7 +13,7 @@ export const siteConfig = {
 
   // Logo & Assets
   logo: {
-    path: "/logo.png",
+    path: "/logo.svg",
     alt: "FlowForce Logo",
   },
 
