@@ -122,6 +122,7 @@ export function HeroSection() {
           style={{
             backgroundImage:
               "url('https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80')",
+            backgroundColor: "#9C8B6C", // Fallback color while image loads
           }}
         />
 
