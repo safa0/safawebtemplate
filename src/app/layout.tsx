@@ -16,8 +16,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Made In UX Studio - Award-winning Design Boutique Agency",
-  description: "A studio crafting captivating digital experiences that seamlessly blend aesthetics with functionality",
+  title: "FlowForce - Transforming Ideas into Seamless Digital Experiences",
+  description: "Professional digital solutions that flow naturally with your business needs, creating powerful experiences that drive results",
 };
 
 export default function RootLayout({

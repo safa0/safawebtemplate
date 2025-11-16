@@ -9,12 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        beige: {
-          DEFAULT: '#E8E3D8',
-          light: '#F5F3EE',
-          dark: '#D4D1C6',
+        khaki: {
+          DEFAULT: '#C3B091',
+          light: '#E8DCC4',
+          dark: '#8B7355',
         },
-        accent: '#B8B5A8',
+        sand: '#D4C4A8',
+        earth: '#9C8B6C',
+        accent: '#A89968',
       },
       fontFamily: {
         serif: ['var(--font-playfair)', 'serif'],

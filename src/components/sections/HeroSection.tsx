@@ -64,20 +64,31 @@ export function HeroSection() {
       className="hero-section grid md:grid-cols-2 w-full h-full relative"
     >
       {/* Left Panel */}
-      <div className="bg-beige p-8 md:p-20 flex flex-col justify-between">
+      <div className="bg-khaki-light p-8 md:p-20 flex flex-col justify-between">
         <div className="logo-tagline mb-12">
-          <div className="logo text-6xl mb-2 font-cursive">M</div>
-          <p className="tagline text-sm text-gray-600 max-w-xs">
-            A studio crafting captivating digital experiences
+          <div className="logo flex items-center gap-4 mb-4">
+            <div className="relative w-16 h-16 md:w-20 md:h-20">
+              <Image
+                src="/logo.png"
+                alt="FlowForce Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <span className="text-4xl md:text-5xl font-serif font-bold text-earth">FlowForce</span>
+          </div>
+          <p className="tagline text-sm text-khaki-dark max-w-xs">
+            Transforming ideas into seamless digital experiences
           </p>
         </div>
 
-        <h1 className="hero-headline font-serif text-6xl md:text-7xl lg:text-8xl leading-tight mb-8">
-          Award-winning
+        <h1 className="hero-headline font-serif text-6xl md:text-7xl lg:text-8xl leading-tight mb-8 text-earth">
+          Professional
           <br />
-          design boutique
+          digital solutions
           <br />
-          agency
+          that flow
         </h1>
 
         <div className="hero-bottom mt-auto">
@@ -90,9 +101,9 @@ export function HeroSection() {
             />
           </div>
 
-          <p className="max-w-md mb-8 text-gray-700 leading-relaxed">
-            We specialize in UX/UI design and branding, creating memorable
-            digital experiences that resonate with your audience.
+          <p className="max-w-md mb-8 text-khaki-dark leading-relaxed">
+            We create powerful digital solutions that flow naturally with your business,
+            delivering seamless experiences that drive growth and innovation.
           </p>
 
           <div className="flex items-center gap-4 text-sm text-gray-500">
@@ -108,7 +119,7 @@ export function HeroSection() {
           className="hero-right-image absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1920&q=80')",
+              "url('https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80')",
           }}
         />
 
@@ -117,17 +128,26 @@ export function HeroSection() {
         {/* Floating Cards */}
         <FloatingCard
           number={1}
-          imageUrl="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&q=80"
+          imageUrl="https://images.unsplash.com/photo-1551244072-5d12893278ab?w=400&q=80"
           className="floating-card floating-card-1 top-[20%] right-[15%] z-30"
         />
-        <FloatingCard
-          number={2}
-          imageUrl="https://images.unsplash.com/photo-1545235617-7a424c1a60cc?w=400&q=80"
-          className="floating-card floating-card-2 top-[45%] right-[40%] z-20"
-        />
+
+        {/* Full-screen Card 2 */}
+        <div className="floating-card floating-card-2 absolute inset-0 z-20 p-8 flex items-end justify-start">
+          <div className="relative w-full h-[80%] rounded-2xl overflow-hidden shadow-2xl">
+            <Image
+              src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1920&q=80"
+              alt="Featured Design 2"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute top-8 left-8 text-9xl font-light text-white/30">2</div>
+          </div>
+        </div>
+
         <FloatingCard
           number={3}
-          imageUrl="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=400&q=80"
+          imageUrl="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&q=80"
           className="floating-card floating-card-3 top-[60%] right-[20%] z-10"
         />
       </div>

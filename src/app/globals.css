@@ -4,10 +4,13 @@
 
 @layer base {
   :root {
-    --color-beige: #E8E3D8;
-    --color-light: #F5F3EE;
-    --color-dark: #333;
-    --color-accent: #B8B5A8;
+    --color-khaki: #C3B091;
+    --color-khaki-light: #E8DCC4;
+    --color-khaki-dark: #8B7355;
+    --color-sand: #D4C4A8;
+    --color-earth: #9C8B6C;
+    --color-dark: #3E3426;
+    --color-accent: #A89968;
   }
 
   * {

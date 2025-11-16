@@ -40,7 +40,7 @@ export function BackgroundManager() {
         }`}
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1920&q=80')",
+            "url('https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80')",
         }}
       />
       <div
@@ -49,11 +49,11 @@ export function BackgroundManager() {
         }`}
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&q=80')",
+            "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&q=80')",
         }}
       />
       <div
-        className={`fixed inset-0 -z-10 bg-beige-light transition-opacity duration-1000 ${
+        className={`fixed inset-0 -z-10 bg-khaki-light transition-opacity duration-1000 ${
           activeBg === "neutral" ? "opacity-100" : "opacity-0"
         }`}
       />

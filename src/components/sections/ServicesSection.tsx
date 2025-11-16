@@ -8,41 +8,41 @@ import Image from "next/image";
 const services = [
   {
     number: "1",
-    title: "UX/UI Design",
+    title: "Digital Strategy",
     description:
-      "A studio crafting captivating digital experiences that seamlessly blend aesthetics with functionality",
+      "Strategic planning that flows with your business vision, creating roadmaps for sustainable digital growth and transformation",
     background:
-      "url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1920&q=80')",
+      "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&q=80')",
     textColor: "text-white",
     hasImage: true,
-    imageUrl: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
   },
   {
     number: "2",
-    title: "Dashboard Design",
+    title: "Web Development",
     description:
-      "Built to decode complexity, our dashboards transform data into elegant and intuitive interfaces",
+      "Building responsive, scalable web solutions that adapt and flow with your users' needs across all devices",
     background:
-      "url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1920&q=80')",
+      "url('https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80')",
     textColor: "text-white",
     hasImage: true,
     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
   },
   {
     number: "3",
-    title: "Web & App Design",
+    title: "Cloud Solutions",
     description:
-      "Crafted for clarity and growth, our web and app experiences are designed to engage and scale seamlessly",
-    background: "#E8E3D8",
+      "Seamless cloud infrastructure that scales naturally with your growth, ensuring reliability and performance",
+    background: "#E8DCC4",
     textColor: "text-gray-800",
     hasImage: false,
   },
   {
     number: "4",
-    title: "Branding Identity",
+    title: "Process Automation",
     description:
-      "From strategy and messaging to visual identity, each brand is designed to be scalable, sustainable, and impactful across every digital platform",
-    background: "#F5F3EE",
+      "Streamlining workflows and automating processes to create efficient, flowing systems that save time and resources",
+    background: "#D4C4A8",
     textColor: "text-gray-800",
     hasImage: false,
   },

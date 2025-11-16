@@ -42,15 +42,15 @@ export function FooterSection() {
       className="footer-section w-full h-full flex items-center justify-center text-center px-8"
     >
       <div>
-        <h2 className="footer-title font-serif text-5xl md:text-7xl mb-8 text-gray-800 max-w-4xl mx-auto">
-          Let's Create Something Beautiful
+        <h2 className="footer-title font-serif text-5xl md:text-7xl mb-8 text-earth max-w-4xl mx-auto">
+          Let's Build Something That Flows
         </h2>
 
         <Link
           href="#contact"
-          className="footer-cta inline-block px-12 py-4 bg-gray-800 text-white rounded-full text-lg hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+          className="footer-cta inline-block px-12 py-4 bg-earth text-white rounded-full text-lg hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
         >
-          Get in Touch →
+          Start Your Journey →
         </Link>
       </div>
     </section>

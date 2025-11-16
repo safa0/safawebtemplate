@@ -34,9 +34,9 @@ export function MissionSection() {
           Our Mission
         </h2>
         <p className="text-xl md:text-2xl leading-relaxed text-white/90">
-          Redefine the digital landscape by crafting elegant, human-centered
-          experiences that seamlessly blend aesthetics with functionality,
-          empowering brands to connect meaningfully with their audiences.
+          To empower businesses with digital solutions that flow naturally with their goals,
+          creating seamless experiences that drive growth, efficiency, and lasting impact
+          in an ever-evolving digital landscape.
         </p>
       </div>
     </section>
