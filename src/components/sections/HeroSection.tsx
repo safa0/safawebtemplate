@@ -99,11 +99,12 @@ export function HeroSection() {
         </div>
 
         <h1 className="hero-headline font-serif text-6xl md:text-7xl lg:text-8xl leading-tight mb-8 text-earth">
-          Professional
-          <br />
-          digital solutions
-          <br />
-          that flow
+          {siteConfig.hero.headline.map((line, index) => (
+            <span key={index}>
+              {line}
+              {index < siteConfig.hero.headline.length - 1 && <br />}
+            </span>
+          ))}
         </h1>
 
         <div className="hero-bottom mt-auto">
@@ -117,8 +118,7 @@ export function HeroSection() {
           </div>
 
           <p className="max-w-md mb-8 text-khaki-dark leading-relaxed">
-            We create powerful digital solutions that flow naturally with your business,
-            delivering seamless experiences that drive growth and innovation.
+            {siteConfig.hero.description}
           </p>
 
           <div className="flex items-center gap-4 text-sm text-gray-500">

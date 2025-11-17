@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { siteConfig } from "@/config/site";
 
 export function MissionSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -32,12 +33,10 @@ export function MissionSection() {
     >
       <div className="mission-text max-w-4xl">
         <h2 className="font-serif text-5xl md:text-6xl mb-8 text-white">
-          Our Mission
+          {siteConfig.mission.title}
         </h2>
         <p className="text-xl md:text-2xl leading-relaxed text-white/90">
-          To empower businesses with digital solutions that flow naturally with their goals,
-          creating seamless experiences that drive growth, efficiency, and lasting impact
-          in an ever-evolving digital landscape.
+          {siteConfig.mission.statement}
         </p>
       </div>
     </section>

@@ -4,49 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-
-const services = [
-  {
-    number: "1",
-    title: "Digital Strategy",
-    description:
-      "Strategic planning that flows with your business vision, creating roadmaps for sustainable digital growth and transformation",
-    background:
-      "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&q=80')",
-    textColor: "text-white",
-    hasImage: true,
-    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
-  },
-  {
-    number: "2",
-    title: "Web Development",
-    description:
-      "Building responsive, scalable web solutions that adapt and flow with your users' needs across all devices",
-    background:
-      "url('https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80')",
-    textColor: "text-white",
-    hasImage: true,
-    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
-  },
-  {
-    number: "3",
-    title: "Cloud Solutions",
-    description:
-      "Seamless cloud infrastructure that scales naturally with your growth, ensuring reliability and performance",
-    background: "#E8DCC4",
-    textColor: "text-gray-800",
-    hasImage: false,
-  },
-  {
-    number: "4",
-    title: "Process Automation",
-    description:
-      "Streamlining workflows and automating processes to create efficient, flowing systems that save time and resources",
-    background: "#D4C4A8",
-    textColor: "text-gray-800",
-    hasImage: false,
-  },
-];
+import { siteConfig } from "@/config/site";
 
 export function ServicesSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -86,7 +44,7 @@ export function ServicesSection() {
       ref={sectionRef}
       className="services-section flex flex-col md:flex-row w-full h-full"
     >
-      {services.map((service) => (
+      {siteConfig.services.map((service) => (
         <div
           key={service.number}
           className="service-card flex-1 h-full relative overflow-hidden flex items-center"

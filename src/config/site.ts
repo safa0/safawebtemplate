@@ -8,8 +8,8 @@
 export const siteConfig = {
   // Brand Identity
   name: "LambdaFlow™",
-  tagline: "Transforming ideas into seamless digital experiences",
-  description: "Professional digital solutions that flow naturally with your business needs, creating powerful experiences that drive results",
+  tagline: "Transform Your Operations with Intelligent Automation",
+  description: "Enterprise-grade RPA and AI automation solutions that deliver measurable ROI, boost efficiency, and drive operational excellence through intelligent process automation",
 
   // Typography
   fonts: {
@@ -29,30 +29,30 @@ export const siteConfig = {
 
   // SEO & Metadata
   seo: {
-    title: "LambdaFlow™ - Transforming Ideas into Seamless Digital Experiences",
-    description: "Professional digital solutions that flow naturally with your business needs, creating powerful experiences that drive results",
-    keywords: ["digital solutions", "web development", "cloud solutions", "automation", "digital strategy"],
+    title: "LambdaFlow™ - Enterprise Automation Implementation Agency",
+    description: "Enterprise-grade RPA and AI automation solutions that deliver measurable ROI, boost efficiency, and drive operational excellence through intelligent process automation",
+    keywords: ["RPA", "robotic process automation", "AI agents", "process automation", "enterprise automation", "AI integration", "automation agency"],
   },
 
   // Hero Section
   hero: {
-    headline: ["Professional", "digital solutions", "that flow"],
-    description: "We create powerful digital solutions that flow naturally with your business, delivering seamless experiences that drive growth and innovation.",
-    cta: "Scroll For More",
+    headline: ["Transform Your", "Operations with", "Intelligent Automation"],
+    description: "We orchestrate people and AI agents to deliver measurable ROI through enterprise-grade automation solutions. 500+ Processes Automated | 2M+ Hours Saved | 300% Average ROI",
+    cta: "Start Your Automation Journey",
   },
 
   // Mission
   mission: {
     title: "Our Mission",
-    statement: "To empower businesses with digital solutions that flow naturally with their goals, creating seamless experiences that drive growth, efficiency, and lasting impact in an ever-evolving digital landscape.",
+    statement: "Empowering enterprises to achieve operational excellence through intelligent automation that seamlessly integrates human expertise with AI capabilities.",
   },
 
   // Services
   services: [
     {
       number: "1",
-      title: "Discovery",
-      description: "Strategic planning that flows with your business vision, creating roadmaps for sustainable digital growth and transformation",
+      title: "Process Mining & Opportunity Assessment",
+      description: "Deep-dive analysis to identify automation opportunities, quantify potential ROI, and build a compelling business case for transformation",
       background: "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&q=80')",
       textColor: "text-white",
       hasImage: true,
@@ -60,8 +60,8 @@ export const siteConfig = {
     },
     {
       number: "2",
-      title: "Design",
-      description: "Building responsive, scalable web solutions that adapt and flow with your users' needs across all devices",
+      title: "Automation Blueprint & Architecture",
+      description: "Strategic design of scalable automation solutions tailored to your enterprise needs, integrating RPA and AI agents for maximum impact",
       background: "url('https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80')",
       textColor: "text-white",
       hasImage: true,
@@ -69,16 +69,16 @@ export const siteConfig = {
     },
     {
       number: "3",
-      title: "Build",
-      description: "Seamless cloud infrastructure that scales naturally with your growth, ensuring reliability and performance",
+      title: "RPA Development & AI Integration",
+      description: "End-to-end development of intelligent automation solutions powered by RPA and AI agents, with rigorous testing and optimization",
       background: "#E8DCC4",
       textColor: "text-gray-800",
       hasImage: false,
     },
     {
       number: "4",
-      title: "Launch",
-      description: "Streamlining workflows and automating processes to create efficient, flowing systems that save time and resources",
+      title: "Deployment & Change Management",
+      description: "Seamless implementation with minimal disruption, comprehensive training, and ongoing optimization to ensure long-term success",
       background: "#D4C4A8",
       textColor: "text-gray-800",
       hasImage: false,
@@ -87,18 +87,21 @@ export const siteConfig = {
 
   // Footer
   footer: {
-    title: "Let's Build Something That Flows",
+    title: "Ready to Unlock Your Automation Potential?",
     cta: {
-      text: "Start Your Journey",
+      text: "Schedule Your Free Consultation",
       link: "#contact",
     },
   },
 
   // Navigation
   navigation: [
-    { label: "Projects (08)", href: "#work" },
-    { label: "Who we are", href: "#about" },
-    { label: "Get in touch", href: "#contact" },
+    { label: "Solutions", href: "/solutions" },
+    { label: "Industries", href: "/industries" },
+    { label: "Why Automate", href: "/why-automate" },
+    { label: "How We Work", href: "/how-we-work" },
+    { label: "About", href: "/about" },
+    { label: "Resources", href: "/resources" },
   ],
 
   // Background Images

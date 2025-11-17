@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 
 export function FooterSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -43,14 +44,14 @@ export function FooterSection() {
     >
       <div>
         <h2 className="footer-title font-serif text-5xl md:text-7xl mb-8 text-earth max-w-4xl mx-auto">
-          Let's Build Something That Flows
+          {siteConfig.footer.title}
         </h2>
 
         <Link
-          href="#contact"
+          href={siteConfig.footer.cta.link}
           className="footer-cta inline-block px-12 py-4 bg-earth text-white rounded-full text-lg hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
         >
-          Start Your Journey →
+          {siteConfig.footer.cta.text} →
         </Link>
       </div>
     </section>
