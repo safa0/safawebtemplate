@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 export function ServicesSection() {
@@ -45,47 +45,54 @@ export function ServicesSection() {
       className="services-section flex flex-col md:flex-row w-full h-full"
     >
       {siteConfig.services.map((service) => (
-        <div
+        <Link
           key={service.number}
-          className="service-card flex-1 h-full relative overflow-hidden flex items-center"
+          href={service.link || "#"}
+          className="service-card group flex-1 h-full relative overflow-hidden flex items-center bg-[#E8DCC4] transition-all duration-500 cursor-pointer hover:scale-[1.02]"
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: service.background.startsWith("url")
-                ? service.background
-                : undefined,
-              backgroundColor: service.background.startsWith("url")
-                ? "transparent" // No fallback color, just show the image
-                : service.background,
-            }}
-          />
+          {/* Background image - hidden by default, visible on hover */}
+          {service.background.startsWith("url") && (
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              style={{
+                backgroundImage: service.background,
+              }}
+            />
+          )}
 
-          <div className={`relative z-10 p-8 md:p-16 ${service.textColor}`}>
-            <div className="service-number text-9xl md:text-[15rem] font-light leading-none mb-8 opacity-30">
+          {/* Dark overlay on hover for better text contrast */}
+          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[5]" />
+
+          {/* Khaki overlay - visible by default, fades on hover */}
+          <div className="absolute inset-0 bg-[#E8DCC4] group-hover:opacity-0 transition-opacity duration-500" />
+
+          <div className="relative z-10 p-8 md:p-16 w-full h-full flex flex-col justify-center">
+            {/* Backdrop blur container - extends to section edges, positioned behind content */}
+            <div className="absolute left-0 right-0 top-0 bottom-0 bg-black/30 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 z-0" />
+
+            {/* Number - larger and more prominent */}
+            <div className="service-number text-[12rem] md:text-[22rem] font-light leading-none mb-8 opacity-20 group-hover:opacity-30 transition-opacity text-gray-800 group-hover:text-white relative z-10">
               {service.number}
             </div>
 
-            <h3 className="font-serif text-4xl md:text-5xl mb-6">
-              {service.title}
-            </h3>
+            {/* Text content */}
+            <div className="relative max-w-xl z-10">
+              <h3 className="font-serif text-5xl md:text-6xl mb-6 text-gray-800 group-hover:text-white transition-colors duration-500">
+                {service.title}
+              </h3>
 
-            <p className="text-lg leading-relaxed max-w-md mb-12">
-              {service.description}
-            </p>
+              <p className="text-xl md:text-2xl leading-relaxed mb-6 text-gray-700 group-hover:text-white/90 transition-colors duration-500">
+                {service.description}
+              </p>
 
-            {service.hasImage && (
-              <div className="relative w-full max-w-md h-64 rounded-xl overflow-hidden shadow-2xl">
-                <Image
-                  src={service.imageUrl!}
-                  alt={service.title}
-                  fill
-                  className="object-cover"
-                />
+              {/* Learn more indicator on hover */}
+              <div className="inline-flex items-center gap-2 text-lg font-medium text-gray-800 group-hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-500">
+                <span>Learn More</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
               </div>
-            )}
+            </div>
           </div>
-        </div>
+        </Link>
       ))}
     </section>
   );
