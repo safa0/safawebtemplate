@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={spaceGrotesk.variable}>
       <body className={`${spaceGrotesk.className} antialiased`}>
-        <IntroAnimation />
+        {/* <IntroAnimation /> */}
         <SmoothScrollProvider>
           {children}
         </SmoothScrollProvider>

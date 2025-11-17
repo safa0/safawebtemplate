@@ -15,24 +15,25 @@ export default function Home() {
         <BackgroundManager />
         <Header />
 
+        {/* Horizontal scroll section */}
         <div data-horizontal-scroll className="horizontal-wrapper">
           <main className="horizontal-container">
-          <div data-horizontal-section>
-            <HeroSection />
-          </div>
-          <div data-horizontal-section>
-            <MissionSection />
-          </div>
-          <div data-horizontal-section>
-            <ServicesSection />
-          </div>
-          <div data-horizontal-section>
-            <FeaturedWorkSection />
-          </div>
-          <div data-horizontal-section>
-            <FooterSection />
-          </div>
-        </main>
+            <div data-horizontal-section>
+              <HeroSection />
+            </div>
+            <div data-horizontal-section>
+              <MissionSection />
+            </div>
+            <div data-horizontal-section>
+              <ServicesSection />
+            </div>
+          </main>
+        </div>
+
+        {/* Vertical scroll section */}
+        <div className="vertical-scroll-container">
+          <FeaturedWorkSection />
+          <FooterSection />
         </div>
       </div>
     </>
