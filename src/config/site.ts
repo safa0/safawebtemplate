@@ -7,7 +7,7 @@
 
 export const siteConfig = {
   // Brand Identity
-  name: "LambdaFlow",
+  name: "LambdaFlow™",
   tagline: "Transforming ideas into seamless digital experiences",
   description: "Professional digital solutions that flow naturally with your business needs, creating powerful experiences that drive results",
 
@@ -29,7 +29,7 @@ export const siteConfig = {
 
   // SEO & Metadata
   seo: {
-    title: "LambdaFlow - Transforming Ideas into Seamless Digital Experiences",
+    title: "LambdaFlow™ - Transforming Ideas into Seamless Digital Experiences",
     description: "Professional digital solutions that flow naturally with your business needs, creating powerful experiences that drive results",
     keywords: ["digital solutions", "web development", "cloud solutions", "automation", "digital strategy"],
   },
