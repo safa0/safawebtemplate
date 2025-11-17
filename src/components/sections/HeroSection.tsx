@@ -28,11 +28,18 @@ export function HeroSection() {
         .to(".hero-headline", { opacity: 0.3, scale: 0.95, duration: 1 }, 0)
         .to(".hero-bottom", { opacity: 0, x: -30, duration: 1 }, 0.3);
 
-      // Load animations
-      gsap.from(".logo", {
+      // Load animations - wait for intro animation to complete
+      const hasIntroPlayed = typeof window !== "undefined"
+        ? sessionStorage.getItem("introAnimationPlayed")
+        : true;
+
+      const delay = hasIntroPlayed ? 0 : 3; // Wait for intro animation
+
+      gsap.from(".logo-tagline", {
         duration: 1,
         opacity: 0,
-        y: -20,
+        y: 20,
+        delay: delay,
         ease: "power3.out",
       });
 
@@ -40,16 +47,24 @@ export function HeroSection() {
         duration: 1.2,
         opacity: 0,
         y: 30,
-        delay: 0.3,
+        delay: delay + 0.2,
+        ease: "power3.out",
+      });
+
+      gsap.from(".hero-bottom", {
+        duration: 1,
+        opacity: 0,
+        y: 20,
+        delay: delay + 0.4,
         ease: "power3.out",
       });
 
       gsap.from(".floating-card", {
         duration: 1,
         opacity: 0,
-        x: 100,
+        scale: 0.8,
         stagger: 0.15,
-        delay: 0.5,
+        delay: delay + 0.6,
         ease: "back.out(1.7)",
       });
     }, sectionRef);

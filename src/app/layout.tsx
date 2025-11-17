@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
+import { IntroAnimation } from "@/components/ui/IntroAnimation";
 import { siteConfig } from "@/config/site";
 
 const inter = Inter({
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${lora.variable}`}>
       <body className={`${inter.className} antialiased`}>
+        <IntroAnimation />
         <SmoothScrollProvider>
           {children}
         </SmoothScrollProvider>

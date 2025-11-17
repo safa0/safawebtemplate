@@ -11,11 +11,12 @@ export default function Home() {
   return (
     <>
       <PageTransition />
-      <BackgroundManager />
-      <Header />
+      <div className="page-content">
+        <BackgroundManager />
+        <Header />
 
-      <div data-horizontal-scroll className="horizontal-wrapper">
-        <main className="horizontal-container">
+        <div data-horizontal-scroll className="horizontal-wrapper">
+          <main className="horizontal-container">
           <div data-horizontal-section>
             <HeroSection />
           </div>
@@ -32,6 +33,7 @@ export default function Home() {
             <FooterSection />
           </div>
         </main>
+        </div>
       </div>
     </>
   );

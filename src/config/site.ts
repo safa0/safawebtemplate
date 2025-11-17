@@ -51,7 +51,7 @@ export const siteConfig = {
   services: [
     {
       number: "1",
-      title: "Digital Strategy",
+      title: "Discovery",
       description: "Strategic planning that flows with your business vision, creating roadmaps for sustainable digital growth and transformation",
       background: "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&q=80')",
       textColor: "text-white",
@@ -60,7 +60,7 @@ export const siteConfig = {
     },
     {
       number: "2",
-      title: "Web Development",
+      title: "Design",
       description: "Building responsive, scalable web solutions that adapt and flow with your users' needs across all devices",
       background: "url('https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80')",
       textColor: "text-white",
@@ -69,7 +69,7 @@ export const siteConfig = {
     },
     {
       number: "3",
-      title: "Cloud Solutions",
+      title: "Build",
       description: "Seamless cloud infrastructure that scales naturally with your growth, ensuring reliability and performance",
       background: "#E8DCC4",
       textColor: "text-gray-800",
@@ -77,7 +77,7 @@ export const siteConfig = {
     },
     {
       number: "4",
-      title: "Process Automation",
+      title: "Launch",
       description: "Streamlining workflows and automating processes to create efficient, flowing systems that save time and resources",
       background: "#D4C4A8",
       textColor: "text-gray-800",
