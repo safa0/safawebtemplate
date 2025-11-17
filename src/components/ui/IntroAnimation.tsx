@@ -27,36 +27,49 @@ export function IntroAnimation() {
         },
       });
 
-      // 1. Logo appears centered with scale and fade
+      // 1. Radial reveal - logo expands from center with circular clip
       timeline
-        .from(logoRef.current, {
-          scale: 0,
-          opacity: 0,
-          duration: 1,
-          ease: "back.out(1.7)",
-        })
-        // 2. Hold for a moment
-        .to({}, { duration: 0.5 })
+        .fromTo(
+          logoRef.current,
+          {
+            clipPath: "circle(0% at 50% 50%)",
+            scale: 0.5,
+            opacity: 0,
+          },
+          {
+            clipPath: "circle(100% at 50% 50%)",
+            scale: 1,
+            opacity: 1,
+            duration: 1.2,
+            ease: "power2.out",
+          }
+        )
+        // 2. Hold for dramatic effect
+        .to({}, { duration: 0.6 })
         // 3. Logo shrinks and moves to header position (top-left)
         .to(logoRef.current, {
-          scale: 0.3,
-          x: -window.innerWidth / 2 + 100,
-          y: -window.innerHeight / 2 + 50,
+          scale: 0.25,
+          x: -window.innerWidth / 2 + 80,
+          y: -window.innerHeight / 2 + 40,
           duration: 1,
-          ease: "power2.inOut",
+          ease: "power3.inOut",
         })
         // 4. Fade out overlay
         .to(overlayRef.current, {
           opacity: 0,
-          duration: 0.5,
+          duration: 0.6,
           ease: "power2.out",
         })
         // 5. Reveal page content
-        .from(".page-content", {
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out",
-        }, "-=0.3");
+        .from(
+          ".page-content",
+          {
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "-=0.4"
+        );
     });
 
     return () => ctx.revert();
