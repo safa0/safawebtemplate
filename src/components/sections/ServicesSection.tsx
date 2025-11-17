@@ -55,9 +55,8 @@ export function ServicesSection() {
               backgroundImage: service.background.startsWith("url")
                 ? service.background
                 : undefined,
-              // Always set a fallback backgroundColor for better performance
               backgroundColor: service.background.startsWith("url")
-                ? "#3E3426" // Dark fallback for image backgrounds (ensures white text is visible)
+                ? "transparent" // No fallback color, just show the image
                 : service.background,
             }}
           />

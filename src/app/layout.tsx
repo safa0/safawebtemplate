@@ -1,20 +1,15 @@
 import type { Metadata } from "next";
-import { Inter, Lora } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { IntroAnimation } from "@/components/ui/IntroAnimation";
 import { siteConfig } from "@/config/site";
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sans",
   display: "swap",
-});
-
-const lora = Lora({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -29,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${lora.variable}`}>
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" className={spaceGrotesk.variable}>
+      <body className={`${spaceGrotesk.className} antialiased`}>
         <IntroAnimation />
         <SmoothScrollProvider>
           {children}

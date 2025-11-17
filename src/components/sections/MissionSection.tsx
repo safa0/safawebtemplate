@@ -28,8 +28,8 @@ export function MissionSection() {
   return (
     <section
       ref={sectionRef}
-      className="mission-section w-full h-full flex items-center justify-center px-8 md:px-20 bg-[#0284C7]"
-      style={{ backgroundColor: "#0284C7" }}
+      className="mission-section w-full h-full flex items-center justify-center px-8 md:px-20 bg-[#032f35]"
+      style={{ backgroundColor: "#032f35" }}
     >
       <div className="mission-text max-w-4xl">
         <h2 className="font-serif text-5xl md:text-6xl mb-8 text-white">

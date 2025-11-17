@@ -150,11 +150,6 @@ export function HeroSection() {
           />
         </div>
 
-        <FloatingCard
-          number={3}
-          imageUrl="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&q=80"
-          className="floating-card floating-card-3 top-[60%] right-[20%] z-10"
-        />
       </div>
     </section>
   );

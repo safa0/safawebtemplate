@@ -19,8 +19,8 @@ const config: Config = {
         accent: '#A89968',
       },
       fontFamily: {
-        serif: ['var(--font-serif)', 'serif'],
-        sans: ['var(--font-inter)', 'sans-serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
     },
   },

@@ -36,9 +36,10 @@ export const siteConfig = {
 
   // Hero Section
   hero: {
-    headline: ["Transform Your", "Operations with", "Intelligent Automation"],
-    description: "We orchestrate people and AI agents to deliver measurable ROI through enterprise-grade automation solutions. 500+ Processes Automated | 2M+ Hours Saved | 300% Average ROI",
+    headline: ["Turn Processes into Smart Flows"],
+    description: "We orchestrate people and AI agents to deliver measurable ROI through enterprise-grade automation solutions.",
     cta: "Start Your Automation Journey",
+    layout: "side-by-side", // New property: arrange description next to the image
   },
 
   // Mission

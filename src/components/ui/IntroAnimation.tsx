@@ -27,35 +27,25 @@ export function IntroAnimation() {
         },
       });
 
-      // 1. Radial reveal - logo expands from center with multiple effects
+      // 1. Radial reveal - logo expands from center
       timeline
         .fromTo(
           logoRef.current,
           {
             clipPath: "circle(0% at 50% 50%)",
-            scale: 0.3,
+            scale: 0.5,
             opacity: 0,
-            rotation: -180,
           },
           {
             clipPath: "circle(100% at 50% 50%)",
             scale: 1,
             opacity: 1,
-            rotation: 0,
-            duration: 1.4,
-            ease: "elastic.out(1, 0.6)",
+            duration: 0.8,
+            ease: "power2.out",
           }
         )
-        // Subtle pulse effect
-        .to(logoRef.current, {
-          scale: 1.05,
-          duration: 0.3,
-          ease: "power1.inOut",
-          yoyo: true,
-          repeat: 1,
-        })
         // 2. Hold for dramatic effect
-        .to({}, { duration: 0.4 })
+        .to({}, { duration: 0.3 })
         // 3. Logo shrinks and moves to header position (top-left)
         .to(logoRef.current, {
           scale: 0.25,
