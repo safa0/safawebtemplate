@@ -41,14 +41,9 @@ export function MissionSection() {
   return (
     <section
       ref={sectionRef}
-      className="mission-section w-full flex items-center justify-center px-8 md:px-20 bg-[#032f35]"
-      style={{
-        backgroundColor: "#032f35",
-        height: "50vh", // Half size
-        minHeight: "400px"
-      }}
+      className="mission-section w-full h-full flex items-center justify-start px-8 md:px-20 bg-[#032f35]"
     >
-      <div className="mission-text max-w-4xl w-full">
+      <div className="mission-text" style={{ maxWidth: "45vw" }}>
         <h2 className="font-serif text-5xl md:text-6xl mb-8 text-white">
           {siteConfig.mission.title}
         </h2>

@@ -68,7 +68,7 @@ export function ServicesSection() {
 
           <div className="relative z-10 p-8 md:p-16 w-full h-full flex flex-col justify-center">
             {/* Backdrop blur container - extends to section edges, positioned behind content */}
-            <div className="absolute left-0 right-0 top-0 bottom-0 bg-black/30 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 z-0" />
+            <div className="absolute left-0 right-0 top-0 bottom-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 z-0" />
 
             {/* Number - larger and more prominent */}
             <div className="service-number text-[12rem] md:text-[22rem] font-light leading-none mb-8 opacity-20 group-hover:opacity-30 transition-opacity text-gray-800 group-hover:text-white relative z-10">
