@@ -45,47 +45,36 @@ The horizontal slats reveal animation for the mission section text is not displa
 - `/src/app/page.tsx` (horizontal scroll setup)
 - `/src/components/providers/SmoothScrollProvider.tsx` (scroll context)
 
-### 2. Horizontal Scroll Position Jump After Navigation
-**Status:** Unresolved
-**Priority:** High
-**Component:** Header navigation / Horizontal scroll container
-
-**Description:**
-When navigating from a different page back to the homepage and then scrolling, the horizontal scroll immediately jumps past the mission section and service cards (1, 2, 3, 4), making them inaccessible.
-
-**Steps to Reproduce:**
-1. Start on homepage
-2. Click on a header link (e.g., "Industries")
-3. Click homepage button to return to first page
-4. Attempt to scroll
-5. Result: Scroll position jumps past mission and services sections
-
-**Expected Behavior:**
-Should start at the beginning of the horizontal scroll and allow smooth scrolling through all sections (Hero → Mission → Services).
-
-**Possible Causes:**
-- Scroll position is being restored from previous session
-- Horizontal scroll container is not resetting position on navigation
-- SmoothScrollProvider or Lenis scroll restoration interfering
-- Browser scroll restoration conflicting with custom scroll implementation
-
-**Possible Solutions:**
-- Reset horizontal scroll position on route change
-- Disable browser scroll restoration for this route
-- Add scroll position reset in PageTransition component
-- Check SmoothScrollProvider for scroll position caching
-
-**Related Files:**
-- `/src/components/ui/Header.tsx` (navigation)
-- `/src/components/ui/PageTransition.tsx` (page transitions)
-- `/src/components/providers/SmoothScrollProvider.tsx` (scroll management)
-- `/src/app/page.tsx` (horizontal scroll container)
-
 ---
 
 ## Resolved Bugs
 
-(None yet)
+### 2. Horizontal Scroll Position Jump After Navigation
+**Status:** Resolved
+**Priority:** High
+**Component:** SmoothScrollProvider / Browser scroll restoration
+**Date Resolved:** 2025-11-18
+
+**Description:**
+When navigating from a different page back to the homepage and then scrolling, the horizontal scroll immediately jumped past the mission section and service cards, making them inaccessible.
+
+**Root Cause:**
+The issue was caused by two factors:
+1. Browser's automatic scroll restoration was attempting to restore the previous scroll position when navigating back to the homepage
+2. The SmoothScrollProvider wasn't resetting scroll position when the route changed, allowing cached scroll states to persist
+
+**Solution:**
+Implemented two-part fix:
+1. Added `history.scrollRestoration = "manual"` in the root layout to disable browser-level scroll restoration
+2. Modified SmoothScrollProvider to:
+   - Import and track the current pathname using Next.js `usePathname()` hook
+   - Reset scroll position to top (both window and Lenis) when the component mounts
+   - Re-run the effect when pathname changes by adding it to the dependency array
+   - This ensures all ScrollTriggers are properly cleaned up and recreated on navigation
+
+**Files Modified:**
+- `/src/app/layout.tsx` - Added scroll restoration prevention
+- `/src/components/providers/SmoothScrollProvider.tsx` - Added route-based scroll reset
 
 ---
 

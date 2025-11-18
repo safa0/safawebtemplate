@@ -25,6 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={spaceGrotesk.variable}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `history.scrollRestoration = "manual"`,
+          }}
+        />
+      </head>
       <body className={`${spaceGrotesk.className} antialiased`}>
         {/* <IntroAnimation /> */}
         <SmoothScrollProvider>
