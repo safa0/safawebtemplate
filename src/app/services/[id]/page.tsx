@@ -5,13 +5,14 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 
 interface ServicePageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function ServicePage({ params }: ServicePageProps) {
-  const service = siteConfig.services.find((s) => s.number === params.id);
+export default async function ServicePage({ params }: ServicePageProps) {
+  const { id } = await params;
+  const service = siteConfig.services.find((s) => s.number === id);
 
   if (!service) {
     notFound();

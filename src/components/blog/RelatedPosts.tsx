@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { WPPost } from '@/lib/wordpress';
+import { BlogPostMetadata } from '@/lib/blog';
 import { BlogCard } from './BlogCard';
 
 if (typeof window !== 'undefined') {
@@ -11,7 +11,7 @@ if (typeof window !== 'undefined') {
 }
 
 interface RelatedPostsProps {
-  posts: WPPost[];
+  posts: BlogPostMetadata[];
 }
 
 export function RelatedPosts({ posts }: RelatedPostsProps) {
@@ -50,7 +50,7 @@ export function RelatedPosts({ posts }: RelatedPostsProps) {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (
-            <BlogCard key={post.id} post={post} index={index} />
+            <BlogCard key={post.slug} post={post} index={index} />
           ))}
         </div>
       </div>

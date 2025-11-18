@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { siteConfig } from "@/config/site";
+import { siteConfig, Service } from "@/config/site";
 
 export function ServiceDetailsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -71,7 +71,9 @@ export function ServiceDetailsSection() {
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-          {siteConfig.services.map((service, index) => (
+          {siteConfig.services.map((serviceItem: Service, index: number) => {
+            const service = serviceItem as Service;
+            return (
             <div
               key={service.number}
               className="service-detail-item flex flex-col"
@@ -96,10 +98,10 @@ export function ServiceDetailsSection() {
               </p>
 
               {/* Image if available */}
-              {service.hasImage && (
+              {service.hasImage && 'imageUrl' in service && service.imageUrl && (
                 <div className="service-detail-image relative h-64 rounded-xl overflow-hidden shadow-lg">
                   <Image
-                    src={service.imageUrl!}
+                    src={service.imageUrl}
                     alt={service.title}
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-300"
@@ -119,7 +121,8 @@ export function ServiceDetailsSection() {
                 />
               )}
             </div>
-          ))}
+          );
+          })}
         </div>
 
         {/* Features Highlight */}
