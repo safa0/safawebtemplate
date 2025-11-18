@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import type { FC } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -69,12 +70,11 @@ export function ServiceDetailsSection() {
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-          {siteConfig.services.map((service) => (
+          {siteConfig.services.map((service, index) => (
             <div
-              key={service.number}
+              key={service.number || index}
               className="service-detail-item flex flex-col"
             >
-              {/* Number Badge */}
               <div className="service-detail-number mb-6">
                 <div className="w-20 h-20 bg-khaki-light rounded-full flex items-center justify-center">
                   <span className="text-4xl font-serif font-bold text-earth">
@@ -83,39 +83,22 @@ export function ServiceDetailsSection() {
                 </div>
               </div>
 
-              {/* Title */}
-              <h3 className="font-serif text-3xl md:text-4xl text-earth mb-4 leading-tight">
+              <div className="font-serif text-3xl md:text-4xl text-earth mb-4 leading-tight">
                 {service.title}
-              </h3>
+              </div>
 
-              {/* Description */}
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed flex-grow">
+              <div className="text-lg text-gray-700 mb-8 leading-relaxed flex-grow">
                 {service.description}
-              </p>
+              </div>
 
-              {/* Image if available */}
-              {service.hasImage && 'imageUrl' in service && service.imageUrl && (
-                <div className="service-detail-image relative h-64 rounded-xl overflow-hidden shadow-lg">
-                  <Image
-                    src={service.imageUrl}
-                    alt={service.title}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              )}
-
-              {/* Decorative color block if no image */}
-              {!service.hasImage && (
-                <div
-                  className="service-detail-image h-32 rounded-xl shadow-md"
-                  style={{
-                    backgroundColor: service.background.startsWith("url")
-                      ? undefined
-                      : service.background,
-                  }}
-                />
-              )}
+              <div
+                className="service-detail-image h-32 rounded-xl shadow-md"
+                style={{
+                  backgroundColor: service.background.startsWith("url")
+                    ? undefined
+                    : service.background,
+                }}
+              />
             </div>
           ))}
         </div>

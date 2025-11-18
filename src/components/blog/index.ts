@@ -6,6 +6,6 @@
 export { BlogCard } from './BlogCard';
 export { BlogGrid } from './BlogGrid';
 export { RelatedPosts } from './RelatedPosts';
-export { BlogLoading } from './BlogLoading';
+export { BlogCardSkeleton, BlogGridSkeleton, BlogPostSkeleton } from './BlogLoading';
 export { CategoryBadge, TagBadge } from './CategoryBadge';
-export { MDXComponents } from './MDXComponents';
+export { mdxComponents } from './MDXComponents';
