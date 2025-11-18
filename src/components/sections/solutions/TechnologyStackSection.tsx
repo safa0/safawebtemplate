@@ -36,8 +36,6 @@ export function TechnologyStackSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const ctx = gsap.context(() => {
       gsap.from(".tech-stack-title", {
         scrollTrigger: {

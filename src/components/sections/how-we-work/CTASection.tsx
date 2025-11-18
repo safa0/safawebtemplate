@@ -5,8 +5,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 
-gsap.registerPlugin(ScrollTrigger);
-
 export function CTASection() {
   const sectionRef = useRef<HTMLElement>(null);
 

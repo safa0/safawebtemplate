@@ -6,8 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
-gsap.registerPlugin(ScrollTrigger);
-
 export function MissionSection() {
   const sectionRef = useRef<HTMLElement>(null);
 

@@ -9,8 +9,6 @@ export function SolutionsCTASection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const ctx = gsap.context(() => {
       gsap.from(".solutions-cta-content", {
         scrollTrigger: {

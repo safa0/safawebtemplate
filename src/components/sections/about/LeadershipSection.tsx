@@ -5,8 +5,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const teamMembers = [
   {
     name: "Sarah Chen",

@@ -5,8 +5,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 
-gsap.registerPlugin(ScrollTrigger);
-
 interface Industry {
   id: string;
   name: string;
@@ -130,8 +128,6 @@ export function IndustryCardsSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.registerPlugin(ScrollTrigger);
-
       // Animate each industry card on scroll
       cardsRef.current.forEach((card, index) => {
         if (card) {

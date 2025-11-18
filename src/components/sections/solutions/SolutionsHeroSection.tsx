@@ -9,8 +9,6 @@ export function SolutionsHeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const ctx = gsap.context(() => {
       gsap.from(".solutions-hero-title", {
         duration: 1.2,

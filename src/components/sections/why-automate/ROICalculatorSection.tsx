@@ -4,8 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 interface ROIScenario {
   label: string;
   hours: number;

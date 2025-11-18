@@ -5,8 +5,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 
-gsap.registerPlugin(ScrollTrigger);
-
 interface CaseStudyTeaser {
   id: string;
   industry: string;
@@ -53,8 +51,6 @@ export function CaseStudyTeaserSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.registerPlugin(ScrollTrigger);
-
       // Title animation
       gsap.from(".case-study-title", {
         scrollTrigger: {

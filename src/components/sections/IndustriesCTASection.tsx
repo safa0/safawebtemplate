@@ -4,15 +4,11 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 export function IndustriesCTASection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.registerPlugin(ScrollTrigger);
-
       // Main heading animation
       gsap.from(".industries-cta-heading", {
         scrollTrigger: {

@@ -6,10 +6,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BlogPostMetadata } from '@/lib/blog';
 import { BlogCard } from './BlogCard';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 interface RelatedPostsProps {
   posts: BlogPostMetadata[];
 }

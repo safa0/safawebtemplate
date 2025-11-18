@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
-import { WPPost, formatDate, getReadingTime } from '@/lib/wordpress';
+import { WPPost, WPCategory, WPTag, formatDate, getReadingTime } from '@/lib/wordpress';
 import { CategoryBadge, TagBadge } from './CategoryBadge';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
@@ -62,7 +62,7 @@ export function BlogPost({ post }: BlogPostProps) {
         {/* Categories */}
         {categories.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4">
-            {categories.map((category: any) => (
+            {categories.map((category: WPCategory) => (
               <CategoryBadge
                 key={category.id}
                 name={category.name}
@@ -138,7 +138,7 @@ export function BlogPost({ post }: BlogPostProps) {
         <div className="mt-12 pt-8 border-t border-khaki-light">
           <h3 className="text-sm font-medium text-gray-600 mb-3">Tags:</h3>
           <div className="flex flex-wrap gap-2">
-            {tags.map((tag: any) => (
+            {tags.map((tag: WPTag) => (
               <TagBadge key={tag.id} name={tag.name} slug={tag.slug} />
             ))}
           </div>

@@ -13,8 +13,6 @@ export function ROICalculatorSection() {
   const yearOneRoi = ((annualSavings - 150000) / 150000) * 100; // Assuming 150k implementation cost
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const ctx = gsap.context(() => {
       gsap.from(".roi-calculator-title", {
         scrollTrigger: {

@@ -4,16 +4,11 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 export function IndustriesHeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Register ScrollTrigger
-      gsap.registerPlugin(ScrollTrigger);
-
       // Heading animation
       gsap.from(".industries-hero-heading", {
         duration: 1.2,
