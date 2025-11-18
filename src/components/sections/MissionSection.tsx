@@ -198,7 +198,7 @@ export function MissionSection() {
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>
           <Link
-            href="#inquire"
+            href="/contact"
             className="mission-cta group inline-flex items-center justify-center sm:justify-start gap-2 text-white text-sm sm:text-base md:text-lg font-medium hover:gap-4 transition-all py-2 sm:py-0"
           >
             <span>Inquire</span>

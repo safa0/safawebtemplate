@@ -63,7 +63,7 @@ export function CTASection() {
 
         <div className="about-cta-button space-y-4 md:space-y-0 md:space-x-6 flex flex-col md:flex-row justify-center items-center">
           <Link
-            href="#contact"
+            href="/contact"
             className="inline-block px-12 py-4 bg-earth text-white rounded-full text-lg font-semibold hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
           >
             Get in Touch →

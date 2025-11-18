@@ -113,7 +113,7 @@ export const siteConfig = {
     title: "Ready to Unlock Your Automation Potential?",
     cta: {
       text: "Schedule Your Free Consultation",
-      link: "#contact",
+      link: "/contact",
     },
   },
 
@@ -125,6 +125,7 @@ export const siteConfig = {
     { label: "Why Automate", href: "/why-automate" },
     { label: "About", href: "/about" },
     { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
   ],
 
   // Background Images

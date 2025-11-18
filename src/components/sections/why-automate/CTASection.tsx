@@ -65,7 +65,7 @@ export function CTASection() {
 
         <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
           <Link
-            href="#contact"
+            href="/contact"
             className="cta-button px-10 py-4 bg-white text-earth font-semibold rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg"
           >
             Schedule Free Assessment →

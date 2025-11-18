@@ -64,7 +64,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               Ready to get started?
             </h3>
             <Link
-              href="/#inquire"
+              href="/contact"
               className="inline-flex items-center gap-2 bg-earth text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-khaki-dark transition-colors"
             >
               <span>Schedule a Consultation</span>

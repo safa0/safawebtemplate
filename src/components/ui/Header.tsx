@@ -59,14 +59,9 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Desktop CTA Button */}
+        {/* Spacer for layout balance */}
         <div className="hidden md:flex items-center gap-4">
-          <Link
-            href="#contact"
-            className="px-5 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200"
-          >
-            Contact Us
-          </Link>
+          {/* Empty spacer to maintain header layout */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -122,13 +117,6 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="#contact"
-              className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200 text-center"
-              onClick={handleNavClick}
-            >
-              Contact Us
-            </Link>
           </nav>
         </div>
       )}

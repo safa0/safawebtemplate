@@ -60,7 +60,7 @@ export function FeaturedWorkSection() {
             </p>
             
             <Link
-              href="#inquire"
+              href="/contact"
               className="group inline-flex items-center gap-2 text-gray-800 text-base md:text-lg font-medium hover:gap-4 transition-all self-start"
             >
               <span className="underline">Inquire</span>

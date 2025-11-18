@@ -16,3 +16,6 @@ export { IndustriesHeroSection } from './IndustriesHeroSection';
 export { IndustryCardsSection } from './IndustryCardsSection';
 export { IndustriesCTASection } from './IndustriesCTASection';
 export { CaseStudyTeaserSection } from './CaseStudyTeaserSection';
+
+// Contact section
+export { ContactSection } from './ContactSection';
