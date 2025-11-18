@@ -69,9 +69,7 @@ export function ServiceDetailsSection() {
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-          {siteConfig.services.map((serviceItem: Service, index: number) => {
-            const service = serviceItem as Service;
-            return (
+          {siteConfig.services.map((service) => (
             <div
               key={service.number}
               className="service-detail-item flex flex-col"
@@ -119,8 +117,7 @@ export function ServiceDetailsSection() {
                 />
               )}
             </div>
-          );
-          })}
+          ))}
         </div>
 
         {/* Features Highlight */}
