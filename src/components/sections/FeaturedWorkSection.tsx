@@ -74,7 +74,7 @@ export function FeaturedWorkSection() {
           {/* Right Section - 2/3 width */}
           <div className="cta-headline w-full md:w-2/3 flex items-center">
             <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-gray-900 leading-tight">
-              Let's bring your<br />vision to life.
+              Let&apos;s bring your<br />vision to life.
             </h2>
           </div>
         </div>
