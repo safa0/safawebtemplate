@@ -125,7 +125,6 @@ export const siteConfig = {
     { label: "How We Work", href: "/how-we-work" },
     { label: "About", href: "/about" },
     { label: "Blog", href: "/blog" },
-    { label: "Resources", href: "/resources" },
   ],
 
   // Background Images

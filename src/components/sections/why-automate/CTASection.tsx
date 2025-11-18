@@ -71,10 +71,10 @@ export function CTASection() {
             Schedule Free Assessment →
           </Link>
           <Link
-            href="/resources"
+            href="/blog"
             className="cta-button px-10 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 hover:scale-105 transition-all duration-300 text-lg"
           >
-            Download ROI Playbook
+            Read Success Stories
           </Link>
         </div>
 
