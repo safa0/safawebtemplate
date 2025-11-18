@@ -178,28 +178,28 @@ export function MissionSection() {
   return (
     <section
       ref={sectionRef}
-      className="mission-section w-full h-full flex items-center justify-start px-8 md:px-20 bg-[#032f35]"
+      className="mission-section w-full h-full flex items-center justify-start px-6 sm:px-8 md:px-12 lg:px-20 py-16 sm:py-20 md:py-0 bg-[#032f35] min-h-screen"
     >
-      <div className="mission-text" style={{ maxWidth: "45vw" }}>
-        <h2 className="mission-title font-serif text-5xl md:text-6xl mb-8 text-white">
+      <div className="mission-text w-full md:w-auto max-w-full md:max-w-[45vw]">
+        <h2 className="mission-title font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl mb-6 sm:mb-8 md:mb-8 text-white leading-tight">
           {siteConfig.mission.title}
         </h2>
-        <p className="mission-statement text-xl md:text-2xl leading-relaxed text-white/90 mb-12">
+        <p className="mission-statement text-sm sm:text-base md:text-xl lg:text-2xl leading-relaxed sm:leading-relaxed text-white/90 mb-8 sm:mb-10 md:mb-12">
           {siteConfig.mission.statement}
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-wrap gap-6">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 md:gap-6">
           <Link
             href="#work"
-            className="mission-cta group inline-flex items-center gap-2 text-white text-lg font-medium hover:gap-4 transition-all"
+            className="mission-cta group inline-flex items-center justify-center sm:justify-start gap-2 text-white text-sm sm:text-base md:text-lg font-medium hover:gap-4 transition-all py-2 sm:py-0"
           >
             <span>Experience the Work</span>
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>
           <Link
             href="#inquire"
-            className="mission-cta group inline-flex items-center gap-2 text-white text-lg font-medium hover:gap-4 transition-all"
+            className="mission-cta group inline-flex items-center justify-center sm:justify-start gap-2 text-white text-sm sm:text-base md:text-lg font-medium hover:gap-4 transition-all py-2 sm:py-0"
           >
             <span>Inquire</span>
             <span className="group-hover:translate-x-1 transition-transform">→</span>

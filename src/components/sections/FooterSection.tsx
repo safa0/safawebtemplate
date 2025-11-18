@@ -40,16 +40,16 @@ export function FooterSection() {
   return (
     <section
       ref={sectionRef}
-      className="footer-section w-full h-full flex items-center justify-center text-center px-8"
+      className="footer-section w-full h-full flex items-center justify-center text-center px-4 sm:px-6 md:px-12 lg:px-8 py-12 sm:py-16 md:py-20 min-h-screen"
     >
-      <div>
-        <h2 className="footer-title font-serif text-5xl md:text-7xl mb-8 text-earth max-w-4xl mx-auto">
+      <div className="w-full max-w-4xl mx-auto">
+        <h2 className="footer-title font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 sm:mb-8 md:mb-10 text-earth leading-tight">
           {siteConfig.footer.title}
         </h2>
 
         <Link
           href={siteConfig.footer.cta.link}
-          className="footer-cta inline-block px-12 py-4 bg-earth text-white rounded-full text-lg hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+          className="footer-cta inline-block px-6 sm:px-8 md:px-12 py-2.5 sm:py-3 md:py-4 bg-earth text-white rounded-full text-sm sm:text-base md:text-lg font-medium hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
         >
           {siteConfig.footer.cta.text} →
         </Link>

@@ -49,8 +49,12 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
 
     gsap.ticker.lagSmoothing(0);
 
-    // Setup GSAP horizontal scroll
+    // Setup GSAP horizontal scroll - only on desktop
     const setupHorizontalScroll = () => {
+      // Don't setup horizontal scroll on mobile
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) return;
+
       const sections = gsap.utils.toArray<HTMLElement>("[data-horizontal-section]");
 
       if (sections.length === 0) return;
@@ -82,6 +86,26 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
 
     // Small delay to ensure DOM is ready
     const timer = setTimeout(setupHorizontalScroll, 100);
+    
+    // Handle window resize to reinitialize horizontal scroll if needed
+    let resizeTimeout: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        // Kill existing horizontal scroll triggers
+        ScrollTrigger.getAll().forEach((trigger) => {
+          const triggerElement = trigger.trigger as HTMLElement;
+          if (triggerElement?.getAttribute?.("data-horizontal-scroll")) {
+            trigger.kill();
+          }
+        });
+        // Reinitialize if needed
+        setupHorizontalScroll();
+        ScrollTrigger.refresh();
+      }, 250);
+    };
+    
+    window.addEventListener("resize", handleResize);
 
     // Keyboard navigation
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -101,7 +125,9 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
     // Cleanup
     return () => {
       clearTimeout(timer);
+      clearTimeout(resizeTimeout);
       window.removeEventListener("keydown", handleKeyPress);
+      window.removeEventListener("resize", handleResize);
       lenis.destroy();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       gsap.ticker.remove((time) => {
