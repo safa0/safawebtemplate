@@ -1,6 +1,6 @@
 "use client";
 
-import { BlogPostMetadata } from '@/lib/blog';
+import { BlogPostMetadata } from '@/lib/blog-types';
 import { BlogCard } from './BlogCard';
 
 interface BlogGridProps {

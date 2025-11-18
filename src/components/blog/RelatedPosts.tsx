@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BlogPostMetadata } from '@/lib/blog';
+import { BlogPostMetadata } from '@/lib/blog-types';
 import { BlogCard } from './BlogCard';
 
 interface RelatedPostsProps {

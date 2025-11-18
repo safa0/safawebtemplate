@@ -1,30 +1,13 @@
+import 'server-only';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
+import type { BlogPost, BlogPostMetadata } from './blog-types';
 
-export interface BlogPost {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  author: string;
-  tags: string[];
-  image: string;
-  content: string;
-  readingTime: string;
-}
-
-export interface BlogPostMetadata {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  author: string;
-  tags: string[];
-  image: string;
-  readingTime: string;
-}
+// Re-export types and utilities for convenience
+export type { BlogPost, BlogPostMetadata } from './blog-types';
+export { formatDate } from './blog-types';
 
 const BLOG_DIRECTORY = path.join(process.cwd(), 'src/content/blog');
 
@@ -148,16 +131,4 @@ export function getAllTags(): string[] {
   });
 
   return Array.from(tagsSet).sort();
-}
-
-/**
- * Format date for display
- */
-export function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
 }
