@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
@@ -10,8 +11,57 @@ export function Preloader() {
   const [progress, setProgress] = useState(0);
   const overlayRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
+  // Ensure content is visible on route changes (after preloader has run)
   useEffect(() => {
+    const hasPreloaderRun = typeof window !== "undefined"
+      ? sessionStorage.getItem("preloaderCompleted")
+      : null;
+
+    if (hasPreloaderRun || pathname !== "/") {
+      // Preloader already ran or not on homepage, ensure content is visible
+      const ensureContentVisible = () => {
+        const pageContent = document.querySelector(".page-content");
+        if (pageContent) {
+          gsap.set(pageContent, { opacity: 1, visibility: "visible" });
+        }
+      };
+
+      // Small delay to ensure DOM is ready
+      const timeout = setTimeout(ensureContentVisible, 50);
+      return () => clearTimeout(timeout);
+    }
+  }, [pathname]);
+
+  // Initial preloader - only runs once on mount
+  useEffect(() => {
+    // Check if preloader has already run (only show on first visit)
+    const hasPreloaderRun = typeof window !== "undefined"
+      ? sessionStorage.getItem("preloaderCompleted")
+      : null;
+
+    if (hasPreloaderRun) {
+      // Preloader already ran, ensure content is visible
+      setIsLoading(false);
+      const pageContent = document.querySelector(".page-content");
+      if (pageContent) {
+        gsap.set(pageContent, { opacity: 1, visibility: "visible" });
+      }
+      return;
+    }
+
+    // Only run preloader on homepage (initial load)
+    const isHomepage = pathname === "/";
+    if (!isHomepage) {
+      setIsLoading(false);
+      const pageContent = document.querySelector(".page-content");
+      if (pageContent) {
+        gsap.set(pageContent, { opacity: 1, visibility: "visible" });
+      }
+      return;
+    }
+
     let loadedCount = 0;
     let isComplete = false;
     const totalResources = 4; // Fonts + 3 critical images
@@ -42,6 +92,8 @@ export function Preloader() {
         const timeline = gsap.timeline({
           onComplete: () => {
             setIsLoading(false);
+            // Mark preloader as completed
+            sessionStorage.setItem("preloaderCompleted", "true");
             // Show page content
             const pageContent = document.querySelector(".page-content");
             if (pageContent) {
@@ -116,7 +168,8 @@ export function Preloader() {
     return () => {
       clearTimeout(fallbackTimeout);
     };
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Only run once on mount
 
   if (!isLoading) {
     return null;
