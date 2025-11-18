@@ -28,12 +28,8 @@ export function HeroSection() {
         .to(".hero-headline", { opacity: 0.3, scale: 0.95, duration: 1 }, 0)
         .to(".hero-bottom", { opacity: 0, x: -30, duration: 1 }, 0.3);
 
-      // Load animations - wait for intro animation to complete
-      const hasIntroPlayed = typeof window !== "undefined"
-        ? sessionStorage.getItem("introAnimationPlayed")
-        : true;
-
-      const delay = hasIntroPlayed ? 0 : 3; // Wait for intro animation
+      // Start animations immediately after preloader
+      const delay = 0;
 
       // Create SVG clip-path for vertical slats reveal - apply to whole page including right panel
       const numberOfRects = 8; // Fewer, wider slats

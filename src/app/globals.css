@@ -25,6 +25,12 @@
     @apply font-sans text-gray-800 leading-relaxed;
     overflow-x: hidden;
   }
+
+  /* Hide page content until preloader completes */
+  .page-content {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 @layer components {

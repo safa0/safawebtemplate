@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
-import { IntroAnimation } from "@/components/ui/IntroAnimation";
+import { Preloader } from "@/components/ui/Preloader";
 import { siteConfig } from "@/config/site";
 
 const spaceGrotesk = Space_Grotesk({
@@ -33,7 +33,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${spaceGrotesk.className} antialiased`}>
-        {/* <IntroAnimation /> */}
+        <Preloader />
         <SmoothScrollProvider>
           {children}
         </SmoothScrollProvider>
