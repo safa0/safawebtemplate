@@ -38,29 +38,33 @@ export function ImpactSection() {
   }, []);
 
   const quickMetrics = [
-    { value: "87%", label: "Process Efficiency" },
-    { value: "6-12mo", label: "to Full ROI" },
-    { value: "40%", label: "Cost Reduction" },
-    { value: "99.9%", label: "Accuracy Rate" }
+    { id: "efficiency", value: "87%", label: "Process Efficiency" },
+    { id: "roi", value: "6-12mo", label: "to Full ROI" },
+    { id: "cost", value: "40%", label: "Cost Reduction" },
+    { id: "accuracy", value: "99.9%", label: "Accuracy Rate" }
   ];
 
   const metrics = [
     {
+      id: "efficiency-detailed",
       value: "87%",
       label: "Average Process Efficiency Gain",
       description: "Across all implementations"
     },
     {
+      id: "roi-detailed",
       value: "6-12",
       label: "Months to Full ROI",
       description: "Typical payback period"
     },
     {
+      id: "cost-reduction",
       value: "40%",
       label: "Reduction in Operational Costs",
       description: "Within first year"
     },
     {
+      id: "accuracy-detailed",
       value: "99.9%",
       label: "Automation Accuracy",
       description: "Error-free execution"
@@ -80,9 +84,9 @@ export function ImpactSection() {
         {/* Quick Metrics Banner */}
         <div className="mb-16 pb-16 border-b border-white/20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {quickMetrics.map((metric, index) => (
+            {quickMetrics.map((metric) => (
               <div
-                key={index}
+                key={metric.id}
                 className="impact-metric text-center"
               >
                 <div className="text-5xl md:text-6xl font-light mb-3 text-khaki-light">
@@ -97,9 +101,9 @@ export function ImpactSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {metrics.map((metric, index) => (
+          {metrics.map((metric) => (
             <div
-              key={index}
+              key={metric.id}
               className="impact-metric bg-white/10 backdrop-blur-sm p-8 rounded-lg border border-white/20 hover:bg-white/15 transition-all duration-500"
             >
               <div className="text-6xl md:text-7xl font-light mb-4 text-khaki-light">

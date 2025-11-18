@@ -128,9 +128,9 @@ export function BenefitsSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {benefits.map((benefit, index) => (
+          {benefits.map((benefit) => (
             <div
-              key={index}
+              key={benefit.title}
               className="benefit-card bg-white rounded-2xl p-8 md:p-10 border border-khaki/20 hover:border-khaki hover:shadow-xl transition-all duration-300 group"
             >
               <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -146,8 +146,8 @@ export function BenefitsSection() {
               </p>
 
               <ul className="space-y-3">
-                {benefit.details.map((detail, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
+                {benefit.details.map((detail) => (
+                  <li key={detail} className="flex items-start gap-3">
                     <span className="text-accent font-bold mt-1">•</span>
                     <span className="text-sm text-gray-700">{detail}</span>
                   </li>

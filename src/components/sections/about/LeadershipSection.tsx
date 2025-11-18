@@ -78,9 +78,9 @@ export function LeadershipSection() {
         </p>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {teamMembers.map((member, index) => (
+          {teamMembers.map((member) => (
             <div
-              key={index}
+              key={member.name}
               className="team-member-card group"
             >
               <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden mb-6 bg-gray-200">

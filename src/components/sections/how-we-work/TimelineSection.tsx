@@ -156,7 +156,7 @@ export function TimelineSection() {
           {/* Phases Grid */}
           <div className="grid lg:grid-cols-5 gap-6 md:gap-4">
             {timelinePhases.map((timelinePhase, index) => (
-              <div key={index} className="timeline-phase-card group">
+              <div key={timelinePhase.phase} className="timeline-phase-card group">
                 {/* Timeline dot */}
                 <div className="hidden lg:flex justify-center mb-6">
                   <div className="w-12 h-12 bg-white border-4 border-earth rounded-full flex items-center justify-center text-earth font-bold text-lg z-10 relative">
@@ -187,8 +187,8 @@ export function TimelineSection() {
                       Key Milestones
                     </p>
                     <ul className="space-y-2">
-                      {timelinePhase.milestones.map((milestone, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-xs text-gray-700">
+                      {timelinePhase.milestones.map((milestone) => (
+                        <li key={milestone} className="flex items-start gap-2 text-xs text-gray-700">
                           <span className="text-khaki-dark font-bold mt-1">✓</span>
                           <span>{milestone}</span>
                         </li>
@@ -202,8 +202,8 @@ export function TimelineSection() {
                       Deliverables
                     </p>
                     <ul className="space-y-1">
-                      {timelinePhase.deliverables.map((deliverable, idx) => (
-                        <li key={idx} className="text-xs text-gray-600 flex items-start gap-2">
+                      {timelinePhase.deliverables.map((deliverable) => (
+                        <li key={deliverable} className="text-xs text-gray-600 flex items-start gap-2">
                           <span className="text-accent mt-1">•</span>
                           <span>{deliverable}</span>
                         </li>

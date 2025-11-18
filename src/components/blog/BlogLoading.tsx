@@ -26,7 +26,7 @@ export function BlogGridSkeleton({ count = 6 }: { count?: number }) {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {[...Array(count)].map((_, i) => (
-        <BlogCardSkeleton key={i} />
+        <BlogCardSkeleton key={`skeleton-${i}`} />
       ))}
     </div>
   );
@@ -67,7 +67,7 @@ export function BlogPostSkeleton() {
       <div className="space-y-4">
         {[...Array(12)].map((_, i) => (
           <div
-            key={i}
+            key={`content-skeleton-${i}`}
             className="h-4 bg-khaki-light rounded"
             style={{ width: `${Math.random() * 20 + 80}%` }}
           ></div>

@@ -87,7 +87,7 @@ export function AchievementsSection() {
           <div className="space-y-12 md:space-y-16">
             {achievements.map((achievement, index) => (
               <div
-                key={index}
+                key={achievement.year}
                 className="milestone"
               >
                 <div className={`flex gap-8 md:gap-12 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>

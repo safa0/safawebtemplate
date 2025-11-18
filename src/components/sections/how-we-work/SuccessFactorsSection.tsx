@@ -141,9 +141,9 @@ export function SuccessFactorsSection() {
 
         {/* Factors Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {factors.map((factor, index) => (
+          {factors.map((factor) => (
             <div
-              key={index}
+              key={factor.title}
               className="success-factor-card group bg-white rounded-2xl border border-khaki/20 p-8 hover:border-khaki hover:shadow-2xl transition-all duration-300"
             >
               {/* Icon */}
@@ -163,8 +163,8 @@ export function SuccessFactorsSection() {
 
               {/* Elements */}
               <ul className="space-y-2">
-                {factor.elements.map((element, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
+                {factor.elements.map((element) => (
+                  <li key={element} className="flex items-start gap-3">
                     <span className="text-khaki-dark text-lg">✓</span>
                     <span className="text-sm text-gray-700 leading-relaxed">
                       {element}
@@ -234,8 +234,8 @@ export function SuccessFactorsSection() {
                   "Organization design and restructuring (if needed)",
                   "Training plan development",
                   "Governance framework establishment",
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
                     <span className="text-accent">→</span>
                     <span className="text-gray-700">{item}</span>
                   </li>
@@ -254,8 +254,8 @@ export function SuccessFactorsSection() {
                   "Escalation and issue resolution",
                   "Continuous training and support",
                   "Post-go-live optimization reviews",
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
                     <span className="text-accent">→</span>
                     <span className="text-gray-700">{item}</span>
                   </li>

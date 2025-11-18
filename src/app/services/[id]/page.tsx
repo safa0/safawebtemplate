@@ -51,7 +51,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <div className="max-w-4xl space-y-8">
             {service.detailedContent?.map((paragraph, index) => (
               <p
-                key={index}
+                key={`content-${index}`}
                 className="text-lg md:text-xl leading-relaxed text-gray-700"
                 dangerouslySetInnerHTML={{ __html: paragraph }}
               />

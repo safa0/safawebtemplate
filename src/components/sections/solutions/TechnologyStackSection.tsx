@@ -116,9 +116,9 @@ export function TechnologyStackSection() {
                 <p className="text-sm font-semibold text-earth uppercase tracking-wide">
                   Key Features
                 </p>
-                {platform.features.map((feature, index) => (
+                {platform.features.map((feature) => (
                   <div
-                    key={index}
+                    key={feature}
                     className="platform-feature flex items-start gap-3"
                   >
                     <div className="mt-1.5 w-2 h-2 rounded-full bg-khaki flex-shrink-0"></div>

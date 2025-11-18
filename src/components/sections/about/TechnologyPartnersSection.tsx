@@ -83,9 +83,9 @@ export function TechnologyPartnersSection() {
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {partners.map((partner, index) => (
+          {partners.map((partner) => (
             <div
-              key={index}
+              key={partner.name}
               className="partner-card p-8 bg-white rounded-lg border-2 border-sand hover:border-earth hover:shadow-lg transition-all duration-300 group"
             >
               <div className="mb-4 text-sm font-semibold text-accent uppercase tracking-wide">

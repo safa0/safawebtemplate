@@ -212,8 +212,8 @@ export function IndustryCardsSection() {
                   Key Use Cases
                 </h4>
                 <ul className="space-y-2">
-                  {industry.useCases.slice(0, 3).map((useCase, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
+                  {industry.useCases.slice(0, 3).map((useCase) => (
+                    <li key={useCase} className="flex items-start gap-2 text-sm text-gray-600">
                       <span className="text-khaki font-bold mt-1">→</span>
                       <span>{useCase}</span>
                     </li>
@@ -232,8 +232,8 @@ export function IndustryCardsSection() {
                   Success Metrics
                 </h4>
                 <div className="space-y-3">
-                  {industry.metrics.map((metric, idx) => (
-                    <div key={idx} className="flex justify-between items-center">
+                  {industry.metrics.map((metric) => (
+                    <div key={metric.label} className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">{metric.label}</span>
                       <span className="metric-value font-serif text-lg font-bold text-khaki">
                         {metric.value}

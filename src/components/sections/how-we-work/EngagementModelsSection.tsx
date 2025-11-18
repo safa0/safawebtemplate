@@ -123,9 +123,9 @@ export function EngagementModelsSection() {
 
         {/* Models Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {models.map((model, index) => (
+          {models.map((model) => (
             <div
-              key={index}
+              key={model.title}
               className="engagement-model-card group relative bg-gradient-to-br from-white to-khaki-light/20 rounded-2xl border border-khaki/20 p-8 md:p-10 hover:border-khaki hover:shadow-2xl transition-all duration-300"
             >
               {/* Icon */}
@@ -159,8 +159,8 @@ export function EngagementModelsSection() {
                   Key Features
                 </p>
                 <ul className="space-y-2">
-                  {model.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
+                  {model.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3">
                       <span className="text-khaki-dark font-bold mt-1">✓</span>
                       <span className="text-sm text-gray-700">{feature}</span>
                     </li>
@@ -218,16 +218,16 @@ export function EngagementModelsSection() {
               </thead>
               <tbody className="divide-y divide-khaki/20">
                 {[
-                  { feature: "Fixed Scope", project: "Yes", managed: "Flexible", coe: "Flexible" },
-                  { feature: "Implementation Support", project: "Included", managed: "Included", coe: "Included" },
-                  { feature: "Post-Launch Support", project: "30 days", managed: "Ongoing", coe: "Ongoing" },
-                  { feature: "Continuous Optimization", project: "No", managed: "Yes", coe: "Yes (in-house)" },
-                  { feature: "Scalability", project: "Limited", managed: "High", coe: "Enterprise-scale" },
-                  { feature: "Knowledge Transfer", project: "Basic", managed: "Ongoing", coe: "Comprehensive" },
-                  { feature: "Predictable Costs", project: "Yes", managed: "Yes", coe: "With guidance" },
-                ].map((row, idx) => (
+                  { id: "scope", feature: "Fixed Scope", project: "Yes", managed: "Flexible", coe: "Flexible" },
+                  { id: "support", feature: "Implementation Support", project: "Included", managed: "Included", coe: "Included" },
+                  { id: "postlaunch", feature: "Post-Launch Support", project: "30 days", managed: "Ongoing", coe: "Ongoing" },
+                  { id: "optimization", feature: "Continuous Optimization", project: "No", managed: "Yes", coe: "Yes (in-house)" },
+                  { id: "scalability", feature: "Scalability", project: "Limited", managed: "High", coe: "Enterprise-scale" },
+                  { id: "knowledge", feature: "Knowledge Transfer", project: "Basic", managed: "Ongoing", coe: "Comprehensive" },
+                  { id: "costs", feature: "Predictable Costs", project: "Yes", managed: "Yes", coe: "With guidance" },
+                ].map((row) => (
                   <tr
-                    key={idx}
+                    key={row.id}
                     className="hover:bg-khaki-light/10 transition-colors duration-200"
                   >
                     <td className="px-6 py-4 font-semibold text-gray-800">

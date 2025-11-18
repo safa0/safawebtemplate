@@ -17,7 +17,7 @@ export function PageTransition() {
         <div className="fixed inset-0 z-[9999] flex pointer-events-none">
           {bars.map((i) => (
             <motion.div
-              key={i}
+              key={`bar-${i}`}
               className={`flex-1 ${i % 2 === 0 ? "bg-accent" : "bg-beige-dark"}`}
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}

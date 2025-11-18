@@ -151,7 +151,7 @@ export function HeroSection() {
 
         <h1 className="hero-headline font-serif text-6xl md:text-7xl lg:text-8xl leading-tight mb-8 text-earth">
           {siteConfig.hero.headline.map((line, index) => (
-            <span key={index}>
+            <span key={`headline-${index}`}>
               {line}
               {index < siteConfig.hero.headline.length - 1 && <br />}
             </span>

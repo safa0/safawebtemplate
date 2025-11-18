@@ -135,9 +135,9 @@ export function StatisticsSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {statistics.map((stat, index) => (
+          {statistics.map((stat) => (
             <div
-              key={index}
+              key={stat.label}
               className="stat-card bg-khaki-light/30 rounded-2xl p-8 md:p-12 border border-khaki/20 hover:border-khaki hover:shadow-lg transition-all duration-300"
             >
               <div className="mb-6">

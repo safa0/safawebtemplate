@@ -65,7 +65,7 @@ function ROICalculator() {
         <div className="space-y-6 mb-8">
           {roiScenarios.map((s, idx) => (
             <button
-              key={idx}
+              key={s.label}
               onClick={() => setSelectedScenario(idx)}
               className={`w-full text-left p-6 rounded-xl border-2 transition-all duration-300 ${
                 selectedScenario === idx

@@ -27,11 +27,81 @@
   }
 }
 
+@layer components {
+  /* Typography Components */
+  .heading-primary {
+    @apply font-serif text-5xl md:text-7xl mb-8 text-earth;
+  }
+
+  .heading-secondary {
+    @apply font-serif text-4xl md:text-6xl mb-6 text-earth;
+  }
+
+  .heading-tertiary {
+    @apply font-serif text-3xl md:text-5xl mb-4 text-earth;
+  }
+
+  /* Button Components */
+  .btn-primary {
+    @apply inline-block px-8 md:px-12 py-3 md:py-4 bg-earth text-white rounded-full text-base md:text-lg font-medium hover:-translate-y-1 hover:shadow-2xl transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply inline-block px-6 md:px-8 py-2 md:py-3 bg-white text-earth rounded-lg text-base md:text-lg font-medium hover:bg-khaki-light transition-colors duration-300;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 text-base md:text-lg font-medium hover:gap-4 transition-all duration-300;
+  }
+
+  /* Link Components */
+  .link-arrow {
+    @apply group inline-flex items-center gap-2 text-lg font-medium;
+  }
+
+  .link-arrow span:last-child {
+    @apply group-hover:translate-x-1 transition-transform duration-300;
+  }
+
+  /* Section Padding */
+  .section-padding {
+    @apply py-16 md:py-20 px-6 md:px-8 lg:px-20;
+  }
+
+  .section-padding-large {
+    @apply py-20 md:py-32 px-6 md:px-8 lg:px-20;
+  }
+
+  /* Container Components */
+  .container-narrow {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Card Components */
+  .card {
+    @apply bg-white rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden;
+  }
+
+  .card-glass {
+    @apply bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-white/15 transition-all duration-500;
+  }
+}
+
 @layer utilities {
   .animated-element {
     will-change: transform, opacity;
     transform: translateZ(0);
     backface-visibility: hidden;
+  }
+
+  /* Performance optimization */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
   }
 }
 

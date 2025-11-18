@@ -206,7 +206,7 @@ export default function ResourcesPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {resources.guides.slice(1).map((guide, index) => (
                 <div
-                  key={index}
+                  key={`guide-${index}`}
                   className="p-6 bg-white rounded-xl border border-gray-200 hover:shadow-lg transition-shadow cursor-pointer"
                 >
                   <div className="flex items-center gap-2 mb-3">
@@ -235,7 +235,7 @@ export default function ResourcesPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {resources.whitepapers.map((paper, index) => (
                 <div
-                  key={index}
+                  key={`paper-${index}`}
                   className="p-6 bg-white rounded-xl border border-gray-200 hover:shadow-lg transition-shadow"
                 >
                   <div className="flex items-center justify-between mb-4">
@@ -262,7 +262,7 @@ export default function ResourcesPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {resources.caseStudies.map((study, index) => (
                 <div
-                  key={index}
+                  key={`study-${index}`}
                   className="p-6 bg-white rounded-xl border border-gray-200 hover:shadow-lg transition-shadow"
                 >
                   <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
@@ -293,7 +293,7 @@ export default function ResourcesPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {resources.webinars.map((webinar, index) => (
                 <div
-                  key={index}
+                  key={`webinar-${index}`}
                   className="p-6 bg-white rounded-xl border border-gray-200 hover:shadow-lg transition-shadow"
                 >
                   <div className="flex items-center justify-between mb-4">
@@ -334,7 +334,7 @@ export default function ResourcesPage() {
             <div className="grid md:grid-cols-3 gap-6">
               {resources.tools.map((tool, index) => (
                 <div
-                  key={index}
+                  key={`tool-${index}`}
                   className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 hover:shadow-lg transition-shadow text-center cursor-pointer"
                 >
                   <div className="text-5xl mb-4">{tool.icon}</div>

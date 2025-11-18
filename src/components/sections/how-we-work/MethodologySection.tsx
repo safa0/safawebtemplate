@@ -161,7 +161,7 @@ export function MethodologySection() {
           <div className="space-y-12 md:space-y-16">
             {steps.map((step, index) => (
               <div
-                key={step.number}
+                key={`step-${step.number}`}
                 className={`step-card group relative ${
                   index % 2 === 0 ? "md:ml-0" : "md:ml-auto"
                 }`}
@@ -194,8 +194,8 @@ export function MethodologySection() {
 
                     {/* Details List */}
                     <div className="space-y-3 bg-white/10 backdrop-blur rounded-lg p-4">
-                      {step.details.map((detail, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
+                      {step.details.map((detail) => (
+                        <div key={detail} className="flex items-start gap-3">
                           <span className="text-khaki-light text-lg mt-0.5">✓</span>
                           <p className="text-sm font-medium leading-tight">
                             {detail}

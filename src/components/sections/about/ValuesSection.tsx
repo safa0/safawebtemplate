@@ -70,9 +70,9 @@ export function ValuesSection() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          {values.map((value, index) => (
+          {values.map((value) => (
             <div
-              key={index}
+              key={value.title}
               className="value-card p-8 md:p-12 bg-khaki-light rounded-lg border-2 border-khaki hover:border-earth transition-colors duration-300"
             >
               <div className="text-5xl mb-6">{value.icon}</div>
