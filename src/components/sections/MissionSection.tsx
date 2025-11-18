@@ -34,6 +34,15 @@ export function MissionSection() {
       const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
       svg.appendChild(defs);
 
+      // Check if section is in viewport - if so, play immediately, otherwise use ScrollTrigger
+      const isInViewport = () => {
+        if (!sectionRef.current) return false;
+        const rect = sectionRef.current.getBoundingClientRect();
+        return rect.left < window.innerWidth && rect.right > 0;
+      };
+
+      const shouldPlayImmediately = isInViewport();
+
       elements.forEach(({ selector, clipId, delay }) => {
         const element = document.querySelector(selector);
         if (!element) return;
@@ -62,24 +71,43 @@ export function MissionSection() {
           clipPath: `url(#${clipId})`
         });
 
-        // Animate the rectangles with ScrollTrigger
+        // Animate the rectangles
         const rects = clipPath.querySelectorAll("rect");
-        gsap.from(rects, {
-          scaleY: 0,
-          transformOrigin: "top center",
-          duration: 1.2,
-          delay: delay,
-          ease: "power2.out",
-          stagger: {
-            amount: 0.8,
-            ease: "none"
-          },
-          scrollTrigger: {
+
+        if (shouldPlayImmediately) {
+          // Play immediately if in viewport
+          gsap.from(rects, {
+            scaleY: 0,
+            transformOrigin: "top center",
+            duration: 1.2,
+            delay: delay,
+            ease: "power2.out",
+            stagger: {
+              amount: 0.8,
+              ease: "none"
+            }
+          });
+        } else {
+          // Use ScrollTrigger if off-screen
+          ScrollTrigger.create({
             trigger: sectionRef.current,
             start: "left 80%",
-            toggleActions: "play none none reverse"
-          }
-        });
+            onEnter: () => {
+              gsap.from(rects, {
+                scaleY: 0,
+                transformOrigin: "top center",
+                duration: 1.2,
+                delay: delay,
+                ease: "power2.out",
+                stagger: {
+                  amount: 0.8,
+                  ease: "none"
+                }
+              });
+            },
+            once: true
+          });
+        }
       });
 
       // Animate CTAs with horizontal slats too
@@ -109,22 +137,40 @@ export function MissionSection() {
         });
 
         const rects = clipPath.querySelectorAll("rect");
-        gsap.from(rects, {
-          scaleY: 0,
-          transformOrigin: "top center",
-          duration: 1.2,
-          delay: 0.4 + (index * 0.15),
-          ease: "power2.out",
-          stagger: {
-            amount: 0.8,
-            ease: "none"
-          },
-          scrollTrigger: {
+        const ctaDelay = 0.4 + (index * 0.15);
+
+        if (shouldPlayImmediately) {
+          gsap.from(rects, {
+            scaleY: 0,
+            transformOrigin: "top center",
+            duration: 1.2,
+            delay: ctaDelay,
+            ease: "power2.out",
+            stagger: {
+              amount: 0.8,
+              ease: "none"
+            }
+          });
+        } else {
+          ScrollTrigger.create({
             trigger: sectionRef.current,
             start: "left 80%",
-            toggleActions: "play none none reverse"
-          }
-        });
+            onEnter: () => {
+              gsap.from(rects, {
+                scaleY: 0,
+                transformOrigin: "top center",
+                duration: 1.2,
+                delay: ctaDelay,
+                ease: "power2.out",
+                stagger: {
+                  amount: 0.8,
+                  ease: "none"
+                }
+              });
+            },
+            once: true
+          });
+        }
       });
     }, sectionRef);
 

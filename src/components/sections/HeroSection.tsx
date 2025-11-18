@@ -36,7 +36,7 @@ export function HeroSection() {
       const delay = hasIntroPlayed ? 0 : 3; // Wait for intro animation
 
       // Create SVG clip-path for vertical slats reveal - apply to whole page including right panel
-      const numberOfRects = 20;
+      const numberOfRects = 8; // Fewer, wider slats
       const elements = [
         { selector: ".logo-tagline", clipId: "hero-logo-clip", delay: delay },
         { selector: ".hero-headline", clipId: "hero-headline-clip", delay: delay + 0.2 },
