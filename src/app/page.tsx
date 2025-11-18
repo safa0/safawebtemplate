@@ -3,8 +3,8 @@ import { PageTransition } from "@/components/ui/PageTransition";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { MissionSection } from "@/components/sections/MissionSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
-import { MetricsBanner } from "@/components/sections/MetricsBanner";
 import { ImpactSection } from "@/components/sections/ImpactSection";
+import { FeaturedWorkSection } from "@/components/sections/FeaturedWorkSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { BackgroundManager } from "@/components/ui/BackgroundManager";
 
@@ -19,24 +19,22 @@ export default function Home() {
         {/* Horizontal scroll section */}
         <div data-horizontal-scroll className="horizontal-wrapper">
           <main className="horizontal-container">
-            <div data-horizontal-section>
-              <HeroSection />
-            </div>
-            <div data-horizontal-section>
-              <MissionSection />
-            </div>
-            <div data-horizontal-section>
-              <ServicesSection />
-            </div>
-            <div data-horizontal-section>
-              <MetricsBanner />
-            </div>
-          </main>
+          <div data-horizontal-section>
+            <HeroSection />
+          </div>
+          <div data-horizontal-section>
+            <MissionSection />
+          </div>
+          <div data-horizontal-section>
+            <ServicesSection />
+          </div>
+        </main>
         </div>
 
-        {/* Vertical scroll section */}
+        {/* Vertical scroll section - transitions from horizontal */}
         <div className="vertical-scroll-container">
           <ImpactSection />
+          <FeaturedWorkSection />
           <FooterSection />
         </div>
       </div>

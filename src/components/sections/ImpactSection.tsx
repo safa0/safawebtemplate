@@ -73,6 +73,10 @@ export function ImpactSection() {
       className="impact-section w-full min-h-screen bg-earth py-20 px-8 md:px-20 flex flex-col justify-center"
     >
       <div className="max-w-7xl mx-auto w-full">
+        <h2 className="impact-title font-serif text-6xl md:text-7xl mb-16 text-white">
+          Results That Matter
+        </h2>
+
         {/* Quick Metrics Banner */}
         <div className="mb-16 pb-16 border-b border-white/20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -91,10 +95,6 @@ export function ImpactSection() {
             ))}
           </div>
         </div>
-
-        <h2 className="impact-title font-serif text-6xl md:text-7xl mb-16 text-white">
-          Results That Matter
-        </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {metrics.map((metric, index) => (
