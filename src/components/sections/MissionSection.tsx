@@ -6,32 +6,125 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export function MissionSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".mission-text", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          end: "top 30%",
-          scrub: 1,
-        },
-        x: 100,
-        opacity: 0,
+      // Create horizontal slats reveal for mission text
+      const numberOfRects = 20;
+      const elements = [
+        { selector: ".mission-title", clipId: "mission-title-clip", delay: 0 },
+        { selector: ".mission-statement", clipId: "mission-statement-clip", delay: 0.2 },
+      ];
+
+      // Create SVG element once
+      let svg = document.querySelector("#mission-clip-svg") as SVGSVGElement;
+      if (!svg) {
+        svg = document.createElementNS("http://www.w3.org/2000/svg", "svg") as SVGSVGElement;
+        svg.setAttribute("id", "mission-clip-svg");
+        svg.setAttribute("width", "0");
+        svg.setAttribute("height", "0");
+        svg.style.position = "absolute";
+        document.body.appendChild(svg);
+      }
+
+      const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+      svg.appendChild(defs);
+
+      elements.forEach(({ selector, clipId, delay }) => {
+        const element = document.querySelector(selector);
+        if (!element) return;
+
+        // Create clipPath with horizontal rectangles
+        const clipPath = document.createElementNS("http://www.w3.org/2000/svg", "clipPath");
+        clipPath.setAttribute("id", clipId);
+        clipPath.setAttribute("clipPathUnits", "objectBoundingBox");
+
+        const rectHeight = 1 / numberOfRects;
+
+        // Create horizontal rectangles
+        for (let i = 0; i < numberOfRects; i++) {
+          const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+          rect.setAttribute("x", "0");
+          rect.setAttribute("y", String(i * rectHeight));
+          rect.setAttribute("width", "1");
+          rect.setAttribute("height", String(rectHeight));
+          clipPath.appendChild(rect);
+        }
+
+        defs.appendChild(clipPath);
+
+        // Apply clip-path to element
+        gsap.set(element, {
+          clipPath: `url(#${clipId})`
+        });
+
+        // Animate the rectangles with ScrollTrigger
+        const rects = clipPath.querySelectorAll("rect");
+        gsap.from(rects, {
+          scaleY: 0,
+          transformOrigin: "top center",
+          duration: 1.2,
+          delay: delay,
+          ease: "power2.out",
+          stagger: {
+            amount: 0.8,
+            ease: "none"
+          },
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "left 80%",
+            toggleActions: "play none none reverse"
+          }
+        });
       });
 
-      gsap.from(".mission-cta", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 70%",
-          end: "top 20%",
-          scrub: 1,
-        },
-        y: 50,
-        opacity: 0,
-        stagger: 0.1,
+      // Animate CTAs with horizontal slats too
+      const ctaElements = document.querySelectorAll(".mission-cta");
+      ctaElements.forEach((cta, index) => {
+        const clipId = `mission-cta-clip-${index}`;
+
+        const clipPath = document.createElementNS("http://www.w3.org/2000/svg", "clipPath");
+        clipPath.setAttribute("id", clipId);
+        clipPath.setAttribute("clipPathUnits", "objectBoundingBox");
+
+        const rectHeight = 1 / numberOfRects;
+
+        for (let i = 0; i < numberOfRects; i++) {
+          const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+          rect.setAttribute("x", "0");
+          rect.setAttribute("y", String(i * rectHeight));
+          rect.setAttribute("width", "1");
+          rect.setAttribute("height", String(rectHeight));
+          clipPath.appendChild(rect);
+        }
+
+        defs.appendChild(clipPath);
+
+        gsap.set(cta, {
+          clipPath: `url(#${clipId})`
+        });
+
+        const rects = clipPath.querySelectorAll("rect");
+        gsap.from(rects, {
+          scaleY: 0,
+          transformOrigin: "top center",
+          duration: 1.2,
+          delay: 0.4 + (index * 0.15),
+          ease: "power2.out",
+          stagger: {
+            amount: 0.8,
+            ease: "none"
+          },
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "left 80%",
+            toggleActions: "play none none reverse"
+          }
+        });
       });
     }, sectionRef);
 
@@ -44,10 +137,10 @@ export function MissionSection() {
       className="mission-section w-full h-full flex items-center justify-start px-8 md:px-20 bg-[#032f35]"
     >
       <div className="mission-text" style={{ maxWidth: "45vw" }}>
-        <h2 className="font-serif text-5xl md:text-6xl mb-8 text-white">
+        <h2 className="mission-title font-serif text-5xl md:text-6xl mb-8 text-white">
           {siteConfig.mission.title}
         </h2>
-        <p className="text-xl md:text-2xl leading-relaxed text-white/90 mb-12">
+        <p className="mission-statement text-xl md:text-2xl leading-relaxed text-white/90 mb-12">
           {siteConfig.mission.statement}
         </p>
 

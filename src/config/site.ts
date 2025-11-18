@@ -57,7 +57,12 @@ export const siteConfig = {
       background: "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80')",
       textColor: "text-white",
       hasImage: false,
-      link: "/solutions",
+      link: "/services/1",
+      detailedContent: [
+        "Situation: Most enterprises struggle with hidden inefficiencies buried in complex processes. Teams spend countless hours on repetitive tasks while leadership lacks visibility into where automation could deliver the greatest impact. Without data-driven insights, automation initiatives often target the wrong processes or fail to secure stakeholder buy-in.",
+        "Task: We deploy advanced process mining tools to capture real-time data from your systems, creating complete transparency into how work flows through your organization. Through collaborative workshops, we identify automation opportunities and quantify their business value using our proprietary ROI calculator that considers time savings, error reduction, compliance improvements, and scalability.",
+        "Action & Result: You receive a prioritized automation roadmap with detailed business cases for each initiative—including process maps, quantified ROI projections, risk assessments, and implementation timelines. This data-backed roadmap secures stakeholder buy-in and serves as your strategic guide, ensuring automation investments align with business objectives and deliver measurable returns from day one."
+      ],
     },
     {
       number: "2",
@@ -66,7 +71,12 @@ export const siteConfig = {
       background: "url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80')",
       textColor: "text-white",
       hasImage: false,
-      link: "/solutions",
+      link: "/services/2",
+      detailedContent: [
+        "Situation: Poorly designed automation solutions create technical debt, fail to scale with business growth, and struggle to integrate with existing systems. Many organizations rush into implementation without proper architecture, resulting in fragile bots that break with system updates and security vulnerabilities that put enterprise data at risk.",
+        "Task: Our architects design enterprise-grade automation blueprints that serve as the technical foundation for your transformation. We create scalable solutions that seamlessly integrate RPA bots and AI agents with your technology stack, establishing governance frameworks for bot management, security, and compliance while defining the optimal mix of attended and unattended automation.",
+        "Action & Result: You receive comprehensive architecture diagrams, technology stack recommendations, infrastructure requirements, and detailed process definition documents (PDDs). These blueprints provide your IT team with clear implementation guidance while establishing quality, security, and performance standards—resulting in a solid technical foundation that de-risks implementation, ensures scalability, and accelerates time-to-value."
+      ],
     },
     {
       number: "3",
@@ -75,7 +85,12 @@ export const siteConfig = {
       background: "url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&q=80')",
       textColor: "text-white",
       hasImage: false,
-      link: "/solutions",
+      link: "/services/3",
+      detailedContent: [
+        "Situation: Automation implementations often fail due to poor code quality, inadequate testing, or bots that can't handle real-world exceptions. Organizations invest heavily in automation only to face production failures, security vulnerabilities, and solutions that require constant maintenance instead of delivering promised efficiencies.",
+        "Task: Our certified developers bring your automation blueprint to life using industry-leading platforms like UiPath, Automation Anywhere, or Blue Prism. We build intelligent automation solutions that incorporate document processing, natural language understanding, and machine learning models. Every bot undergoes rigorous testing in environments that mirror production, validating exception handling, logging, monitoring, and performance metrics.",
+        "Action & Result: You receive production-ready automation solutions with comprehensive documentation covering bot logic, dependencies, error handling procedures, and maintenance guides—plus training materials for operators and administrators. Our enterprise-grade code ensures security, maintainability, and scalability, delivering long-term value with minimal technical debt and bots that handle exceptions intelligently while learning from experience."
+      ],
     },
     {
       number: "4",
@@ -84,7 +99,12 @@ export const siteConfig = {
       background: "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=80')",
       textColor: "text-white",
       hasImage: false,
-      link: "/solutions",
+      link: "/services/4",
+      detailedContent: [
+        "Situation: Even technically perfect automation fails without proper change management and organizational buy-in. Employees resist new workflows, IT teams struggle with unfamiliar bot infrastructure, and business leaders lack visibility into automation performance. Without structured deployment and ongoing optimization, automation initiatives deliver disappointing results and fail to scale across the enterprise.",
+        "Task: We execute phased rollouts that minimize disruption while building confidence through early wins. Our approach includes comprehensive runbooks, rollback procedures, and 24/7 support during critical launches. We conduct tailored training for all stakeholder groups—end users, IT teams, and business leaders—building genuine understanding of how automation transforms workflows and what success looks like.",
+        "Action & Result: You gain a sustainable automation program with established monitoring dashboards, performance metrics, and a Center of Excellence (CoE) framework for governance and best practices. We provide ongoing optimization support including performance tuning, exception analysis, and opportunity identification for additional automation. The result is an automation program that grows organically within your organization, driven by automation champions, continuous improvement, and expanding business value."
+      ],
     },
   ],
 

@@ -35,27 +35,78 @@ export function HeroSection() {
 
       const delay = hasIntroPlayed ? 0 : 3; // Wait for intro animation
 
-      gsap.from(".logo-tagline", {
-        duration: 1,
-        opacity: 0,
-        y: 20,
-        delay: delay,
-        ease: "power3.out",
+      // Create SVG clip-path for vertical slats reveal - apply to whole page including right panel
+      const numberOfRects = 20;
+      const elements = [
+        { selector: ".logo-tagline", clipId: "hero-logo-clip", delay: delay },
+        { selector: ".hero-headline", clipId: "hero-headline-clip", delay: delay + 0.2 },
+        { selector: ".hero-bottom", clipId: "hero-bottom-clip", delay: delay + 0.4 },
+        { selector: ".hero-right-image", clipId: "hero-right-clip", delay: delay + 0.1 },
+        { selector: ".floating-card-2", clipId: "hero-card-clip", delay: delay + 0.3 }
+      ];
+
+      // Create SVG element once
+      let svg = document.querySelector("#hero-clip-svg") as SVGSVGElement;
+      if (!svg) {
+        svg = document.createElementNS("http://www.w3.org/2000/svg", "svg") as SVGSVGElement;
+        svg.setAttribute("id", "hero-clip-svg");
+        svg.setAttribute("width", "0");
+        svg.setAttribute("height", "0");
+        svg.style.position = "absolute";
+        document.body.appendChild(svg);
+      }
+
+      const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+      svg.appendChild(defs);
+
+      elements.forEach(({ selector, clipId, delay: elementDelay }) => {
+        const element = document.querySelector(selector);
+        if (!element) return;
+
+        // Create clipPath with vertical rectangles
+        const clipPath = document.createElementNS("http://www.w3.org/2000/svg", "clipPath");
+        clipPath.setAttribute("id", clipId);
+        clipPath.setAttribute("clipPathUnits", "objectBoundingBox");
+
+        const rectWidth = 1 / numberOfRects;
+
+        // Create vertical rectangles
+        for (let i = 0; i < numberOfRects; i++) {
+          const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+          rect.setAttribute("x", String(i * rectWidth));
+          rect.setAttribute("y", "0");
+          rect.setAttribute("width", String(rectWidth));
+          rect.setAttribute("height", "1");
+          clipPath.appendChild(rect);
+        }
+
+        defs.appendChild(clipPath);
+
+        // Apply clip-path to element
+        gsap.set(element, {
+          clipPath: `url(#${clipId})`
+        });
+
+        // Animate the rectangles
+        const rects = clipPath.querySelectorAll("rect");
+        gsap.from(rects, {
+          scaleX: 0,
+          transformOrigin: "left center",
+          duration: 1.2,
+          delay: elementDelay,
+          ease: "power2.out",
+          stagger: {
+            amount: 0.8,
+            ease: "none"
+          }
+        });
       });
 
-      gsap.from(".hero-headline", {
-        duration: 1.2,
-        opacity: 0,
-        y: 30,
-        delay: delay + 0.2,
-        ease: "power3.out",
-      });
-
-      gsap.from(".hero-bottom", {
-        duration: 1,
-        opacity: 0,
-        y: 20,
-        delay: delay + 0.4,
+      // Ocean picture slide in from right to left
+      gsap.from(".hero-right-image", {
+        x: "100%",
+        duration: 1.5,
+        delay: delay + 0.1,
         ease: "power3.out",
       });
 
