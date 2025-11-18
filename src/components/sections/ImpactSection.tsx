@@ -37,6 +37,13 @@ export function ImpactSection() {
     return () => ctx.revert();
   }, []);
 
+  const quickMetrics = [
+    { value: "87%", label: "Process Efficiency" },
+    { value: "6-12mo", label: "to Full ROI" },
+    { value: "40%", label: "Cost Reduction" },
+    { value: "99.9%", label: "Accuracy Rate" }
+  ];
+
   const metrics = [
     {
       value: "87%",
@@ -66,6 +73,25 @@ export function ImpactSection() {
       className="impact-section w-full min-h-screen bg-earth py-20 px-8 md:px-20 flex flex-col justify-center"
     >
       <div className="max-w-7xl mx-auto w-full">
+        {/* Quick Metrics Banner */}
+        <div className="mb-16 pb-16 border-b border-white/20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {quickMetrics.map((metric, index) => (
+              <div
+                key={index}
+                className="impact-metric text-center"
+              >
+                <div className="text-5xl md:text-6xl font-light mb-3 text-khaki-light">
+                  {metric.value}
+                </div>
+                <div className="text-lg md:text-xl text-white/80">
+                  {metric.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <h2 className="impact-title font-serif text-6xl md:text-7xl mb-16 text-white">
           Results That Matter
         </h2>
