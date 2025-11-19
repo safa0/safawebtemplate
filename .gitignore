@@ -37,7 +37,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Screenshots and media (dev files)
+# Screenshots and media (dev files only, not public assets)
+# Ignore all images first
 *.png
 *.jpg
 *.jpeg
@@ -46,4 +47,11 @@ next-env.d.ts
 reference_frame_*
 current_*
 fixed_*
+
+# But allow public folder images (negation must come after)
+!public/**/*.png
+!public/**/*.jpg
+!public/**/*.jpeg
+!public/**/*.gif
+
 venv/
