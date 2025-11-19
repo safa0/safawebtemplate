@@ -61,7 +61,7 @@ export function HeroSection() {
           </h1>
 
           <p className="hero-description text-lg md:text-xl text-khaki-light max-w-3xl mx-auto mb-12 leading-relaxed">
-            Enterprise-grade automation delivers measurable ROI, eliminates manual work, and empowers your team to focus on strategic growth. Discover why 500+ processes are already automated with LambdaFlow.
+            Enterprise-grade automation delivers measurable ROI, eliminates manual work, and empowers your team to focus on strategic growth. Discover why 500+ processes are already automated with Ansyn.
           </p>
 
           <div className="hero-highlight inline-block bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 md:p-12">

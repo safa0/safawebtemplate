@@ -58,7 +58,7 @@ export function CTASection() {
         </h2>
 
         <p className="about-cta-content text-xl md:text-2xl text-khaki-dark mb-12 leading-relaxed">
-          Let&apos;s explore how LambdaFlow™ can help you achieve operational excellence through intelligent automation. Schedule a consultation with our team today.
+          Let&apos;s explore how Ansyn can help you achieve operational excellence through intelligent automation. Schedule a consultation with our team today.
         </p>
 
         <div className="about-cta-button space-y-4 md:space-y-0 md:space-x-6 flex flex-col md:flex-row justify-center items-center">

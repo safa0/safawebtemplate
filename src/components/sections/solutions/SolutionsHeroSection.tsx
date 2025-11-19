@@ -64,7 +64,7 @@ export function SolutionsHeroSection() {
           </h1>
 
           <p className="solutions-hero-description text-xl text-gray-700 leading-relaxed max-w-xl mb-8">
-            From process discovery to enterprise-wide automation, LambdaFlow delivers end-to-end automation solutions designed to maximize ROI, minimize risk, and drive measurable business outcomes.
+            From process discovery to enterprise-wide automation, Ansyn delivers end-to-end automation solutions designed to maximize ROI, minimize risk, and drive measurable business outcomes.
           </p>
 
           <div className="flex items-center gap-6">

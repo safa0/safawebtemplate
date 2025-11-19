@@ -28,7 +28,7 @@ const models: EngagementModel[] = [
     ],
     timeline: "6-12 weeks",
     investmentRange: "$150K - $500K",
-    icon: "📋",
+    icon: "",
   },
   {
     title: "Managed Services",
@@ -43,7 +43,7 @@ const models: EngagementModel[] = [
     ],
     timeline: "Ongoing engagement",
     investmentRange: "$50K - $150K/month",
-    icon: "🤝",
+    icon: "",
   },
   {
     title: "Center of Excellence (CoE)",
@@ -58,7 +58,7 @@ const models: EngagementModel[] = [
     ],
     timeline: "3-6 months setup",
     investmentRange: "$200K - $600K + team investment",
-    icon: "🏢",
+    icon: "",
   },
 ];
 
@@ -128,11 +128,6 @@ export function EngagementModelsSection() {
               key={model.title}
               className="engagement-model-card group relative bg-gradient-to-br from-white to-khaki-light/20 rounded-2xl border border-khaki/20 p-8 md:p-10 hover:border-khaki hover:shadow-2xl transition-all duration-300"
             >
-              {/* Icon */}
-              <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                {model.icon}
-              </div>
-
               {/* Title */}
               <h3 className="font-serif text-3xl text-earth mb-3">
                 {model.title}

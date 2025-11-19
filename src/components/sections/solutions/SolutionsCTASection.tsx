@@ -66,7 +66,7 @@ export function SolutionsCTASection() {
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <div className="solutions-cta-feature bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <div className="text-3xl mb-3">🔍</div>
+            <div className="text-3xl mb-3"></div>
             <h3 className="font-serif text-xl text-white mb-2">Free Assessment</h3>
             <p className="text-white/80 text-sm">
               No obligation analysis of your automation opportunities and potential ROI
@@ -74,7 +74,7 @@ export function SolutionsCTASection() {
           </div>
 
           <div className="solutions-cta-feature bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <div className="text-3xl mb-3">👥</div>
+            <div className="text-3xl mb-3"></div>
             <h3 className="font-serif text-xl text-white mb-2">Expert Consultation</h3>
             <p className="text-white/80 text-sm">
               Direct access to our team of automation architects and solution engineers
@@ -82,7 +82,7 @@ export function SolutionsCTASection() {
           </div>
 
           <div className="solutions-cta-feature bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <div className="text-3xl mb-3">📊</div>
+            <div className="text-3xl mb-3"></div>
             <h3 className="font-serif text-xl text-white mb-2">Custom Roadmap</h3>
             <p className="text-white/80 text-sm">
               Personalized implementation plan with clear milestones and success metrics

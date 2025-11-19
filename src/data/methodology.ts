@@ -10,7 +10,6 @@ export interface MethodologyStep {
   subtitle: string;
   description: string;
   details: string[];
-  icon: string;
   color: string;
 }
 
@@ -27,7 +26,6 @@ export const methodologySteps: MethodologyStep[] = [
       "Risk assessment and mitigation planning",
       "Business case development",
     ],
-    icon: "🔍",
     color: "from-khaki to-khaki-dark",
   },
   {
@@ -42,7 +40,6 @@ export const methodologySteps: MethodologyStep[] = [
       "Security and compliance planning",
       "Scalability framework",
     ],
-    icon: "🏗️",
     color: "from-earth to-accent",
   },
   {
@@ -57,7 +54,6 @@ export const methodologySteps: MethodologyStep[] = [
       "Performance optimization",
       "Security hardening",
     ],
-    icon: "⚙️",
     color: "from-sand to-khaki-dark",
   },
   {
@@ -72,7 +68,6 @@ export const methodologySteps: MethodologyStep[] = [
       "Change management execution",
       "Go-live support (24/7)",
     ],
-    icon: "🚀",
     color: "from-earth to-earth",
   },
   {
@@ -87,7 +82,6 @@ export const methodologySteps: MethodologyStep[] = [
       "Regular health checks and updates",
       "Long-term strategic partnership",
     ],
-    icon: "📊",
     color: "from-khaki to-sand",
   },
 ];

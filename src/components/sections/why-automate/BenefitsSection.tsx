@@ -58,10 +58,6 @@ export function BenefitsSection() {
               key={benefit.title}
               className="benefit-card bg-white rounded-2xl p-8 md:p-10 border border-khaki/20 hover:border-khaki hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                {benefit.icon}
-              </div>
-
               <h3 className="font-serif text-2xl md:text-3xl text-earth mb-3">
                 {benefit.title}
               </h3>

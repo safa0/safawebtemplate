@@ -7,7 +7,6 @@
 export interface Industry {
   id: string;
   name: string;
-  icon: string;
   description: string;
   useCases: string[];
   metrics: {
@@ -22,7 +21,6 @@ export const industries: Industry[] = [
   {
     id: "financial",
     name: "Financial Services & Banking",
-    icon: "💳",
     description: "Transform banking operations with intelligent automation for faster, compliant processes.",
     useCases: [
       "Invoice Processing & Payment Automation",
@@ -42,7 +40,6 @@ export const industries: Industry[] = [
   {
     id: "healthcare",
     name: "Healthcare & Life Sciences",
-    icon: "🏥",
     description: "Streamline healthcare operations while maintaining HIPAA compliance and patient care excellence.",
     useCases: [
       "Patient Records Management",
@@ -62,7 +59,6 @@ export const industries: Industry[] = [
   {
     id: "manufacturing",
     name: "Manufacturing & Supply Chain",
-    icon: "🏭",
     description: "Optimize production and logistics with real-time automation and intelligent monitoring.",
     useCases: [
       "Inventory Management & Tracking",
@@ -82,7 +78,6 @@ export const industries: Industry[] = [
   {
     id: "retail",
     name: "Retail & E-commerce",
-    icon: "🛒",
     description: "Elevate customer experience while automating backend operations for seamless commerce.",
     useCases: [
       "Customer Service & Support Automation",
@@ -102,7 +97,6 @@ export const industries: Industry[] = [
   {
     id: "professional",
     name: "Professional Services",
-    icon: "📋",
     description: "Accelerate delivery and improve profitability through intelligent automation of service operations.",
     useCases: [
       "Document Processing & Management",

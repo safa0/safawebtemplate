@@ -5,7 +5,6 @@
  */
 
 export interface Benefit {
-  icon: string;
   title: string;
   description: string;
   details: string[];
@@ -13,7 +12,6 @@ export interface Benefit {
 
 export const benefits: Benefit[] = [
   {
-    icon: "💰",
     title: "Cost Reduction",
     description: "Dramatically reduce operational expenses through intelligent automation",
     details: [
@@ -24,7 +22,6 @@ export const benefits: Benefit[] = [
     ],
   },
   {
-    icon: "✓",
     title: "Accuracy & Compliance",
     description: "Achieve 95% error reduction and maintain regulatory compliance",
     details: [
@@ -35,7 +32,6 @@ export const benefits: Benefit[] = [
     ],
   },
   {
-    icon: "😊",
     title: "Employee Satisfaction",
     description: "Free your team from repetitive tasks and boost engagement",
     details: [
@@ -46,7 +42,6 @@ export const benefits: Benefit[] = [
     ],
   },
   {
-    icon: "📈",
     title: "Scalability",
     description: "Scale operations without proportional cost increases",
     details: [
@@ -57,7 +52,6 @@ export const benefits: Benefit[] = [
     ],
   },
   {
-    icon: "⚡",
     title: "Speed to Market",
     description: "Accelerate time-to-value and competitive advantage",
     details: [
@@ -68,7 +62,6 @@ export const benefits: Benefit[] = [
     ],
   },
   {
-    icon: "🎯",
     title: "Strategic Focus",
     description: "Enable teams to concentrate on high-value work",
     details: [

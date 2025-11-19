@@ -82,17 +82,14 @@ export function MethodologySection() {
                 <div className="md:w-1/2">
                   {/* Step Card */}
                   <div className={`bg-gradient-to-br ${step.color} rounded-2xl p-8 md:p-10 text-white shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 transform origin-left md:origin-center`}>
-                    {/* Step Number and Icon */}
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="text-5xl">{step.icon}</div>
-                      <div className="flex-1">
-                        <div className="text-sm uppercase tracking-widest opacity-90 font-semibold">
-                          Step {step.number}
-                        </div>
-                        <h3 className="font-serif text-4xl leading-tight">
-                          {step.title}
-                        </h3>
+                    {/* Step Number */}
+                    <div className="mb-6">
+                      <div className="text-sm uppercase tracking-widest opacity-90 font-semibold">
+                        Step {step.number}
                       </div>
+                      <h3 className="font-serif text-4xl leading-tight">
+                        {step.title}
+                      </h3>
                     </div>
 
                     {/* Subtitle */}

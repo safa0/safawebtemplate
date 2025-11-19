@@ -8,7 +8,7 @@ const achievements = [
   {
     year: "2020",
     title: "Founded",
-    description: "LambdaFlow™ launches with a mission to transform enterprise automation",
+    description: "Ansyn launches with a mission to transform enterprise automation",
   },
   {
     year: "2021",

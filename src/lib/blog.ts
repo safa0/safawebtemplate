@@ -37,7 +37,7 @@ function parseBlogFile(filename: string): BlogPost {
     title: data.title || '',
     date: data.date || '',
     excerpt: data.excerpt || '',
-    author: data.author || 'LambdaFlow Team',
+    author: data.author || 'Ansyn Team',
     tags: data.tags || [],
     image: data.image || '/images/blog/default.jpg',
     content,
