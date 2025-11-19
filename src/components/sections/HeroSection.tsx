@@ -12,27 +12,51 @@ export function HeroSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 1,
-        },
-      });
+      // Responsive animation configuration
+      const isMobile = window.innerWidth < 640;
+      const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024;
+      const isDesktop = window.innerWidth >= 1024;
 
-      timeline
-        .to(".floating-card-2", { x: -100, opacity: 0, duration: 1 }, 0)
-        .to(".floating-card-3", { x: -80, opacity: 0, duration: 1 }, 0.1)
-        .to(".hero-right-image", { x: "-20%", duration: 1 }, 0)
-        .to(".hero-headline", { opacity: 0.3, scale: 0.95, duration: 1 }, 0)
-        .to(".hero-bottom", { opacity: 0, x: -30, duration: 1 }, 0.3);
+      // Only apply parallax scroll effects on desktop
+      if (isDesktop) {
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+          },
+        });
+
+        timeline
+          .to(".floating-card-2", { x: -100, opacity: 0, duration: 1 }, 0)
+          .to(".floating-card-3", { x: -80, opacity: 0, duration: 1 }, 0.1)
+          .to(".hero-right-image", { x: "-20%", duration: 1 }, 0)
+          .to(".hero-headline", { opacity: 0.3, scale: 0.95, duration: 1 }, 0)
+          .to(".hero-bottom", { opacity: 0, x: -30, duration: 1 }, 0.3);
+      } else if (isTablet) {
+        // Reduced parallax for tablet
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+          },
+        });
+
+        timeline
+          .to(".floating-card-2", { x: -50, opacity: 0, duration: 1 }, 0)
+          .to(".hero-right-image", { x: "-10%", duration: 1 }, 0)
+          .to(".hero-headline", { opacity: 0.5, scale: 0.98, duration: 1 }, 0);
+      }
+      // Mobile: No parallax, just simple fade on scroll
 
       // Start animations immediately after preloader
       const delay = 0;
 
-      // Create SVG clip-path for vertical slats reveal - apply to whole page including right panel
-      const numberOfRects = 8; // Fewer, wider slats
+      // Responsive slat count for performance
+      const numberOfRects = isMobile ? 6 : isTablet ? 8 : 8;
       const elements = [
         { selector: ".logo-tagline", clipId: "hero-logo-clip", delay: delay },
         { selector: ".hero-headline", clipId: "hero-headline-clip", delay: delay + 0.2 },
@@ -83,35 +107,48 @@ export function HeroSection() {
           clipPath: `url(#${clipId})`
         });
 
-        // Animate the rectangles
+        // Animate the rectangles with responsive duration
         const rects = clipPath.querySelectorAll("rect");
+        const animDuration = isMobile ? 0.8 : isTablet ? 1.0 : 1.2;
+        const staggerAmount = isMobile ? 0.5 : isTablet ? 0.6 : 0.8;
+
         gsap.from(rects, {
           scaleX: 0,
           transformOrigin: "left center",
-          duration: 1.2,
+          duration: animDuration,
           delay: elementDelay,
           ease: "power2.out",
           stagger: {
-            amount: 0.8,
+            amount: staggerAmount,
             ease: "none"
           }
         });
       });
 
-      // Ocean picture slide in from right to left
-      gsap.from(".hero-right-image", {
-        x: "100%",
-        duration: 1.5,
-        delay: delay + 0.1,
-        ease: "power3.out",
-      });
+      // Ocean picture slide in from right to left (only on desktop/tablet)
+      if (!isMobile) {
+        gsap.from(".hero-right-image", {
+          x: "100%",
+          duration: isTablet ? 1.2 : 1.5,
+          delay: delay + 0.1,
+          ease: "power3.out",
+        });
+      } else {
+        // Simple fade-in on mobile
+        gsap.from(".hero-right-image", {
+          opacity: 0,
+          duration: 0.8,
+          delay: delay + 0.1,
+          ease: "power2.out",
+        });
+      }
 
       gsap.from(".floating-card", {
-        duration: 1,
+        duration: isMobile ? 0.6 : 1,
         opacity: 0,
-        scale: 0.8,
+        scale: isMobile ? 0.95 : 0.8,
         stagger: 0.15,
-        delay: delay + 0.6,
+        delay: delay + (isMobile ? 0.3 : 0.6),
         ease: "back.out(1.7)",
       });
     }, sectionRef);
@@ -124,8 +161,31 @@ export function HeroSection() {
       ref={sectionRef}
       className="hero-section flex flex-col md:grid md:grid-cols-2 w-full h-full relative bg-white z-10 min-h-screen"
     >
-      {/* Left Panel */}
-      <div className="bg-khaki-light p-6 sm:p-8 md:p-12 lg:p-20 flex flex-col justify-between relative z-10 min-h-[70vh] sm:min-h-[75vh] md:min-h-full order-1 md:order-1">
+      {/* Right Panel - Image (hidden on mobile) */}
+      <div className="hidden md:block relative overflow-hidden h-[35vh] sm:h-[40vh] md:h-full bg-earth z-10 order-1 md:order-2">
+        <div
+          className="hero-right-image absolute inset-0 bg-cover bg-center z-0"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80')",
+            backgroundColor: "#9C8B6C", // Fallback color while image loads
+          }}
+        />
+
+        {/* Full-screen Card - covers entire right side */}
+        <div className="floating-card floating-card-2 absolute inset-0 z-20 overflow-hidden bg-gray-900">
+          <Image
+            src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1920&q=80"
+            alt="Featured Design"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      </div>
+
+      {/* Left Panel - Content (full screen on mobile) */}
+      <div className="bg-khaki-light p-6 sm:p-8 md:p-12 lg:p-20 flex flex-col justify-between relative z-10 min-h-screen md:min-h-full order-2 md:order-1">
         <div className="logo-tagline mb-6 sm:mb-8 md:mb-12">
           <div className="logo flex items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3 md:mb-4">
             <div className="relative w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20 bg-transparent flex-shrink-0">
@@ -169,34 +229,11 @@ export function HeroSection() {
           </p>
 
           <div className="flex items-center gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm text-gray-500">
-            <span>Scroll For More</span>
+            <span className="hidden md:inline">Scroll For More</span>
+            <span className="md:hidden">Explore Below</span>
             <div className="scroll-arrow animate-pulse">→</div>
           </div>
         </div>
-      </div>
-
-      {/* Right Panel */}
-      <div className="relative overflow-hidden h-[30vh] sm:h-[35vh] md:h-full bg-earth z-10 order-2 md:order-2">
-        <div
-          className="hero-right-image absolute inset-0 bg-cover bg-center z-0"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80')",
-            backgroundColor: "#9C8B6C", // Fallback color while image loads
-          }}
-        />
-
-        {/* Full-screen Card - covers entire right side */}
-        <div className="floating-card floating-card-2 absolute inset-0 z-20 overflow-hidden bg-gray-900">
-          <Image
-            src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1920&q=80"
-            alt="Featured Design"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-
       </div>
     </section>
   );

@@ -85,6 +85,7 @@ export function ROICalculatorSection() {
                   value={hoursPerYear}
                   onChange={(e) => setHoursPerYear(parseInt(e.target.value))}
                   className="w-full h-3 bg-khaki-light rounded-lg appearance-none cursor-pointer accent-earth"
+                  suppressHydrationWarning
                 />
                 <div className="flex justify-between items-center mt-2">
                   <span className="text-sm text-gray-600">5k hours</span>
@@ -107,6 +108,7 @@ export function ROICalculatorSection() {
                   value={costPerHour}
                   onChange={(e) => setCostPerHour(parseInt(e.target.value))}
                   className="w-full h-3 bg-khaki-light rounded-lg appearance-none cursor-pointer accent-earth"
+                  suppressHydrationWarning
                 />
                 <div className="flex justify-between items-center mt-2">
                   <span className="text-sm text-gray-600">$15/hr</span>

@@ -11,8 +11,15 @@ export function MissionSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Create horizontal slats reveal for mission text
-      const numberOfRects = 20;
+      // Responsive animation configuration
+      const isMobile = window.innerWidth < 640;
+      const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024;
+
+      // Create horizontal slats reveal for mission text - fewer on mobile for performance
+      const numberOfRects = isMobile ? 10 : isTablet ? 15 : 20;
+      const animDuration = isMobile ? 0.7 : isTablet ? 0.9 : 1.2;
+      const staggerAmount = isMobile ? 0.5 : isTablet ? 0.6 : 0.8;
+
       const elements = [
         { selector: ".mission-title", clipId: "mission-title-clip", delay: 0 },
         { selector: ".mission-statement", clipId: "mission-statement-clip", delay: 0.2 },
@@ -69,7 +76,7 @@ export function MissionSection() {
           clipPath: `url(#${clipId})`
         });
 
-        // Animate the rectangles
+        // Animate the rectangles with responsive timing
         const rects = clipPath.querySelectorAll("rect");
 
         if (shouldPlayImmediately) {
@@ -77,11 +84,11 @@ export function MissionSection() {
           gsap.from(rects, {
             scaleY: 0,
             transformOrigin: "top center",
-            duration: 1.2,
+            duration: animDuration,
             delay: delay,
             ease: "power2.out",
             stagger: {
-              amount: 0.8,
+              amount: staggerAmount,
               ease: "none"
             }
           });
@@ -94,11 +101,11 @@ export function MissionSection() {
               gsap.from(rects, {
                 scaleY: 0,
                 transformOrigin: "top center",
-                duration: 1.2,
+                duration: animDuration,
                 delay: delay,
                 ease: "power2.out",
                 stagger: {
-                  amount: 0.8,
+                  amount: staggerAmount,
                   ease: "none"
                 }
               });
@@ -135,17 +142,17 @@ export function MissionSection() {
         });
 
         const rects = clipPath.querySelectorAll("rect");
-        const ctaDelay = 0.4 + (index * 0.15);
+        const ctaDelay = isMobile ? 0.2 + (index * 0.1) : 0.4 + (index * 0.15);
 
         if (shouldPlayImmediately) {
           gsap.from(rects, {
             scaleY: 0,
             transformOrigin: "top center",
-            duration: 1.2,
+            duration: animDuration,
             delay: ctaDelay,
             ease: "power2.out",
             stagger: {
-              amount: 0.8,
+              amount: staggerAmount,
               ease: "none"
             }
           });
@@ -157,11 +164,11 @@ export function MissionSection() {
               gsap.from(rects, {
                 scaleY: 0,
                 transformOrigin: "top center",
-                duration: 1.2,
+                duration: animDuration,
                 delay: ctaDelay,
                 ease: "power2.out",
                 stagger: {
-                  amount: 0.8,
+                  amount: staggerAmount,
                   ease: "none"
                 }
               });

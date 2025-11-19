@@ -11,28 +11,59 @@ export function ImpactSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".impact-title", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          end: "top 40%",
-          scrub: 1,
-        },
-        y: 50,
-        opacity: 0,
-      });
+      const isMobile = window.innerWidth < 640;
 
-      gsap.from(".impact-metric", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 70%",
-          end: "top 30%",
-          scrub: 1,
-        },
-        y: 80,
-        opacity: 0,
-        stagger: 0.2,
-      });
+      if (isMobile) {
+        // Simpler, faster animations on mobile
+        gsap.from(".impact-title", {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.out",
+        });
+
+        gsap.from(".impact-metric", {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+            toggleActions: "play none none none",
+          },
+          y: 40,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: "power2.out",
+        });
+      } else {
+        // Desktop: Use scrub animations
+        gsap.from(".impact-title", {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            end: "top 40%",
+            scrub: 1,
+          },
+          y: 50,
+          opacity: 0,
+        });
+
+        gsap.from(".impact-metric", {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 70%",
+            end: "top 30%",
+            scrub: 1,
+          },
+          y: 80,
+          opacity: 0,
+          stagger: 0.2,
+        });
+      }
     }, sectionRef);
 
     return () => ctx.revert();

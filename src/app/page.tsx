@@ -25,7 +25,7 @@ export default function Home() {
           <div data-horizontal-section>
             <MissionSection />
           </div>
-          <div data-horizontal-section>
+          <div data-horizontal-section className="hidden md:block">
             <ServicesSection />
           </div>
         </main>
