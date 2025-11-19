@@ -7,7 +7,7 @@
 
 export const siteConfig = {
   // Brand Identity
-  name: "LambdaFlow™",
+  name: "Ansyn.ai",
   tagline: "Transform Your Operations with Intelligent Automation",
   description: "Enterprise-grade RPA and AI automation solutions that deliver measurable ROI, boost efficiency, and drive operational excellence through intelligent process automation",
 
@@ -24,12 +24,12 @@ export const siteConfig = {
   // Logo & Assets
   logo: {
     path: "/logo.png",
-    alt: "LambdaFlow Logo",
+    alt: "Ansyn.ai Logo",
   },
 
   // SEO & Metadata
   seo: {
-    title: "LambdaFlow™ - Enterprise Automation Implementation Agency",
+    title: "Ansyn.ai - Enterprise Automation Implementation Agency",
     description: "Enterprise-grade RPA and AI automation solutions that deliver measurable ROI, boost efficiency, and drive operational excellence through intelligent process automation",
     keywords: ["RPA", "robotic process automation", "AI agents", "process automation", "enterprise automation", "AI integration", "automation agency"],
   },
@@ -161,7 +161,7 @@ export const siteConfig = {
   // Company Information
   company: {
     foundedYear: 2020,
-    legalName: "LambdaFlow Inc.",
+    legalName: "Ansyn.ai Inc.",
     location: {
       city: "San Francisco",
       state: "CA",
@@ -224,7 +224,7 @@ export const siteConfig = {
 
   // Contact Info
   contact: {
-    email: "hello@flowforce.com",
+    email: "hello@ansyn.ai",
     phone: "+1 (800) AUTO-MATE",
     phoneHref: "tel:+18002886628",
     address: "123 Market St, San Francisco, CA 94103",

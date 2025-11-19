@@ -21,27 +21,27 @@ interface PageMetadata {
 export const pageMetadata: Record<string, PageMetadata> = {
   home: {
     title: "Enterprise Automation Solutions",
-    description: "Transform your operations with LambdaFlow™ - the intelligent automation platform for enterprise. Reduce costs, increase efficiency, and scale with confidence.",
+    description: "Transform your operations with Ansyn.ai - the intelligent automation platform for enterprise. Reduce costs, increase efficiency, and scale with confidence.",
     keywords: ["enterprise automation", "RPA", "intelligent automation", "process automation", "workflow automation"],
   },
   about: {
-    title: "About LambdaFlow™ | Enterprise Automation Leaders",
-    description: "Learn about LambdaFlow™ - pioneers in enterprise automation since 2020. Meet our leadership team and discover how we're transforming operations through intelligent automation.",
-    keywords: ["about LambdaFlow", "enterprise automation", "RPA leaders", "automation company", "company story"],
+    title: "About Ansyn.ai | Enterprise Automation Leaders",
+    description: "Learn about Ansyn.ai - pioneers in enterprise automation since 2020. Meet our leadership team and discover how we're transforming operations through intelligent automation.",
+    keywords: ["about Ansyn.ai", "enterprise automation", "RPA leaders", "automation company", "company story"],
   },
   contact: {
-    title: "Contact Us | LambdaFlow™ - Get in Touch",
-    description: "Get in touch with LambdaFlow™ to discuss your automation needs. Schedule a free consultation and discover how we can transform your operations.",
-    keywords: ["contact LambdaFlow", "automation consultation", "get in touch", "schedule meeting", "automation assessment"],
+    title: "Contact Us | Ansyn.ai - Get in Touch",
+    description: "Get in touch with Ansyn.ai to discuss your automation needs. Schedule a free consultation and discover how we can transform your operations.",
+    keywords: ["contact Ansyn.ai", "automation consultation", "get in touch", "schedule meeting", "automation assessment"],
   },
   blog: {
     title: "Automation Insights & Best Practices Blog",
-    description: "Expert insights on enterprise automation, RPA, and AI. Learn best practices, case studies, and industry trends from the LambdaFlow™ team.",
+    description: "Expert insights on enterprise automation, RPA, and AI. Learn best practices, case studies, and industry trends from the Ansyn.ai team.",
     keywords: ["automation blog", "RPA insights", "automation best practices", "enterprise automation articles", "AI automation"],
   },
   solutions: {
     title: "Automation Solutions | RPA & AI-Powered Workflows",
-    description: "Comprehensive automation solutions powered by RPA, AI, and intelligent workflows. Transform your enterprise operations with LambdaFlow™.",
+    description: "Comprehensive automation solutions powered by RPA, AI, and intelligent workflows. Transform your enterprise operations with Ansyn.ai.",
     keywords: ["automation solutions", "RPA solutions", "AI workflow automation", "enterprise automation platform", "intelligent automation"],
   },
   industries: {
@@ -60,8 +60,8 @@ export const pageMetadata: Record<string, PageMetadata> = {
     keywords: ["automation methodology", "implementation process", "automation delivery", "project methodology", "automation approach"],
   },
   privacy: {
-    title: "Privacy Policy | LambdaFlow™",
-    description: "Learn how LambdaFlow™ collects, uses, and protects your personal information. Our commitment to privacy and data security.",
+    title: "Privacy Policy | Ansyn.ai",
+    description: "Learn how Ansyn.ai collects, uses, and protects your personal information. Our commitment to privacy and data security.",
     keywords: ["privacy policy", "data protection", "privacy practices", "data security", "information security"],
   },
 };
@@ -70,9 +70,9 @@ export const pageMetadata: Record<string, PageMetadata> = {
  * Default metadata values
  */
 const defaults = {
-  siteName: "LambdaFlow™",
+  siteName: "Ansyn.ai",
   defaultImage: "/og-image.png",
-  twitterHandle: "@lambdaflow",
+  twitterHandle: "@ansynai",
 };
 
 /**
