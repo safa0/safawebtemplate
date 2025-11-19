@@ -63,7 +63,7 @@ export function CompanyStorySection() {
           <div>
             <h3 className="text-2xl font-semibold text-earth mb-6">Founded in {siteConfig.company.foundedYear}</h3>
             <p className="text-lg text-khaki-dark leading-relaxed mb-6">
-              LambdaFlow™ was born from a vision to revolutionize how enterprises approach automation. Our founders, with over 50 years of combined experience in enterprise technology and process optimization, recognized a critical gap in the market.
+              Ansyn was born from a vision to revolutionize how enterprises approach automation. Our founders, with over 50 years of combined experience in enterprise technology and process optimization, recognized a critical gap in the market.
             </p>
             <p className="text-lg text-khaki-dark leading-relaxed">
               We set out to build more than just an automation solution—we created a mission-driven organization committed to delivering tangible, measurable impact for our clients.

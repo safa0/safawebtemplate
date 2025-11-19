@@ -121,7 +121,6 @@ export const siteConfig = {
   navigation: [
     { label: "Solutions", href: "/solutions" },
     { label: "Industries", href: "/industries" },
-    { label: "Solutions2", href: "/solutions2" },
     { label: "Why Automate", href: "/why-automate" },
     { label: "About", href: "/about" },
     { label: "Blog", href: "/blog" },

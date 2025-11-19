@@ -95,7 +95,7 @@ export function ContactSection() {
             Get in Touch
           </h1>
           <p className="contact-hero-description text-lg md:text-xl text-khaki-dark max-w-2xl mx-auto leading-relaxed">
-            Ready to transform your operations? Let&apos;s discuss how LambdaFlow™ can help you achieve operational excellence through intelligent automation.
+            Ready to transform your operations? Let&apos;s discuss how Ansyn can help you achieve operational excellence through intelligent automation.
           </p>
         </div>
 

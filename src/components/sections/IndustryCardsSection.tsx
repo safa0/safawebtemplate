@@ -77,9 +77,8 @@ export function IndustryCardsSection() {
               }}
               className={`industry-card ${industry.bgColor} rounded-2xl p-8 border-2 ${industry.accentColor} shadow-lg hover:shadow-2xl transition-shadow duration-300`}
             >
-              {/* Icon and Title */}
+              {/* Title */}
               <div className="mb-6">
-                <div className="text-5xl mb-4">{industry.icon}</div>
                 <h3 className="font-serif text-2xl md:text-3xl text-earth mb-2">
                   {industry.name}
                 </h3>

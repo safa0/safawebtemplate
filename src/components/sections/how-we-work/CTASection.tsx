@@ -108,21 +108,21 @@ export function CTASection() {
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="text-4xl font-bold mb-3 text-khaki-light">📋</div>
+              <div className="text-4xl font-bold mb-3 text-khaki-light"></div>
               <h4 className="font-semibold text-lg mb-3">Process Review</h4>
               <p className="text-khaki-light text-sm">
                 In-depth analysis of your target processes and current workflows
               </p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold mb-3 text-khaki-light">💰</div>
+              <div className="text-4xl font-bold mb-3 text-khaki-light"></div>
               <h4 className="font-semibold text-lg mb-3">ROI Calculation</h4>
               <p className="text-khaki-light text-sm">
                 Detailed financial model showing potential savings and ROI timeline
               </p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold mb-3 text-khaki-light">🗺️</div>
+              <div className="text-4xl font-bold mb-3 text-khaki-light"></div>
               <h4 className="font-semibold text-lg mb-3">Implementation Roadmap</h4>
               <p className="text-khaki-light text-sm">
                 Customized plan aligned with your organization&apos;s goals and timeline

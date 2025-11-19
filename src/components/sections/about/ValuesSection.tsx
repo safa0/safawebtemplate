@@ -53,7 +53,6 @@ export function ValuesSection() {
               key={value.title}
               className="value-card p-8 md:p-12 bg-khaki-light rounded-lg border-2 border-khaki hover:border-earth transition-colors duration-300"
             >
-              <div className="text-5xl mb-6">{value.icon}</div>
               <h3 className="text-3xl font-semibold text-earth mb-4">{value.title}</h3>
               <p className="text-lg text-khaki-dark leading-relaxed">
                 {value.description}

@@ -86,7 +86,7 @@ export function IndustriesCTASection() {
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <div className="cta-feature bg-white rounded-xl p-6 shadow-md">
-            <div className="text-3xl mb-3">🎯</div>
+            <div className="text-3xl mb-3"></div>
             <h4 className="font-serif text-lg text-earth mb-2">Custom Assessment</h4>
             <p className="text-sm text-gray-600">
               Industry-specific automation opportunities analysis
@@ -94,7 +94,7 @@ export function IndustriesCTASection() {
           </div>
 
           <div className="cta-feature bg-white rounded-xl p-6 shadow-md">
-            <div className="text-3xl mb-3">⚙️</div>
+            <div className="text-3xl mb-3"></div>
             <h4 className="font-serif text-lg text-earth mb-2">Tailored Solutions</h4>
             <p className="text-sm text-gray-600">
               Automation blueprints designed for your sector
@@ -102,7 +102,7 @@ export function IndustriesCTASection() {
           </div>
 
           <div className="cta-feature bg-white rounded-xl p-6 shadow-md">
-            <div className="text-3xl mb-3">📊</div>
+            <div className="text-3xl mb-3"></div>
             <h4 className="font-serif text-lg text-earth mb-2">Proven ROI</h4>
             <p className="text-sm text-gray-600">
               Track record of measurable results in your industry

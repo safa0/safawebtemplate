@@ -57,7 +57,7 @@ export function LeadershipSection() {
               key={member.name}
               className="team-member-card group"
             >
-              <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden mb-6 bg-gray-200">
+              <div className="relative w-full aspect-square rounded-lg overflow-hidden mb-6 bg-gray-200">
                 <Image
                   src={member.image}
                   alt={member.name}
