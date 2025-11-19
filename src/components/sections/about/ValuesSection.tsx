@@ -3,29 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-const values = [
-  {
-    title: "Innovation",
-    description: "We constantly push the boundaries of what's possible in automation, leveraging the latest AI and RPA technologies to deliver cutting-edge solutions.",
-    icon: "🚀",
-  },
-  {
-    title: "Excellence",
-    description: "Every project receives our unwavering commitment to quality, precision, and delivering results that exceed expectations.",
-    icon: "⭐",
-  },
-  {
-    title: "Partnership",
-    description: "We view our clients as partners. Your success is our success, and we're committed to your long-term transformation journey.",
-    icon: "🤝",
-  },
-  {
-    title: "Results",
-    description: "We measure ourselves by the tangible impact we deliver. ROI, efficiency gains, and operational excellence are at the heart of everything we do.",
-    icon: "📈",
-  },
-];
+import { values } from "@/data/values";
 
 export function ValuesSection() {
   const sectionRef = useRef<HTMLElement>(null);

@@ -9,12 +9,9 @@ import { AchievementsSection } from "@/components/sections/about/AchievementsSec
 import { TechnologyPartnersSection } from "@/components/sections/about/TechnologyPartnersSection";
 import { CTASection } from "@/components/sections/about/CTASection";
 import { FooterSection } from "@/components/sections/FooterSection";
+import { generateMetadata as genMetadata } from "@/config/metadata";
 
-export const metadata = {
-  title: "About LambdaFlow™ | Enterprise Automation Leaders",
-  description: "Learn about LambdaFlow™ - pioneers in enterprise automation since 2020. Meet our leadership team and discover how we're transforming operations through intelligent automation.",
-  keywords: ["about LambdaFlow", "enterprise automation", "RPA leaders", "automation company", "company story"],
-};
+export const metadata = genMetadata("about");
 
 export default function AboutPage() {
   return (

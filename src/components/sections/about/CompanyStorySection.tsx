@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { siteConfig } from "@/config/site";
 
 export function CompanyStorySection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -60,7 +61,7 @@ export function CompanyStorySection() {
 
         <div className="story-content grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-semibold text-earth mb-6">Founded in 2020</h3>
+            <h3 className="text-2xl font-semibold text-earth mb-6">Founded in {siteConfig.company.foundedYear}</h3>
             <p className="text-lg text-khaki-dark leading-relaxed mb-6">
               LambdaFlow™ was born from a vision to revolutionize how enterprises approach automation. Our founders, with over 50 years of combined experience in enterprise technology and process optimization, recognized a critical gap in the market.
             </p>
@@ -82,19 +83,19 @@ export function CompanyStorySection() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
           <div className="story-stat">
-            <div className="text-4xl md:text-5xl font-bold text-earth mb-2">500+</div>
+            <div className="text-4xl md:text-5xl font-bold text-earth mb-2">{siteConfig.stats.processesAutomated}</div>
             <p className="text-sm md:text-base text-khaki-dark font-medium">Processes Automated</p>
           </div>
           <div className="story-stat">
-            <div className="text-4xl md:text-5xl font-bold text-earth mb-2">2M+</div>
+            <div className="text-4xl md:text-5xl font-bold text-earth mb-2">{siteConfig.stats.hoursSaved}</div>
             <p className="text-sm md:text-base text-khaki-dark font-medium">Hours Saved</p>
           </div>
           <div className="story-stat">
-            <div className="text-4xl md:text-5xl font-bold text-earth mb-2">300%</div>
+            <div className="text-4xl md:text-5xl font-bold text-earth mb-2">{siteConfig.stats.averageROI}</div>
             <p className="text-sm md:text-base text-khaki-dark font-medium">Average ROI</p>
           </div>
           <div className="story-stat">
-            <div className="text-4xl md:text-5xl font-bold text-earth mb-2">95+</div>
+            <div className="text-4xl md:text-5xl font-bold text-earth mb-2">{siteConfig.stats.enterpriseClients}</div>
             <p className="text-sm md:text-base text-khaki-dark font-medium">Enterprise Clients</p>
           </div>
         </div>

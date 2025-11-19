@@ -270,10 +270,10 @@ export function ContactSection() {
                       Phone
                     </h3>
                     <a
-                      href="tel:+1-800-AUTOMATE"
+                      href={siteConfig.contact.phoneHref}
                       className="text-khaki-dark hover:text-earth transition-colors"
                     >
-                      +1 (800) AUTO-MATE
+                      {siteConfig.contact.phone}
                     </a>
                   </div>
                 </div>

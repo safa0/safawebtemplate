@@ -3,16 +3,9 @@ import { getAllPosts } from '@/lib/blog';
 import { Header } from '@/components/ui/Header';
 import { BlogGrid } from '@/components/blog/BlogGrid';
 import { FooterSection } from '@/components/sections/FooterSection';
+import { generateMetadata as genMetadata } from '@/config/metadata';
 
-export const metadata: Metadata = {
-  title: 'Blog - LambdaFlow™',
-  description: 'Expert insights on automation, AI, and digital transformation from the LambdaFlow team',
-  openGraph: {
-    title: 'Blog - LambdaFlow™',
-    description: 'Expert insights on automation, AI, and digital transformation',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = genMetadata('blog');
 
 export default async function BlogPage() {
   // Get all posts from MDX files

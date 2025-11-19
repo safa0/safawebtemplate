@@ -8,12 +8,9 @@ import { EngagementModelsSection } from "@/components/sections/how-we-work/Engag
 import { SuccessFactorsSection } from "@/components/sections/how-we-work/SuccessFactorsSection";
 import { CTASection } from "@/components/sections/how-we-work/CTASection";
 import { FooterSection } from "@/components/sections/FooterSection";
+import { generateMetadata as genMetadata } from "@/config/metadata";
 
-export const metadata = {
-  title: "How We Work | LambdaFlow™ - Our 5-Step Methodology",
-  description: "Discover our proven 5-step methodology for enterprise automation: Discover, Design, Develop, Deploy, and Deliver. Learn how we transform your operations.",
-  keywords: ["methodology", "process automation", "implementation approach", "automation framework", "RPA deployment"],
-};
+export const metadata = genMetadata("how-we-work");
 
 export default function HowWeWorkPage() {
   return (

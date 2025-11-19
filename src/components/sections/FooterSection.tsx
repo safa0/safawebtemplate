@@ -27,7 +27,7 @@ export function FooterSection() {
   ];
 
   return (
-    <footer className="w-full bg-[#E8DCC4] min-h-screen flex flex-col">
+    <footer className="w-full bg-khaki-light min-h-screen flex flex-col">
       {/* Main Footer Content */}
       <div className="flex-1 flex items-center">
         {/* Logo Section - Left Side */}
@@ -41,7 +41,7 @@ export function FooterSection() {
               className="w-48 md:w-64 lg:w-80 h-auto object-contain"
               priority
             />
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-[#3E3426]">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-earth">
               {siteConfig.name}
             </h2>
           </Link>
@@ -50,7 +50,7 @@ export function FooterSection() {
         {/* Right-aligned section with divider and navigation */}
         <div className="flex items-center ml-auto">
           {/* Vertical Divider */}
-          <div className="w-px h-64 bg-[#9C8B6C]/20" />
+          <div className="w-px h-64 bg-earth/20" />
 
           {/* Navigation Items - Right Side */}
           <nav className="w-auto flex flex-col">
@@ -61,19 +61,19 @@ export function FooterSection() {
                 className="group relative overflow-hidden block w-full py-6 md:py-8 px-8 md:px-12 lg:px-16"
               >
                 <div className="relative z-10 flex items-baseline gap-4">
-                  <span className="text-sm md:text-base text-[#9C8B6C] font-light group-hover:text-[#E8DCC4] transition-colors duration-300">
+                  <span className="text-sm md:text-base text-khaki font-light group-hover:text-khaki-light transition-colors duration-300">
                     {item.number}
                   </span>
-                  <span className="text-2xl md:text-3xl lg:text-4xl font-light text-[#3E3426] group-hover:text-[#E8DCC4] transition-colors duration-300">
+                  <span className="text-2xl md:text-3xl lg:text-4xl font-light text-earth group-hover:text-khaki-light transition-colors duration-300">
                     {item.label}
                   </span>
                 </div>
                 {/* Hover background overlay - animates from top to bottom */}
-                <div className="absolute inset-0 bg-[#8B7355] origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-out z-0" />
+                <div className="absolute inset-0 bg-khaki-dark origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-out z-0" />
               </Link>
               {/* Divider line between items */}
               {index < navigationItems.length - 1 && (
-                <div className="w-full h-px bg-[#9C8B6C]/20" />
+                <div className="w-full h-px bg-khaki/20" />
               )}
             </div>
           ))}
@@ -82,27 +82,27 @@ export function FooterSection() {
       </div>
 
       {/* Bottom Footer Section */}
-      <div className="border-t border-[#9C8B6C]/20">
+      <div className="border-t border-khaki/20">
         <div className="flex items-start">
           {/* Contact */}
           <div className="flex-1 px-8 md:px-12 lg:px-16 py-8">
-            <h3 className="text-xs font-light text-[#9C8B6C] mb-3 tracking-wider uppercase">
+            <h3 className="text-xs font-light text-khaki mb-3 tracking-wider uppercase">
               Contact
             </h3>
             <a
               href={`mailto:${siteConfig.contact.email}`}
-              className="text-sm md:text-base text-[#3E3426] hover:text-[#8B7355] transition-colors duration-300"
+              className="text-sm md:text-base text-earth hover:text-khaki-dark transition-colors duration-300"
             >
               {siteConfig.contact.email}
             </a>
           </div>
 
           {/* Vertical Divider */}
-          <div className="w-px h-24 bg-[#9C8B6C]/20" />
+          <div className="w-px h-24 bg-khaki/20" />
 
           {/* Subscribe */}
           <div className="flex-1 px-8 md:px-12 lg:px-16 py-8">
-            <h3 className="text-xs font-light text-[#9C8B6C] mb-3 tracking-wider uppercase">
+            <h3 className="text-xs font-light text-khaki mb-3 tracking-wider uppercase">
               Subscribe
             </h3>
             {isMounted ? (
@@ -111,7 +111,7 @@ export function FooterSection() {
                   ref={subscribeRef}
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 bg-transparent border-b border-[#9C8B6C]/40 py-2 text-sm text-[#3E3426] placeholder:text-[#9C8B6C]/60 focus:outline-none focus:border-[#8B7355] transition-colors duration-300"
+                  className="flex-1 bg-transparent border-b border-khaki/40 py-2 text-sm text-earth placeholder:text-khaki/60 focus:outline-none focus:border-khaki-dark transition-colors duration-300"
                   required
                 />
                 <button
@@ -120,7 +120,7 @@ export function FooterSection() {
                   aria-label="Subscribe"
                 >
                   <svg
-                    className="w-4 h-4 text-[#3E3426]"
+                    className="w-4 h-4 text-earth"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -136,25 +136,25 @@ export function FooterSection() {
               </form>
             ) : (
               <div className="flex items-center gap-2 h-8">
-                <div className="flex-1 border-b border-[#9C8B6C]/40 py-2" />
+                <div className="flex-1 border-b border-khaki/40 py-2" />
               </div>
             )}
           </div>
 
           {/* Vertical Divider */}
-          <div className="w-px h-24 bg-[#9C8B6C]/20" />
+          <div className="w-px h-24 bg-khaki/20" />
 
           {/* Connect */}
           <div className="flex-1 px-8 md:px-12 lg:px-16 py-8">
-            <h3 className="text-xs font-light text-[#9C8B6C] mb-3 tracking-wider uppercase">
+            <h3 className="text-xs font-light text-khaki mb-3 tracking-wider uppercase">
               Connect
             </h3>
             <div className="flex flex-col gap-2">
               <a
-                href="https://instagram.com"
+                href={siteConfig.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-[#3E3426] hover:text-[#8B7355] transition-colors duration-300"
+                className="text-sm text-earth hover:text-khaki-dark transition-colors duration-300"
               >
                 Instagram
               </a>
@@ -162,7 +162,7 @@ export function FooterSection() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-[#3E3426] hover:text-[#8B7355] transition-colors duration-300"
+                className="text-sm text-earth hover:text-khaki-dark transition-colors duration-300"
               >
                 LinkedIn
               </a>
@@ -170,17 +170,17 @@ export function FooterSection() {
           </div>
 
           {/* Vertical Divider */}
-          <div className="w-px h-24 bg-[#9C8B6C]/20" />
+          <div className="w-px h-24 bg-khaki/20" />
 
           {/* Others */}
           <div className="flex-1 px-8 md:px-12 lg:px-16 py-8">
-            <h3 className="text-xs font-light text-[#9C8B6C] mb-3 tracking-wider uppercase">
+            <h3 className="text-xs font-light text-khaki mb-3 tracking-wider uppercase">
               Others
             </h3>
             <div className="flex flex-col gap-2">
               <Link
                 href="/privacy"
-                className="text-sm text-[#3E3426] hover:text-[#8B7355] transition-colors duration-300"
+                className="text-sm text-earth hover:text-khaki-dark transition-colors duration-300"
               >
                 Privacy Policy
               </Link>
@@ -189,8 +189,8 @@ export function FooterSection() {
         </div>
 
         {/* Copyright */}
-        <div className="px-8 md:px-12 lg:px-16 py-6 border-t border-[#9C8B6C]/20 text-right">
-          <p className="text-xs text-[#9C8B6C]">
+        <div className="px-8 md:px-12 lg:px-16 py-6 border-t border-khaki/20 text-right">
+          <p className="text-xs text-khaki">
             2025 {siteConfig.name} ©
           </p>
         </div>

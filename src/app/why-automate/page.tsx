@@ -8,12 +8,9 @@ import { UseCasesSection } from "@/components/sections/why-automate/UseCasesSect
 import { ROICalculatorSection } from "@/components/sections/why-automate/ROICalculatorSection";
 import { CTASection } from "@/components/sections/why-automate/CTASection";
 import { FooterSection } from "@/components/sections/FooterSection";
+import { generateMetadata as genMetadata } from "@/config/metadata";
 
-export const metadata = {
-  title: "Why Automate | LambdaFlow™ - Transform Your Operations",
-  description: "Discover the ROI and benefits of intelligent automation. Learn how enterprises achieve 300% ROI, reduce errors by 95%, and improve employee satisfaction.",
-  keywords: ["automation ROI", "business benefits", "process automation", "RPA benefits", "automation case study"],
-};
+export const metadata = genMetadata("why-automate");
 
 export default function WhyAutomatePage() {
   return (

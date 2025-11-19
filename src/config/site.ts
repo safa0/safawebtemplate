@@ -158,17 +158,76 @@ export const siteConfig = {
     },
   ],
 
+  // Company Information
+  company: {
+    foundedYear: 2020,
+    legalName: "LambdaFlow Inc.",
+    location: {
+      city: "San Francisco",
+      state: "CA",
+      country: "USA",
+    },
+  },
+
+  // Company Statistics
+  stats: {
+    processesAutomated: "500+",
+    hoursSaved: "2M+",
+    averageROI: "300%",
+    enterpriseClients: "95+",
+  },
+
+  // Impact Metrics
+  metrics: {
+    quickMetrics: [
+      { id: "efficiency", value: "87%", label: "Process Efficiency" },
+      { id: "roi", value: "6-12mo", label: "to Full ROI" },
+      { id: "cost", value: "40%", label: "Cost Reduction" },
+      { id: "accuracy", value: "99.9%", label: "Accuracy Rate" },
+    ],
+    detailedMetrics: [
+      {
+        id: "efficiency-detailed",
+        value: "87%",
+        label: "Average Process Efficiency Gain",
+        description: "Across all implementations",
+      },
+      {
+        id: "roi-detailed",
+        value: "6-12",
+        label: "Months to Full ROI",
+        description: "Typical payback period",
+      },
+      {
+        id: "cost-reduction",
+        value: "40%",
+        label: "Reduction in Operational Costs",
+        description: "Within first year",
+      },
+      {
+        id: "accuracy-detailed",
+        value: "99.9%",
+        label: "Automation Accuracy",
+        description: "Error-free execution",
+      },
+    ],
+  },
+
   // Social Links (if needed)
   social: {
     twitter: "",
     linkedin: "",
     github: "",
+    instagram: "https://instagram.com",
+    facebook: "",
   },
 
   // Contact Info
   contact: {
     email: "hello@flowforce.com",
-    phone: "",
+    phone: "+1 (800) AUTO-MATE",
+    phoneHref: "tel:+18002886628",
+    address: "123 Market St, San Francisco, CA 94103",
   },
 };
 

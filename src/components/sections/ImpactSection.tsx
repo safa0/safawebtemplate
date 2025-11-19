@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 
 export function ImpactSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -37,39 +38,8 @@ export function ImpactSection() {
     return () => ctx.revert();
   }, []);
 
-  const quickMetrics = [
-    { id: "efficiency", value: "87%", label: "Process Efficiency" },
-    { id: "roi", value: "6-12mo", label: "to Full ROI" },
-    { id: "cost", value: "40%", label: "Cost Reduction" },
-    { id: "accuracy", value: "99.9%", label: "Accuracy Rate" }
-  ];
-
-  const metrics = [
-    {
-      id: "efficiency-detailed",
-      value: "87%",
-      label: "Average Process Efficiency Gain",
-      description: "Across all implementations"
-    },
-    {
-      id: "roi-detailed",
-      value: "6-12",
-      label: "Months to Full ROI",
-      description: "Typical payback period"
-    },
-    {
-      id: "cost-reduction",
-      value: "40%",
-      label: "Reduction in Operational Costs",
-      description: "Within first year"
-    },
-    {
-      id: "accuracy-detailed",
-      value: "99.9%",
-      label: "Automation Accuracy",
-      description: "Error-free execution"
-    }
-  ];
+  const quickMetrics = siteConfig.metrics.quickMetrics;
+  const metrics = siteConfig.metrics.detailedMetrics;
 
   return (
     <section
