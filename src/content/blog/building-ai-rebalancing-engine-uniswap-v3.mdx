@@ -60,7 +60,7 @@ Our AI strategies explicitly model this trade-off.
 
 The simplest approach—rebalance every 24 hours regardless of price.
 
-```python
+```
 class TauResetStrategy(BaseStrategy):
     def evaluate(self, position: Position, pool_state: PoolState) -> Decision:
         hours_since_last = (now() - position.last_rebalance).total_seconds() / 3600
@@ -71,7 +71,7 @@ class TauResetStrategy(BaseStrategy):
                 new_range=self._center_range_on_price(pool_state.current_price),
                 reason="24-hour interval reached"
             )
-        return Decision(action="WAIT", reason=f"Next rebalance in {24-hours_since_last:.1f}h")
+        return Decision(action="WAIT", reason=f"Next rebalance in ...")
 ```
 
 **Pros**: Predictable, simple, no ML required
@@ -81,7 +81,7 @@ class TauResetStrategy(BaseStrategy):
 
 Rebalance when price moves more than 1% or exits the range.
 
-```python
+```
 class AutoRebalanceStrategy(BaseStrategy):
     def __init__(self, threshold_pct: float = 0.01):
         self.threshold = threshold_pct
@@ -101,19 +101,19 @@ class AutoRebalanceStrategy(BaseStrategy):
 
 Adjusts rebalance frequency based on realized volatility regime.
 
-```python
+```
 class BucketTauResetStrategy(BaseStrategy):
-    VOLATILITY_BUCKETS = {
-        "low": {"threshold": 0.02, "interval_hours": 48},
-        "medium": {"threshold": 0.05, "interval_hours": 24},
-        "high": {"threshold": float('inf'), "interval_hours": 12}
-    }
+    VOLATILITY_BUCKETS = [
+        ("low", 0.02, 48),
+        ("medium", 0.05, 24),
+        ("high", inf, 12)
+    ]
 ```
 
 **Pros**: Adapts to market conditions
 **Cons**: Still reactive, not predictive
 
-### Strategies 4 & 5: AI-SES and AI-ARIMA (ML-Powered)
+### Strategies 4 and 5: AI-SES and AI-ARIMA (ML-Powered)
 
 Our flagship strategies use time-series forecasting to predict price movements and make probabilistic decisions.
 
@@ -130,11 +130,11 @@ Our flagship strategies use time-series forecasting to predict price movements a
 
 We use the Holt-Winters Exponential Smoothing model from `statsmodels`:
 
-```python
+```
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
 
 class AIForecastModel:
-    def train(self, prices: pd.Series) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    def train(self, prices):
         model = ExponentialSmoothing(
             prices,
             trend='add',
@@ -148,15 +148,15 @@ class AIForecastModel:
         mean = forecast.predicted_mean.values
         ci = forecast.conf_int(alpha=0.10)  # 90% CI
 
-        return mean, ci['lower'].values, ci['upper'].values
+        return mean, ci.lower.values, ci.upper.values
 ```
 
 ### IL-Aware Decision Logic
 
 The key innovation is our impermanent loss-aware decision logic:
 
-```python
-def evaluate(self, position: Position, forecast: Forecast) -> Decision:
+```
+def evaluate(self, position, forecast):
     in_range = position.is_in_range(current_price)
 
     if in_range:
@@ -170,7 +170,7 @@ def evaluate(self, position: Position, forecast: Forecast) -> Decision:
             return Decision(
                 action="REBALANCE",
                 confidence=exit_prob,
-                reason=f"High probability ({exit_prob:.0%}) of range exit"
+                reason="High probability of range exit"
             )
         return Decision(action="WAIT", reason="Low exit probability")
 
@@ -186,8 +186,7 @@ def evaluate(self, position: Position, forecast: Forecast) -> Decision:
             return Decision(
                 action="WAIT",
                 confidence=reentry_prob,
-                reason=f"Price likely to re-enter range ({reentry_prob:.0%}). "
-                       f"Waiting avoids impermanent loss."
+                reason="Price likely to re-enter range. Waiting avoids IL."
             )
 
         return Decision(
@@ -201,9 +200,9 @@ def evaluate(self, position: Position, forecast: Forecast) -> Decision:
 
 We model price distribution using the forecast confidence intervals:
 
-```python
+```
 def _calc_exit_probability(self, forecast_mean, lower_90, upper_90,
-                            range_lower, range_upper) -> float:
+                            range_lower, range_upper):
     # Estimate standard deviation from 90% CI
     # 90% CI spans approximately 3.29 standard deviations
     std = (upper_90[-1] - lower_90[-1]) / 3.29
@@ -211,7 +210,7 @@ def _calc_exit_probability(self, forecast_mean, lower_90, upper_90,
 
     from scipy.stats import norm
 
-    # P(price < range_lower) + P(price > range_upper)
+    # P(price below range_lower) + P(price above range_upper)
     p_below = norm.cdf(range_lower, loc=final_price_mean, scale=std)
     p_above = 1 - norm.cdf(range_upper, loc=final_price_mean, scale=std)
 
@@ -224,10 +223,10 @@ def _calc_exit_probability(self, forecast_mean, lower_90, upper_90,
 
 We implemented an intelligent caching system that minimizes RPC calls:
 
-```python
+```
 class PriceHistoryService:
-    def get_history(self, pool: str, days: int = 45) -> pd.DataFrame:
-        cache_key = f"{pool}_{days}d"
+    def get_history(self, pool, days=45):
+        cache_key = pool + "_" + str(days) + "d"
         cached = self._load_cache(cache_key)
 
         if cached is not None:
@@ -248,8 +247,8 @@ class PriceHistoryService:
 
 Alchemy's API has a 30-day limit for historical queries. We handle this transparently:
 
-```python
-def _fetch_full_history(self, pool: str, days: int) -> pd.DataFrame:
+```
+def _fetch_full_history(self, pool, days):
     chunks = []
     end_time = now()
 
@@ -272,9 +271,9 @@ def _fetch_full_history(self, pool: str, days: int) -> pd.DataFrame:
 
 For computationally intensive model training, we built a fully automated GPU orchestration system:
 
-```python
+```
 class RunPodOrchestrator:
-    async def auto_train(self, config: TrainingConfig) -> TrainingResult:
+    async def auto_train(self, config):
         # 1. Create GPU pod
         pod = await self.runpod.create_pod(
             gpu_type=config.gpu_type,
@@ -291,7 +290,7 @@ class RunPodOrchestrator:
 
             # 4. Run training with progress streaming
             async for line in ssh.execute_stream(
-                f"python train.py --pool {config.pool} --epochs {config.epochs}"
+                "python train.py --pool " + config.pool + " --epochs " + str(config.epochs)
             ):
                 yield TrainingProgress(line)
 
@@ -307,7 +306,7 @@ class RunPodOrchestrator:
 
 ### CLI Interface
 
-```bash
+```
 python scripts/runpod_cli.py auto \
     --pool 0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640 \
     --chain ethereum \
@@ -322,7 +321,7 @@ python scripts/runpod_cli.py auto \
 
 We validate our AI strategies using walk-forward testing—training on historical data and testing on subsequent unseen periods:
 
-```python
+```
 @pytest.mark.regression
 def test_ai_ses_walkforward():
     pool = "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"  # ETH/USDC
@@ -349,44 +348,40 @@ def test_ai_ses_walkforward():
     mae = mean_absolute_error(actuals, predictions)
     coverage = calculate_ci_coverage(predictions, actuals)
 
-    assert mae < 50, f"MAE too high: {mae}"
-    assert coverage > 0.85, f"90% CI coverage too low: {coverage}"
+    assert mae < 50, "MAE too high"
+    assert coverage > 0.85, "90% CI coverage too low"
 ```
 
 ## API Design
 
 ### Main Evaluation Endpoint
 
-```python
-@router.post("/api/v1/rebalance/evaluate")
-async def evaluate_position(request: EvaluateRequest) -> EvaluateResponse:
-    """
-    Request:
-    {
-        "pool_address": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
-        "chain": "ethereum",
-        "position": {
-            "range_lower": 1800.0,
-            "range_upper": 2200.0,
-            "liquidity": 1000000
-        },
-        "strategy": "ai-ses"
-    }
+The main endpoint accepts a position and returns a rebalancing recommendation:
 
-    Response:
-    {
-        "action": "WAIT",
-        "confidence": 0.73,
-        "reason": "Price likely to re-enter range (73%). Waiting avoids IL.",
-        "current_price": 1750.45,
-        "is_in_range": false,
-        "forecast": {
-            "mean_12h": 1823.50,
-            "lower_90": 1756.20,
-            "upper_90": 1890.80
-        }
-    }
-    """
+**Request:**
+```
+POST /api/v1/rebalance/evaluate
+
+pool_address: "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+chain: "ethereum"
+position:
+  range_lower: 1800.0
+  range_upper: 2200.0
+  liquidity: 1000000
+strategy: "ai-ses"
+```
+
+**Response:**
+```
+action: "WAIT"
+confidence: 0.73
+reason: "Price likely to re-enter range (73%). Waiting avoids IL."
+current_price: 1750.45
+is_in_range: false
+forecast:
+  mean_12h: 1823.50
+  lower_90: 1756.20
+  upper_90: 1890.80
 ```
 
 ## Technology Stack

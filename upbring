@@ -1,0 +1,1001 @@
+#!/bin/bash
+
+# ============================================
+# Claude Code Web Design Setup Script
+# ============================================
+# This script installs and configures:
+# - MCP servers for web design tools
+# - Custom skills for frontend development
+# - Specialized subagents
+# - Useful slash commands
+# - Automated hooks
+# ============================================
+
+set -e  # Exit on error
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# Helper functions
+print_section() {
+    echo -e "\n${BLUE}========================================${NC}"
+    echo -e "${BLUE}$1${NC}"
+    echo -e "${BLUE}========================================${NC}\n"
+}
+
+print_success() {
+    echo -e "${GREEN}✓ $1${NC}"
+}
+
+print_warning() {
+    echo -e "${YELLOW}⚠ $1${NC}"
+}
+
+print_error() {
+    echo -e "${RED}✗ $1${NC}"
+}
+
+print_info() {
+    echo -e "${BLUE}ℹ $1${NC}"
+}
+
+# Check if Claude Code is installed
+check_claude_installed() {
+    if ! command -v claude &> /dev/null; then
+        print_error "Claude Code is not installed or not in PATH"
+        echo "Please install Claude Code first: https://claude.ai/download"
+        exit 1
+    fi
+    print_success "Claude Code is installed"
+}
+
+# Create directory structure
+setup_directories() {
+    print_section "Creating Directory Structure"
+    
+    # Skills directories
+    mkdir -p ~/.claude/skills/user/frontend-patterns
+    mkdir -p ~/.claude/skills/user/design-system
+    mkdir -p ~/.claude/skills/user/web-performance
+    print_success "Created skills directories"
+    
+    # Agents directory
+    mkdir -p ~/.claude/agents
+    print_success "Created agents directory"
+    
+    # Commands directory
+    mkdir -p ~/.claude/commands/web
+    print_success "Created commands directory"
+    
+    # Hooks directory
+    mkdir -p ~/.claude/hooks/web
+    print_success "Created hooks directory"
+}
+
+# Install MCP Servers
+install_mcp_servers() {
+    print_section "Installing MCP Servers"
+    
+    print_info "Installing Figma MCP (design to code)..."
+    claude mcp add --transport http figma-remote-mcp https://mcp.figma.com/mcp 2>&1 || print_warning "Figma MCP might already be installed"
+    
+    print_info "Installing GitHub MCP (version control)..."
+    claude mcp add --transport sse github https://api.github.com/mcp 2>&1 || print_warning "GitHub MCP might already be installed"
+    
+    print_info "Installing Canva MCP (design assets)..."
+    claude mcp add --transport http canva https://mcp.canva.com/mcp 2>&1 || print_warning "Canva MCP might already be installed"
+    
+    print_info "Installing Cloudinary MCP (image optimization)..."
+    claude mcp add --transport http cloudinary https://mcp.cloudinary.com/mcp 2>&1 || print_warning "Cloudinary MCP might already be installed"
+    
+    print_success "MCP servers installation complete"
+}
+
+# Create Frontend Patterns Skill
+create_frontend_patterns_skill() {
+    print_section "Creating Frontend Patterns Skill"
+    
+    cat > ~/.claude/skills/user/frontend-patterns/SKILL.md << 'SKILL_EOF'
+---
+name: frontend-patterns
+description: Modern frontend development patterns including React/Next.js, TypeScript, Tailwind CSS, responsive design, and accessibility standards
+---
+
+# Frontend Development Patterns
+
+## React/Next.js Standards
+
+### Component Structure
+```tsx
+// ✅ Our standard component structure
+import { FC, useState, useEffect } from 'react';
+import type { ComponentProps } from './types';
+
+interface Props extends ComponentProps {
+  title: string;
+  onAction?: () => void;
+}
+
+export const MyComponent: FC<Props> = ({ 
+  title, 
+  onAction,
+  className = ''
+}) => {
+  // 1. Hooks first
+  const [state, setState] = useState<string>('');
+  
+  // 2. Effects second
+  useEffect(() => {
+    // Effect logic
+  }, []);
+  
+  // 3. Handlers third
+  const handleClick = () => {
+    onAction?.();
+  };
+  
+  // 4. Early returns
+  if (!title) return null;
+  
+  // 5. Render
+  return (
+    <div className={`component-wrapper ${className}`}>
+      <h2>{title}</h2>
+      <button onClick={handleClick}>Action</button>
+    </div>
+  );
+};
+
+export type { Props as MyComponentProps };
+```
+
+## Tailwind CSS Standards
+
+### Responsive Design Pattern
+```tsx
+// ✅ Mobile-first responsive classes
+<div className="
+  w-full px-4
+  sm:px-6
+  md:px-8
+  lg:max-w-7xl lg:mx-auto
+  xl:px-0
+">
+  <h1 className="
+    text-2xl
+    sm:text-3xl
+    md:text-4xl
+    lg:text-5xl
+    font-bold leading-tight
+  ">
+    Title
+  </h1>
+</div>
+```
+
+## Accessibility Standards
+
+### ARIA and Semantic HTML
+```tsx
+// ✅ Proper accessibility
+<button
+  type="button"
+  onClick={handleClick}
+  aria-label="Close dialog"
+  aria-pressed={isPressed}
+  disabled={isDisabled}
+>
+  Close
+</button>
+
+<form onSubmit={handleSubmit}>
+  <label htmlFor="email" className="sr-only">Email</label>
+  <input
+    id="email"
+    type="email"
+    required
+    aria-required="true"
+    aria-describedby="email-error"
+    aria-invalid={!!error}
+  />
+  {error && (
+    <p id="email-error" role="alert" className="text-red-600">
+      {error}
+    </p>
+  )}
+</form>
+```
+
+## Performance Optimization
+
+### Image Optimization
+```tsx
+import Image from 'next/image';
+
+<Image
+  src="/hero.jpg"
+  alt="Hero image"
+  width={1920}
+  height={1080}
+  priority
+  placeholder="blur"
+/>
+```
+
+## Key Principles
+
+1. **Mobile-First**: Always design for mobile, then enhance
+2. **Accessibility**: Every element must be keyboard accessible
+3. **Performance**: Lazy load everything not immediately visible
+4. **Type Safety**: Use TypeScript for all components
+5. **Testing**: Test user interactions, not implementation
+SKILL_EOF
+
+    print_success "Created frontend-patterns skill"
+}
+
+# Create Design System Skill
+create_design_system_skill() {
+    print_section "Creating Design System Skill"
+    
+    cat > ~/.claude/skills/user/design-system/SKILL.md << 'SKILL_EOF'
+---
+name: design-system
+description: Design system patterns including color palettes, typography scales, spacing systems, and component styling standards
+---
+
+# Design System Standards
+
+## Color System
+```css
+:root {
+  /* Primary Colors */
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  
+  /* Neutral Colors */
+  --color-gray-50: #f9fafb;
+  --color-gray-900: #111827;
+  
+  /* Semantic Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+}
+```
+
+## Typography System
+```css
+:root {
+  /* Font Families */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Fira Code', 'Courier New', monospace;
+  
+  /* Font Sizes */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+}
+```
+
+## Spacing System
+```css
+:root {
+  /* 4px base unit */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-4: 1rem;      /* 16px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+}
+```
+
+## Component Patterns
+```css
+.card {
+  background: var(--color-surface);
+  border-radius: var(--space-2);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s ease;
+}
+
+.btn {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--space-2);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+```
+
+## Responsive Breakpoints
+```css
+/* Mobile First */
+@media (min-width: 640px) { /* sm */ }
+@media (min-width: 768px) { /* md */ }
+@media (min-width: 1024px) { /* lg */ }
+@media (min-width: 1280px) { /* xl */ }
+```
+SKILL_EOF
+
+    print_success "Created design-system skill"
+}
+
+# Create Web Performance Skill
+create_web_performance_skill() {
+    print_section "Creating Web Performance Skill"
+    
+    cat > ~/.claude/skills/user/web-performance/SKILL.md << 'SKILL_EOF'
+---
+name: web-performance
+description: Web performance optimization patterns including Core Web Vitals, image optimization, code splitting, and caching strategies
+---
+
+# Web Performance Optimization
+
+## Core Web Vitals Targets
+```typescript
+const TARGETS = {
+  LCP: 2500,  // Largest Contentful Paint < 2.5s
+  FID: 100,   // First Input Delay < 100ms
+  CLS: 0.1,   // Cumulative Layout Shift < 0.1
+};
+```
+
+## Image Optimization
+```tsx
+import Image from 'next/image';
+
+// Hero images
+<Image
+  src="/hero.jpg"
+  alt="Hero"
+  width={1920}
+  height={1080}
+  priority
+  quality={90}
+/>
+
+// Below fold
+<Image
+  src="/content.jpg"
+  alt="Content"
+  width={800}
+  height={600}
+  loading="lazy"
+  quality={75}
+  sizes="(max-width: 768px) 100vw, 50vw"
+/>
+```
+
+## Code Splitting
+```tsx
+import dynamic from 'next/dynamic';
+
+const HeavyComponent = dynamic(
+  () => import('@/components/Heavy'),
+  {
+    loading: () => <Skeleton />,
+    ssr: false,
+  }
+);
+```
+
+## Performance Checklist
+
+- [ ] Run Lighthouse (score > 90)
+- [ ] Optimize images (WebP/AVIF)
+- [ ] Preload fonts
+- [ ] Lazy load below-fold content
+- [ ] Check Core Web Vitals
+- [ ] Test on 3G network
+SKILL_EOF
+
+    print_success "Created web-performance skill"
+}
+
+# Create UI Designer Subagent
+create_ui_designer_subagent() {
+    print_section "Creating UI Designer Subagent"
+    
+    cat > ~/.claude/agents/ui-designer.md << 'AGENT_EOF'
+---
+name: ui-designer
+description: UI/UX design expert. Use for creating layouts, choosing colors, typography, spacing, responsive design, and user experience optimization.
+tools: Read, Write, Edit, WebFetch, WebSearch
+model: inherit
+---
+
+You are a senior UI/UX designer specializing in modern web interfaces.
+
+## Your Design Philosophy
+
+1. **User-Centered**: Prioritize user needs and accessibility
+2. **Minimalist**: Embrace white space
+3. **Consistent**: Maintain design system consistency
+4. **Responsive**: Mobile-first approach
+5. **Performant**: Design with performance in mind
+
+## Skills You Use
+
+- **design-system**: For colors, typography, spacing
+- **frontend-patterns**: For accessibility standards
+
+## Your Design Process
+
+1. Understand requirements and audience
+2. Create information architecture
+3. Design visual system (colors, typography, spacing)
+4. Create responsive layouts
+5. Ensure accessibility (WCAG 2.1 AA)
+
+## Deliverables
+
+Always provide:
+- Color palette with hex codes
+- Typography with sizes/weights
+- Spacing values
+- Component specs with states
+- Responsive breakpoints
+- Accessibility notes
+
+## Communication Style
+
+Present designs clearly with:
+- Visual descriptions
+- Color hex codes
+- Exact spacing values
+- Responsive behavior details
+- Accessibility compliance notes
+AGENT_EOF
+
+    print_success "Created ui-designer subagent"
+}
+
+# Create Frontend Developer Subagent
+create_frontend_developer_subagent() {
+    print_section "Creating Frontend Developer Subagent"
+    
+    cat > ~/.claude/agents/frontend-developer.md << 'AGENT_EOF'
+---
+name: frontend-developer
+description: Frontend development expert specializing in React, Next.js, TypeScript, and Tailwind CSS. Use for implementing components, features, and optimizations.
+tools: Read, Write, Edit, Bash, Grep, Glob
+model: inherit
+---
+
+You are a senior frontend developer with expertise in modern web technologies.
+
+## Tech Stack
+
+- React 18+ (Hooks, Suspense)
+- Next.js 14+ (App Router)
+- TypeScript 5+
+- Tailwind CSS 3+
+
+## Skills You Use
+
+- **frontend-patterns**: Component structure, TypeScript patterns
+- **design-system**: Tailwind values, colors, spacing
+- **web-performance**: Optimization strategies
+
+## Development Approach
+
+1. Understand requirements
+2. Check design specs
+3. Plan component structure
+4. Implement with TypeScript
+5. Add accessibility
+6. Write tests
+7. Optimize performance
+
+## Code Quality Standards
+
+- TypeScript strict mode
+- 80%+ test coverage
+- All elements keyboard accessible
+- Props validated with TypeScript
+- No console.logs in production
+
+## Component Template
+```tsx
+import { FC } from 'react';
+
+interface Props {
+  title: string;
+  onAction?: () => void;
+}
+
+export const Component: FC<Props> = ({ 
+  title, 
+  onAction 
+}) => {
+  return (
+    <div>
+      <h2>{title}</h2>
+      <button onClick={onAction}>Action</button>
+    </div>
+  );
+};
+```
+
+## Quality Gates
+
+- [ ] TypeScript compiles
+- [ ] ESLint passes
+- [ ] Tests pass (80%+ coverage)
+- [ ] Responsive on all breakpoints
+- [ ] Accessible
+- [ ] Performance assessed
+AGENT_EOF
+
+    print_success "Created frontend-developer subagent"
+}
+
+# Create Performance Specialist Subagent
+create_performance_specialist_subagent() {
+    print_section "Creating Performance Specialist Subagent"
+    
+    cat > ~/.claude/agents/performance-specialist.md << 'AGENT_EOF'
+---
+name: performance-specialist
+description: Web performance expert. Use for optimizing load times, Core Web Vitals, bundle sizes, and overall site performance.
+tools: Read, Grep, Bash, WebFetch, WebSearch
+model: inherit
+---
+
+You are a web performance specialist focused on making websites fast.
+
+## Mission
+
+Optimize to achieve:
+- LCP < 2.5s
+- FID < 100ms
+- CLS < 0.1
+- Lighthouse > 90
+
+## Skills You Use
+
+- **web-performance**: Optimization patterns
+- **frontend-patterns**: Code splitting, lazy loading
+
+## Analysis Process
+
+1. Run Lighthouse audit
+2. Identify issues (images, fonts, bundle, layout shifts)
+3. Prioritize by impact
+4. Implement fixes
+5. Measure improvements
+
+## Common Optimizations
+
+- Optimize images (next/image, WebP)
+- Use next/font for fonts
+- Dynamic imports for code splitting
+- Add dimensions to prevent layout shifts
+- Enable caching
+
+## Tools
+
+- Lighthouse
+- WebPageTest
+- Chrome DevTools
+- Next.js Analyzer
+
+## Report Format
+```
+## Performance Audit
+
+### Current State
+- Lighthouse: XX/100
+- LCP: Xs
+- Bundle: XXkB
+
+### Issues
+1. [Critical] Issue description
+   - Fix: Solution
+   - Impact: Expected improvement
+
+### Implementation Plan
+Week 1: Critical fixes
+Week 2: Quick wins
+
+### Expected Results
+- Lighthouse: XX → XX
+- LCP: Xs → Xs
+```
+AGENT_EOF
+
+    print_success "Created performance-specialist subagent"
+}
+
+# Create Slash Commands
+create_slash_commands() {
+    print_section "Creating Slash Commands"
+    
+    # Design review command
+    cat > ~/.claude/commands/web/design-review.md << 'CMD_EOF'
+# Web Design Review
+
+Perform comprehensive design review:
+
+1. **Visual Design**
+   - Check color contrast (WCAG AA: 4.5:1)
+   - Verify typography consistency
+   - Assess spacing and alignment
+
+2. **Responsive Design**
+   - Test all breakpoints
+   - Verify touch targets ≥ 44px
+   - Check horizontal scrolling
+
+3. **Accessibility**
+   - Test keyboard navigation
+   - Check ARIA labels
+   - Verify focus indicators
+
+4. **User Experience**
+   - Check loading/error/empty states
+   - Verify CTAs are clear
+
+5. **Performance**
+   - Check image optimization
+   - Verify lazy loading
+   - Test on 3G
+
+Provide detailed report with issues and fixes.
+CMD_EOF
+    print_success "Created design-review command"
+    
+    # Performance audit command
+    cat > ~/.claude/commands/web/performance-audit.md << 'CMD_EOF'
+# Performance Audit
+
+Run comprehensive performance audit:
+
+1. Run Lighthouse: `npx lighthouse $ARGUMENTS --view`
+2. Analyze bundle: `ANALYZE=true npm run build`
+3. Check images in public/
+4. Report Core Web Vitals (LCP, FID, CLS)
+5. Provide fixes with expected impact
+
+Use **performance-specialist** subagent for analysis.
+CMD_EOF
+    print_success "Created performance-audit command"
+    
+    # New component command
+    cat > ~/.claude/commands/web/new-component.md << 'CMD_EOF'
+# Create New Component
+
+Create React component: $ARGUMENTS
+
+1. Create structure:
+   - components/$ARGUMENTS/index.ts
+   - components/$ARGUMENTS/$ARGUMENTS.tsx
+   - components/$ARGUMENTS/$ARGUMENTS.test.tsx
+   - components/$ARGUMENTS/types.ts
+
+2. Generate:
+   - TypeScript interface
+   - Functional component
+   - Accessibility attributes
+   - Test file
+
+Use **frontend-developer** subagent.
+CMD_EOF
+    print_success "Created new-component command"
+    
+    # Responsive test command
+    cat > ~/.claude/commands/web/test-responsive.md << 'CMD_EOF'
+# Test Responsive Design
+
+Test responsive behavior: $ARGUMENTS
+
+Check breakpoints:
+- Mobile (< 640px)
+- Tablet (640-1024px)
+- Desktop (> 1024px)
+- Landscape mobile
+
+Report issues and provide Tailwind fixes.
+CMD_EOF
+    print_success "Created test-responsive command"
+}
+
+# Create Hooks
+create_hooks() {
+    print_section "Creating Automated Hooks"
+    
+    # Format code hook
+    cat > ~/.claude/hooks/web/format_code.sh << 'HOOK_EOF'
+#!/bin/bash
+FILE=$(echo "$CLAUDE_TOOL_INPUT" | jq -r '.file_path' 2>/dev/null)
+
+if [[ -n "$FILE" ]]; then
+  case "$FILE" in
+    *.tsx|*.ts|*.jsx|*.js|*.css)
+      if command -v npx &> /dev/null && [ -f "package.json" ]; then
+        npx prettier --write "$FILE" 2>/dev/null || true
+        echo "✓ Formatted $FILE"
+      fi
+      ;;
+  esac
+fi
+exit 0
+HOOK_EOF
+    chmod +x ~/.claude/hooks/web/format_code.sh
+    print_success "Created format_code hook"
+    
+    # Accessibility check hook
+    cat > ~/.claude/hooks/web/check_accessibility.sh << 'HOOK_EOF'
+#!/bin/bash
+FILE=$(echo "$CLAUDE_TOOL_INPUT" | jq -r '.file_path' 2>/dev/null)
+
+if [[ "$FILE" =~ \.(tsx|jsx)$ ]]; then
+  ISSUES=()
+  
+  if grep -q 'onClick=' "$FILE" && grep -q '<div' "$FILE"; then
+    if ! grep -q 'role=' "$FILE"; then
+      ISSUES+=("⚠️  onClick on div without role")
+    fi
+  fi
+  
+  if grep -q '<img' "$FILE" && ! grep -q 'alt=' "$FILE"; then
+    ISSUES+=("⚠️  img without alt")
+  fi
+  
+  if grep -q '<button' "$FILE" && ! grep -q 'type=' "$FILE"; then
+    ISSUES+=("⚠️  button without type")
+  fi
+  
+  if [ ${#ISSUES[@]} -gt 0 ]; then
+    echo "Accessibility warnings in $FILE:"
+    printf '%s\n' "${ISSUES[@]}"
+    echo "Run /web:design-review for full audit"
+  fi
+fi
+exit 0
+HOOK_EOF
+    chmod +x ~/.claude/hooks/web/check_accessibility.sh
+    print_success "Created check_accessibility hook"
+    
+    # Create settings.json
+    cat > ~/.claude/settings.json << 'SETTINGS_EOF'
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/web/format_code.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/web/check_accessibility.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
+SETTINGS_EOF
+    print_success "Created settings.json with hooks"
+}
+
+# Create Quick Reference Guide
+create_quick_reference() {
+    print_section "Creating Quick Reference Guide"
+    
+    cat > ~/.claude/WEB_DESIGN_GUIDE.md << 'GUIDE_EOF'
+# Web Design with Claude Code - Quick Reference
+
+## Common Workflows
+
+### Creating a New Page
+1. "Use ui-designer to design a landing page"
+2. "Use frontend-developer to implement the design"
+3. "/web:performance-audit"
+
+### Optimizing Performance
+1. "/web:performance-audit https://yoursite.com"
+2. "Use performance-specialist to fix issues"
+
+### Building Components
+1. "/web:new-component ButtonPrimary"
+2. "Use frontend-developer to implement"
+3. "/web:design-review"
+
+### Responsive Design
+1. "/web:test-responsive ComponentName"
+2. Fix with Tailwind responsive classes
+
+## MCP Servers Available
+
+- **Figma**: Design imports
+- **Canva**: Design assets
+- **Cloudinary**: Image optimization
+- **GitHub**: Version control
+
+## Skills Available
+
+- **frontend-patterns**: React/Next.js/TypeScript
+- **design-system**: Colors, typography, spacing
+- **web-performance**: Optimization strategies
+
+## Subagents Available
+
+- **ui-designer**: Visual and UX design
+- **frontend-developer**: Implementation
+- **performance-specialist**: Speed optimization
+
+## Slash Commands
+
+- `/web:design-review` - Comprehensive design audit
+- `/web:performance-audit URL` - Performance analysis
+- `/web:new-component NAME` - Scaffold component
+- `/web:test-responsive COMPONENT` - Test responsiveness
+
+## Pro Tips
+
+1. Start with `ui-designer` for design work
+2. Use `frontend-developer` for implementation
+3. Run `/web:performance-audit` before deploying
+4. Hooks auto-format and check accessibility
+GUIDE_EOF
+    
+    print_success "Created quick reference guide at ~/.claude/WEB_DESIGN_GUIDE.md"
+}
+
+# Verification
+verify_installation() {
+    print_section "Verifying Installation"
+    
+    # Check skills
+    if [ -d ~/.claude/skills/user/frontend-patterns ]; then
+        print_success "frontend-patterns skill installed"
+    else
+        print_error "frontend-patterns skill missing"
+    fi
+    
+    if [ -d ~/.claude/skills/user/design-system ]; then
+        print_success "design-system skill installed"
+    else
+        print_error "design-system skill missing"
+    fi
+    
+    if [ -d ~/.claude/skills/user/web-performance ]; then
+        print_success "web-performance skill installed"
+    else
+        print_error "web-performance skill missing"
+    fi
+    
+    # Check subagents
+    if [ -f ~/.claude/agents/ui-designer.md ]; then
+        print_success "ui-designer subagent installed"
+    else
+        print_error "ui-designer subagent missing"
+    fi
+    
+    if [ -f ~/.claude/agents/frontend-developer.md ]; then
+        print_success "frontend-developer subagent installed"
+    else
+        print_error "frontend-developer subagent missing"
+    fi
+    
+    if [ -f ~/.claude/agents/performance-specialist.md ]; then
+        print_success "performance-specialist subagent installed"
+    else
+        print_error "performance-specialist subagent missing"
+    fi
+    
+    # Check commands
+    COMMANDS_FOUND=0
+    for cmd in design-review performance-audit new-component test-responsive; do
+        if [ -f ~/.claude/commands/web/$cmd.md ]; then
+            ((COMMANDS_FOUND++))
+        fi
+    done
+    print_success "Found $COMMANDS_FOUND/4 slash commands"
+    
+    # Check hooks
+    if [ -f ~/.claude/hooks/web/format_code.sh ] && [ -x ~/.claude/hooks/web/format_code.sh ]; then
+        print_success "format_code hook installed"
+    else
+        print_error "format_code hook missing or not executable"
+    fi
+    
+    if [ -f ~/.claude/hooks/web/check_accessibility.sh ] && [ -x ~/.claude/hooks/web/check_accessibility.sh ]; then
+        print_success "check_accessibility hook installed"
+    else
+        print_error "check_accessibility hook missing or not executable"
+    fi
+    
+    # Check settings
+    if [ -f ~/.claude/settings.json ]; then
+        print_success "settings.json configured"
+    else
+        print_error "settings.json missing"
+    fi
+}
+
+# Final instructions
+print_final_instructions() {
+    print_section "Installation Complete!"
+    
+    echo -e "${GREEN}✓ Web Design setup is complete!${NC}\n"
+    
+    echo -e "${BLUE}What was installed:${NC}"
+    echo "  • 3 Custom Skills (frontend-patterns, design-system, web-performance)"
+    echo "  • 3 Subagents (ui-designer, frontend-developer, performance-specialist)"
+    echo "  • 4 Slash Commands (/web:design-review, /web:performance-audit, etc.)"
+    echo "  • 2 Automated Hooks (formatting, accessibility checks)"
+    echo "  • 4+ MCP Servers (Figma, GitHub, Canva, Cloudinary)"
+    echo ""
+    
+    echo -e "${BLUE}Quick Start Commands:${NC}"
+    echo "  View quick reference:"
+    echo "    cat ~/.claude/WEB_DESIGN_GUIDE.md"
+    echo ""
+    echo "  Check installation:"
+    echo "    claude /agents"
+    echo "    claude /help"
+    echo ""
+    echo "  Try these commands:"
+    echo "    /web:new-component MyButton"
+    echo "    /web:design-review"
+    echo "    /web:performance-audit https://yoursite.com"
+    echo ""
+    echo "  Use subagents:"
+    echo '    "Use ui-designer to create a hero section"'
+    echo '    "Use frontend-developer to implement a card component"'
+    echo '    "Use performance-specialist to optimize the site"'
+    echo ""
+    
+    echo -e "${YELLOW}Note: You may need to restart Claude Code for all changes to take effect.${NC}"
+    echo ""
+    
+    echo -e "${GREEN}Happy building! 🚀${NC}"
+}
+
+# Main execution
+main() {
+    echo -e "${GREEN}"
+    echo "╔════════════════════════════════════════╗"
+    echo "║  Claude Code Web Design Setup         ║"
+    echo "║  Complete Installation Script          ║"
+    echo "╚════════════════════════════════════════╝"
+    echo -e "${NC}\n"
+    
+    check_claude_installed
+    setup_directories
+    install_mcp_servers
+    create_frontend_patterns_skill
+    create_design_system_skill
+    create_web_performance_skill
+    create_ui_designer_subagent
+    create_frontend_developer_subagent
+    create_performance_specialist_subagent
+    create_slash_commands
+    create_hooks
+    create_quick_reference
+    verify_installation
+    print_final_instructions
+}
+
+# Run main function
+main
