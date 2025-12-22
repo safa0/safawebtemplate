@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terneshk Pitch Deck</title>
+    <style>
+        :root {
+            --khaki-light: #E8DCC4;
+            --khaki-dark: #C3B091;
+            --title-color: #8B7355;
+            --text-color: #333333;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--khaki-light);
+            color: var(--text-color);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .slides-container {
+            width: 100vw;
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            box-sizing: border-box;
+            position: relative;
+            background: linear-gradient(135deg, var(--khaki-light) 0%, white 100%);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .slide:nth-child(even) {
+             background: linear-gradient(135deg, white 0%, var(--khaki-light) 100%);
+        }
+        .content {
+            max-width: 900px;
+            width: 100%;
+            text-align: left;
+            background: rgba(255,255,255,0.6);
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+        h1 {
+            color: var(--title-color);
+            font-size: 3rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--khaki-dark);
+            padding-bottom: 0.5rem;
+        }
+        h2 {
+            color: var(--title-color);
+            font-size: 2rem;
+        }
+        p, li {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        ul {
+            padding-left: 2rem;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 0.9rem;
+            opacity: 0.5;
+        }
+        .nav-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            pointer-events: none;
+            opacity: 0;
+            animation: fadeIn 2s 1s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-hint">Scroll down or use Arrow Keys</div>
+    <div class="slides-container">
+
+        <div class="slide" id="slide-1">
+            <div class="content">
+                <h1>TinyML-based Intrusion Detection 
+for IoT Devices</h1>
+                
+            </div>
+            <div class="slide-number">1 / 15</div>
+        </div>
+        
+        <div class="slide" id="slide-2">
+            <div class="content">
+                <h1>The Problem</h1>
+                <p>Over 18 billion IoT devices in use. Expected to reach 40 billion by 2030*</p><p>Cybersecurity threats are surging: 400% increase in malware attack over year 2022*</p><p>Stricter regulations and customer demand drive compliance pressure *</p><p>IEC 62443 requires continuous anomaly detection; yet most vendors are not compliant.</p><p>* https://iot-analytics.com/number-connected-iot-devices/?utm_source=chatgpt.com</p>
+            </div>
+            <div class="slide-number">2 / 15</div>
+        </div>
+        
+        <div class="slide" id="slide-3">
+            <div class="content">
+                <h1>Market Opportunity</h1>
+                <p>Analysts forecast the global IoT security market to grow from around USD 35 billion in 2024 to well over USD 100 billion by 2030. *</p><p>Industrial automation &amp; energy sectors are leading the demand.</p><p>Vendors must integrate embedded security to achieve IEC 62443 compliance by 2027</p><p>* https://www.grandviewresearch.com/industry-analysis/internet-of-things-iot-security-market</p>
+            </div>
+            <div class="slide-number">3 / 15</div>
+        </div>
+        
+        <div class="slide" id="slide-4">
+            <div class="content">
+                <h1>Todays Solutions</h1>
+                <p>Cloud IDS, while suitable for some application, has the following drawbacks</p><ul><li>High Latency</li><li>Privacy risk</li><li>Dependence on continuous connectivity</li></ul>
+            </div>
+            <div class="slide-number">4 / 15</div>
+        </div>
+        
+        <div class="slide" id="slide-5">
+            <div class="content">
+                <h1>Todays Solutions - continue</h1>
+                <p>Local Server, could be a feasible solution for some but has the folowing cons</p><ul><li>Increases system complexity</li><li>Too costly for large-scale or low-margin applications (e.g. Traffic cameras)</li></ul>
+            </div>
+            <div class="slide-number">5 / 15</div>
+        </div>
+        
+        <div class="slide" id="slide-6">
+            <div class="content">
+                <h1>Todays Solutions - continue</h1>
+                <p>Deploying IDS directly on IoT/IIoT devices can address many challenges.</p><ul><li>Rule-based IDS cannot keep up with AI-driven and evolving cyberattacks.</li><li>IoT devices lack sufficient compute power &amp; memory to run traditional AI-based IDS.</li></ul>
+            </div>
+            <div class="slide-number">6 / 15</div>
+        </div>
+        
+        <div class="slide" id="slide-7">
+            <div class="content">
+                <h1>Our Proposed Solution</h1>
+                <p>TinyML Intrusion Detection SDK for MCUs.</p><p>An AI based IDS:</p><ul><li>Small enough to fit into embedded devices (less than 1MB)</li><li>Fast response:  &lt; 300 µs latency</li><li>High accuracy: &gt;98 % accuracy</li><li>Plug-and-play C/C++ library.</li><li>Covers detection requirement requested by IEC 62443.</li></ul>
+            </div>
+            <div class="slide-number">7 / 15</div>
+        </div>
+        
+        <div class="slide" id="slide-8">
+            <div class="content">
+                <h1>Proof of Feasibility</h1>
+                <p>Based on research from Mälardalen University.</p><p>Validated on RISC-V emulator → 98 % accuracy.</p><p>Same architecture portable to ARM Cortex-M.</p>
+            </div>
+            <div class="slide-number">8 / 15</div>
+        </div>
+        
+        <div class="slide" id="slide-9">
+            <div class="content">
+                <h1>Technology Roadmap</h1>
+                <p>Phase Goal Deliverable:</p><ul><li>Q1,Q2: SDK core + ARM prototype → Working demo</li><li>Q3: Industrial pilot (ABB/Combitech) → Case study</li><li>Q4: SDK v1 release → licensing preparation &amp; commercialization</li></ul>
+            </div>
+            <div class="slide-number">9 / 15</div>
+        </div>
+        
+        <div class="slide" id="slide-10">
+            <div class="content">
+                <h1>Business Model</h1>
+                <p>B2B SDK licensing (per-device or project).</p><p>Maintenance &amp; update subscriptions.</p><p>Optional gateway demo kit that enables customers to integrate our SDK quickly</p>
+            </div>
+            <div class="slide-number">10 / 15</div>
+        </div>
+        
+        <div class="slide" id="slide-11">
+            <div class="content">
+                <h1>Competitive Advantage</h1>
+                
+            </div>
+            <div class="slide-number">11 / 15</div>
+        </div>
+        
+        <div class="slide" id="slide-12">
+            <div class="content">
+                <h1>Target Market &amp; Partners</h1>
+                <p>Industrial Automation: ABB, Siemens, Atlas Copco.</p><p>Energy &amp; Utility: Hitachi Energy, Vattenfall.</p><p>Integration Partners: Combitech, RISE.</p><p>Ideal for vendors seeking IEC 62443 certification.</p>
+            </div>
+            <div class="slide-number">12 / 15</div>
+        </div>
+        
+        <div class="slide" id="slide-13">
+            <div class="content">
+                <h1>Funding &amp; Use of Funds</h1>
+                <p>Ask: SEK 500 000 – 1 M (grant + seed).</p><p>Allocation:</p><p>40 % - Software &amp; SDK development</p><p>30 % - Hardware demo and testing</p><p>20 % - Market validation / IEC 62443 cert support</p><p>10 % - Admin &amp; legal</p>
+            </div>
+            <div class="slide-number">13 / 15</div>
+        </div>
+        
+        <div class="slide" id="slide-14">
+            <div class="content">
+                <h1>Vision &amp; Impact</h1>
+                <p>“Enabling secure and autonomous IoT - everywhere.”</p><p>Terneshk aims to become a key enabler for IEC 62443-compliant embedded devices.</p><p>Exit strategy: potential acquisition by a security or industrial automation leader.</p><p>Call to action: Join us in building Sweden’s first/Next(?) embedded AI security platform.</p>
+            </div>
+            <div class="slide-number">14 / 15</div>
+        </div>
+        
+        <div class="slide" id="slide-15">
+            <div class="content">
+                <h1>Thanks for your attention</h1>
+                <p>Q &amp; A</p>
+            </div>
+            <div class="slide-number">15 / 15</div>
+        </div>
+        
+    </div>
+    <script>
+        document.addEventListener('keydown', (e) => {
+            const container = document.querySelector('.slides-container');
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                container.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+            } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                container.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
