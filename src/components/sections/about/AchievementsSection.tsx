@@ -6,34 +6,34 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const achievements = [
   {
-    year: "2020",
-    title: "Founded",
-    description: "LambdaFlow™ launches with a mission to transform enterprise automation",
-  },
-  {
-    year: "2021",
-    title: "100 Processes Automated",
-    description: "Reached a major milestone, automating critical business processes for leading enterprises",
-  },
-  {
-    year: "2022",
-    title: "AI Integration Pioneer",
-    description: "Introduced groundbreaking AI-powered automation solutions to the market",
-  },
-  {
-    year: "2023",
-    title: "500+ Processes Automated",
-    description: "Crossed the 500-process milestone, saving clients over 1.5 million hours",
-  },
-  {
     year: "2024",
-    title: "Industry Recognition",
-    description: "Awarded as Leading Automation Solution Provider in multiple industry reports",
+    title: "Research Foundation",
+    description: "Master's thesis proves lightweight ML IDS feasibility on microcontroller-class IIoT hardware.",
   },
   {
     year: "2025",
-    title: "2M+ Hours Saved",
-    description: "Achieved 2 million cumulative hours saved for enterprise clients globally",
+    title: "TinySentinel Formed",
+    description: "Team formalized around on-device intrusion detection with academic and industrial collaborators.",
+  },
+  {
+    year: "2025",
+    title: "IEEE Submission",
+    description: "Refined models and feature engineering submitted for peer review at an IEEE conference.",
+  },
+  {
+    year: "2025",
+    title: "Validation Funding",
+    description: "Applied for research-based validation to fund novelty search, regulatory analysis, and dashboarding.",
+  },
+  {
+    year: "2026",
+    title: "Hardware Pilots",
+    description: "Planned hardware-in-the-loop and field prototypes with early industrial partners.",
+  },
+  {
+    year: "Future",
+    title: "Edge-First Security",
+    description: "Expanding TinySentinel across new boards, protocols, and partner ecosystems.",
   },
 ];
 

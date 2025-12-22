@@ -16,16 +16,16 @@ const timelinePhases: TimelinePhase[] = [
   {
     phase: "Phase 1: Discovery & Planning",
     duration: "2-3 weeks",
-    description: "Comprehensive analysis of your processes and development of the automation strategy",
+    description: "Comprehensive analysis of your devices, protocols, and threat model to define the on-device IDS strategy",
     milestones: [
-      "Initial assessment completed",
-      "Process documentation finalized",
-      "Business case & ROI model approved",
+      "Hardware and RTOS assessment completed",
+      "Threat scenarios prioritized",
+      "Telemetry and footprint budgets agreed",
       "Project charter signed off",
     ],
     deliverables: [
-      "Process mapping document",
-      "ROI analysis report",
+      "Device and threat assessment",
+      "Telemetry budget & success metrics",
       "Risk register",
       "Project plan & timeline",
     ],
@@ -33,7 +33,7 @@ const timelinePhases: TimelinePhase[] = [
   {
     phase: "Phase 2: Design & Architecture",
     duration: "2-3 weeks",
-    description: "Solution design, technology selection, and architecture planning",
+    description: "Feature selection, model design, and integration planning for target boards",
     milestones: [
       "Architecture design reviewed",
       "Integration points mapped",
@@ -50,16 +50,16 @@ const timelinePhases: TimelinePhase[] = [
   {
     phase: "Phase 3: Development & Testing",
     duration: "3-5 weeks",
-    description: "Bot development, AI integration, and comprehensive testing",
+    description: "Firmware integration, model optimization, and comprehensive testing",
     milestones: [
       "Development kickoff",
-      "Unit testing completed",
-      "UAT environment ready",
-      "Production readiness review",
+      "Latency/footprint targets met",
+      "Hardware-in-loop tests ready",
+      "Alerting and failsafes reviewed",
     ],
     deliverables: [
-      "Developed automation solution",
-      "Test cases & results",
+      "Integrated firmware module",
+      "Test cases & results (latency, energy, accuracy)",
       "Deployment guide",
       "Operations manual",
     ],
@@ -67,7 +67,7 @@ const timelinePhases: TimelinePhase[] = [
   {
     phase: "Phase 4: Deployment & Training",
     duration: "1-2 weeks",
-    description: "Go-live execution, staff training, and operational transition",
+    description: "Pilot execution on devices, operator training, and operational transition",
     milestones: [
       "Staff training completed",
       "Production deployment",
@@ -84,7 +84,7 @@ const timelinePhases: TimelinePhase[] = [
   {
     phase: "Phase 5: Optimization & Support",
     duration: "Ongoing",
-    description: "Performance monitoring, optimization, and strategic partnership",
+    description: "Performance monitoring, model refresh, and strategic partnership",
     milestones: [
       "Stabilization achieved",
       "Performance baseline established",
@@ -228,7 +228,7 @@ export function TimelineSection() {
               </div>
               <div>
                 <p className="text-gray-700 leading-relaxed">
-                  <strong>Phased Approach:</strong> Roll out automation across departments in stages, reducing risk and allowing iterative learning.
+                  <strong>Phased Approach:</strong> Roll out TinySentinel across device groups in stages, reducing risk and allowing iterative tuning.
                 </p>
               </div>
             </div>

@@ -7,9 +7,9 @@
 
 export const siteConfig = {
   // Brand Identity
-  name: "LambdaFlow™",
-  tagline: "Transform Your Operations with Intelligent Automation",
-  description: "Enterprise-grade RPA and AI automation solutions that deliver measurable ROI, boost efficiency, and drive operational excellence through intelligent process automation",
+  name: "TinySentinel™",
+  tagline: "Lightweight AI Security for Industrial IoT",
+  description: "On-device intrusion detection that runs on microcontroller-class hardware, delivering real-time anomaly detection without cloud dependence.",
 
   // Typography
   fonts: {
@@ -24,105 +24,105 @@ export const siteConfig = {
   // Logo & Assets
   logo: {
     path: "/logo.png",
-    alt: "LambdaFlow Logo",
+    alt: "TinySentinel Logo",
   },
 
   // SEO & Metadata
   seo: {
-    title: "LambdaFlow™ - Enterprise Automation Implementation Agency",
-    description: "Enterprise-grade RPA and AI automation solutions that deliver measurable ROI, boost efficiency, and drive operational excellence through intelligent process automation",
-    keywords: ["RPA", "robotic process automation", "AI agents", "process automation", "enterprise automation", "AI integration", "automation agency"],
+    title: "TinySentinel™ - On-Device Intrusion Detection for Industrial IoT",
+    description: "TinySentinel brings machine-learning intrusion detection to resource-constrained IIoT devices. Real-time, on-device anomaly detection with minimal compute and zero cloud dependency.",
+    keywords: ["tinyml", "intrusion detection", "iot security", "iiot", "lightweight ai", "on-device security", "cybersecurity"],
   },
 
   // Hero Section
   hero: {
-    headline: ["Turn Processes into Smart Flows"],
-    description: "We orchestrate people and AI agents to deliver measurable ROI through enterprise-grade automation solutions.",
-    cta: "Start Your Automation Journey",
+    headline: ["Intrusion Detection on Microcontrollers"],
+    description: "Detect anomalies directly on IIoT nodes with TinySentinel’s ultra-efficient ML models—built for devices measured in kilobytes, not gigabytes.",
+    cta: "Book a Demo",
     layout: "side-by-side", // New property: arrange description next to the image
   },
 
   // Mission
   mission: {
     title: "Our Mission",
-    statement: "Empowering enterprises to achieve operational excellence through intelligent automation that seamlessly integrates human expertise with AI capabilities.",
+    statement: "Protect connected industries by embedding trustworthy, low-footprint AI security where it matters most—the device itself.",
   },
 
   // Services
   services: [
     {
       number: "1",
-      title: "Process Mining & Opportunity Assessment",
-      description: "Deep-dive analysis to identify automation opportunities, quantify potential ROI, and build a compelling business case for transformation",
-      background: "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80')",
+      title: "Threat & Requirements Lab",
+      description: "Map IIoT attack surfaces, device constraints, and regulatory expectations (CRA, NIS2) to define an on-device detection blueprint.",
+      background: "url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1920&q=80')",
       textColor: "text-white",
       hasImage: false,
       link: "/services/1",
       detailedContent: [
-        "Situation: Most enterprises struggle with hidden inefficiencies buried in complex processes. Teams spend countless hours on repetitive tasks while leadership lacks visibility into where automation could deliver the greatest impact. Without data-driven insights, automation initiatives often target the wrong processes or fail to secure stakeholder buy-in.",
-        "Task: We deploy advanced process mining tools to capture real-time data from your systems, creating complete transparency into how work flows through your organization. Through collaborative workshops, we identify automation opportunities and quantify their business value using our proprietary ROI calculator that considers time savings, error reduction, compliance improvements, and scalability.",
-        "Action & Result: You receive a prioritized automation roadmap with detailed business cases for each initiative—including process maps, quantified ROI projections, risk assessments, and implementation timelines. This data-backed roadmap secures stakeholder buy-in and serves as your strategic guide, ensuring automation investments align with business objectives and deliver measurable returns from day one."
+        "Situation: IIoT fleets are exposed to evolving threats while operating on hardware measured in kilobytes. Vendors must secure devices without sacrificing uptime, latency, or certification pathways.",
+        "Task: We profile hardware limits, network behaviors, and compliance requirements (e.g., CRA/NIS2) to scope feasible on-device intrusion detection. We prioritize signals that can be monitored locally without impacting real-time control loops.",
+        "Action & Result: You get a requirements dossier covering target behaviors, telemetry budget, regulatory considerations, and an implementation plan tuned to your boards and deployment constraints.",
       ],
     },
     {
       number: "2",
-      title: "Automation Blueprint & Architecture",
-      description: "Strategic design of scalable automation solutions tailored to your enterprise needs, integrating RPA and AI agents for maximum impact",
-      background: "url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80')",
+      title: "Model & Feature Adaptation",
+      description: "Tailor lightweight ML architectures and feature engineering to your protocols and sensor telemetry while keeping memory and power budgets intact.",
+      background: "url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1920&q=80')",
       textColor: "text-white",
       hasImage: false,
       link: "/services/2",
       detailedContent: [
-        "Situation: Poorly designed automation solutions create technical debt, fail to scale with business growth, and struggle to integrate with existing systems. Many organizations rush into implementation without proper architecture, resulting in fragile bots that break with system updates and security vulnerabilities that put enterprise data at risk.",
-        "Task: Our architects design enterprise-grade automation blueprints that serve as the technical foundation for your transformation. We create scalable solutions that seamlessly integrate RPA bots and AI agents with your technology stack, establishing governance frameworks for bot management, security, and compliance while defining the optimal mix of attended and unattended automation.",
-        "Action & Result: You receive comprehensive architecture diagrams, technology stack recommendations, infrastructure requirements, and detailed process definition documents (PDDs). These blueprints provide your IT team with clear implementation guidance while establishing quality, security, and performance standards—resulting in a solid technical foundation that de-risks implementation, ensures scalability, and accelerates time-to-value."
+        "Situation: Existing IDS models are too heavy for microcontrollers, and generic features miss industrial behaviors.",
+        "Task: We adapt TinySentinel’s feature set and model topology to your traffic patterns and device constraints, selecting embeddings and quantization strategies that survive aggressive memory limits.",
+        "Action & Result: You receive tuned models with accompanying feature pipelines that fit your MCU footprint, preserving detection accuracy while honoring latency, RAM, and flash budgets.",
       ],
     },
     {
       number: "3",
-      title: "Development & AI Integration",
-      description: "End-to-end development of intelligent automation solutions powered by RPA and AI agents, with rigorous testing and optimization",
-      background: "url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&q=80')",
+      title: "Firmware & Runtime Optimization",
+      description: "Integrate the IDS SDK into firmware, compress models, and optimize for deterministic performance on target boards.",
+      background: "url('https://images.unsplash.com/photo-1504386106331-3e4e71712b38?w=1920&q=80')",
       textColor: "text-white",
       hasImage: false,
       link: "/services/3",
       detailedContent: [
-        "Situation: Automation implementations often fail due to poor code quality, inadequate testing, or bots that can't handle real-world exceptions. Organizations invest heavily in automation only to face production failures, security vulnerabilities, and solutions that require constant maintenance instead of delivering promised efficiencies.",
-        "Task: Our certified developers bring your automation blueprint to life using industry-leading platforms like UiPath, Automation Anywhere, or Blue Prism. We build intelligent automation solutions that incorporate document processing, natural language understanding, and machine learning models. Every bot undergoes rigorous testing in environments that mirror production, validating exception handling, logging, monitoring, and performance metrics.",
-        "Action & Result: You receive production-ready automation solutions with comprehensive documentation covering bot logic, dependencies, error handling procedures, and maintenance guides—plus training materials for operators and administrators. Our enterprise-grade code ensures security, maintainability, and scalability, delivering long-term value with minimal technical debt and bots that handle exceptions intelligently while learning from experience."
+        "Situation: Even efficient models can underperform without tight firmware integration and deterministic scheduling.",
+        "Task: We integrate the IDS runtime into your firmware build, apply quantization/pruning, and profile latency, energy, and memory. We harden logging, alerting, and fail-safe behaviors for industrial environments.",
+        "Action & Result: You get production-ready firmware modules with verified timing, memory usage, and telemetry hooks, plus developer documentation for ongoing maintenance.",
       ],
     },
     {
       number: "4",
-      title: "Deployment & Change Management",
-      description: "Seamless implementation with minimal disruption, comprehensive training, and ongoing optimization to ensure long-term success",
-      background: "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=80')",
+      title: "Field Validation & Monitoring",
+      description: "Validate on real hardware, simulate attacks, and operationalize dashboards for operators and compliance teams.",
+      background: "url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80')",
       textColor: "text-white",
       hasImage: false,
       link: "/services/4",
       detailedContent: [
-        "Situation: Even technically perfect automation fails without proper change management and organizational buy-in. Employees resist new workflows, IT teams struggle with unfamiliar bot infrastructure, and business leaders lack visibility into automation performance. Without structured deployment and ongoing optimization, automation initiatives deliver disappointing results and fail to scale across the enterprise.",
-        "Task: We execute phased rollouts that minimize disruption while building confidence through early wins. Our approach includes comprehensive runbooks, rollback procedures, and 24/7 support during critical launches. We conduct tailored training for all stakeholder groups—end users, IT teams, and business leaders—building genuine understanding of how automation transforms workflows and what success looks like.",
-        "Action & Result: You gain a sustainable automation program with established monitoring dashboards, performance metrics, and a Center of Excellence (CoE) framework for governance and best practices. We provide ongoing optimization support including performance tuning, exception analysis, and opportunity identification for additional automation. The result is an automation program that grows organically within your organization, driven by automation champions, continuous improvement, and expanding business value."
+        "Situation: Security claims must be proven on actual boards and reflected in operator workflows.",
+        "Task: We run red-team style scenarios, device-in-the-loop tests, and long-horizon monitoring to refine thresholds and response plans. We prepare compliance-ready evidence and operational runbooks.",
+        "Action & Result: You receive validated prototypes, dashboards for alerts and performance, and a deployment playbook aligned with your manufacturing, energy, or critical infrastructure requirements.",
       ],
     },
   ],
 
   // Footer
   footer: {
-    title: "Ready to Unlock Your Automation Potential?",
+    title: "Ready to Secure Your IIoT Fleet?",
     cta: {
-      text: "Schedule Your Free Consultation",
+      text: "Schedule a TinySentinel Demo",
       link: "/contact",
     },
   },
 
   // Navigation
   navigation: [
-    { label: "Solutions", href: "/solutions" },
+    { label: "Technology", href: "/solutions" },
     { label: "Industries", href: "/industries" },
-    { label: "Solutions2", href: "/solutions2" },
-    { label: "Why Automate", href: "/why-automate" },
+    { label: "Validation Roadmap", href: "/solutions2" },
+    { label: "Why On-Device IDS", href: "/why-automate" },
     { label: "About", href: "/about" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
@@ -130,9 +130,9 @@ export const siteConfig = {
 
   // Background Images
   backgrounds: {
-    hero: "https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80",
-    floral: "https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80",
-    concrete: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&q=80",
+    hero: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80",
+    floral: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80",
+    concrete: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1920&q=80",
     neutral: "#E8DCC4",
   },
 
@@ -140,19 +140,19 @@ export const siteConfig = {
   floatingCards: [
     {
       number: 1,
-      imageUrl: "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=400&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1582719478248-44e6c3b9ef71?w=400&q=80",
       position: "top-[20%] right-[15%]",
       zIndex: "z-30",
     },
     {
       number: 2,
-      imageUrl: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1920&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=1920&q=80",
       fullScreen: true,
       zIndex: "z-20",
     },
     {
       number: 3,
-      imageUrl: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80",
       position: "top-[60%] right-[20%]",
       zIndex: "z-10",
     },
@@ -160,55 +160,55 @@ export const siteConfig = {
 
   // Company Information
   company: {
-    foundedYear: 2020,
-    legalName: "LambdaFlow Inc.",
+    foundedYear: 2025,
+    legalName: "TinySentinel AB",
     location: {
-      city: "San Francisco",
-      state: "CA",
-      country: "USA",
+      city: "Skövde",
+      state: "Västra Götaland",
+      country: "Sweden",
     },
   },
 
   // Company Statistics
   stats: {
-    processesAutomated: "500+",
-    hoursSaved: "2M+",
-    averageROI: "300%",
-    enterpriseClients: "95+",
+    processesAutomated: "12+",
+    hoursSaved: "98.7%",
+    averageROI: "<256KB",
+    enterpriseClients: "7",
   },
 
   // Impact Metrics
   metrics: {
     quickMetrics: [
-      { id: "efficiency", value: "87%", label: "Process Efficiency" },
-      { id: "roi", value: "6-12mo", label: "to Full ROI" },
-      { id: "cost", value: "40%", label: "Cost Reduction" },
-      { id: "accuracy", value: "99.9%", label: "Accuracy Rate" },
+      { id: "detection", value: "98.7%", label: "Detection Accuracy (bench)" },
+      { id: "latency", value: "<10ms", label: "Inference Latency" },
+      { id: "footprint", value: "<256KB", label: "Model Footprint" },
+      { id: "energy", value: "-35%", label: "Energy vs. cloud offload" },
     ],
     detailedMetrics: [
       {
         id: "efficiency-detailed",
-        value: "87%",
-        label: "Average Process Efficiency Gain",
-        description: "Across all implementations",
+        value: "92%",
+        label: "Attack Coverage",
+        description: "Anomaly classes detected in hardware-in-loop testing",
       },
       {
         id: "roi-detailed",
-        value: "6-12",
-        label: "Months to Full ROI",
-        description: "Typical payback period",
+        value: "30%",
+        label: "Telemetry Reduction",
+        description: "Less data leaving devices while improving detection fidelity",
       },
       {
         id: "cost-reduction",
-        value: "40%",
-        label: "Reduction in Operational Costs",
-        description: "Within first year",
+        value: "48h",
+        label: "Deployment Window",
+        description: "From tuned model to firmware-integrated prototype",
       },
       {
         id: "accuracy-detailed",
-        value: "99.9%",
-        label: "Automation Accuracy",
-        description: "Error-free execution",
+        value: "12",
+        label: "Boards Targeted",
+        description: "Microcontroller-class targets in current validation pipeline",
       },
     ],
   },
@@ -218,16 +218,16 @@ export const siteConfig = {
     twitter: "",
     linkedin: "",
     github: "",
-    instagram: "https://instagram.com",
+    instagram: "",
     facebook: "",
   },
 
   // Contact Info
   contact: {
-    email: "hello@flowforce.com",
-    phone: "+1 (800) AUTO-MATE",
-    phoneHref: "tel:+18002886628",
-    address: "123 Market St, San Francisco, CA 94103",
+    email: "contact@tinysentinel.ai",
+    phone: "+46 (0)70 000 0000",
+    phoneHref: "tel:+46700000000",
+    address: "Skövde & Västerås, Sweden",
   },
 };
 

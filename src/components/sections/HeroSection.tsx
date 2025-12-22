@@ -167,16 +167,16 @@ export function HeroSection() {
           className="hero-right-image absolute inset-0 bg-cover bg-center z-0"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80')",
-            backgroundColor: "#9C8B6C", // Fallback color while image loads
+              "url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=1920&q=80')",
+            backgroundColor: "#0F1A2C", // Fallback color while image loads
           }}
         />
 
         {/* Full-screen Card - covers entire right side */}
         <div className="floating-card floating-card-2 absolute inset-0 z-20 overflow-hidden bg-gray-900">
           <Image
-            src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1920&q=80"
-            alt="Featured Design"
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80"
+            alt="Embedded Security"
             fill
             className="object-cover"
             priority

@@ -14,28 +14,28 @@ interface ROIScenario {
 
 const roiScenarios: ROIScenario[] = [
   {
-    label: "Small Process",
+    label: "Single Line Pilot",
     hours: 20,
     hourlyRate: 50,
     automationCost: 15000,
     year: 1,
   },
   {
-    label: "Medium Process",
+    label: "Factory Cell",
     hours: 100,
     hourlyRate: 60,
     automationCost: 50000,
     year: 1,
   },
   {
-    label: "Large Process",
+    label: "Plant Network",
     hours: 500,
     hourlyRate: 65,
     automationCost: 150000,
     year: 1,
   },
   {
-    label: "Enterprise Program",
+    label: "Fleet Deployment",
     hours: 2000,
     hourlyRate: 70,
     automationCost: 400000,
@@ -59,7 +59,7 @@ function ROICalculator() {
     <div className="grid md:grid-cols-2 gap-12 items-center">
       <div>
         <h3 className="font-serif text-3xl md:text-4xl text-earth mb-8">
-          Calculate Your ROI
+          Estimate Your IDS Impact
         </h3>
 
         <div className="space-y-6 mb-8">
@@ -75,7 +75,7 @@ function ROICalculator() {
             >
               <p className="font-semibold text-earth mb-2">{s.label}</p>
               <p className="text-sm text-gray-600">
-                {s.hours} hours/day • ${s.automationCost.toLocaleString()} implementation
+                {s.hours} hours/day manual monitoring avoided • ${s.automationCost.toLocaleString()} integration
               </p>
             </button>
           ))}
@@ -84,18 +84,18 @@ function ROICalculator() {
 
       <div className="space-y-6">
         <div className="bg-gradient-to-br from-earth/10 to-khaki/10 rounded-2xl p-8 border border-earth/20">
-          <p className="text-sm text-gray-600 mb-2">Annual Hours Automated</p>
+          <p className="text-sm text-gray-600 mb-2">Annual Manual Monitoring Hours Avoided</p>
           <p className="text-4xl font-bold text-earth mb-6">
             {annualHours.toLocaleString()}
           </p>
 
-          <p className="text-sm text-gray-600 mb-2">Annual Cost Savings</p>
+          <p className="text-sm text-gray-600 mb-2">Estimated Annual Cost Savings</p>
           <p className="text-4xl font-bold text-green-600 mb-6">
             ${annualSavings.toLocaleString()}
           </p>
 
           <div className="border-t border-earth/20 pt-6">
-            <p className="text-sm text-gray-600 mb-2">Implementation Cost</p>
+            <p className="text-sm text-gray-600 mb-2">Integration Cost</p>
             <p className="text-2xl font-bold text-gray-800 mb-6">
               ${scenario.automationCost.toLocaleString()}
             </p>
@@ -120,7 +120,7 @@ function ROICalculator() {
             ${firstYearProfit.toLocaleString()}
           </p>
           <p className="text-sm text-gray-600 mt-4">
-            By year 5, cumulative savings exceed ${(annualSavings * 5 - scenario.automationCost).toLocaleString()}
+            By year 5, cumulative savings from avoided manual monitoring exceed ${(annualSavings * 5 - scenario.automationCost).toLocaleString()}
           </p>
         </div>
       </div>
@@ -167,10 +167,10 @@ export function ROICalculatorSection() {
       <div className="max-w-7xl mx-auto">
         <div className="roi-title mb-16 text-center">
           <h2 className="font-serif text-4xl md:text-6xl text-earth mb-4">
-            ROI Examples
+            Impact Scenarios
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Explore realistic scenarios across different process sizes and complexity levels
+            Explore realistic scenarios showing how on-device detection displaces manual monitoring and cloud costs
           </p>
         </div>
 
@@ -184,14 +184,14 @@ export function ROICalculatorSection() {
             <p className="text-3xl font-bold text-earth mb-3">98%</p>
             <p className="font-semibold text-gray-800 mb-2">Predictability</p>
             <p className="text-gray-600 text-sm">
-              ROI calculations are highly predictable based on process characteristics
+              Impact estimates stabilize once target boards and telemetry budgets are defined
             </p>
           </div>
           <div className="bg-white rounded-2xl p-8 border border-khaki/20">
             <p className="text-3xl font-bold text-earth mb-3">6-9 mo</p>
             <p className="font-semibold text-gray-800 mb-2">Average Break-Even</p>
             <p className="text-gray-600 text-sm">
-              Most organizations break even within 6-9 months of implementation
+              Most organizations break even within 6-9 months of integration
             </p>
           </div>
           <div className="bg-white rounded-2xl p-8 border border-khaki/20">
@@ -205,12 +205,12 @@ export function ROICalculatorSection() {
 
         {/* ROI methodology note */}
         <div className="mt-12 md:mt-16 bg-blue-50 rounded-2xl border border-blue-200 p-8">
-          <p className="text-sm font-semibold text-blue-900 mb-3">ROI Calculation Methodology</p>
+          <p className="text-sm font-semibold text-blue-900 mb-3">Impact Calculation Methodology</p>
           <p className="text-gray-700 text-sm leading-relaxed mb-4">
-            Our calculations use conservative estimates: 250 working days/year, linear cost structures, and standard hourly rates. Actual ROI often exceeds these projections when factoring in productivity gains, reduced errors, faster throughput, and compound benefits across multiple processes.
+            These estimates assume 250 working days/year and typical operator rates. Actual impact often exceeds projections once you factor in avoided outages, reduced telemetry spend, and stronger compliance posture.
           </p>
           <p className="text-xs text-blue-800">
-            * Results based on 500+ implementations across diverse industries. Individual results may vary based on process complexity, integration requirements, and change management effectiveness.
+            * Results based on TinySentinel validation work. Individual results may vary based on hardware constraints, integration requirements, and operational readiness.
           </p>
         </div>
       </div>

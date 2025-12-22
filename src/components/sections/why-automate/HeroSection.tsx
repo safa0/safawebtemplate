@@ -53,30 +53,30 @@ export function HeroSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center">
           <p className="hero-subtitle text-lg md:text-xl text-khaki-light font-medium uppercase tracking-widest mb-4">
-            Why Automate?
+            Why On-Device IDS?
           </p>
 
           <h1 className="hero-title font-serif text-5xl md:text-7xl lg:text-8xl leading-tight mb-8 text-white max-w-5xl mx-auto">
-            Unlock Growth with Intelligent Automation
+            Keep IIoT Safe with Lightweight Detection
           </h1>
 
           <p className="hero-description text-lg md:text-xl text-khaki-light max-w-3xl mx-auto mb-12 leading-relaxed">
-            Enterprise-grade automation delivers measurable ROI, eliminates manual work, and empowers your team to focus on strategic growth. Discover why 500+ processes are already automated with LambdaFlow.
+            TinySentinel runs directly on microcontrollers, delivering real-time anomaly detection without shipping sensitive data to the cloud. Protect uptime, privacy, and compliance—even on devices measured in kilobytes.
           </p>
 
           <div className="hero-highlight inline-block bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 md:p-12">
             <div className="grid md:grid-cols-3 gap-8">
               <div>
-                <p className="text-3xl md:text-4xl font-bold text-white mb-2">300%</p>
-                <p className="text-khaki-light">Average ROI in 12 months</p>
+                <p className="text-3xl md:text-4xl font-bold text-white mb-2">98.7%</p>
+                <p className="text-khaki-light">Detection accuracy (bench)</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-bold text-white mb-2">2M+</p>
-                <p className="text-khaki-light">Hours saved by our clients</p>
+                <p className="text-3xl md:text-4xl font-bold text-white mb-2">&lt;10 ms</p>
+                <p className="text-khaki-light">Typical inference latency</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-bold text-white mb-2">500+</p>
-                <p className="text-khaki-light">Processes automated</p>
+                <p className="text-3xl md:text-4xl font-bold text-white mb-2">&lt;256 KB</p>
+                <p className="text-khaki-light">Model footprint target</p>
               </div>
             </div>
           </div>

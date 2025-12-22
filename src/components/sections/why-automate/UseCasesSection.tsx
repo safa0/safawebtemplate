@@ -29,91 +29,91 @@ interface UseCase {
 
 const useCases: UseCase[] = [
   {
-    id: "invoicing",
-    title: "Invoice Processing & Approval",
-    industry: "Finance & Accounting",
+    id: "controller-ids",
+    title: "Controller Anomaly Detection",
+    industry: "Industrial Automation",
     before: {
-      time: "5-7 days",
-      accuracy: "92%",
-      cost: "$2.50/invoice",
-      description: "Manual invoice entry, verification, and approval routing across multiple stakeholders",
-    },
-    after: {
-      time: "2-4 hours",
-      accuracy: "99.8%",
-      cost: "$0.15/invoice",
-      description: "Automated data extraction, validation, and approval workflows with intelligent routing",
-    },
-    improvement: {
-      timeReduction: "96% faster",
-      costSavings: "94% reduction",
-      roiTimeline: "4 months",
-    },
-  },
-  {
-    id: "claims",
-    title: "Insurance Claims Processing",
-    industry: "Insurance",
-    before: {
-      time: "21 days",
-      accuracy: "88%",
-      cost: "$50/claim",
-      description: "Manual document collection, verification, and processing with multiple touchpoints",
-    },
-    after: {
-      time: "2 days",
-      accuracy: "99.5%",
-      cost: "$8/claim",
-      description: "Automated document collection, OCR, validation, and decision-making with escalation",
-    },
-    improvement: {
-      timeReduction: "90% faster",
-      costSavings: "84% reduction",
-      roiTimeline: "5 months",
-    },
-  },
-  {
-    id: "hr",
-    title: "HR Employee Onboarding",
-    industry: "Human Resources",
-    before: {
-      time: "30 days",
+      time: "Seconds–minutes",
       accuracy: "85%",
-      cost: "$400/employee",
-      description: "Manual form filling, system access setup, training scheduling, and documentation",
+      cost: "Cloud + gateway servers",
+      description: "Detection depends on upstream gateways; noisy data leaves the site for analysis.",
     },
     after: {
-      time: "1 day",
-      accuracy: "99%",
-      cost: "$80/employee",
-      description: "Automated provisioning, system setup, training assignment, and compliance documentation",
+      time: "<10 ms",
+      accuracy: "98.7%",
+      cost: "Local MCU cycles",
+      description: "TinySentinel runs on the controller, flagging deviations instantly without cloud backhaul.",
     },
     improvement: {
-      timeReduction: "97% faster",
-      costSavings: "80% reduction",
-      roiTimeline: "3 months",
+      timeReduction: "Real-time vs. periodic",
+      costSavings: "≈30% less telemetry",
+      roiTimeline: "6-week PoC",
     },
   },
   {
-    id: "orders",
-    title: "Order Fulfillment & Shipping",
-    industry: "E-commerce & Retail",
+    id: "substation",
+    title: "Remote Substation Monitoring",
+    industry: "Energy & Utilities",
     before: {
-      time: "8 hours",
-      accuracy: "91%",
-      cost: "$3/order",
-      description: "Manual order entry, inventory checking, picking, and shipping label generation",
+      time: "Minutes (network dependent)",
+      accuracy: "Alert gaps",
+      cost: "Truck rolls for diagnostics",
+      description: "Edge devices rely on central SOC; connectivity loss hides attacks and anomalies.",
     },
     after: {
-      time: "15 minutes",
-      accuracy: "99.9%",
-      cost: "$0.50/order",
-      description: "Automated order processing, inventory management, picking routes, and label generation",
+      time: "<1 s local alert",
+      accuracy: "Predictive thresholds",
+      cost: "Fewer truck rolls",
+      description: "Local detection keeps alerts flowing during outages and feeds evidence when links return.",
     },
     improvement: {
-      timeReduction: "97% faster",
-      costSavings: "83% reduction",
-      roiTimeline: "4 months",
+      timeReduction: "Always-on locally",
+      costSavings: "Fewer site visits",
+      roiTimeline: "Pilot-ready",
+    },
+  },
+  {
+    id: "edge-platform",
+    title: "Edge Platform Multi-Tenant Security",
+    industry: "Edge Platform Vendors",
+    before: {
+      time: "Cloud batch scoring",
+      accuracy: "Varies per tenant",
+      cost: "High ingest and storage",
+      description: "Anomaly detection runs in cloud after aggregation, adding delay and cost.",
+    },
+    after: {
+      time: "On-device scoring",
+      accuracy: "Consistent per-node",
+      cost: "Lower cloud egress",
+      description: "TinySentinel runs per device, sending only alerts/metadata upstream.",
+    },
+    improvement: {
+      timeReduction: "Edge-first decisions",
+      costSavings: "Reduced ingest",
+      roiTimeline: "Roadmap-ready",
+    },
+  },
+  {
+    id: "oem-firmware",
+    title: "OEM Firmware Security",
+    industry: "System Integrators",
+    before: {
+      time: "After firmware logs",
+      accuracy: "Blind spots",
+      cost: "Extra hardware",
+      description: "Security relies on external probes; device-level attacks slip by.",
+    },
+    after: {
+      time: "Inline detection",
+      accuracy: "Device-aware",
+      cost: "No new hardware",
+      description: "Embedded IDS monitors key signals inside firmware with deterministic overhead.",
+    },
+    improvement: {
+      timeReduction: "Inline monitoring",
+      costSavings: "Zero extra BOM",
+      roiTimeline: "Firmware sprint",
     },
   },
 ];
@@ -273,7 +273,7 @@ export function UseCasesSection() {
             Real-World Use Cases
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            See how companies across industries transformed their operations with automation
+            See how teams are applying on-device intrusion detection across industrial contexts.
           </p>
         </div>
 
@@ -291,7 +291,7 @@ export function UseCasesSection() {
         {/* Insight bar */}
         <div className="mt-16 md:mt-24 bg-gradient-to-r from-khaki-light/20 to-accent/10 rounded-2xl border border-khaki/20 p-8 md:p-12">
           <p className="text-lg text-gray-700 max-w-4xl">
-            <span className="font-semibold text-earth">The Pattern:</span> Across all industries and processes, automation consistently delivers 80-95% cost reductions, 4-6x speed improvements, and 99%+ accuracy. The real opportunity lies in identifying which processes to automate first for maximum ROI.
+            <span className="font-semibold text-earth">The Pattern:</span> Moving detection onto the device cuts latency, reduces outbound data, and keeps coverage during connectivity gaps—while staying within strict memory and energy budgets.
           </p>
         </div>
       </div>

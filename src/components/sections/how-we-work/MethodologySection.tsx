@@ -131,7 +131,7 @@ export function MethodologySection() {
               Each Step Builds on the Last
             </h3>
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-              Our methodology ensures comprehensive planning, flawless execution, and lasting success. We don&apos;t just implement automation&mdash;we transform your operations.
+              Our methodology ensures comprehensive planning, flawless execution, and lasting success. We don&apos;t just deploy models&mdash;we deliver resilient on-device security.
             </p>
           </div>
         </div>

@@ -47,7 +47,7 @@ export function TechnologyPartnersSection() {
           Technology Partnerships
         </h2>
         <p className="text-center text-lg text-khaki-dark mb-16 max-w-2xl mx-auto">
-          We partner with industry-leading technology providers to deliver best-in-class automation solutions.
+          We collaborate with universities, hardware labs, and security advisors to keep TinySentinel validated, efficient, and ready for industrial deployments.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

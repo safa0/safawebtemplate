@@ -48,7 +48,7 @@ export function BenefitsSection() {
             Six Key Benefits
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Intelligent automation transforms every aspect of your business
+            On-device intrusion detection strengthens privacy, resilience, and compliance for IIoT.
           </p>
         </div>
 
@@ -90,25 +90,25 @@ export function BenefitsSection() {
                 Unified Benefits
               </h3>
               <p className="text-lg text-khaki-light leading-relaxed mb-6">
-                These benefits don&apos;t exist in isolation. Cost reduction enables reinvestment in employee development. Improved accuracy builds customer trust. Greater capacity allows strategic focus. The synergistic effect creates exponential business value.
+                Lightweight design enables privacy-by-default, resilience during outages, and regulatory readiness—without sacrificing latency or energy budgets.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
-                <p className="text-3xl font-bold mb-2">6-9 mo</p>
-                <p className="text-sm text-khaki-light">Break-even point</p>
+                <p className="text-3xl font-bold mb-2">&lt;10 ms</p>
+                <p className="text-sm text-khaki-light">Inference latency</p>
               </div>
               <div className="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
-                <p className="text-3xl font-bold mb-2">5+ yrs</p>
-                <p className="text-sm text-khaki-light">Long-term value</p>
+                <p className="text-3xl font-bold mb-2">&lt;256 KB</p>
+                <p className="text-sm text-khaki-light">Model footprint target</p>
               </div>
               <div className="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
-                <p className="text-3xl font-bold mb-2">∞</p>
-                <p className="text-sm text-khaki-light">Scalability</p>
+                <p className="text-3xl font-bold mb-2">Local</p>
+                <p className="text-sm text-khaki-light">Data processing</p>
               </div>
               <div className="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
-                <p className="text-3xl font-bold mb-2">100%</p>
-                <p className="text-sm text-khaki-light">Process improvement</p>
+                <p className="text-3xl font-bold mb-2">Offline</p>
+                <p className="text-sm text-khaki-light">Coverage ready</p>
               </div>
             </div>
           </div>

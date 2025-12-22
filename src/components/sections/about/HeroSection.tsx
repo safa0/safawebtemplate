@@ -49,11 +49,11 @@ export function HeroSection() {
         </div>
 
         <h1 className="about-hero-headline font-serif text-5xl md:text-7xl lg:text-8xl leading-tight mb-8 text-earth">
-          Pioneers in Enterprise Automation
+          Pioneers in Lightweight IDS
         </h1>
 
         <p className="about-hero-description text-lg md:text-xl text-khaki-dark max-w-2xl mx-auto leading-relaxed">
-          Since 2020, we have been at the forefront of intelligent automation, helping enterprises transform their operations through cutting-edge RPA and AI integration solutions.
+          Rooted in research at Högskolan i Skövde and Mälardalen University, we build on-device intrusion detection that brings ML security to microcontroller-class IIoT hardware.
         </p>
       </div>
     </section>

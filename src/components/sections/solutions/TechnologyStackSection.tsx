@@ -13,22 +13,22 @@ interface RpaPlatform {
 
 const rpaPlatforms: RpaPlatform[] = [
   {
-    name: "UiPath",
-    description: "Cloud-native RPA platform for enterprise automation",
+    name: "TinySentinel SDK",
+    description: "Embeddable IDS runtime optimized for microcontroller-class hardware",
+    color: "bg-amber-50",
+    features: ["<256 KB footprint target", "Deterministic latency", "Telemetry-light logging", "Failsafe behaviors"],
+  },
+  {
+    name: "Feature Lab",
+    description: "Protocol-aware feature engineering tuned for IIoT traffic and sensor data",
     color: "bg-blue-50",
-    features: ["Low-code design", "AI-powered", "Cloud-native", "Enterprise scale"],
+    features: ["Protocol-specific featurization", "Quantization-aware training", "Attack replay datasets", "Privacy-first processing"],
   },
   {
-    name: "Blue Prism",
-    description: "Intelligent automation platform with secure architecture",
-    color: "bg-indigo-50",
-    features: ["Secure infrastructure", "Digital workforce", "Process analytics", "Compliance ready"],
-  },
-  {
-    name: "Automation Anywhere",
-    description: "Intelligent RPA platform with cognitive AI integration",
-    color: "bg-purple-50",
-    features: ["Cognitive AI", "Bot marketplace", "Cloud and on-prem", "Advanced analytics"],
+    name: "Validation Suite",
+    description: "Hardware-in-the-loop testing, attack simulation, and dashboards for operators",
+    color: "bg-green-50",
+    features: ["Attack scenario playbooks", "Latency/energy profiling", "Alert dashboards", "Compliance evidence packs"],
   },
 ];
 
@@ -85,10 +85,10 @@ export function TechnologyStackSection() {
         {/* Section Header */}
         <div className="mb-16 max-w-2xl">
           <h2 className="tech-stack-title font-serif text-5xl md:text-6xl text-earth mb-4">
-            RPA Platforms We Master
+            Technology We Deliver
           </h2>
           <p className="text-xl text-gray-600">
-            Our team has deep expertise in the leading enterprise automation platforms
+            Our stack keeps ML-based intrusion detection ultra-lightweight while fitting industrial requirements.
           </p>
         </div>
 
@@ -138,10 +138,10 @@ export function TechnologyStackSection() {
         {/* Integration Info */}
         <div className="bg-white rounded-2xl p-8 md:p-12 border border-khaki-light">
           <h3 className="font-serif text-2xl text-earth mb-4">
-            Multi-Platform Expertise
+            Built for Constrained Hardware
           </h3>
           <p className="text-gray-700 leading-relaxed">
-            We don&apos;t limit ourselves to a single platform. Our agnostic approach means we select the best tool for your specific business needs, whether you require on-premise deployment, cloud-native solutions, or a hybrid approach. Our architects evaluate your requirements against platform capabilities to ensure optimal fit, cost-efficiency, and long-term scalability.
+            We prioritize MCU realities—limited RAM/flash, tight timing, and intermittent connectivity. Every component is designed for privacy-first, low-energy, real-time operation so security doesn&apos;t sacrifice uptime.
           </p>
         </div>
       </div>

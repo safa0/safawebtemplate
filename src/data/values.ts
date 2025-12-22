@@ -12,23 +12,23 @@ export interface Value {
 
 export const values: Value[] = [
   {
-    title: "Innovation",
-    description: "We constantly push the boundaries of what's possible in automation, leveraging the latest AI and RPA technologies to deliver cutting-edge solutions.",
-    icon: "🚀",
+    title: "Privacy-First Security",
+    description: "Data stays on the device whenever possible—reducing exposure and aligning with privacy-by-design principles.",
+    icon: "🔒",
   },
   {
-    title: "Excellence",
-    description: "Every project receives our unwavering commitment to quality, precision, and delivering results that exceed expectations.",
-    icon: "⭐",
+    title: "Resilience by Design",
+    description: "Industrial environments demand robustness. We engineer for uptime, deterministic performance, and graceful failure modes.",
+    icon: "⚙️",
   },
   {
-    title: "Partnership",
-    description: "We view our clients as partners. Your success is our success, and we're committed to your long-term transformation journey.",
-    icon: "🤝",
+    title: "Low-Footprint Engineering",
+    description: "Every byte, millisecond, and milliwatt matters. We obsess over efficiency to make ML viable on MCUs.",
+    icon: "📏",
   },
   {
-    title: "Results",
-    description: "We measure ourselves by the tangible impact we deliver. ROI, efficiency gains, and operational excellence are at the heart of everything we do.",
-    icon: "📈",
+    title: "Research-Led Impact",
+    description: "Rooted in academic research and validated with industry partners, we move fast while preserving scientific rigor.",
+    icon: "🔬",
   },
 ];

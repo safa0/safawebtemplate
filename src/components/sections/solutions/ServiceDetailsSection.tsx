@@ -61,10 +61,10 @@ export function ServiceDetailsSection() {
         {/* Section Header */}
         <div className="mb-20">
           <h2 className="font-serif text-5xl md:text-6xl text-earth mb-4">
-            Our 4-Step Solution Framework
+            Our On-Device IDS Framework
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl">
-            Each service in our automation framework is designed to deliver maximum value and ensure successful implementation
+            Each phase keeps detection accurate while respecting microcontroller limits, regulatory expectations, and operational resilience.
           </p>
         </div>
 
@@ -108,21 +108,21 @@ export function ServiceDetailsSection() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="text-5xl font-serif font-bold text-khaki mb-2">
-                300%
+                98.7%
               </div>
-              <p className="text-gray-700">Average ROI within first year</p>
+              <p className="text-gray-700">Detection accuracy in bench tests</p>
             </div>
             <div>
               <div className="text-5xl font-serif font-bold text-khaki mb-2">
-                90%
+                &lt;10 ms
               </div>
-              <p className="text-gray-700">Reduction in manual errors</p>
+              <p className="text-gray-700">Inference latency budget</p>
             </div>
             <div>
               <div className="text-5xl font-serif font-bold text-khaki mb-2">
-                6-12
+                &lt;256 KB
               </div>
-              <p className="text-gray-700">Weeks to full deployment</p>
+              <p className="text-gray-700">Model footprint target</p>
             </div>
           </div>
         </div>

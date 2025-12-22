@@ -95,7 +95,7 @@ export function ContactSection() {
             Get in Touch
           </h1>
           <p className="contact-hero-description text-lg md:text-xl text-khaki-dark max-w-2xl mx-auto leading-relaxed">
-            Ready to transform your operations? Let&apos;s discuss how LambdaFlow™ can help you achieve operational excellence through intelligent automation.
+            Ready to secure your IIoT devices with on-device intrusion detection? Let&apos;s discuss how TinySentinel™ can fit your hardware, compliance, and uptime needs.
           </p>
         </div>
 
@@ -311,23 +311,23 @@ export function ContactSection() {
             {/* Additional Info Card */}
             <div className="mt-12 p-8 bg-khaki-light rounded-2xl border-2 border-khaki">
               <h3 className="font-serif text-2xl text-earth mb-4">
-                Free Automation Assessment
+                On-Device IDS Strategy Call
               </h3>
               <p className="text-khaki-dark mb-4">
-                Schedule a 45-minute consultation with our experts to identify your highest-ROI automation opportunities.
+                Schedule a 45-minute session to map threats, hardware limits, and validation paths for TinySentinel on your devices.
               </p>
               <ul className="space-y-2 text-khaki-dark">
                 <li className="flex items-start gap-2">
                   <span className="text-earth mt-1">✓</span>
-                  <span>Process review and opportunity analysis</span>
+                  <span>Device and protocol review with footprint targets</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-earth mt-1">✓</span>
-                  <span>ROI calculation and financial modeling</span>
+                  <span>Threat scenarios and response expectations</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-earth mt-1">✓</span>
-                  <span>Customized implementation roadmap</span>
+                  <span>Customized validation and deployment roadmap</span>
                 </li>
               </ul>
             </div>
@@ -337,4 +337,3 @@ export function ContactSection() {
     </section>
   );
 }
-

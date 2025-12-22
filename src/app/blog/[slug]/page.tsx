@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 
   return {
-    title: `${post.title} - LambdaFlow™`,
+    title: `${post.title} - TinySentinel™`,
     description: post.excerpt,
     openGraph: {
       title: post.title,
@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'LambdaFlow™',
+      name: 'TinySentinel™',
       logo: {
         '@type': 'ImageObject',
         url: 'https://your-domain.com/logo.png',

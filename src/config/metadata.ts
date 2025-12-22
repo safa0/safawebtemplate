@@ -20,49 +20,49 @@ interface PageMetadata {
  */
 export const pageMetadata: Record<string, PageMetadata> = {
   home: {
-    title: "Enterprise Automation Solutions",
-    description: "Transform your operations with LambdaFlow™ - the intelligent automation platform for enterprise. Reduce costs, increase efficiency, and scale with confidence.",
-    keywords: ["enterprise automation", "RPA", "intelligent automation", "process automation", "workflow automation"],
+    title: "TinySentinel™ | On-Device Intrusion Detection for IIoT",
+    description: "Lightweight AI security that runs directly on microcontroller-class IIoT hardware. Real-time anomaly detection without cloud dependency.",
+    keywords: ["tinyml ids", "on-device intrusion detection", "iiot security", "iot anomaly detection", "embedded security"],
   },
   about: {
-    title: "About LambdaFlow™ | Enterprise Automation Leaders",
-    description: "Learn about LambdaFlow™ - pioneers in enterprise automation since 2020. Meet our leadership team and discover how we're transforming operations through intelligent automation.",
-    keywords: ["about LambdaFlow", "enterprise automation", "RPA leaders", "automation company", "company story"],
+    title: "About TinySentinel™ | Lightweight AI Security",
+    description: "Meet the team behind TinySentinel—research-driven engineers delivering microcontroller-ready intrusion detection for industrial IoT.",
+    keywords: ["TinySentinel", "tinyml security", "on-device ids", "iiot cybersecurity", "team"],
   },
   contact: {
-    title: "Contact Us | LambdaFlow™ - Get in Touch",
-    description: "Get in touch with LambdaFlow™ to discuss your automation needs. Schedule a free consultation and discover how we can transform your operations.",
-    keywords: ["contact LambdaFlow", "automation consultation", "get in touch", "schedule meeting", "automation assessment"],
+    title: "Contact Us | TinySentinel™ - Schedule a Demo",
+    description: "Talk with the TinySentinel team about on-device intrusion detection for your IIoT devices. Book a demo or request a validation workshop.",
+    keywords: ["contact TinySentinel", "iiot security demo", "on-device ids consultation", "book demo"],
   },
   blog: {
-    title: "Automation Insights & Best Practices Blog",
-    description: "Expert insights on enterprise automation, RPA, and AI. Learn best practices, case studies, and industry trends from the LambdaFlow™ team.",
-    keywords: ["automation blog", "RPA insights", "automation best practices", "enterprise automation articles", "AI automation"],
+    title: "TinySentinel Insights | Lightweight Security & TinyML",
+    description: "Research notes and perspectives on tinyML intrusion detection, embedded cybersecurity, and industrial IoT resilience from the TinySentinel team.",
+    keywords: ["tinyml blog", "iot security insights", "embedded anomaly detection", "iiot security research"],
   },
   solutions: {
-    title: "Automation Solutions | RPA & AI-Powered Workflows",
-    description: "Comprehensive automation solutions powered by RPA, AI, and intelligent workflows. Transform your enterprise operations with LambdaFlow™.",
-    keywords: ["automation solutions", "RPA solutions", "AI workflow automation", "enterprise automation platform", "intelligent automation"],
+    title: "Technology | TinySentinel On-Device IDS",
+    description: "Discover TinySentinel’s microcontroller-ready IDS pipeline: requirements mapping, feature adaptation, firmware optimization, and field validation.",
+    keywords: ["on-device ids", "tinyml intrusion detection", "iiot security technology", "embedded ml security"],
   },
   industries: {
-    title: "Industry-Specific Automation Solutions",
-    description: "Tailored automation solutions for Financial Services, Healthcare, Manufacturing, Retail, and Professional Services. Industry expertise meets intelligent automation.",
-    keywords: ["industry automation", "financial automation", "healthcare automation", "manufacturing automation", "retail automation"],
+    title: "Industries | Securing Industrial IoT & Edge Platforms",
+    description: "How TinySentinel protects industrial manufacturing, system integrators, edge platform vendors, energy and critical infrastructure, and security partners.",
+    keywords: ["iiot industries", "industrial security", "edge device security", "critical infrastructure iot", "iot partners"],
   },
   "why-automate": {
-    title: "Why Automate? | Benefits & ROI of Enterprise Automation",
-    description: "Discover the transformative benefits of enterprise automation: cost reduction, improved accuracy, scalability, and faster time-to-market. Calculate your ROI.",
-    keywords: ["why automate", "automation benefits", "automation ROI", "cost reduction", "process efficiency"],
+    title: "Why On-Device IDS? | TinySentinel Benefits & Proof",
+    description: "Understand the case for on-device intrusion detection: privacy, low latency, regulatory readiness, and resilience for resource-constrained IIoT hardware.",
+    keywords: ["on-device ids benefits", "iiot security roi", "tinyml ids value", "embedded security"],
   },
   "how-we-work": {
-    title: "Our Methodology | How We Deliver Automation Excellence",
-    description: "Our proven 5-step methodology ensures successful automation implementation: Discover, Design, Develop, Deploy, and Deliver. Partner with confidence.",
-    keywords: ["automation methodology", "implementation process", "automation delivery", "project methodology", "automation approach"],
+    title: "Methodology | TinySentinel Validation Framework",
+    description: "Our research-led delivery: threat scoping, feature/model adaptation, firmware optimization, and real-hardware validation with compliance evidence.",
+    keywords: ["tinyml methodology", "iot security process", "ids validation", "embedded model deployment"],
   },
   privacy: {
-    title: "Privacy Policy | LambdaFlow™",
-    description: "Learn how LambdaFlow™ collects, uses, and protects your personal information. Our commitment to privacy and data security.",
-    keywords: ["privacy policy", "data protection", "privacy practices", "data security", "information security"],
+    title: "Privacy Policy | TinySentinel™",
+    description: "Learn how TinySentinel™ handles contact details and demo information while prioritizing security and privacy.",
+    keywords: ["privacy policy", "data protection", "iot security", "privacy practices"],
   },
 };
 
@@ -70,9 +70,9 @@ export const pageMetadata: Record<string, PageMetadata> = {
  * Default metadata values
  */
 const defaults = {
-  siteName: "LambdaFlow™",
+  siteName: "TinySentinel™",
   defaultImage: "/og-image.png",
-  twitterHandle: "@lambdaflow",
+  twitterHandle: "@tinysentinel",
 };
 
 /**

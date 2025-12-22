@@ -13,28 +13,28 @@ interface Statistic {
 
 const statistics: Statistic[] = [
   {
-    value: 300,
+    value: 99,
     unit: "%",
-    label: "Average ROI",
-    description: "Return on investment within 12 months",
-  },
-  {
-    value: 50,
-    unit: "%",
-    label: "Manual Work Reduction",
-    description: "40-60% reduction in manual processes",
-  },
-  {
-    value: 95,
-    unit: "%",
-    label: "Error Reduction",
-    description: "Elimination of human errors and compliance issues",
+    label: "Detection Accuracy (bench)",
+    description: "Lightweight models tuned for IIoT attack scenarios",
   },
   {
     value: 10,
-    unit: "x",
-    label: "Capacity Increase",
-    description: "Processing capacity multiplication",
+    unit: "ms",
+    label: "Latency Budget",
+    description: "Inference stays within control loop constraints",
+  },
+  {
+    value: 256,
+    unit: "KB",
+    label: "Footprint Target",
+    description: "Fits MCU-class devices without extra hardware",
+  },
+  {
+    value: 35,
+    unit: "%",
+    label: "Energy Savings",
+    description: "Versus cloud offload and heavier IDS options",
   },
 ];
 
@@ -156,7 +156,7 @@ export function StatisticsSection() {
         {/* Bottom insight */}
         <div className="mt-16 md:mt-24 bg-gradient-to-r from-earth/5 to-khaki/5 rounded-2xl border border-earth/10 p-8 md:p-12">
           <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto">
-            <span className="font-semibold text-earth">Real Impact:</span> Organizations that implement intelligent automation see productivity gains within the first month and break-even within 6-9 months. The benefits compound over time as automation spreads across your organization.
+            <span className="font-semibold text-earth">Real Impact:</span> On-device intrusion detection preserves uptime, reduces data exposure, and keeps alerts flowing even when connectivity drops—critical for industrial environments.
           </p>
         </div>
       </div>

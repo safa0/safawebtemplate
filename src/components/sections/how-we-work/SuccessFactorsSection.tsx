@@ -71,7 +71,7 @@ const factors: SuccessFactor[] = [
     title: "Skilled Team & Support",
     description: "Having the right expertise and ongoing support ensures success and continuous improvement",
     elements: [
-      "Certified automation experts",
+      "Embedded ML engineers",
       "Dedicated support team",
       "Knowledge base",
       "Regular health checks",
@@ -184,10 +184,10 @@ export function SuccessFactorsSection() {
                 Why These Factors Matter
               </h3>
               <p className="text-khaki-light text-lg leading-relaxed mb-6">
-                Automation technology is only 30% of a successful transformation. The remaining 70% comes from people, processes, and proper governance. We&apos;ve learned this through hundreds of implementations, and it&apos;s embedded in our methodology.
+                On-device security is only 30% about the model. The remaining 70% is about people, processes, and governance—aligning OT teams, compliance, and engineering to keep detection reliable.
               </p>
               <p className="text-khaki-light/90 text-base">
-                We don&apos;t just implement automation&mdash;we guide you through organizational change to ensure sustained success and competitive advantage.
+                We don&apos;t just drop a model into firmware&mdash;we guide you through operational change to ensure sustained, verifiable security.
               </p>
             </div>
 
@@ -195,21 +195,21 @@ export function SuccessFactorsSection() {
               <div className="bg-white/10 backdrop-blur border border-white/20 rounded-lg p-6">
                 <p className="text-3xl font-bold mb-2">95%</p>
                 <p className="text-khaki-light text-sm">
-                  Of our successful projects had strong executive sponsorship
+                  Of successful pilots hit latency and footprint targets with aligned teams
                 </p>
               </div>
 
               <div className="bg-white/10 backdrop-blur border border-white/20 rounded-lg p-6">
                 <p className="text-3xl font-bold mb-2">88%</p>
                 <p className="text-khaki-light text-sm">
-                  Achieved or exceeded ROI targets with proper change management
+                  Achieved detection goals when OT + security co-owned the rollout
                 </p>
               </div>
 
               <div className="bg-white/10 backdrop-blur border border-white/20 rounded-lg p-6">
                 <p className="text-3xl font-bold mb-2">92%</p>
                 <p className="text-khaki-light text-sm">
-                  User adoption rate when all success factors are in place
+                  Operator adoption when runbooks and governance were in place
                 </p>
               </div>
             </div>

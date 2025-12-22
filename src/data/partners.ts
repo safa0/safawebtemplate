@@ -12,33 +12,33 @@ export interface Partner {
 
 export const partners: Partner[] = [
   {
-    name: "UiPath",
-    category: "RPA Platform",
-    description: "Leading enterprise RPA platform powering our automation solutions",
+    name: "Högskolan i Skövde",
+    category: "Research Partner",
+    description: "Academic research roots in lightweight ML for intrusion detection",
   },
   {
-    name: "OpenAI",
-    category: "AI & LLM",
-    description: "Advanced AI capabilities for intelligent automation workflows",
+    name: "Mälardalen University",
+    category: "Embedded AI & IoT",
+    description: "Co-developed optimized models for microcontroller-class devices",
   },
   {
-    name: "AWS",
-    category: "Cloud Infrastructure",
-    description: "Secure and scalable cloud infrastructure for our solutions",
+    name: "Industrial Labs",
+    category: "Hardware Validation",
+    description: "Board-level testing and firmware integration for IIoT targets",
   },
   {
-    name: "Microsoft",
-    category: "Enterprise Integration",
-    description: "Deep integration with Microsoft enterprise ecosystem",
+    name: "IEEE Submission",
+    category: "Peer Review",
+    description: "Conference paper under review covering refined model performance",
   },
   {
-    name: "Salesforce",
-    category: "CRM Integration",
-    description: "Seamless Salesforce automation and integration capabilities",
+    name: "Security Advisors",
+    category: "Regulatory & FTO",
+    description: "Guiding freedom-to-operate and CRA/NIS2 alignment",
   },
   {
-    name: "Databricks",
-    category: "Data & Analytics",
-    description: "Advanced data processing for intelligent automation insights",
+    name: "Industrial Integrators",
+    category: "Pilot Partners",
+    description: "Early adopters validating TinySentinel in production-like IIoT settings",
   },
 ];

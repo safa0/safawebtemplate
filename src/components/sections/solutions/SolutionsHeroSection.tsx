@@ -55,27 +55,27 @@ export function SolutionsHeroSection() {
         <div className="flex flex-col justify-center">
           <div className="mb-6">
             <h2 className="solutions-hero-subtitle text-khaki-dark font-serif text-lg uppercase tracking-widest">
-              Comprehensive Solutions
+              Microcontroller-Ready Security
             </h2>
           </div>
 
           <h1 className="solutions-hero-title font-serif text-6xl md:text-7xl lg:text-8xl leading-tight mb-8 text-earth">
-            Our Solutions
+            On-Device IDS Technology
           </h1>
 
           <p className="solutions-hero-description text-xl text-gray-700 leading-relaxed max-w-xl mb-8">
-            From process discovery to enterprise-wide automation, LambdaFlow delivers end-to-end automation solutions designed to maximize ROI, minimize risk, and drive measurable business outcomes.
+            From threat scoping to firmware optimization, TinySentinel delivers an IDS pipeline purpose-built for resource-constrained IIoT hardware—real-time detection without cloud dependence.
           </p>
 
           <div className="flex items-center gap-6">
             <div className="flex flex-col">
-              <span className="text-4xl font-serif font-bold text-earth">500+</span>
-              <span className="text-sm text-gray-600">Processes Automated</span>
+              <span className="text-4xl font-serif font-bold text-earth">98.7%</span>
+              <span className="text-sm text-gray-600">Detection Accuracy (bench)</span>
             </div>
             <div className="h-12 w-px bg-khaki"></div>
             <div className="flex flex-col">
-              <span className="text-4xl font-serif font-bold text-earth">2M+</span>
-              <span className="text-sm text-gray-600">Hours Saved</span>
+              <span className="text-4xl font-serif font-bold text-earth">&lt;256 KB</span>
+              <span className="text-sm text-gray-600">Model Footprint</span>
             </div>
           </div>
         </div>
@@ -83,8 +83,8 @@ export function SolutionsHeroSection() {
         {/* Right Image */}
         <div className="solutions-hero-image relative h-96 md:h-full min-h-[500px] rounded-2xl overflow-hidden shadow-2xl">
           <Image
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
-            alt="Automation Solutions"
+            src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&q=80"
+            alt="On-Device Intrusion Detection"
             fill
             className="object-cover"
           />

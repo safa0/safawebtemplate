@@ -54,11 +54,11 @@ export function CTASection() {
     >
       <div className="max-w-4xl w-full text-center">
         <h2 className="about-cta-title font-serif text-5xl md:text-7xl mb-8 text-earth">
-          Ready to Transform Your Operations?
+          Ready to Secure Your IIoT?
         </h2>
 
         <p className="about-cta-content text-xl md:text-2xl text-khaki-dark mb-12 leading-relaxed">
-          Let&apos;s explore how LambdaFlow™ can help you achieve operational excellence through intelligent automation. Schedule a consultation with our team today.
+          Let&apos;s explore how TinySentinel™ can bring on-device intrusion detection to your hardware while meeting privacy, latency, and compliance needs. Schedule a consultation with our team today.
         </p>
 
         <div className="about-cta-button space-y-4 md:space-y-0 md:space-x-6 flex flex-col md:flex-row justify-center items-center">
@@ -72,7 +72,7 @@ export function CTASection() {
             href="/why-automate"
             className="inline-block px-12 py-4 bg-khaki-light text-earth rounded-full text-lg font-semibold border-2 border-earth hover:bg-earth hover:text-white transition-all duration-300"
           >
-            Learn More
+            Why On-Device IDS
           </Link>
         </div>
 
@@ -84,19 +84,19 @@ export function CTASection() {
             <div>
               <p className="text-sm text-khaki-dark mb-2">Email</p>
               <a
-                href="mailto:hello@lambdaflow.com"
+                href="mailto:contact@tinysentinel.ai"
                 className="text-xl font-semibold text-earth hover:text-accent transition-colors"
               >
-                hello@lambdaflow.com
+                contact@tinysentinel.ai
               </a>
             </div>
             <div>
               <p className="text-sm text-khaki-dark mb-2">Phone</p>
               <a
-                href="tel:+1-800-AUTOMATE"
+                href="tel:+46700000000"
                 className="text-xl font-semibold text-earth hover:text-accent transition-colors"
               >
-                +1 (800) AUTO-MATE
+                +46 (0)70 000 0000
               </a>
             </div>
           </div>

@@ -79,8 +79,7 @@ export function IndustriesCTASection() {
 
         {/* Subheading */}
         <p className="industries-cta-subheading text-lg md:text-xl text-gray-700 mb-12 max-w-2xl mx-auto">
-          Our automation expertise spans across all sectors. Let&apos;s explore how we can
-          transform your specific operations with custom automation solutions.
+          TinySentinel adapts to any constrained device fleet. Let&apos;s explore how on-device IDS can align with your hardware, protocols, and compliance demands.
         </p>
 
         {/* Features Grid */}
@@ -89,7 +88,7 @@ export function IndustriesCTASection() {
             <div className="text-3xl mb-3">🎯</div>
             <h4 className="font-serif text-lg text-earth mb-2">Custom Assessment</h4>
             <p className="text-sm text-gray-600">
-              Industry-specific automation opportunities analysis
+              Device and protocol review with footprint targets
             </p>
           </div>
 
@@ -97,7 +96,7 @@ export function IndustriesCTASection() {
             <div className="text-3xl mb-3">⚙️</div>
             <h4 className="font-serif text-lg text-earth mb-2">Tailored Solutions</h4>
             <p className="text-sm text-gray-600">
-              Automation blueprints designed for your sector
+              IDS blueprints designed for your environment and constraints
             </p>
           </div>
 
@@ -105,21 +104,20 @@ export function IndustriesCTASection() {
             <div className="text-3xl mb-3">📊</div>
             <h4 className="font-serif text-lg text-earth mb-2">Proven ROI</h4>
             <p className="text-sm text-gray-600">
-              Track record of measurable results in your industry
+              Evidence-driven validation and reporting for stakeholders
             </p>
           </div>
         </div>
 
         {/* Primary CTA Button */}
         <button className="industries-cta-button px-10 py-4 bg-earth text-white rounded-full font-semibold text-lg hover:bg-khaki-dark hover:-translate-y-1 transition-all duration-300 shadow-lg inline-flex items-center gap-3 mb-8">
-          Schedule Your Free Industry Consultation
+          Schedule Your IDS Consultation
           <span>→</span>
         </button>
 
         {/* Secondary Info */}
         <p className="text-gray-600">
-          Get a personalized assessment of automation opportunities for your business.
-          No obligation, just actionable insights.
+          Get a personalized plan for integrating on-device detection into your products—no obligation, just actionable guidance.
         </p>
       </div>
     </section>

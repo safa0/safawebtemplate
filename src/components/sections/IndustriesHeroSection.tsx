@@ -66,13 +66,11 @@ export function IndustriesHeroSection() {
         </h1>
 
         <p className="industries-hero-subtitle text-xl md:text-2xl text-khaki-dark mb-8">
-          Sector-specific expertise in enterprise automation
+          Sector-specific expertise in on-device intrusion detection
         </p>
 
         <p className="industries-hero-description text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          We deliver industry-tailored automation solutions with deep domain knowledge.
-          From financial services to healthcare, manufacturing to retail, our proven
-          methodologies drive measurable ROI across sectors.
+          We tailor TinySentinel to the realities of industrial manufacturing, energy, edge platform vendors, system integrators, and security partners—bringing lightweight detection to constrained hardware in each environment.
         </p>
       </div>
     </section>

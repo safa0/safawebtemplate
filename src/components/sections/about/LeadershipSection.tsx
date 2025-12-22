@@ -48,7 +48,7 @@ export function LeadershipSection() {
           Meet Our Leadership
         </h2>
         <p className="text-xl text-khaki-dark mb-16 max-w-2xl">
-          Experienced visionaries dedicated to driving transformation through intelligent automation.
+          Researchers, engineers, and advisors committed to bringing trustworthy on-device intrusion detection to industrial hardware.
         </p>
 
         <div className="grid md:grid-cols-2 gap-12">

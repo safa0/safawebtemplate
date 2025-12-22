@@ -63,20 +63,20 @@ export function CompanyStorySection() {
           <div>
             <h3 className="text-2xl font-semibold text-earth mb-6">Founded in {siteConfig.company.foundedYear}</h3>
             <p className="text-lg text-khaki-dark leading-relaxed mb-6">
-              LambdaFlow™ was born from a vision to revolutionize how enterprises approach automation. Our founders, with over 50 years of combined experience in enterprise technology and process optimization, recognized a critical gap in the market.
+              TinySentinel was born from research proving that intrusion detection can run directly on microcontroller-class IIoT devices. Our founders combine academic rigor with industrial software experience to close the gap between lab results and field-ready security.
             </p>
             <p className="text-lg text-khaki-dark leading-relaxed">
-              We set out to build more than just an automation solution—we created a mission-driven organization committed to delivering tangible, measurable impact for our clients.
+              We are building more than an IDS engine—we are enabling manufacturers, integrators, and critical infrastructure operators to embed trustworthy security without sacrificing latency, energy, or privacy.
             </p>
           </div>
 
           <div>
             <h3 className="text-2xl font-semibold text-earth mb-6">Our Mission</h3>
             <p className="text-lg text-khaki-dark leading-relaxed mb-6">
-              To empower enterprises with intelligent automation that seamlessly integrates human expertise with AI capabilities, enabling organizations to achieve operational excellence and unlock new growth opportunities.
+              Deliver resilient, privacy-first detection on constrained devices—keeping sensitive data local while meeting regulatory expectations and protecting uptime.
             </p>
             <p className="text-lg text-khaki-dark leading-relaxed">
-              We believe that automation should enhance human potential, not replace it. Every solution we deliver is designed to amplify what your teams can achieve.
+              We believe security must fit the device, not the other way around. Every feature is measured against memory, latency, and operational safety.
             </p>
           </div>
         </div>
@@ -84,19 +84,19 @@ export function CompanyStorySection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
           <div className="story-stat">
             <div className="text-4xl md:text-5xl font-bold text-earth mb-2">{siteConfig.stats.processesAutomated}</div>
-            <p className="text-sm md:text-base text-khaki-dark font-medium">Processes Automated</p>
+            <p className="text-sm md:text-base text-khaki-dark font-medium">Board Targets</p>
           </div>
           <div className="story-stat">
             <div className="text-4xl md:text-5xl font-bold text-earth mb-2">{siteConfig.stats.hoursSaved}</div>
-            <p className="text-sm md:text-base text-khaki-dark font-medium">Hours Saved</p>
+            <p className="text-sm md:text-base text-khaki-dark font-medium">Detection Accuracy</p>
           </div>
           <div className="story-stat">
             <div className="text-4xl md:text-5xl font-bold text-earth mb-2">{siteConfig.stats.averageROI}</div>
-            <p className="text-sm md:text-base text-khaki-dark font-medium">Average ROI</p>
+            <p className="text-sm md:text-base text-khaki-dark font-medium">Model Footprint</p>
           </div>
           <div className="story-stat">
             <div className="text-4xl md:text-5xl font-bold text-earth mb-2">{siteConfig.stats.enterpriseClients}</div>
-            <p className="text-sm md:text-base text-khaki-dark font-medium">Enterprise Clients</p>
+            <p className="text-sm md:text-base text-khaki-dark font-medium">Pilot Partners</p>
           </div>
         </div>
       </div>
