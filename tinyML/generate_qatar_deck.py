@@ -207,20 +207,55 @@ COLOR_BG = RGBColor(0xE8, 0xDC, 0xC4)    # khaki-light
 COLOR_TITLE = RGBColor(0x8B, 0x73, 0x55) # khaki-dark
 COLOR_TEXT = RGBColor(0x33, 0x33, 0x33)  # Dark Grey
 
+def delete_all_slides(prs):
+    # Access the xml element containing the slide references
+    xml_slides = prs.slides._sldIdLst
+    slides = list(xml_slides)
+    prev_len = len(slides)
+    for s in slides:
+        xml_slides.remove(s)
+    print(f"Removed {prev_len} existing slides from template.")
+
 def create_pptx(filename):
-    prs = Presentation()
+    # Use the original file as a template to ensure Keynote compatibility
+    template_path = "Terneshk_PitchDeckMain.pptx"
+    if os.path.exists(template_path):
+        print(f"Using {template_path} as base template.")
+        prs = Presentation(template_path)
+        delete_all_slides(prs)
+    else:
+        print("Warning: Template not found, using default blank presentation.")
+        prs = Presentation()
     
     for slide_data in SLIDES:
-        # Use Title and Content layout (usually index 1)
-        # For title slide (first one), maybe use index 0
+        # Use Title and Content layout
+        # We need to be careful with layout indices if the template is custom.
+        # Usually: 0=Title Slide, 1=Title and Content.
+        # We'll try to guess based on name if possible, or fall back to indices.
+        
         layout_idx = 1
+        # Try to find a 'Title and Content' layout
+        for i, layout in enumerate(prs.slide_layouts):
+            if 'content' in layout.name.lower():
+                layout_idx = i
+                break
+        
+        # Override for first/last slide (Title Slide)
         if slide_data == SLIDES[0] or slide_data == SLIDES[-1]:
-            layout_idx = 0 # Title Slide Layout
+            layout_idx = 0
+            for i, layout in enumerate(prs.slide_layouts):
+                if 'title' in layout.name.lower() and 'content' not in layout.name.lower():
+                    layout_idx = i
+                    break
             
         slide_layout = prs.slide_layouts[layout_idx]
         slide = prs.slides.add_slide(slide_layout)
         
-        # Apply Background
+        # Theme handling: The template might already have backgrounds. 
+        # We will enforce our colors only if needed, but if we use the template, 
+        # we might want to respect its master if it's correct.
+        # However, user asked for "inspired by website", so we force the Khaki/Sand colors.
+        
         background = slide.background
         fill = background.fill
         fill.solid()
@@ -237,21 +272,40 @@ def create_pptx(filename):
                 p.font.color.rgb = COLOR_TITLE
         
         # Set Content
-        if layout_idx == 0:
-            # Title Slide: Use subtitle placeholder if available
-             if len(slide.placeholders) > 1:
-                subtitle = slide.placeholders[1]
-                subtitle.text = slide_data.get('subtitle', '') + "\n\n" + "\n".join(slide_data.get('content', []))
-                for p in subtitle.text_frame.paragraphs:
+        # We need to find the body placeholder. It's not always placeholders[1].
+        body = None
+        for ph in slide.placeholders:
+            if ph.placeholder_format.idx == 1: # Standard body
+                body = ph
+            # if not found, search by type?
+            # ph.is_placeholder_type(PP_PLACEHOLDER.BODY)? (requires import)
+        
+        # Fallback heuristic: the placeholder that isn't title
+        if not body:
+             for shape in slide.placeholders:
+                if shape != slide.shapes.title:
+                    body = shape
+                    break
+
+        if body:
+            if slide_data == SLIDES[0] or slide_data == SLIDES[-1]:
+                # Title Slide Subtitle/Content
+                tf = body.text_frame
+                tf.clear()
+                text_content = slide_data.get('subtitle', '') 
+                if slide_data.get('content'):
+                    text_content += "\n\n" + "\n".join(slide_data.get('content', []))
+                
+                body.text = text_content
+                
+                for p in tf.paragraphs:
                     p.font.name = "Arial"
                     p.font.color.rgb = COLOR_TEXT
                     p.font.size = Pt(24)
-        else:
-            # Content Slide
-            if len(slide.placeholders) > 1:
-                body = slide.placeholders[1]
+            else:
+                # Regular Bullet Points
                 tf = body.text_frame
-                tf.clear() # clear default
+                tf.clear()
                 
                 for line in slide_data.get('content', []):
                     p = tf.add_paragraph()
@@ -263,9 +317,18 @@ def create_pptx(filename):
 
         # Add Speaker Notes
         if 'notes' in slide_data:
-            notes_slide = slide.notes_slide
-            notes_tf = notes_slide.notes_text_frame
-            notes_tf.text = slide_data['notes']
+            try:
+                notes_slide = slide.notes_slide
+                if notes_slide and notes_slide.notes_text_frame:
+                    notes_slide.notes_text_frame.text = slide_data['notes']
+                else:
+                    # Fallback for templates where notes_text_frame might be tricky
+                    for shape in notes_slide.shapes:
+                        if shape.has_text_frame:
+                            shape.text_frame.text = slide_data['notes']
+                            break
+            except Exception as e:
+                print(f"Warning: Could not set notes for slide: {e}")
 
     prs.save(filename)
     print(f"Saved PPTX to {filename}")
@@ -457,5 +520,5 @@ def create_html(filename):
     print(f"Saved HTML to {filename}")
 
 if __name__ == "__main__":
-    create_pptx("Terneshk_QatarWebSummit_Deck.pptx")
-    create_html("Terneshk_QatarWebSummit_Presentation.html")
+    create_pptx("LambdaIDS_QatarWebSummit_Deck.pptx")
+    create_html("LambdaIDS_QatarWebSummit_Presentation.html")
