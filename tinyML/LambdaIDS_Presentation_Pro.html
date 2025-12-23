@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LambdaIDS - Qatar Web Summit Presentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #fdfaf5;
+            --accent-primary: #8B7355;
+            --accent-secondary: #C3B091;
+            --text-dark: #2D241E;
+            --text-muted: #6B5E55;
+            --slide-width: 1280px;
+            --slide-height: 720px;
+            --transition-speed: 0.6s;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--text-dark);
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-dark);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #deck-container {
+            width: 100vw;
+            height: 56.25vw; /* 16:9 aspect ratio */
+            max-width: var(--slide-width);
+            max-height: var(--slide-height);
+            position: relative;
+            background: var(--bg-base);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            perspective: 1000px;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 5rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all var(--transition-speed) cubic-bezier(0.19, 1, 0.22, 1);
+            pointer-events: none;
+            background: linear-gradient(135deg, var(--bg-base) 0%, #fff 100%);
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+            z-index: 10;
+        }
+
+        .slide.prev {
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            margin: 0 0 1rem 0;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin: 0 0 2.5rem 0;
+        }
+
+        .content-box {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 4px solid var(--accent-secondary);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-size: 1.8rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: 800;
+        }
+
+        .slide-footer {
+            position: absolute;
+            bottom: 2rem;
+            left: 5rem;
+            right: 5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+            color: var(--accent-secondary);
+            border-top: 1px solid rgba(139, 115, 85, 0.2);
+            padding-top: 1rem;
+        }
+
+        .logo {
+            font-weight: 800;
+            letter-spacing: 0.1rem;
+            color: var(--accent-primary);
+        }
+
+        /* Title Slide Special Styling */
+        .slide-title {
+            align-items: center;
+            text-align: center;
+        }
+        .slide-title h1 {
+            font-size: 5.5rem;
+            border-bottom: none;
+        }
+        .slide-title .content-box {
+            border-left: none;
+            padding-left: 0;
+        }
+
+        /* Progress Bar */
+        #progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: var(--accent-primary);
+            width: 0%;
+            transition: width 0.3s ease;
+            z-index: 20;
+        }
+
+        /* Controls Hint */
+        #controls-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.8rem;
+            z-index: 100;
+        }
+
+        /* Speaker Notes Sync Visual */
+        #sync-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4CAF50;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div id="deck-container">
+        <!-- Slides will be injected here -->
+        <div id="progress-bar"></div>
+    </div>
+
+    <div id="controls-hint">Use Arrows to Navigate • Press 'S' for Speaker View</div>
+    <div id="sync-indicator"></div>
+
+    <script>
+        const slideData = [
+            {
+                title: "LambdaIDS",
+                subtitle: "The Immune System for the Edge",
+                content: ["Securing the Critical Infrastructure of Tomorrow with TinyML", "Autonomous, On-Device, Real-Time Anomaly Detection"],
+                isTitle: true
+            },
+            {
+                title: "The Problem",
+                subtitle: "The 'Smart' World is Critically Vulnerable",
+                content: [
+                    "75 Billion IoT devices by 2025 - massive attack surface",
+                    "Security tools are too heavy for microcontrollers",
+                    "98% of IoT traffic is currently unencrypted or vulnerable",
+                    "Critical Risk: Ransomware in hospitals, grid shutdowns"
+                ]
+            },
+            {
+                title: "Why Now?",
+                subtitle: "The Regulatory Tsunami",
+                content: [
+                    "EU Cyber Resilience Act (CRA): Mandatory for ALL connected products",
+                    "IEC 62443: Moving from 'nice-to-have' to 'must-have'",
+                    "The Market Gap: Manufacturers lack security expertise",
+                    "Compliance is now a 'License to Operate'"
+                ]
+            },
+            {
+                title: "The Solution",
+                subtitle: "LambdaIDS",
+                content: [
+                    "Autonomous On-Device AI agent for MCUs",
+                    "Real-time Anomaly Detection without cloud latency",
+                    "Ultra-Lightweight: Runs on <100KB RAM",
+                    "Built for IEC 62443 and CRA compliance"
+                ]
+            },
+            {
+                title: "How It Works",
+                subtitle: "Edge AI vs. Cloud Security",
+                content: [
+                    "Zero latency: Decisions made in milliseconds locally",
+                    "Privacy-preserving: Sensitive data never leaves the device",
+                    "Works offline: Security even in disconnected environments",
+                    "100x more energy efficient than cloud processing"
+                ]
+            },
+            {
+                title: "Market Opportunity",
+                subtitle: "A High-Growth Landscape",
+                content: [
+                    "$30B+ IoT Security Market (growing 25% YoY)",
+                    "$4B High-Value Industrial & Utility Security",
+                    "$100M Reachable Market (Nordic + MENA Critical Infra)",
+                    "Targeting: Industrial Automation, Smart Energy, Automotive"
+                ]
+            },
+            {
+                title: "Business Model",
+                subtitle: "Scalable Software & SDK",
+                content: [
+                    "B2B Licensing: Per-device fee for OEMs",
+                    "Tiered Subscription: Detection vs. Prevention + Analytics",
+                    "Paid Pilots with Tier 1 manufacturers",
+                    "High-Margin Model: 80%+ at scale"
+                ]
+            },
+            {
+                title: "Traction & Validation",
+                subtitle: "Built on Solid Foundations",
+                content: [
+                    "Key Partners: Collaboration with Combitech & RISE",
+                    "Academic Validation: Cutting-edge Embedded AI research",
+                    "Funding: Secured early grant funding (Vinnova/VFT)",
+                    "Pipeline: Engaging ABB and Siemens ecosystem"
+                ]
+            },
+            {
+                title: "Competitive Landscape",
+                subtitle: "Small, Fast, Compliant",
+                content: [
+                    "Vs. Cloud (Darktrace): We win on Speed and Size",
+                    "Vs. Legacy Firewalls: We win on Zero-Day adaptability",
+                    "Unique Edge: TinyML + IEC 62443 + <100KB footprint",
+                    "Moat: Proprietary quantization and attack datasets"
+                ]
+            },
+            {
+                title: "Roadmap",
+                subtitle: "Path to Scale 2025-2027",
+                content: [
+                    "2025: Finalize SDK v1.0 & Complete Industrial Pilots",
+                    "2025 Q4: First Commercial Deployments & Certification",
+                    "2026: Expansion to MENA region & Series A funding",
+                    "2027: Integration with Chip Vendors (ST, NXP)"
+                ]
+            },
+            {
+                title: "The Team",
+                subtitle: "Bridge Between AI and Hardware",
+                content: [
+                    "Soroush Safaei: CEO - AI & Business Strategy",
+                    "Ahmad Mostafavi: CTO - Embedded Systems Expert",
+                    "Hossein Fotouhi: Scientific Lead - Professor in IoT",
+                    "Expertise: Where Data Science meets Silicon constraints"
+                ]
+            },
+            {
+                title: "The Ask",
+                subtitle: "Join the Standard for Edge Security",
+                content: [
+                    "Raising: $500K - $1M (Seed / Pre-Seed)",
+                    "40% R&D: SDK refinement & Certification",
+                    "30% BD: Pilot execution & Partnerships",
+                    "Opportunity: Define the standard for Secure AI"
+                ]
+            },
+            {
+                title: "Contact",
+                subtitle: "Let's build a secure future together.",
+                content: [
+                    "Soroush Safaei | Ahmad Mostafavi | Hossein Fotouhi",
+                    "LambdaIDS",
+                    "www.lambdaids.se"
+                ]
+            }
+        ];
+
+        let currentSlide = 0;
+        const container = document.getElementById('deck-container');
+        const bc = new BroadcastChannel('deck_sync');
+
+        function renderSlides() {
+            slideData.forEach((data, index) => {
+                const slideDiv = document.createElement('div');
+                slideDiv.className = `slide ${index === 0 ? 'active' : ''} ${data.isTitle ? 'slide-title' : ''}`;
+                
+                let contentHtml = data.content.map(li => `<li>${li}</li>`).join('');
+                
+                slideDiv.innerHTML = `
+                    <h1>${data.title}</h1>
+                    <h2>${data.subtitle}</h2>
+                    <div class="content-box">
+                        <ul>${contentHtml}</ul>
+                    </div>
+                    <div class="slide-footer">
+                        <span class="logo">LAMBDA IDS</span>
+                        <span>Qatar Web Summit 2025</span>
+                        <span>${index + 1} / ${slideData.length}</span>
+                    </div>
+                `;
+                container.appendChild(slideDiv);
+            });
+        }
+
+        function updateSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            if (index < 0) index = 0;
+            if (index >= slides.length) index = slides.length - 1;
+
+            slides.forEach((s, i) => {
+                s.classList.remove('active', 'prev');
+                if (i === index) s.classList.add('active');
+                if (i < index) s.classList.add('prev');
+            });
+
+            currentSlide = index;
+            document.getElementById('progress-bar').style.width = `${((index + 1) / slides.length) * 100}%`;
+            
+            // Sync to BroadcastChannel
+            bc.postMessage({ type: 'slide_change', index: index });
+        }
+
+        renderSlides();
+
+        // Listen for sync from other window (Speaker Notes)
+        bc.onmessage = (event) => {
+            if (event.data.type === 'slide_change') {
+                updateSlide(event.data.index);
+            }
+        };
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+                updateSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                updateSlide(currentSlide - 1);
+            } else if (e.key.toLowerCase() === 's') {
+                window.open('LambdaIDS_Notes_Pro.html', 'Speaker Notes', 'width=800,height=600');
+            }
+        });
+    </script>
+</body>
+</html>

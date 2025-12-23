@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
             --text-color: #333333;
             --note-bg: #fff9f0;
         }
+
         body {
             margin: 0;
             padding: 0;
@@ -20,6 +22,7 @@
             height: 100vh;
             overflow: hidden;
         }
+
         #main-view {
             flex: 3;
             height: 100%;
@@ -27,6 +30,7 @@
             scroll-snap-type: y mandatory;
             background: #333;
         }
+
         #speaker-view {
             flex: 1;
             background: white;
@@ -36,6 +40,7 @@
             display: flex;
             flex-direction: column;
         }
+
         .slide-container {
             height: 100vh;
             width: 100%;
@@ -45,6 +50,7 @@
             scroll-snap-align: start;
             position: relative;
         }
+
         .slide {
             width: 90%;
             max-width: 1200px;
@@ -54,11 +60,12 @@
             padding: 4rem;
             box-sizing: border-box;
             border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
+
         h1 {
             color: var(--title-color);
             font-size: 3rem;
@@ -66,14 +73,23 @@
             border-bottom: 3px solid var(--title-color);
             padding-bottom: 0.5rem;
         }
+
         h2 {
             color: var(--title-color);
             font-size: 2rem;
             margin-top: 0;
         }
-        ul { font-size: 1.8rem; line-height: 1.6; color: var(--text-color); }
-        li { margin-bottom: 1rem; }
-        
+
+        ul {
+            font-size: 1.8rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        li {
+            margin-bottom: 1rem;
+        }
+
         .current-note {
             margin-top: 20px;
             padding: 20px;
@@ -83,6 +99,7 @@
             line-height: 1.6;
             white-space: pre-wrap;
         }
+
         .note-label {
             font-weight: bold;
             text-transform: uppercase;
@@ -90,116 +107,195 @@
             margin-bottom: 10px;
             display: block;
         }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .team-member {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--title-color);
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member h3 {
+            color: var(--title-color);
+            font-size: 1.4rem;
+            margin: 10px 0 5px 0;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .team-member .role {
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .team-tagline {
+            font-size: 1.4rem;
+            color: var(--text-color);
+            margin-top: 2rem;
+            text-align: center;
+            font-style: italic;
+        }
     </style>
 </head>
+
 <body>
     <div id="main-view">
         <!-- Slides will be injected here -->
+
         
         <div class="slide-container">
             <div class="slide">
                 <h1>LambdaIDS: The Immune System for the Edge</h1>
                 <h2>Securing the Critical Infrastructure of Tomorrow with TinyML</h2>
-                <ul><li>We enable secure, autonomous, and compliant IoT at the edge.</li><li>Contact: Soroush Safaei | Ahmad Mostafavi | Hossein Fotouhi</li></ul>
+                <ul><li>We enable secure, autonomous, and compliant IoT at the edge.</li><li>Ahmad Mostafavi | Soroush Safaei | Hossein Fotouhi</li></ul>
             </div>
         </div>
-        
+            
         <div class="slide-container">
             <div class="slide">
                 <h1>The Problem: The &#x27;Smart&#x27; World is Critically Vulnerable</h1>
                 
-                <ul><li>• Explosion of Attack Surface: 75 Billion IoT devices by 2025.</li><li>• Resource Constraints: Existing security tools (agents, firewalls) are too heavy for microcontrollers.</li><li>• The Result: 98% of IoT traffic is unencrypted or vulnerable.</li><li>• Critical Risk: Ransomware in hospitals, grid shutdowns, industrial espionage.</li></ul>
+                <ul><li>Explosion of Attack Surface: 75 Billion IoT devices by 2025.</li><li>Resource Constraints: Existing security tools (agents, firewalls) are too heavy for microcontrollers.</li><li>The Result: 98% of IoT traffic is unencrypted or vulnerable.</li><li>Critical Risk: Ransomware in hospitals, grid shutdowns, industrial espionage.</li></ul>
             </div>
         </div>
-        
+            
         <div class="slide-container">
             <div class="slide">
                 <h1>Why Now? The Regulatory Tsunami</h1>
                 
-                <ul><li>• EU Cyber Resilience Act (CRA): Mandatory cybersecurity for ALL connected products by 2025/2026.</li><li>• IEC 62443: Moving from &#x27;nice-to-have&#x27; to &#x27;must-have&#x27; for industrial compliance.</li><li>• The Market Gap: Manufacturers are entering a panic mode. They lack the expertise to build compliant security from scratch.</li><li>• Opportunity: Compliance is no longer optional—it is a license to operate.</li></ul>
+                <ul><li>EU Cyber Resilience Act (CRA): Mandatory cybersecurity for ALL connected products by 2025/2026.</li><li>IEC 62443: Moving from &#x27;nice-to-have&#x27; to &#x27;must-have&#x27; for industrial compliance.</li><li>The Market Gap: Manufacturers are entering a panic mode. They lack the expertise to build compliant security from scratch.</li><li>Opportunity: Compliance is no longer optional—it is a license to operate.</li></ul>
             </div>
         </div>
-        
+            
         <div class="slide-container">
             <div class="slide">
                 <h1>The Solution: LambdaIDS</h1>
                 
-                <ul><li>• Autonomous On-Device Security: An AI agent that lives ON the microcontroller.</li><li>• Real-time Anomaly Detection: Detects zero-day attacks instantly without cloud latency.</li><li>• Ultra-Lightweight: Runs on &lt;100KB RAM. Consumes negligible battery.</li><li>• Compliance-Ready: Built to satisfy IEC 62443 and CRA requirements out of the box.</li></ul>
+                <ul><li>Autonomous On-Device Security: An AI agent that lives ON the microcontroller.</li><li>Real-time Anomaly Detection: Detects zero-day attacks instantly without cloud latency.</li><li>Ultra-Lightweight: Runs on &lt;100KB RAM. Consumes negligible battery.</li><li>Compliance-Ready: Built to satisfy IEC 62443 and CRA requirements out of the box.</li></ul>
             </div>
         </div>
-        
+            
         <div class="slide-container">
             <div class="slide">
                 <h1>How It Works: Edge AI vs. Cloud Security</h1>
                 
-                <ul><li>• Traditional (Cloud): High latency, privacy risks, high data cost, fails offline.</li><li>• LambdaIDS (Edge): Zero latency, privacy-preserving, works offline, 100x more energy efficient.</li><li>• Tech Stack: Proprietary TinyML algorithms optimized for ARM Cortex-M and RISC-V.</li></ul>
+                <ul><li>Traditional (Cloud): High latency, privacy risks, high data cost, fails offline.</li><li>LambdaIDS (Edge): Zero latency, privacy-preserving, works offline, 100x more energy efficient.</li><li>Tech Stack: Proprietary TinyML algorithms optimized for ARM Cortex-M and RISC-V.</li></ul>
             </div>
         </div>
-        
+            
         <div class="slide-container">
             <div class="slide">
                 <h1>Market Opportunity</h1>
                 
-                <ul><li>• Total Addressable Market (TAM): $30B+ IoT Security Market (growing 25% YoY).</li><li>• Serviceable Available Market (SAM): $4B Industrial &amp; Utility IoT Security.</li><li>• Serviceable Obtainable Market (SOM): $100M (Nordic + MENA Critical Infrastructure).</li><li>• Target Segments: Industrial Automation (IIoT), Smart Energy, Automotive.</li></ul>
+                <ul><li>Total Addressable Market (TAM): $30B+ IoT Security Market (growing 25% YoY).</li><li>Serviceable Available Market (SAM): $4B Industrial &amp; Utility IoT Security.</li><li>Serviceable Obtainable Market (SOM): $100M (Nordic + MENA Critical Infrastructure).</li><li>Target Segments: Industrial Automation (IIoT), Smart Energy, Automotive.</li></ul>
             </div>
         </div>
-        
+            
         <div class="slide-container">
             <div class="slide">
                 <h1>Business Model</h1>
                 
-                <ul><li>• B2B Licensing &amp; SDK: Per-device license fee for OEMs.</li><li>• Tiered Subscription: Basic (Detection) vs. Pro (Prevention + Fleet Analytics).</li><li>• Pilot Strategy: Paid pilots with Tier 1 manufacturers to validate and customize.</li><li>• Scalability: High-margin software model (80%+ gross margin at scale).</li></ul>
+                <ul><li>B2B Licensing &amp; SDK: Per-device license fee for OEMs.</li><li>Tiered Subscription: Basic (Detection) vs. Pro (Prevention + Fleet Analytics).</li><li>Pilot Strategy: Paid pilots with Tier 1 manufacturers to validate and customize.</li><li>Scalability: High-margin software model (80%+ gross margin at scale).</li></ul>
             </div>
         </div>
-        
+            
         <div class="slide-container">
             <div class="slide">
                 <h1>Traction &amp; Validation</h1>
                 
-                <ul><li>• Key Partners: Collaboration with Combitech &amp; RISE (Research Institutes of Sweden).</li><li>• Academic Validation: Backed by cutting-edge research in Embedded AI.</li><li>• Funding: Secured early grant funding (Vinnova/VFT). Validation of tech novelty.</li><li>• Pipeline: Discussions with major players in Industrial Automation (ABB, Siemens ecosystem).</li></ul>
+                <ul><li>Key Partners: Collaboration with Combitech &amp; RISE (Research Institutes of Sweden).</li><li>Academic Validation: Backed by cutting-edge research in Embedded AI.</li><li>Funding: Secured early grant funding (Vinnova/VFT). Validation of tech novelty.</li><li>Pipeline: Discussions with major players in Industrial Automation (ABB, Siemens ecosystem).</li></ul>
             </div>
         </div>
-        
+            
         <div class="slide-container">
             <div class="slide">
                 <h1>Competitive Landscape</h1>
                 
-                <ul><li>• Cloud-Based (Darktrace, etc.): Too heavy, high latency. (LambdaIDS wins on Speed/Size).</li><li>• Embedded Legacy (Firewalls): Static rules, can&#x27;t stop zero-days. (LambdaIDS wins on Adaptability).</li><li>• The LambdaIDS Advantage: The only solution combining TinyML + IEC 62443 Compliance + &lt;100KB Footprint.</li><li>• Moat: Proprietary quantization algorithms &amp; curated attack datasets.</li></ul>
+                <ul><li>Cloud-Based (Darktrace, etc.): Too heavy, high latency. (LambdaIDS wins on Speed/Size).</li><li>Embedded Legacy (Firewalls): Static rules, can&#x27;t stop zero-days. (LambdaIDS wins on Adaptability).</li><li>The LambdaIDS Advantage: The only solution combining TinyML + IEC 62443 Compliance + &lt;100KB Footprint.</li><li>Moat: Proprietary quantization algorithms &amp; curated attack datasets.</li></ul>
             </div>
         </div>
-        
+            
         <div class="slide-container">
             <div class="slide">
                 <h1>Roadmap: Path to Scale</h1>
                 
-                <ul><li>• Q1-Q2 2025: Finalize SDK v1.0. Complete Pilot with Combitech/RISE.</li><li>• Q3-Q4 2025: First Commercial Deployments (Industrial Sector). Achieve IEC 62443 Cert.</li><li>• 2026: Expansion to MENA region. Series A for Global Scale.</li><li>• 2027: Integration with major Chip Vendors (ST, NXP).</li></ul>
+                <ul><li>Q1-Q2 2025: Finalize SDK v1.0. Complete Pilot with Combitech/RISE.</li><li>Q3-Q4 2025: First Commercial Deployments (Industrial Sector). Achieve IEC 62443 Cert.</li><li>2026: Expansion to MENA region. Series A for Global Scale.</li><li>2027: Integration with major Chip Vendors (ST, NXP).</li></ul>
             </div>
         </div>
-        
+            
         <div class="slide-container">
-            <div class="slide">
+            <div class="slide" style="justify-content: flex-start;">
                 <h1>The Team</h1>
+                <div class="team-grid">
+                    
+                <div class="team-member">
+                    <img src="ahmadMostafavi.jpeg" alt="Ahmad Mostafavi">
+                    <h3>Ahmad Mostafavi</h3>
+                    <p class="role">CEO &amp; Founder</p>
+                    <p>Deep tech expert in Embedded Systems &amp; Security.</p>
+                </div>
                 
-                <ul><li>• Soroush Safaei: Co-Founder &amp; CEO. Expertise in AI &amp; Business Strategy.</li><li>• Ahmad Mostafavi: Co-Founder &amp; CTO. Deep tech expert in Embedded Systems.</li><li>• Hossein Fotouhi: Co-Founder &amp; Scientific Lead. Professor in IoT &amp; Networks.</li><li>• Why Us: We bridge the gap between Data Science and Hardware constraints.</li></ul>
+                <div class="team-member">
+                    <img src="Soroush.jpeg" alt="Soroush Safaei">
+                    <h3>Soroush Safaei</h3>
+                    <p class="role">Co-Founder</p>
+                    <p>Expertise in AI Strategy &amp; Market Development.</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="hosseinFotouhi.jpeg" alt="Hossein Fotouhi">
+                    <h3>Hossein Fotouhi</h3>
+                    <p class="role">Co-Founder</p>
+                    <p>Associate Professor at MDU, Expert in IoT &amp; Edge Computing.</p>
+                </div>
+                
+                </div>
+                <p class="team-tagline">Why Us: We bridge the gap between AI, Hardware constraints, and Academic Innovation.</p>
             </div>
         </div>
-        
+            
         <div class="slide-container">
             <div class="slide">
                 <h1>The Ask</h1>
                 
-                <ul><li>• Seeking: $500K - $1M (Seed / Pre-Seed).</li><li>• Use of Funds:</li><li>  - 40% R&amp;D (SDK refinement, Certification).</li><li>  - 30% Business Dev (Pilot execution, Partnership management).</li><li>  - 30% Operations &amp; Legal (IP Protection).</li><li>• Opportunity: Join us in defining the standard for Edge AI Security.</li></ul>
+                <ul><li>Seeking: $500K - $1M (Seed / Pre-Seed).</li><li>Use of Funds:</li><li>40% R&amp;D (SDK refinement, Certification).</li><li>30% Business Dev (Pilot execution, Partnership management).</li><li>30% Operations &amp; Legal (IP Protection).</li><li>Opportunity: Join us in defining the standard for Edge AI Security.</li></ul>
             </div>
         </div>
-        
+            
         <div class="slide-container">
             <div class="slide">
                 <h1>Contact</h1>
                 <h2>Let&#x27;s build a secure future together.</h2>
-                <ul><li>Soroush Safaei, Ahmad Mostafavi, Hossein Fotouhi</li><li>LambdaIDS</li><li>www.lambdaids.se</li></ul>
+                <ul><li>Ahmad Mostafavi, Soroush Safaei, Hossein Fotouhi</li><li>LambdaIDS</li><li>www.lambdaids.se</li></ul>
             </div>
         </div>
-        
+            
+
     </div>
     <div id="speaker-view">
         <h2>Speaker Notes</h2>
@@ -213,8 +309,8 @@
     </div>
 
     <script>
-        const notes = ["Good morning. We are LambdaIDS.\n\nWe are building the immune system for the IoT edge.\n\nEvery day, we connect more critical infrastructure to the internet\u2014from factories to power grids.\nBut the devices running them are vulnerable. We are here to change that.", "We are racing towards a world with 75 billion connected devices.\n\nBut here is the problem: The security tools we use for laptops and servers simply do not fit on these tiny chips.\n\nThis leaves our most critical infrastructure\u2014energy grids, hospitals, factories\u2014wide open to attack.\nCurrent solutions are too heavy, too expensive, or simply non-existent for the edge.", "So, why is this the right time for LambdaIDS? Because the rules of the game have changed.\n\nWith the EU Cyber Resilience Act, security is no longer a 'nice-to-have'. It is the law.\n\nIf a device is not secure by design, it cannot be sold in the EU. Period.\n\nManufacturers are panicking. They are hardware experts, not security experts. They need a drop-in solution to stay in business.", "Enter LambdaIDS.\n\nThink of it as an autonomous immune system for every device.\n\nIt sits right on the microcontroller. It learns what 'normal' looks like and blocks anomalies in real-time.\n\nIt doesn't need the cloud. It doesn't drain the battery. And most importantly, it makes compliance easy for the manufacturer.", "Traditional security sends data to the cloud to be checked. That's slow, expensive, and risky.\n\nLambdaIDS processes everything locally.\n\nThis means we catch attacks in milliseconds, not minutes. We work even when the internet is down.\n\nAnd we do it with a fraction of the energy.", "The market opportunity is massive.\n\nThe global IoT security market is over 30 billion dollars and growing fast.\n\nWe are laser-focused on the high-value Industrial and Utility sectors first\u2014our SAM is around 4 billion.\n\nStarting with the Nordics and expanding to MENA, we are targeting a reachable market of 100 million in the next 3 years.", "How do we make money?\n\nWe are a software company. We license our SDK to device manufacturers.\n\nIt's a scalable B2B model with high margins. We charge a per-device fee, or an annual subscription for advanced fleet analytics.\n\nCurrently, we are engaging in paid pilots to fine-tune the product with top-tier industrial partners.", "We aren't just an idea. We have real traction.\n\nWe are collaborating with Combitech and RISE, validating our tech against the toughest standards.\n\nWe have secured grant funding, proving the novelty of our technology.\n\nAnd we are already in talks with major players in the industrial automation space.", "When you look at the competition, there is a clear gap.\n\nCloud solutions like Darktrace are too heavy. Legacy firewalls are too dumb\u2014they can't stop new attacks.\n\nLambdaIDS is the only solution that brings smart, adaptive AI to the smallest chips.\n\nOur moat lies in our proprietary algorithms that squeeze this intelligence into less than 100 kilobytes.", "Here is our plan for the next 18 months.\n\nBy mid-2025, we will finalize our SDK and complete our key pilots.\n\nBy the end of the year, we aim for our first commercial deployments and full certification.\n\nIn 2026, we expand aggressively into the MENA region and look towards a Series A to scale globally.", "Our team is built for this challenge.\n\nSoroush leads our strategy, Ahmad drives our deep tech innovation, and Hossein ensures our scientific rigor.\n\nTogether, we live at the intersection of hardware constraints and software intelligence.", "We are raising between 500k and 1 million dollars.\n\nThis capital will take us from validated tech to commercial product.\n\nThe majority will go into R&D and securing those critical certifications.\n\nWe invite you to join us. Let's define the standard for secure AI at the edge.", "Thank you. Let's build a secure future together.\n\nI'm happy to take your questions."];
-        
+        const notes = ["Good morning. We are LambdaIDS.\n\nWe are building the immune system for the IoT edge.\n\nEvery day, we connect more critical infrastructure to the internet\u2014from factories to power grids.\nBut the devices running them are vulnerable. We are here to change that.", "We are racing towards a world with 75 billion connected devices.\n\nBut here is the problem: The security tools we use for laptops and servers simply do not fit on these tiny chips.\n\nThis leaves our most critical infrastructure\u2014energy grids, hospitals, factories\u2014wide open to attack.\nCurrent solutions are too heavy, too expensive, or simply non-existent for the edge.", "So, why is this the right time for LambdaIDS? Because the rules of the game have changed.\n\nWith the EU Cyber Resilience Act, security is no longer a 'nice-to-have'. It is the law.\n\nIf a device is not secure by design, it cannot be sold in the EU. Period.\n\nManufacturers are panicking. They are hardware experts, not security experts. They need a drop-in solution to stay in business.", "Enter LambdaIDS.\n\nThink of it as an autonomous immune system for every device.\n\nIt sits right on the microcontroller. It learns what 'normal' looks like and blocks anomalies in real-time.\n\nIt doesn't need the cloud. It doesn't drain the battery. And most importantly, it makes compliance easy for the manufacturer.", "Traditional security sends data to the cloud to be checked. That's slow, expensive, and risky.\n\nLambdaIDS processes everything locally.\n\nThis means we catch attacks in milliseconds, not minutes. We work even when the internet is down.\n\nAnd we do it with a fraction of the energy.", "The market opportunity is massive.\n\nThe global IoT security market is over 30 billion dollars and growing fast.\n\nWe are laser-focused on the high-value Industrial and Utility sectors first\u2014our SAM is around 4 billion.\n\nStarting with the Nordics and expanding to MENA, we are targeting a reachable market of 100 million in the next 3 years.", "How do we make money?\n\nWe are a software company. We license our SDK to device manufacturers.\n\nIt's a scalable B2B model with high margins. We charge a per-device fee, or an annual subscription for advanced fleet analytics.\n\nCurrently, we are engaging in paid pilots to fine-tune the product with top-tier industrial partners.", "We aren't just an idea. We have real traction.\n\nWe are collaborating with Combitech and RISE, validating our tech against the toughest standards.\n\nWe have secured grant funding, proving the novelty of our technology.\n\nAnd we are already in talks with major players in the industrial automation space.", "When you look at the competition, there is a clear gap.\n\nCloud solutions like Darktrace are too heavy. Legacy firewalls are too dumb\u2014they can't stop new attacks.\n\nLambdaIDS is the only solution that brings smart, adaptive AI to the smallest chips.\n\nOur moat lies in our proprietary algorithms that squeeze this intelligence into less than 100 kilobytes.", "Here is our plan for the next 18 months.\n\nBy mid-2025, we will finalize our SDK and complete our key pilots.\n\nBy the end of the year, we aim for our first commercial deployments and full certification.\n\nIn 2026, we expand aggressively into the MENA region and look towards a Series A to scale globally.", "Our team is built for this challenge.\n\nAhmad leads our vision as CEO and Founder, while Soroush and Hossein drive our strategy and scientific innovation.\n\nTogether, we live at the intersection of AI, hardware constraints, and academic rigor.", "We are raising between 500k and 1 million dollars.\n\nThis capital will take us from validated tech to commercial product.\n\nThe majority will go into R&D and securing those critical certifications.\n\nWe invite you to join us. Let's define the standard for secure AI at the edge.", "Thank you. Let's build a secure future together.\n\nI'm happy to take your questions."];
+
         const mainView = document.getElementById('main-view');
         const liveNote = document.getElementById('live-note');
         const noteLabel = document.querySelector('.note-label');
@@ -227,7 +323,7 @@
             const slideHeight = window.innerHeight;
             const scrollTop = mainView.scrollTop;
             const index = Math.round(scrollTop / slideHeight);
-            
+
             if (notes[index]) {
                 liveNote.textContent = notes[index];
                 noteLabel.textContent = "Currently Viewing: Slide " + (index + 1);
@@ -244,4 +340,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LambdaIDS Pitch Deck</title>
+    <style>
+        :root {
+            --bg-color: #E8DCC4;
+            --title-color: #8B7355;
+            --text-color: #333333;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #333;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .slides {
+            height: 100vh;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+        }
+        .slides::-webkit-scrollbar {
+            width: 8px;
+        }
+        .slides::-webkit-scrollbar-thumb {
+            background: rgba(0,0,0,0.2);
+            border-radius: 4px;
+        }
+        .slide-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #fff 100%);
+            padding: 3.5rem 3rem;
+            box-sizing: border-box;
+            border-radius: 0;
+            box-shadow: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            color: var(--title-color);
+            font-size: 2.8rem;
+            margin-top: 0;
+            border-bottom: 3px solid var(--title-color);
+            padding-bottom: 0.5rem;
+        }
+        h2 {
+            color: var(--title-color);
+            font-size: 1.9rem;
+            margin-top: 0;
+        }
+        ul {
+            font-size: 1.6rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        li {
+            margin-bottom: 0.8rem;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .team-member {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 1.2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .team-member img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--title-color);
+            margin-bottom: 0.8rem;
+        }
+        .team-member h3 {
+            color: var(--title-color);
+            font-size: 1.3rem;
+            margin: 8px 0 4px 0;
+        }
+        .team-member p {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.4;
+        }
+        .team-member .role {
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 6px;
+            font-style: italic;
+        }
+        .team-tagline {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-top: 1.5rem;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slides">
+    
+    <div class="slide-container">
+        <div class="slide">
+            <h1>LambdaIDS: The Immune System for the Edge</h1>
+            <h2>Securing the Critical Infrastructure of Tomorrow with TinyML</h2>
+            <ul><li>We enable secure, autonomous, and compliant IoT at the edge.</li><li>Ahmad Mostafavi | Soroush Safaei | Hossein Fotouhi</li></ul>
+        </div>
+    </div>
+            
+    <div class="slide-container">
+        <div class="slide">
+            <h1>The Problem: The &#x27;Smart&#x27; World is Critically Vulnerable</h1>
+            
+            <ul><li>Explosion of Attack Surface: 75 Billion IoT devices by 2025.</li><li>Resource Constraints: Existing security tools (agents, firewalls) are too heavy for microcontrollers.</li><li>The Result: 98% of IoT traffic is unencrypted or vulnerable.</li><li>Critical Risk: Ransomware in hospitals, grid shutdowns, industrial espionage.</li></ul>
+        </div>
+    </div>
+            
+    <div class="slide-container">
+        <div class="slide">
+            <h1>Why Now? The Regulatory Tsunami</h1>
+            
+            <ul><li>EU Cyber Resilience Act (CRA): Mandatory cybersecurity for ALL connected products by 2025/2026.</li><li>IEC 62443: Moving from &#x27;nice-to-have&#x27; to &#x27;must-have&#x27; for industrial compliance.</li><li>The Market Gap: Manufacturers are entering a panic mode. They lack the expertise to build compliant security from scratch.</li><li>Opportunity: Compliance is no longer optional—it is a license to operate.</li></ul>
+        </div>
+    </div>
+            
+    <div class="slide-container">
+        <div class="slide">
+            <h1>The Solution: LambdaIDS</h1>
+            
+            <ul><li>Autonomous On-Device Security: An AI agent that lives ON the microcontroller.</li><li>Real-time Anomaly Detection: Detects zero-day attacks instantly without cloud latency.</li><li>Ultra-Lightweight: Runs on &lt;100KB RAM. Consumes negligible battery.</li><li>Compliance-Ready: Built to satisfy IEC 62443 and CRA requirements out of the box.</li></ul>
+        </div>
+    </div>
+            
+    <div class="slide-container">
+        <div class="slide">
+            <h1>How It Works: Edge AI vs. Cloud Security</h1>
+            
+            <ul><li>Traditional (Cloud): High latency, privacy risks, high data cost, fails offline.</li><li>LambdaIDS (Edge): Zero latency, privacy-preserving, works offline, 100x more energy efficient.</li><li>Tech Stack: Proprietary TinyML algorithms optimized for ARM Cortex-M and RISC-V.</li></ul>
+        </div>
+    </div>
+            
+    <div class="slide-container">
+        <div class="slide">
+            <h1>Market Opportunity</h1>
+            
+            <ul><li>Total Addressable Market (TAM): $30B+ IoT Security Market (growing 25% YoY).</li><li>Serviceable Available Market (SAM): $4B Industrial &amp; Utility IoT Security.</li><li>Serviceable Obtainable Market (SOM): $100M (Nordic + MENA Critical Infrastructure).</li><li>Target Segments: Industrial Automation (IIoT), Smart Energy, Automotive.</li></ul>
+        </div>
+    </div>
+            
+    <div class="slide-container">
+        <div class="slide">
+            <h1>Business Model</h1>
+            
+            <ul><li>B2B Licensing &amp; SDK: Per-device license fee for OEMs.</li><li>Tiered Subscription: Basic (Detection) vs. Pro (Prevention + Fleet Analytics).</li><li>Pilot Strategy: Paid pilots with Tier 1 manufacturers to validate and customize.</li><li>Scalability: High-margin software model (80%+ gross margin at scale).</li></ul>
+        </div>
+    </div>
+            
+    <div class="slide-container">
+        <div class="slide">
+            <h1>Traction &amp; Validation</h1>
+            
+            <ul><li>Key Partners: Collaboration with Combitech &amp; RISE (Research Institutes of Sweden).</li><li>Academic Validation: Backed by cutting-edge research in Embedded AI.</li><li>Funding: Secured early grant funding (Vinnova/VFT). Validation of tech novelty.</li><li>Pipeline: Discussions with major players in Industrial Automation (ABB, Siemens ecosystem).</li></ul>
+        </div>
+    </div>
+            
+    <div class="slide-container">
+        <div class="slide">
+            <h1>Competitive Landscape</h1>
+            
+            <ul><li>Cloud-Based (Darktrace, etc.): Too heavy, high latency. (LambdaIDS wins on Speed/Size).</li><li>Embedded Legacy (Firewalls): Static rules, can&#x27;t stop zero-days. (LambdaIDS wins on Adaptability).</li><li>The LambdaIDS Advantage: The only solution combining TinyML + IEC 62443 Compliance + &lt;100KB Footprint.</li><li>Moat: Proprietary quantization algorithms &amp; curated attack datasets.</li></ul>
+        </div>
+    </div>
+            
+    <div class="slide-container">
+        <div class="slide">
+            <h1>Roadmap: Path to Scale</h1>
+            
+            <ul><li>Q1-Q2 2025: Finalize SDK v1.0. Complete Pilot with Combitech/RISE.</li><li>Q3-Q4 2025: First Commercial Deployments (Industrial Sector). Achieve IEC 62443 Cert.</li><li>2026: Expansion to MENA region. Series A for Global Scale.</li><li>2027: Integration with major Chip Vendors (ST, NXP).</li></ul>
+        </div>
+    </div>
+            
+    <div class="slide-container">
+        <div class="slide" style="justify-content: flex-start;">
+            <h1>The Team</h1>
+            <div class="team-grid">
+                
+        <div class="team-member">
+            <img src="ahmadMostafavi.jpeg" alt="Ahmad Mostafavi">
+            <h3>Ahmad Mostafavi</h3>
+            <p class="role">CEO &amp; Founder</p>
+            <p>Deep tech expert in Embedded Systems &amp; Security.</p>
+        </div>
+                
+        <div class="team-member">
+            <img src="Soroush.jpeg" alt="Soroush Safaei">
+            <h3>Soroush Safaei</h3>
+            <p class="role">Co-Founder</p>
+            <p>Expertise in AI Strategy &amp; Market Development.</p>
+        </div>
+                
+        <div class="team-member">
+            <img src="hosseinFotouhi.jpeg" alt="Hossein Fotouhi">
+            <h3>Hossein Fotouhi</h3>
+            <p class="role">Co-Founder</p>
+            <p>Associate Professor at MDU, Expert in IoT &amp; Edge Computing.</p>
+        </div>
+                
+            </div>
+            <p class="team-tagline">Why Us: We bridge the gap between AI, Hardware constraints, and Academic Innovation.</p>
+        </div>
+    </div>
+            
+    <div class="slide-container">
+        <div class="slide">
+            <h1>The Ask</h1>
+            
+            <ul><li>Seeking: $500K - $1M (Seed / Pre-Seed).</li><li>Use of Funds:</li><li>40% R&amp;D (SDK refinement, Certification).</li><li>30% Business Dev (Pilot execution, Partnership management).</li><li>30% Operations &amp; Legal (IP Protection).</li><li>Opportunity: Join us in defining the standard for Edge AI Security.</li></ul>
+        </div>
+    </div>
+            
+    <div class="slide-container">
+        <div class="slide">
+            <h1>Contact</h1>
+            <h2>Let&#x27;s build a secure future together.</h2>
+            <ul><li>Ahmad Mostafavi, Soroush Safaei, Hossein Fotouhi</li><li>LambdaIDS</li><li>www.lambdaids.se</li></ul>
+        </div>
+    </div>
+            
+    </div>
+</body>
+
+</html>

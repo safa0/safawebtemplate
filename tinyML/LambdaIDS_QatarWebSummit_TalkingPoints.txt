@@ -1,0 +1,108 @@
+Slide 1: LambdaIDS: The Immune System for the Edge
+Good morning. We are LambdaIDS.
+
+We are building the immune system for the IoT edge.
+
+Every day, we connect more critical infrastructure to the internet—from factories to power grids.
+But the devices running them are vulnerable. We are here to change that.
+
+Slide 2: The Problem: The 'Smart' World is Critically Vulnerable
+We are racing towards a world with 75 billion connected devices.
+
+But here is the problem: The security tools we use for laptops and servers simply do not fit on these tiny chips.
+
+This leaves our most critical infrastructure—energy grids, hospitals, factories—wide open to attack.
+Current solutions are too heavy, too expensive, or simply non-existent for the edge.
+
+Slide 3: Why Now? The Regulatory Tsunami
+So, why is this the right time for LambdaIDS? Because the rules of the game have changed.
+
+With the EU Cyber Resilience Act, security is no longer a 'nice-to-have'. It is the law.
+
+If a device is not secure by design, it cannot be sold in the EU. Period.
+
+Manufacturers are panicking. They are hardware experts, not security experts. They need a drop-in solution to stay in business.
+
+Slide 4: The Solution: LambdaIDS
+Enter LambdaIDS.
+
+Think of it as an autonomous immune system for every device.
+
+It sits right on the microcontroller. It learns what 'normal' looks like and blocks anomalies in real-time.
+
+It doesn't need the cloud. It doesn't drain the battery. And most importantly, it makes compliance easy for the manufacturer.
+
+Slide 5: How It Works: Edge AI vs. Cloud Security
+Traditional security sends data to the cloud to be checked. That's slow, expensive, and risky.
+
+LambdaIDS processes everything locally.
+
+This means we catch attacks in milliseconds, not minutes. We work even when the internet is down.
+
+And we do it with a fraction of the energy.
+
+Slide 6: Market Opportunity
+The market opportunity is massive.
+
+The global IoT security market is over 30 billion dollars and growing fast.
+
+We are laser-focused on the high-value Industrial and Utility sectors first—our SAM is around 4 billion.
+
+Starting with the Nordics and expanding to MENA, we are targeting a reachable market of 100 million in the next 3 years.
+
+Slide 7: Business Model
+How do we make money?
+
+We are a software company. We license our SDK to device manufacturers.
+
+It's a scalable B2B model with high margins. We charge a per-device fee, or an annual subscription for advanced fleet analytics.
+
+Currently, we are engaging in paid pilots to fine-tune the product with top-tier industrial partners.
+
+Slide 8: Traction & Validation
+We aren't just an idea. We have real traction.
+
+We are collaborating with Combitech and RISE, validating our tech against the toughest standards.
+
+We have secured grant funding, proving the novelty of our technology.
+
+And we are already in talks with major players in the industrial automation space.
+
+Slide 9: Competitive Landscape
+When you look at the competition, there is a clear gap.
+
+Cloud solutions like Darktrace are too heavy. Legacy firewalls are too dumb—they can't stop new attacks.
+
+LambdaIDS is the only solution that brings smart, adaptive AI to the smallest chips.
+
+Our moat lies in our proprietary algorithms that squeeze this intelligence into less than 100 kilobytes.
+
+Slide 10: Roadmap: Path to Scale
+Here is our plan for the next 18 months.
+
+By mid-2025, we will finalize our SDK and complete our key pilots.
+
+By the end of the year, we aim for our first commercial deployments and full certification.
+
+In 2026, we expand aggressively into the MENA region and look towards a Series A to scale globally.
+
+Slide 11: The Team
+Our team is built for this challenge.
+
+Ahmad leads our vision as CEO and Founder, while Soroush and Hossein drive our strategy and scientific innovation.
+
+Together, we live at the intersection of AI, hardware constraints, and academic rigor.
+
+Slide 12: The Ask
+We are raising between 500k and 1 million dollars.
+
+This capital will take us from validated tech to commercial product.
+
+The majority will go into R&D and securing those critical certifications.
+
+We invite you to join us. Let's define the standard for secure AI at the edge.
+
+Slide 13: Contact
+Thank you. Let's build a secure future together.
+
+I'm happy to take your questions.
