@@ -7,7 +7,7 @@
 
 export const siteConfig = {
   // Brand Identity
-  name: "Ansyn.ai",
+  name: "LambdaFlows™",
   tagline: "Transform Your Operations with Intelligent Automation",
   description: "Enterprise-grade RPA and AI automation solutions that deliver measurable ROI, boost efficiency, and drive operational excellence through intelligent process automation",
 
@@ -24,12 +24,12 @@ export const siteConfig = {
   // Logo & Assets
   logo: {
     path: "/logo.png",
-    alt: "Ansyn.ai Logo",
+    alt: "LambdaFlows Logo",
   },
 
   // SEO & Metadata
   seo: {
-    title: "Ansyn.ai - Enterprise Automation Implementation Agency",
+    title: "LambdaFlows™ - Enterprise Automation Implementation Agency",
     description: "Enterprise-grade RPA and AI automation solutions that deliver measurable ROI, boost efficiency, and drive operational excellence through intelligent process automation",
     keywords: ["RPA", "robotic process automation", "AI agents", "process automation", "enterprise automation", "AI integration", "automation agency"],
   },
