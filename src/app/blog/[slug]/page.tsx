@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 
   return {
-    title: `${post.title} - LambdaFlow™`,
+    title: `${post.title} - LambdaFlows™`,
     description: post.excerpt,
     openGraph: {
       title: post.title,
@@ -49,11 +49,11 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       authors: [post.author],
       images: post.image
         ? [
-            {
-              url: post.image,
-              alt: post.title,
-            },
-          ]
+          {
+            url: post.image,
+            alt: post.title,
+          },
+        ]
         : [],
     },
     twitter: {
@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'LambdaFlow™',
+      name: 'LambdaFlows™',
       logo: {
         '@type': 'ImageObject',
         url: 'https://your-domain.com/logo.png',
