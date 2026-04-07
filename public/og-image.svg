@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1A1A2E"/>
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#E94560" stroke-width="0.5" opacity="0.15"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <!-- Diagonal accent lines -->
+  <line x1="0" y1="630" x2="1200" y2="0" stroke="#E94560" stroke-width="1" opacity="0.2"/>
+  <line x1="100" y1="630" x2="1200" y2="100" stroke="#E94560" stroke-width="0.5" opacity="0.1"/>
+  <!-- Corner glow -->
+  <circle cx="1100" cy="100" r="200" fill="#E94560" opacity="0.08"/>
+  <circle cx="100" cy="530" r="150" fill="#E94560" opacity="0.05"/>
+  <!-- Lambda symbol -->
+  <text x="600" y="280" text-anchor="middle" font-family="system-ui, sans-serif" font-size="180" font-weight="700" fill="white" opacity="0.9">&lambda;</text>
+  <!-- Programme name -->
+  <text x="600" y="370" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="white" letter-spacing="2">[Programme Name]</text>
+  <!-- Tagline -->
+  <text x="600" y="420" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="white" opacity="0.5" letter-spacing="3">STEM TO AI FELLOWSHIP</text>
+  <!-- Bottom data strip -->
+  <text x="350" y="550" text-anchor="middle" font-family="monospace" font-size="24" font-weight="700" fill="#E94560">$200/mo</text>
+  <text x="350" y="575" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.4" letter-spacing="1">STIPEND</text>
+  <text x="600" y="550" text-anchor="middle" font-family="monospace" font-size="24" font-weight="700" fill="#E94560">3-12mo</text>
+  <text x="600" y="575" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.4" letter-spacing="1">TO JOB-READY</text>
+  <text x="850" y="550" text-anchor="middle" font-family="monospace" font-size="24" font-weight="700" fill="#E94560">$0</text>
+  <text x="850" y="575" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="white" opacity="0.4" letter-spacing="1">TUITION</text>
+  <!-- Dividers -->
+  <line x1="475" y1="535" x2="475" y2="580" stroke="white" stroke-width="0.5" opacity="0.15"/>
+  <line x1="725" y1="535" x2="725" y2="580" stroke="white" stroke-width="0.5" opacity="0.15"/>
+</svg>
