@@ -17,13 +17,11 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Configure ScrollTrigger for better performance
     ScrollTrigger.config({
       limitCallbacks: true,
       syncInterval: 150,
     });
 
-    // Initialize Lenis - keep vertical for natural wheel scrolling
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -36,11 +34,9 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
 
     lenisRef.current = lenis;
 
-    // Reset scroll position to top on route change
     window.scrollTo(0, 0);
     lenis.scrollTo(0, { immediate: true });
 
-    // Sync Lenis with GSAP ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
 
     gsap.ticker.add((time) => {
@@ -49,92 +45,14 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
 
     gsap.ticker.lagSmoothing(0);
 
-    // Setup GSAP horizontal scroll - only on desktop
-    const setupHorizontalScroll = () => {
-      // Don't setup horizontal scroll on mobile
-      const isMobile = window.innerWidth < 768;
-      if (isMobile) return;
-
-      const sections = gsap.utils.toArray<HTMLElement>("[data-horizontal-section]");
-
-      if (sections.length === 0) return;
-
-      const container = document.querySelector("[data-horizontal-scroll]") as HTMLElement;
-      if (!container) return;
-
-      // Calculate total scroll distance
-      const totalWidth = sections.reduce((acc, section) => acc + section.offsetWidth, 0);
-
-      // Create horizontal scroll animation
-      gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          pin: true,
-          scrub: 1,
-          snap: {
-            snapTo: 1 / (sections.length - 1),
-            duration: { min: 0.2, max: 0.6 },
-            ease: "power1.inOut",
-          },
-          end: () => `+=${totalWidth - window.innerWidth}`,
-          invalidateOnRefresh: true,
-        },
-      });
-    };
-
-    // Small delay to ensure DOM is ready
-    const timer = setTimeout(setupHorizontalScroll, 100);
-    
-    // Handle window resize to reinitialize horizontal scroll if needed
-    let resizeTimeout: NodeJS.Timeout;
-    const handleResize = () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        // Kill existing horizontal scroll triggers
-        ScrollTrigger.getAll().forEach((trigger) => {
-          const triggerElement = trigger.trigger as HTMLElement;
-          if (triggerElement?.getAttribute?.("data-horizontal-scroll")) {
-            trigger.kill();
-          }
-        });
-        // Reinitialize if needed
-        setupHorizontalScroll();
-        ScrollTrigger.refresh();
-      }, 250);
-    };
-    
-    window.addEventListener("resize", handleResize);
-
-    // Keyboard navigation
-    const handleKeyPress = (e: KeyboardEvent) => {
-      const isMobile = window.innerWidth < 768;
-      if (isMobile) return;
-
-      if (e.key === "ArrowRight") {
-        lenis.scrollTo(window.scrollY + window.innerHeight, { duration: 1.2 });
-      }
-      if (e.key === "ArrowLeft") {
-        lenis.scrollTo(window.scrollY - window.innerHeight, { duration: 1.2 });
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyPress);
-
-    // Cleanup
     return () => {
-      clearTimeout(timer);
-      clearTimeout(resizeTimeout);
-      window.removeEventListener("keydown", handleKeyPress);
-      window.removeEventListener("resize", handleResize);
       lenis.destroy();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       gsap.ticker.remove((time) => {
         lenis.raf(time * 1000);
       });
     };
-  }, [pathname]); // Re-run effect when pathname changes
+  }, [pathname]);
 
   return <>{children}</>;
 }
