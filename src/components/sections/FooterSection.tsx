@@ -185,6 +185,9 @@ export function FooterSection() {
         <div className="px-6 sm:px-8 md:px-12 lg:px-16 py-6 border-t border-white/10 text-center sm:text-right">
           <p className="text-xs text-khaki/40">
             {new Date().getFullYear()} {siteConfig.name} &copy;
+            {siteConfig.footer.version && (
+              <span className="ml-3 text-khaki/20">{siteConfig.footer.version}</span>
+            )}
           </p>
         </div>
       </div>

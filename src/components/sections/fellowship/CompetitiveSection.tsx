@@ -72,9 +72,9 @@ export function CompetitiveSection() {
             (item, index) => (
               <div
                 key={`diff-${index}`}
-                className="differentiator-item p-5 rounded-xl bg-khaki-light border border-earth/10 text-center"
+                className="differentiator-item p-5 rounded-xl bg-khaki-light/60 border border-earth/10 text-center hover:bg-khaki-light transition-colors duration-300"
               >
-                <div className="text-accent font-bold text-lg mb-2">
+                <div className="w-8 h-8 mx-auto mb-3 flex items-center justify-center rounded-full bg-accent/10 text-accent text-xs font-bold">
                   {String(index + 1).padStart(2, "0")}
                 </div>
                 <p className="text-sm text-dark/70 leading-relaxed">{item}</p>
@@ -83,63 +83,72 @@ export function CompetitiveSection() {
           )}
         </div>
 
-        {/* Comparison Table */}
-        <div className="competitive-table overflow-x-auto">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="border-b-2 border-earth/20">
-                <th className="py-4 pr-4 text-sm font-bold text-dark uppercase tracking-wider">
-                  Programme
-                </th>
-                <th className="py-4 pr-4 text-sm font-bold text-dark uppercase tracking-wider hidden sm:table-cell">
-                  Target
-                </th>
-                <th className="py-4 pr-4 text-sm font-bold text-dark uppercase tracking-wider hidden md:table-cell">
-                  Stipend
-                </th>
-                <th className="py-4 pr-4 text-sm font-bold text-dark uppercase tracking-wider hidden md:table-cell">
-                  Duration
-                </th>
-                <th className="py-4 text-sm font-bold text-dark uppercase tracking-wider">
-                  Key Difference
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {siteConfig.competitiveLandscape.comparison.map((row) => (
-                <tr
+        {/* Comparison Table — Card Style */}
+        <div className="competitive-table">
+          <h3 className="text-lg font-bold text-dark mb-6 text-center">
+            How we compare
+          </h3>
+          <div className="space-y-3">
+            {siteConfig.competitiveLandscape.comparison.map((row) => {
+              const isUs = "isUs" in row && row.isUs;
+              return (
+                <div
                   key={row.programme}
-                  className={`border-b border-earth/10 ${
-                    "isUs" in row && row.isUs
-                      ? "bg-accent/5 font-medium"
-                      : "hover:bg-khaki-light/50"
-                  } transition-colors`}
+                  className={`rounded-xl p-5 md:p-6 transition-all duration-300 ${
+                    isUs
+                      ? "bg-dark text-white ring-2 ring-accent shadow-lg"
+                      : "bg-khaki-light/40 hover:bg-khaki-light/70 border border-earth/5"
+                  }`}
                 >
-                  <td className="py-4 pr-4 text-sm text-dark">
-                    {"isUs" in row && row.isUs ? (
-                      <span className="font-bold text-accent">
+                  <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-6">
+                    {/* Programme name */}
+                    <div className="md:w-1/4 flex items-center gap-2">
+                      {isUs && (
+                        <span className="w-2 h-2 bg-accent rounded-full flex-shrink-0" />
+                      )}
+                      <span
+                        className={`font-bold text-sm ${
+                          isUs ? "text-accent" : "text-dark"
+                        }`}
+                      >
                         {row.programme}
                       </span>
-                    ) : (
-                      row.programme
-                    )}
-                  </td>
-                  <td className="py-4 pr-4 text-sm text-dark/60 hidden sm:table-cell">
-                    {row.target}
-                  </td>
-                  <td className="py-4 pr-4 text-sm text-dark/60 hidden md:table-cell">
-                    {row.stipend}
-                  </td>
-                  <td className="py-4 pr-4 text-sm text-dark/60 hidden md:table-cell">
-                    {row.duration}
-                  </td>
-                  <td className="py-4 text-sm text-dark/70">
-                    {row.difference}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                    </div>
+
+                    {/* Meta */}
+                    <div className="md:w-1/4 flex items-center gap-4 text-xs">
+                      <span
+                        className={`px-2 py-1 rounded ${
+                          isUs
+                            ? "bg-white/10 text-white/70"
+                            : "bg-white text-dark/50"
+                        }`}
+                      >
+                        {row.target}
+                      </span>
+                      <span className={isUs ? "text-white/50" : "text-dark/40"}>
+                        {row.stipend}
+                      </span>
+                      <span className={isUs ? "text-white/50" : "text-dark/40"}>
+                        {row.duration}
+                      </span>
+                    </div>
+
+                    {/* Difference */}
+                    <div className="md:w-1/2">
+                      <p
+                        className={`text-sm leading-relaxed ${
+                          isUs ? "text-white/70" : "text-dark/60"
+                        }`}
+                      >
+                        {row.difference}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

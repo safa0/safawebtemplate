@@ -127,30 +127,29 @@ export function TiersSection() {
                   {tier.description}
                 </p>
 
-                {/* Curriculum */}
-                <div className="mb-6">
-                  <h4 className="text-xs font-bold text-dark/40 uppercase tracking-wider mb-3">
-                    Curriculum
+                {/* Curriculum — compact chips */}
+                <div className="mb-4">
+                  <h4 className="text-xs font-bold text-dark/40 uppercase tracking-wider mb-2">
+                    You&apos;ll learn
                   </h4>
-                  <ul className="space-y-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {tier.curriculum.map((item) => (
-                      <li
+                      <span
                         key={item}
-                        className="flex items-start gap-2 text-sm text-dark/60"
+                        className="text-xs px-2.5 py-1 rounded-full bg-white border border-earth/10 text-dark/60"
                       >
-                        <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${colors.accent === "text-accent" ? "bg-accent" : "bg-dark"}`} />
                         {item}
-                      </li>
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
-                {/* Gate */}
-                <div className="p-3 rounded-lg bg-white/80 border border-earth/10">
-                  <div className="text-xs font-bold text-dark/40 uppercase tracking-wider mb-1">
-                    Gate to progress
-                  </div>
-                  <p className="text-sm text-dark/70">{tier.gate}</p>
+                {/* Gate — inline */}
+                <div className="flex items-start gap-2 p-3 rounded-lg bg-white/80 border border-earth/10">
+                  <svg className={`w-4 h-4 flex-shrink-0 mt-0.5 ${colors.accent}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                  <p className="text-xs text-dark/60 leading-relaxed">{tier.gate}</p>
                 </div>
 
                 {/* Arrow indicator between cards (desktop) */}

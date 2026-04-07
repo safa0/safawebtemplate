@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { siteConfig } from "@/config/site";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,13 +23,12 @@ export function TestimonialsSection() {
         },
       });
 
-      gsap.from(".testimonial-card", {
+      gsap.from(".launch-card", {
         opacity: 0,
         y: 30,
-        duration: 0.6,
-        stagger: 0.15,
+        duration: 0.8,
         scrollTrigger: {
-          trigger: ".testimonials-grid",
+          trigger: ".launch-card",
           start: "top 85%",
           toggleActions: "play none none none",
         },
@@ -44,63 +43,54 @@ export function TestimonialsSection() {
       ref={sectionRef}
       className="testimonials-section w-full bg-khaki-light section-padding-large"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="testimonials-header text-center mb-16">
+        <div className="testimonials-header text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4">
             Fellow Stories
           </h2>
           <p className="text-lg md:text-xl text-dark/60 max-w-2xl mx-auto">
-            Hear from people who&apos;ve made the transition.
+            We&apos;re building the first cohort now. Their stories will live
+            here.
           </p>
         </div>
 
-        {/* Testimonials */}
-        <div className="testimonials-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {siteConfig.testimonials.map((testimonial, index) => (
-            <div
-              key={`testimonial-${index}`}
-              className="testimonial-card p-8 rounded-2xl bg-white border border-earth/10 hover:shadow-lg transition-all duration-300"
-            >
-              {/* Quote */}
-              <div className="text-3xl text-accent/30 mb-4">&ldquo;</div>
-              <p className="text-dark/70 leading-relaxed mb-6 italic">
-                {testimonial.quote}
-              </p>
+        {/* Launching Soon Card */}
+        <div className="launch-card relative p-10 md:p-14 rounded-2xl bg-white border border-earth/10 text-center overflow-hidden">
+          {/* Subtle pattern */}
+          <div className="absolute inset-0 opacity-[0.02]" style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, #1A1A2E 1px, transparent 0)`,
+            backgroundSize: '24px 24px',
+          }} />
 
-              {/* Author */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-khaki/10 flex items-center justify-center text-dark/40 text-sm font-bold">
-                  {testimonial.name.charAt(0)}
-                </div>
-                <div>
-                  <div className="font-medium text-dark">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-sm text-dark/50">
-                    {testimonial.role}
-                  </div>
-                </div>
-              </div>
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 text-accent text-sm font-medium rounded-full mb-6">
+              <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+              Launching 2026
             </div>
-          ))}
 
-          {/* Placeholder cards for future testimonials */}
-          {[1, 2].map((i) => (
-            <div
-              key={`placeholder-${i}`}
-              className="testimonial-card p-8 rounded-2xl border-2 border-dashed border-earth/10 flex items-center justify-center min-h-[200px]"
-            >
-              <div className="text-center">
-                <div className="text-dark/20 text-sm font-medium">
-                  Your story could be here
-                </div>
-                <div className="text-dark/10 text-xs mt-1">
-                  Applications open
-                </div>
-              </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-dark mb-4">
+              Be among the first fellows
+            </h3>
+
+            <p className="text-dark/50 max-w-lg mx-auto mb-8 leading-relaxed">
+              The inaugural cohort is forming now. Apply to be one of the first
+              people to make the STEM-to-AI transition through this programme.
+              Your story starts here.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/apply"
+                className="px-8 py-3 bg-accent text-white rounded-full font-medium hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300"
+              >
+                Apply Now
+              </Link>
+              <span className="text-sm text-dark/30">
+                Rolling admissions &middot; No deadline
+              </span>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

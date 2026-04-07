@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 export function Header() {
@@ -36,6 +37,15 @@ export function Header() {
             href="/"
             className="flex items-center gap-2 md:gap-3 flex-shrink-0"
           >
+            <div className="relative w-8 h-8 md:w-9 md:h-9">
+              <Image
+                src={siteConfig.logo.path}
+                alt={siteConfig.logo.alt}
+                fill
+                className="object-contain"
+                unoptimized
+              />
+            </div>
             <span className="text-lg md:text-xl font-bold text-dark">
               {siteConfig.name}
             </span>
