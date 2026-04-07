@@ -1,86 +1,71 @@
 /**
  * Page Metadata Configuration
- * Centralized metadata templates for all pages.
- * Provides consistent SEO and social sharing metadata across the site.
+ * Centralized metadata templates for the fellowship programme website.
  */
 
 import { Metadata } from "next";
 
-/**
- * Page metadata configuration interface
- */
 interface PageMetadata {
   title: string;
   description: string;
   keywords: string[];
 }
 
-/**
- * Page metadata templates
- */
 export const pageMetadata: Record<string, PageMetadata> = {
   home: {
-    title: "Enterprise Automation Solutions",
-    description: "Transform your operations with LambdaFlows™ - the intelligent automation platform for enterprise. Reduce costs, increase efficiency, and scale with confidence.",
-    keywords: ["enterprise automation", "RPA", "intelligent automation", "process automation", "workflow automation"],
+    title: "[Programme Name] \u2014 STEM to AI Fellowship",
+    description:
+      "A talent investment programme for non-CS STEM graduates transitioning into AI & Machine Learning. Micro-stipend, mentorship, and a structured path to your first AI role.",
+    keywords: [
+      "AI fellowship",
+      "STEM to AI",
+      "machine learning fellowship",
+      "STEM graduates",
+      "AI career transition",
+    ],
   },
   about: {
-    title: "About LambdaFlows™ | Enterprise Automation Leaders",
-    description: "Learn about LambdaFlows™ - pioneers in enterprise automation since 2020. Meet our leadership team and discover how we're transforming operations through intelligent automation.",
-    keywords: ["about LambdaFlows", "enterprise automation", "RPA leaders", "automation company", "company story"],
+    title: "About | [Programme Name]",
+    description:
+      "Why we exist: the AI industry needs domain experts, not more CS graduates. Learn about our thesis, our model, and what makes this fellowship different.",
+    keywords: [
+      "about fellowship",
+      "AI talent gap",
+      "STEM to ML",
+      "fellowship mission",
+      "domain experts AI",
+    ],
   },
-  contact: {
-    title: "Contact Us | LambdaFlows™ - Get in Touch",
-    description: "Get in touch with LambdaFlows™ to discuss your automation needs. Schedule a free consultation and discover how we can transform your operations.",
-    keywords: ["contact LambdaFlows", "automation consultation", "get in touch", "schedule meeting", "automation assessment"],
+  apply: {
+    title: "Apply | [Programme Name]",
+    description:
+      "Apply to the [Programme Name] fellowship. We\u2019re looking for non-CS STEM graduates ready to commit full-time to transitioning into AI & Machine Learning.",
+    keywords: [
+      "apply AI fellowship",
+      "fellowship application",
+      "STEM AI programme",
+      "ML fellowship apply",
+    ],
   },
   blog: {
-    title: "Automation Insights & Best Practices Blog",
-    description: "Expert insights on enterprise automation, RPA, and AI. Learn best practices, case studies, and industry trends from the LambdaFlows™ team.",
-    keywords: ["automation blog", "RPA insights", "automation best practices", "enterprise automation articles", "AI automation"],
-  },
-  solutions: {
-    title: "Automation Solutions | RPA & AI-Powered Workflows",
-    description: "Comprehensive automation solutions powered by RPA, AI, and intelligent workflows. Transform your enterprise operations with LambdaFlows™.",
-    keywords: ["automation solutions", "RPA solutions", "AI workflow automation", "enterprise automation platform", "intelligent automation"],
-  },
-  industries: {
-    title: "Industry-Specific Automation Solutions",
-    description: "Tailored automation solutions for Financial Services, Healthcare, Manufacturing, Retail, and Professional Services. Industry expertise meets intelligent automation.",
-    keywords: ["industry automation", "financial automation", "healthcare automation", "manufacturing automation", "retail automation"],
-  },
-  "why-automate": {
-    title: "Why Automate? | Benefits & ROI of Enterprise Automation",
-    description: "Discover the transformative benefits of enterprise automation: cost reduction, improved accuracy, scalability, and faster time-to-market. Calculate your ROI.",
-    keywords: ["why automate", "automation benefits", "automation ROI", "cost reduction", "process efficiency"],
-  },
-  "how-we-work": {
-    title: "Our Methodology | How We Deliver Automation Excellence",
-    description: "Our proven 5-step methodology ensures successful automation implementation: Discover, Design, Develop, Deploy, and Deliver. Partner with confidence.",
-    keywords: ["automation methodology", "implementation process", "automation delivery", "project methodology", "automation approach"],
-  },
-  privacy: {
-    title: "Privacy Policy | LambdaFlows™",
-    description: "Learn how LambdaFlows™ collects, uses, and protects your personal information. Our commitment to privacy and data security.",
-    keywords: ["privacy policy", "data protection", "privacy practices", "data security", "information security"],
+    title: "Blog | [Programme Name]",
+    description:
+      "Insights on the STEM-to-AI transition, machine learning careers, and stories from our fellowship community.",
+    keywords: [
+      "AI career blog",
+      "STEM to AI stories",
+      "machine learning career",
+      "fellowship blog",
+    ],
   },
 };
 
-/**
- * Default metadata values
- */
 const defaults = {
-  siteName: "LambdaFlows™",
+  siteName: "[Programme Name]",
   defaultImage: "/og-image.png",
-  twitterHandle: "@lambdaflows",
+  twitterHandle: "",
 };
 
-/**
- * Generate metadata for a page
- * @param pageKey - The key from pageMetadata object
- * @param customizations - Optional metadata overrides
- * @returns Next.js Metadata object
- */
 export function generateMetadata(
   pageKey: keyof typeof pageMetadata,
   customizations?: Partial<PageMetadata>
@@ -88,7 +73,6 @@ export function generateMetadata(
   const page = pageMetadata[pageKey];
 
   if (!page) {
-    console.warn(`Metadata not found for page: ${pageKey}`);
     return {};
   }
 
@@ -119,18 +103,10 @@ export function generateMetadata(
       title,
       description,
       images: [defaults.defaultImage],
-      creator: defaults.twitterHandle,
     },
   };
 }
 
-/**
- * Helper to generate metadata with custom title suffix
- * @param baseTitle - The base title (e.g., "About Us")
- * @param description - Page description
- * @param keywords - SEO keywords
- * @returns Next.js Metadata object
- */
 export function createPageMetadata(
   baseTitle: string,
   description: string,
@@ -161,7 +137,6 @@ export function createPageMetadata(
       title,
       description,
       images: [defaults.defaultImage],
-      creator: defaults.twitterHandle,
     },
   };
 }

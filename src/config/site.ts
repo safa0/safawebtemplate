@@ -1,238 +1,334 @@
 /**
  * Site Configuration
  * =================
- * Central configuration file for the entire website.
+ * Central configuration file for the fellowship programme website.
  * Change values here to customize the site without touching individual components.
  */
 
 export const siteConfig = {
   // Brand Identity
-  name: "LambdaFlows™",
-  tagline: "Transform Your Operations with Intelligent Automation",
-  description: "Enterprise-grade RPA and AI automation solutions that deliver measurable ROI, boost efficiency, and drive operational excellence through intelligent process automation",
+  name: "[Programme Name]",
+  tagline: "Preparing the next generation for the AI age",
+  description:
+    "A talent investment programme for non-CS STEM graduates transitioning into AI & Machine Learning. We identify high-potential scientists and engineers and invest in their transition through mentorship, micro-stipends, and structured learning.",
 
   // Typography
   fonts: {
-    // Primary font for body text and UI elements
-    // Options: "Inter", "Work_Sans", "DM_Sans", "Plus_Jakarta_Sans", "Outfit"
-    sans: "Inter",
-    // Serif font for headings and accent text
-    // Options: "Lora", "Merriweather", "Playfair_Display", "Cormorant_Garamond"
-    serif: "Lora",
+    sans: "Space_Grotesk",
   },
 
   // Logo & Assets
   logo: {
     path: "/logo.png",
-    alt: "LambdaFlows Logo",
+    alt: "[Programme Name] Logo",
   },
 
   // SEO & Metadata
   seo: {
-    title: "LambdaFlows™ - Enterprise Automation Implementation Agency",
-    description: "Enterprise-grade RPA and AI automation solutions that deliver measurable ROI, boost efficiency, and drive operational excellence through intelligent process automation",
-    keywords: ["RPA", "robotic process automation", "AI agents", "process automation", "enterprise automation", "AI integration", "automation agency"],
+    title: "[Programme Name] — STEM to AI Fellowship",
+    description:
+      "A talent investment programme for non-CS STEM graduates transitioning into AI & Machine Learning. Micro-stipend, mentorship, and a structured path to your first AI role.",
+    keywords: [
+      "AI fellowship",
+      "STEM to AI",
+      "machine learning fellowship",
+      "AI career transition",
+      "STEM graduates",
+      "AI mentorship",
+      "ML training programme",
+      "non-CS AI",
+      "physics to AI",
+      "science to machine learning",
+    ],
   },
 
   // Hero Section
   hero: {
-    headline: ["Turn Processes into Smart Flows"],
-    description: "We orchestrate people and AI agents to deliver measurable ROI through enterprise-grade automation solutions.",
-    cta: "Start Your Automation Journey",
-    layout: "side-by-side", // New property: arrange description next to the image
+    badge: "Applications Open",
+    headline: ["Your Science Degree", "Is Your AI Superpower"],
+    description:
+      "We invest in non-CS STEM graduates making the leap into AI & Machine Learning. Stipend. Mentorship. Structure. No tuition. This isn\u2019t a bootcamp\u2014it\u2019s angel investing for human capital.",
+    cta: {
+      text: "Apply Now",
+      link: "/apply",
+    },
+    secondaryCta: {
+      text: "Learn How It Works",
+      link: "#how-it-works",
+    },
   },
 
-  // Mission
-  mission: {
-    title: "Our Mission",
-    statement: "Empowering enterprises to achieve operational excellence through intelligent automation that seamlessly integrates human expertise with AI capabilities.",
+  // Problem / Market Gap
+  problem: {
+    title: "The Gap Nobody\u2019s Filling",
+    statement:
+      "The AI industry has a talent bottleneck, but it\u2019s not where most people think. There is no shortage of computer science graduates who can train a model on MNIST. The shortage is in people who understand real-world domains\u2014materials science, biology, physics, chemistry, engineering\u2014and can apply machine learning to problems that actually matter.",
+    points: [
+      {
+        stat: "73%",
+        label: "of frontier AI labs report needing more domain experts",
+      },
+      {
+        stat: "$0",
+        label: "stipend programmes exist for non-CS STEM \u2192 AI transitions",
+      },
+      {
+        stat: "3\u201312mo",
+        label: "is all it takes for a strong STEM grad to become job-ready in ML",
+      },
+    ],
   },
 
-  // Services
-  services: [
+  // Tiered Model
+  tiers: [
     {
-      number: "1",
-      title: "Process Mining & Opportunity Assessment",
-      description: "Deep-dive analysis to identify automation opportunities, quantify potential ROI, and build a compelling business case for transformation",
-      background: "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80')",
-      textColor: "text-white",
-      hasImage: false,
-      link: "/services/1",
-      detailedContent: [
-        "Situation: Most enterprises struggle with hidden inefficiencies buried in complex processes. Teams spend countless hours on repetitive tasks while leadership lacks visibility into where automation could deliver the greatest impact. Without data-driven insights, automation initiatives often target the wrong processes or fail to secure stakeholder buy-in.",
-        "Task: We deploy advanced process mining tools to capture real-time data from your systems, creating complete transparency into how work flows through your organization. Through collaborative workshops, we identify automation opportunities and quantify their business value using our proprietary ROI calculator that considers time savings, error reduction, compliance improvements, and scalability.",
-        "Action & Result: You receive a prioritized automation roadmap with detailed business cases for each initiative—including process maps, quantified ROI projections, risk assessments, and implementation timelines. This data-backed roadmap secures stakeholder buy-in and serves as your strategic guide, ensuring automation investments align with business objectives and deliver measurable returns from day one."
+      name: "Ignition",
+      duration: "3 months",
+      stipend: "$200/mo",
+      total: "$600",
+      description:
+        "Entry tier. All fellows start here. Prove your commitment, build foundations, and demonstrate traction.",
+      highlights: [
+        "ML fundamentals curriculum",
+        "Bi-weekly mentor sessions",
+        "First portfolio project",
       ],
     },
     {
-      number: "2",
-      title: "Automation Blueprint & Architecture",
-      description: "Strategic design of scalable automation solutions tailored to your enterprise needs, integrating RPA and AI agents for maximum impact",
-      background: "url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80')",
-      textColor: "text-white",
-      hasImage: false,
-      link: "/services/2",
-      detailedContent: [
-        "Situation: Poorly designed automation solutions create technical debt, fail to scale with business growth, and struggle to integrate with existing systems. Many organizations rush into implementation without proper architecture, resulting in fragile bots that break with system updates and security vulnerabilities that put enterprise data at risk.",
-        "Task: Our architects design enterprise-grade automation blueprints that serve as the technical foundation for your transformation. We create scalable solutions that seamlessly integrate RPA bots and AI agents with your technology stack, establishing governance frameworks for bot management, security, and compliance while defining the optimal mix of attended and unattended automation.",
-        "Action & Result: You receive comprehensive architecture diagrams, technology stack recommendations, infrastructure requirements, and detailed process definition documents (PDDs). These blueprints provide your IT team with clear implementation guidance while establishing quality, security, and performance standards—resulting in a solid technical foundation that de-risks implementation, ensures scalability, and accelerates time-to-value."
+      name: "Orbit",
+      duration: "6 months",
+      stipend: "$200/mo",
+      total: "$1,200",
+      description:
+        "Extended on merit after Ignition review. Deepen your skills, tackle real-world problems, build your professional identity.",
+      highlights: [
+        "Domain-specific ML track",
+        "Open-source contributions",
+        "Technical writing",
       ],
     },
     {
-      number: "3",
-      title: "Development & AI Integration",
-      description: "End-to-end development of intelligent automation solutions powered by RPA and AI agents, with rigorous testing and optimization",
-      background: "url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&q=80')",
-      textColor: "text-white",
-      hasImage: false,
-      link: "/services/3",
-      detailedContent: [
-        "Situation: Automation implementations often fail due to poor code quality, inadequate testing, or bots that can't handle real-world exceptions. Organizations invest heavily in automation only to face production failures, security vulnerabilities, and solutions that require constant maintenance instead of delivering promised efficiencies.",
-        "Task: Our certified developers bring your automation blueprint to life using industry-leading platforms like UiPath, Automation Anywhere, or Blue Prism. We build intelligent automation solutions that incorporate document processing, natural language understanding, and machine learning models. Every bot undergoes rigorous testing in environments that mirror production, validating exception handling, logging, monitoring, and performance metrics.",
-        "Action & Result: You receive production-ready automation solutions with comprehensive documentation covering bot logic, dependencies, error handling procedures, and maintenance guides—plus training materials for operators and administrators. Our enterprise-grade code ensures security, maintainability, and scalability, delivering long-term value with minimal technical debt and bots that handle exceptions intelligently while learning from experience."
-      ],
-    },
-    {
-      number: "4",
-      title: "Deployment & Change Management",
-      description: "Seamless implementation with minimal disruption, comprehensive training, and ongoing optimization to ensure long-term success",
-      background: "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=80')",
-      textColor: "text-white",
-      hasImage: false,
-      link: "/services/4",
-      detailedContent: [
-        "Situation: Even technically perfect automation fails without proper change management and organizational buy-in. Employees resist new workflows, IT teams struggle with unfamiliar bot infrastructure, and business leaders lack visibility into automation performance. Without structured deployment and ongoing optimization, automation initiatives deliver disappointing results and fail to scale across the enterprise.",
-        "Task: We execute phased rollouts that minimize disruption while building confidence through early wins. Our approach includes comprehensive runbooks, rollback procedures, and 24/7 support during critical launches. We conduct tailored training for all stakeholder groups—end users, IT teams, and business leaders—building genuine understanding of how automation transforms workflows and what success looks like.",
-        "Action & Result: You gain a sustainable automation program with established monitoring dashboards, performance metrics, and a Center of Excellence (CoE) framework for governance and best practices. We provide ongoing optimization support including performance tuning, exception analysis, and opportunity identification for additional automation. The result is an automation program that grows organically within your organization, driven by automation champions, continuous improvement, and expanding business value."
+      name: "Escape Velocity",
+      duration: "12 months",
+      stipend: "$200/mo",
+      total: "$2,400",
+      description:
+        "Full programme. You\u2019re building serious projects, publishing work, and preparing for the job market.",
+      highlights: [
+        "Capstone research project",
+        "Interview preparation",
+        "Industry introductions",
       ],
     },
   ],
 
-  // Footer
-  footer: {
-    title: "Ready to Unlock Your Automation Potential?",
-    cta: {
-      text: "Schedule Your Free Consultation",
-      link: "/contact",
+  // What Fellows Receive
+  benefits: [
+    {
+      icon: "stipend",
+      title: "Monthly Stipend",
+      description:
+        "$200/month, paid on deliverable completion. Real money, real accountability. We invest in you so you can focus on learning.",
     },
+    {
+      icon: "mentorship",
+      title: "Expert Mentorship",
+      description:
+        "Bi-weekly 1:1 calls with a working AI/CS professional. Not lectures\u2014strategic guidance, code review, and career advice.",
+    },
+    {
+      icon: "curriculum",
+      title: "Structured Curriculum",
+      description:
+        "A curated learning path from foundations to job-readiness, designed to skip the noise and focus on what the market demands.",
+    },
+    {
+      icon: "portfolio",
+      title: "Portfolio Development",
+      description:
+        "Guided project work that produces real, presentable portfolio pieces\u2014not toy projects. Everything goes on GitHub.",
+    },
+    {
+      icon: "career",
+      title: "Career Support",
+      description:
+        "CV review, LinkedIn optimization, interview prep, and introductions where possible. The end goal is a job, not a certificate.",
+    },
+  ],
+
+  // Eligibility Criteria
+  criteria: {
+    title: "Who We\u2019re Looking For",
+    subtitle:
+      "You don\u2019t need to be exceptional. You need to be serious.",
+    items: [
+      {
+        label: "STEM Background",
+        description:
+          "Non-CS STEM degree: physics, chemistry, biology, materials engineering, mathematics, or equivalent. Recent graduates preferred (0\u20133 years post-graduation).",
+      },
+      {
+        label: "Mathematical Comfort",
+        description:
+          "Comfortable with linear algebra, calculus, and statistics at the undergraduate level. Doesn\u2019t need to be exceptional\u2014needs to not be afraid of it.",
+      },
+      {
+        label: "Genuine Motivation",
+        description:
+          "Able to articulate why you want to transition into AI/ML, even informally. We\u2019re looking for signal, not polish.",
+      },
+      {
+        label: "Full-Time Commitment",
+        description:
+          "Able to commit 50 hours per week. This is a full-time undertaking, equivalent to a university course load. Not compatible with a full-time job.",
+      },
+    ],
+  },
+
+  // Application Process
+  applicationProcess: {
+    title: "How to Apply",
+    subtitle:
+      "Lightweight but intentional. We filter for signal\u2014curiosity, commitment, thinking ability\u2014not credentials.",
+    steps: [
+      {
+        number: "01",
+        title: "Written Application",
+        description:
+          "Short written application: your background, why AI/ML, and what you\u2019d build if you could build anything. No CV required\u2014just honest answers.",
+      },
+      {
+        number: "02",
+        title: "Conversation",
+        description:
+          "30-minute informal call. Not an interview\u2014a conversation. We\u2019re assessing curiosity, commitment, and programme fit.",
+      },
+      {
+        number: "03",
+        title: "Diagnostic",
+        description:
+          "A short, low-pressure math and logic exercise (take-home, ~2 hours). Not testing knowledge\u2014testing how you think and learn.",
+      },
+      {
+        number: "04",
+        title: "Offer",
+        description:
+          "Accepted fellows receive a written offer outlining the tier, stipend, expectations, and start date.",
+      },
+    ],
+  },
+
+  // FAQ
+  faq: [
+    {
+      question: "Do I need a computer science degree?",
+      answer:
+        "No. In fact, this programme is specifically designed for people who don\u2019t have one. We\u2019re looking for physicists, chemists, biologists, engineers, and mathematicians.",
+    },
+    {
+      question: "Is this free? What\u2019s the catch?",
+      answer:
+        "We pay you $200/month. There is no tuition, no income share agreement, no catch. We invest in you because we believe the AI industry needs more domain experts. Your success is our return.",
+    },
+    {
+      question: "Can I do this alongside a full-time job?",
+      answer:
+        "The programme requires a 50-hour weekly commitment. It\u2019s not compatible with full-time employment. Part-time work is possible, but this should be your primary focus.",
+    },
+    {
+      question: "What happens if I can\u2019t keep up?",
+      answer:
+        "If life gets in the way, say so. Honesty is valued above all. Stipends can be deferred (not forfeited) while you catch up. If the programme isn\u2019t working, we part ways gracefully\u2014no stigma.",
+    },
+    {
+      question: "Where is this programme based?",
+      answer:
+        "Everywhere. The programme is fully remote and global from day one. A fellow in Bogot\u00e1 and a fellow in Dhaka get the same experience.",
+    },
+    {
+      question: "What\u2019s the difference between this and a bootcamp?",
+      answer:
+        "Bootcamps charge you $8\u201316k, have low selectivity, and offer generic curricula. We pay you, select carefully, and build a customized path. We\u2019re closer to a venture-backed fellowship than a school.",
+    },
+    {
+      question: "How is progression decided?",
+      answer:
+        "At the end of each tier, we make one of four decisions: advance, hold (extend current tier), graduate early, or part ways. Every decision is based on demonstrated traction, not attendance.",
+    },
+    {
+      question: "Who owns the work I produce?",
+      answer:
+        "You do. 100%. Code, projects, blog posts, portfolio pieces\u2014all yours. This is not a work-for-hire arrangement.",
+    },
+  ],
+
+  // Testimonials (placeholders)
+  testimonials: [
+    {
+      name: "First Fellow",
+      role: "Materials Science \u2192 ML Engineer",
+      quote:
+        "This space is reserved for our first cohort of fellows. Their stories will go here.",
+      avatar: "",
+    },
+  ],
+
+  // Programme Statistics (placeholders)
+  stats: {
+    fellowsSupported: "Coming Soon",
+    countriesReached: "Global",
+    investmentPerFellow: "$2,400",
+    completionTarget: "85%",
   },
 
   // Navigation
   navigation: [
-    { label: "Solutions", href: "/solutions" },
-    { label: "Industries", href: "/industries" },
-    { label: "Solutions2", href: "/solutions2" },
-    { label: "Why Automate", href: "/why-automate" },
     { label: "About", href: "/about" },
+    { label: "Apply", href: "/apply" },
+    { label: "FAQ", href: "/#faq" },
     { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "/contact" },
   ],
 
-  // Background Images
-  backgrounds: {
-    hero: "https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80",
-    floral: "https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80",
-    concrete: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&q=80",
-    neutral: "#E8DCC4",
+  // Footer
+  footer: {
+    title: "Ready to Make the Leap?",
+    cta: {
+      text: "Apply Now",
+      link: "/apply",
+    },
   },
 
-  // Floating Cards (Hero Section)
-  floatingCards: [
-    {
-      number: 1,
-      imageUrl: "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=400&q=80",
-      position: "top-[20%] right-[15%]",
-      zIndex: "z-30",
-    },
-    {
-      number: 2,
-      imageUrl: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1920&q=80",
-      fullScreen: true,
-      zIndex: "z-20",
-    },
-    {
-      number: 3,
-      imageUrl: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&q=80",
-      position: "top-[60%] right-[20%]",
-      zIndex: "z-10",
-    },
-  ],
+  // Backgrounds
+  backgrounds: {
+    hero: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80",
+    neutral: "#F0F4F8",
+  },
 
   // Company Information
   company: {
-    foundedYear: 2020,
-    legalName: "LambdaFlows Inc.",
-    location: {
-      city: "San Francisco",
-      state: "CA",
-      country: "USA",
-    },
+    foundedYear: 2026,
+    legalName: "[Programme Name]",
   },
 
-  // Company Statistics
-  stats: {
-    processesAutomated: "500+",
-    hoursSaved: "2M+",
-    averageROI: "300%",
-    enterpriseClients: "95+",
-  },
-
-  // Impact Metrics
-  metrics: {
-    quickMetrics: [
-      { id: "efficiency", value: "87%", label: "Process Efficiency" },
-      { id: "roi", value: "6-12mo", label: "to Full ROI" },
-      { id: "cost", value: "40%", label: "Cost Reduction" },
-      { id: "accuracy", value: "99.9%", label: "Accuracy Rate" },
-    ],
-    detailedMetrics: [
-      {
-        id: "efficiency-detailed",
-        value: "87%",
-        label: "Average Process Efficiency Gain",
-        description: "Across all implementations",
-      },
-      {
-        id: "roi-detailed",
-        value: "6-12",
-        label: "Months to Full ROI",
-        description: "Typical payback period",
-      },
-      {
-        id: "cost-reduction",
-        value: "40%",
-        label: "Reduction in Operational Costs",
-        description: "Within first year",
-      },
-      {
-        id: "accuracy-detailed",
-        value: "99.9%",
-        label: "Automation Accuracy",
-        description: "Error-free execution",
-      },
-    ],
-  },
-
-  // Social Links (if needed)
+  // Social Links
   social: {
     twitter: "",
     linkedin: "",
     github: "",
-    instagram: "https://instagram.com",
-    facebook: "",
   },
 
   // Contact Info
   contact: {
-    email: "hello@lambdaflows.com",
-    phone: "+1 (800) AUTO-MATE",
-    phoneHref: "tel:+18002886628",
-    address: "123 Market St, San Francisco, CA 94103",
+    email: "hello@programmename.com",
   },
 };
 
-// Type definitions for better TypeScript support
+// Type definitions
 export type SiteConfig = typeof siteConfig;
-export type Service = typeof siteConfig.services[0];
-export type FloatingCard = typeof siteConfig.floatingCards[0];
-export type NavigationItem = typeof siteConfig.navigation[0];
+export type Tier = (typeof siteConfig.tiers)[number];
+export type Benefit = (typeof siteConfig.benefits)[number];
+export type CriterionItem = (typeof siteConfig.criteria.items)[number];
+export type ApplicationStep =
+  (typeof siteConfig.applicationProcess.steps)[number];
+export type FAQItem = (typeof siteConfig.faq)[number];
+export type NavigationItem = (typeof siteConfig.navigation)[number];
