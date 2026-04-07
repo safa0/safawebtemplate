@@ -4,39 +4,39 @@ import Link from 'next/link';
 export const mdxComponents: MDXComponents = {
   // Headings
   h1: ({ children }) => (
-    <h1 className="text-4xl md:text-5xl font-serif font-bold text-midnight mb-6 mt-12 first:mt-0">
+    <h1 className="text-4xl md:text-5xl font-serif font-bold text-dark mb-6 mt-12 first:mt-0">
       {children}
     </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="text-3xl md:text-4xl font-serif font-bold text-midnight mb-5 mt-10">
+    <h2 className="text-3xl md:text-4xl font-serif font-bold text-dark mb-5 mt-10">
       {children}
     </h2>
   ),
   h3: ({ children }) => (
-    <h3 className="text-2xl md:text-3xl font-serif font-semibold text-midnight mb-4 mt-8">
+    <h3 className="text-2xl md:text-3xl font-serif font-semibold text-dark mb-4 mt-8">
       {children}
     </h3>
   ),
   h4: ({ children }) => (
-    <h4 className="text-xl md:text-2xl font-serif font-semibold text-midnight mb-3 mt-6">
+    <h4 className="text-xl md:text-2xl font-serif font-semibold text-dark mb-3 mt-6">
       {children}
     </h4>
   ),
   h5: ({ children }) => (
-    <h5 className="text-lg md:text-xl font-serif font-semibold text-midnight mb-3 mt-5">
+    <h5 className="text-lg md:text-xl font-serif font-semibold text-dark mb-3 mt-5">
       {children}
     </h5>
   ),
   h6: ({ children }) => (
-    <h6 className="text-base md:text-lg font-serif font-semibold text-midnight mb-2 mt-4">
+    <h6 className="text-base md:text-lg font-serif font-semibold text-dark mb-2 mt-4">
       {children}
     </h6>
   ),
 
   // Paragraphs
   p: ({ children }) => (
-    <p className="text-base md:text-lg leading-relaxed text-midnight/80 mb-6">
+    <p className="text-base md:text-lg leading-relaxed text-dark/80 mb-6">
       {children}
     </p>
   ),
@@ -49,7 +49,7 @@ export const mdxComponents: MDXComponents = {
     return (
       <Component
         href={href || '#'}
-        className="text-midnight underline decoration-midnight/20 decoration-2 underline-offset-4 hover:decoration-coral transition-colors"
+        className="text-dark underline decoration-dark/20 decoration-2 underline-offset-4 hover:decoration-accent transition-colors"
         {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       >
         {children}
@@ -69,14 +69,14 @@ export const mdxComponents: MDXComponents = {
     </ol>
   ),
   li: ({ children }) => (
-    <li className="text-base md:text-lg text-midnight/80 leading-relaxed pl-2">
+    <li className="text-base md:text-lg text-dark/80 leading-relaxed pl-2">
       {children}
     </li>
   ),
 
   // Blockquote
   blockquote: ({ children }) => (
-    <blockquote className="border-l-4 border-midnight/20 bg-ice pl-6 pr-4 py-4 mb-6 italic">
+    <blockquote className="border-l-4 border-earth/20 bg-khaki-light pl-6 pr-4 py-4 mb-6 italic">
       {children}
     </blockquote>
   ),
@@ -87,7 +87,7 @@ export const mdxComponents: MDXComponents = {
 
     if (isInline) {
       return (
-        <code className="bg-[#0A1628]/10 text-midnight px-2 py-1 rounded text-sm font-mono">
+        <code className="bg-[#0A1628]/10 text-dark px-2 py-1 rounded text-sm font-mono">
           {children}
         </code>
       );
@@ -100,31 +100,31 @@ export const mdxComponents: MDXComponents = {
     );
   },
   pre: ({ children }) => (
-    <pre className="bg-[#0A1628] text-ice p-6 rounded-lg overflow-x-auto mb-6 text-sm md:text-base">
+    <pre className="bg-[#0A1628] text-khaki-light p-6 rounded-lg overflow-x-auto mb-6 text-sm md:text-base">
       {children}
     </pre>
   ),
 
   // Horizontal Rule
   hr: () => (
-    <hr className="border-t-2 border-midnight/20 my-12" />
+    <hr className="border-t-2 border-earth/20 my-12" />
   ),
 
   // Table
   table: ({ children }) => (
     <div className="overflow-x-auto mb-6">
-      <table className="min-w-full divide-y divide-midnight/10">
+      <table className="min-w-full divide-y divide-earth/10">
         {children}
       </table>
     </div>
   ),
   thead: ({ children }) => (
-    <thead className="bg-ice">
+    <thead className="bg-khaki-light">
       {children}
     </thead>
   ),
   tbody: ({ children }) => (
-    <tbody className="divide-y divide-midnight/10/30">
+    <tbody className="divide-y divide-earth/10/30">
       {children}
     </tbody>
   ),
@@ -134,12 +134,12 @@ export const mdxComponents: MDXComponents = {
     </tr>
   ),
   th: ({ children }) => (
-    <th className="px-6 py-3 text-left text-sm font-semibold text-midnight">
+    <th className="px-6 py-3 text-left text-sm font-semibold text-dark">
       {children}
     </th>
   ),
   td: ({ children }) => (
-    <td className="px-6 py-4 text-sm text-midnight/80">
+    <td className="px-6 py-4 text-sm text-dark/80">
       {children}
     </td>
   ),
@@ -157,7 +157,7 @@ export const mdxComponents: MDXComponents = {
           className="w-full h-auto"
         />
         {alt && (
-          <p className="text-sm text-midnight/60 text-center mt-2 italic">
+          <p className="text-sm text-dark/60 text-center mt-2 italic">
             {alt}
           </p>
         )}
@@ -167,7 +167,7 @@ export const mdxComponents: MDXComponents = {
 
   // Strong
   strong: ({ children }) => (
-    <strong className="font-semibold text-midnight">
+    <strong className="font-semibold text-dark">
       {children}
     </strong>
   ),

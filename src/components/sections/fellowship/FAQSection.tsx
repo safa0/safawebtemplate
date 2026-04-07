@@ -20,19 +20,19 @@ function FAQItem({
   onToggle: () => void;
 }) {
   return (
-    <div className="border-b border-midnight/10 last:border-b-0">
+    <div className="border-b border-earth/10 last:border-b-0">
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between py-6 text-left group"
       >
-        <span className="text-lg md:text-xl font-medium text-midnight pr-8 group-hover:text-coral transition-colors duration-200">
+        <span className="text-lg md:text-xl font-medium text-dark pr-8 group-hover:text-accent transition-colors duration-200">
           {question}
         </span>
         <span
           className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border transition-all duration-300 ${
             isOpen
-              ? "bg-coral border-coral text-white rotate-45"
-              : "border-midnight/20 text-midnight/40 group-hover:border-coral group-hover:text-coral"
+              ? "bg-accent border-accent text-white rotate-45"
+              : "border-earth/20 text-dark/40 group-hover:border-accent group-hover:text-accent"
           }`}
         >
           <svg
@@ -59,7 +59,7 @@ function FAQItem({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-midnight/60 leading-relaxed max-w-3xl">
+            <p className="pb-6 text-dark/60 leading-relaxed max-w-3xl">
               {answer}
             </p>
           </motion.div>
@@ -114,10 +114,10 @@ export function FAQSection() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="faq-header text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-midnight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-midnight/60">
+          <p className="text-lg text-dark/60">
             Everything you need to know before applying.
           </p>
         </div>

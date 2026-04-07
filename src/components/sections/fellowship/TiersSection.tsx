@@ -54,28 +54,28 @@ export function TiersSection() {
   }, []);
 
   const tierColors = [
-    { bg: "bg-coral/5", border: "border-coral/20", accent: "text-coral" },
+    { bg: "bg-accent/5", border: "border-accent/20", accent: "text-accent" },
     {
-      bg: "bg-midnight/5",
-      border: "border-midnight/20",
-      accent: "text-midnight",
+      bg: "bg-earth/5",
+      border: "border-earth/20",
+      accent: "text-dark",
     },
-    { bg: "bg-coral/5", border: "border-coral/20", accent: "text-coral" },
+    { bg: "bg-accent/5", border: "border-accent/20", accent: "text-accent" },
   ];
 
   return (
     <section
       ref={sectionRef}
       id="how-it-works"
-      className="tiers-section w-full bg-ice section-padding-large"
+      className="tiers-section w-full bg-khaki-light section-padding-large"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="tiers-header text-center mb-16 md:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-midnight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4">
             How It Works
           </h2>
-          <p className="text-lg md:text-xl text-midnight/60 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-dark/60 max-w-2xl mx-auto">
             Every fellow starts at Tier 1. Progression is earned. Think of it
             like funding rounds: demonstrate traction, unlock the next stage.
           </p>
@@ -83,7 +83,7 @@ export function TiersSection() {
 
         {/* Connecting line (desktop) */}
         <div className="hidden lg:block relative mb-4">
-          <div className="tier-connector absolute top-1/2 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-coral via-midnight to-coral" />
+          <div className="tier-connector absolute top-1/2 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-accent via-dark to-accent" />
         </div>
 
         {/* Tier Cards */}
@@ -103,13 +103,13 @@ export function TiersSection() {
                 </div>
 
                 {/* Name & Duration */}
-                <h3 className="text-2xl md:text-3xl font-bold text-midnight mb-2">
+                <h3 className="text-2xl md:text-3xl font-bold text-dark mb-2">
                   {tier.name}
                 </h3>
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="text-midnight/60">{tier.duration}</span>
-                  <span className="text-midnight/30">&middot;</span>
-                  <span className="text-midnight/60">{tier.stipend}</span>
+                  <span className="text-dark/60">{tier.duration}</span>
+                  <span className="text-dark/30">&middot;</span>
+                  <span className="text-dark/60">{tier.stipend}</span>
                 </div>
 
                 {/* Total investment badge */}
@@ -117,13 +117,13 @@ export function TiersSection() {
                   <span className={`text-sm font-bold ${colors.accent}`}>
                     {tier.total}
                   </span>
-                  <span className="text-xs text-midnight/40">
+                  <span className="text-xs text-dark/40">
                     total investment
                   </span>
                 </div>
 
                 {/* Description */}
-                <p className="text-midnight/60 mb-6 leading-relaxed">
+                <p className="text-dark/60 mb-6 leading-relaxed">
                   {tier.description}
                 </p>
 
@@ -132,7 +132,7 @@ export function TiersSection() {
                   {tier.highlights.map((highlight) => (
                     <li
                       key={highlight}
-                      className="flex items-start gap-3 text-sm text-midnight/70"
+                      className="flex items-start gap-3 text-sm text-dark/70"
                     >
                       <svg
                         className={`w-5 h-5 flex-shrink-0 mt-0.5 ${colors.accent}`}
@@ -156,7 +156,7 @@ export function TiersSection() {
                 {index < siteConfig.tiers.length - 1 && (
                   <div className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white rounded-full items-center justify-center shadow-md">
                     <svg
-                      className="w-4 h-4 text-coral"
+                      className="w-4 h-4 text-accent"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"

@@ -34,10 +34,10 @@ export function CompanyStorySection() {
       className="w-full bg-white section-padding-large"
     >
       <div className="thesis-content max-w-4xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-midnight mb-8">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-8">
           The Thesis
         </h2>
-        <div className="space-y-6 text-lg md:text-xl text-midnight/60 leading-relaxed">
+        <div className="space-y-6 text-lg md:text-xl text-dark/60 leading-relaxed">
           <p>{siteConfig.problem.statement}</p>
           <p>
             These people already exist. They graduated with strong mathematics,
@@ -46,9 +46,9 @@ export function CompanyStorySection() {
             from STEM to AI is short&mdash;but nobody is building it at the
             right scale or the right price point.
           </p>
-          <p className="text-midnight font-medium text-xl md:text-2xl">
+          <p className="text-dark font-medium text-xl md:text-2xl">
             This programme is that bridge.{" "}
-            <span className="text-coral">
+            <span className="text-accent">
               Angel investing for human capital.
             </span>
           </p>

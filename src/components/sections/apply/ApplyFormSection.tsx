@@ -29,7 +29,7 @@ export function ApplyFormSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-coral section-padding-large"
+      className="w-full bg-accent section-padding-large"
     >
       <div className="apply-form-content max-w-3xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
@@ -41,7 +41,7 @@ export function ApplyFormSection() {
         </p>
         <a
           href="#"
-          className="inline-block px-10 py-4 bg-white text-coral text-lg font-bold rounded-full hover:bg-white/90 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+          className="inline-block px-10 py-4 bg-white text-accent text-lg font-bold rounded-full hover:bg-white/90 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
         >
           Start Your Application
         </a>

@@ -74,14 +74,14 @@ export function ValuesSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-ice section-padding-large"
+      className="w-full bg-khaki-light section-padding-large"
     >
       <div className="max-w-7xl mx-auto">
         <div className="diff-header text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-midnight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4">
             What Makes Us Different
           </h2>
-          <p className="text-lg text-midnight/60 max-w-2xl mx-auto">
+          <p className="text-lg text-dark/60 max-w-2xl mx-auto">
             No existing programme combines all five of our properties: non-CS
             STEM focus, micro-stipend, tiered commitment, global reach, and
             venture framing.
@@ -92,9 +92,9 @@ export function ValuesSection() {
           {differentiators.map((item) => (
             <div
               key={item.label}
-              className="diff-card p-8 rounded-2xl bg-white border border-midnight/10 hover:shadow-lg transition-all duration-300"
+              className="diff-card p-8 rounded-2xl bg-white border border-earth/10 hover:shadow-lg transition-all duration-300"
             >
-              <h3 className="text-lg font-bold text-midnight mb-4">
+              <h3 className="text-lg font-bold text-dark mb-4">
                 vs. {item.label}
               </h3>
               <div className="space-y-3">
@@ -112,13 +112,13 @@ export function ValuesSection() {
                       d="M6 18L18 6M6 6l12 12"
                     />
                   </svg>
-                  <span className="text-sm text-midnight/50">
+                  <span className="text-sm text-dark/50">
                     {item.comparison}
                   </span>
                 </div>
                 <div className="flex items-start gap-2">
                   <svg
-                    className="w-5 h-5 flex-shrink-0 mt-0.5 text-coral"
+                    className="w-5 h-5 flex-shrink-0 mt-0.5 text-accent"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -130,7 +130,7 @@ export function ValuesSection() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-sm text-midnight/80 font-medium">
+                  <span className="text-sm text-dark/80 font-medium">
                     {item.us}
                   </span>
                 </div>

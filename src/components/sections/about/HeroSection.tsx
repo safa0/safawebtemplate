@@ -23,7 +23,7 @@ export function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-midnight pt-32 pb-20 md:pt-40 md:pb-28 px-6 md:px-8 lg:px-12"
+      className="w-full bg-dark pt-32 pb-20 md:pt-40 md:pb-28 px-6 md:px-8 lg:px-12"
     >
       <div className="about-hero-content max-w-4xl mx-auto text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">

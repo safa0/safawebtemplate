@@ -46,18 +46,18 @@ export function WhatToExpectSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-ice section-padding-large"
+      className="w-full bg-khaki-light section-padding-large"
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-midnight mb-12 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-dark mb-12 text-center">
           What to Expect
         </h2>
 
         <div className="expect-grid grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* What we look for */}
-          <div className="expect-col p-8 md:p-10 rounded-2xl bg-white border border-midnight/10">
-            <h3 className="text-xl font-bold text-midnight mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-coral/10 text-coral">
+          <div className="expect-col p-8 md:p-10 rounded-2xl bg-white border border-earth/10">
+            <h3 className="text-xl font-bold text-dark mb-6 flex items-center gap-3">
+              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-accent/10 text-accent">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -78,10 +78,10 @@ export function WhatToExpectSection() {
               {weSeek.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-midnight/60"
+                  className="flex items-start gap-3 text-dark/60"
                 >
                   <svg
-                    className="w-5 h-5 flex-shrink-0 mt-0.5 text-coral"
+                    className="w-5 h-5 flex-shrink-0 mt-0.5 text-accent"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -100,9 +100,9 @@ export function WhatToExpectSection() {
           </div>
 
           {/* What to prepare */}
-          <div className="expect-col p-8 md:p-10 rounded-2xl bg-white border border-midnight/10">
-            <h3 className="text-xl font-bold text-midnight mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-midnight/10 text-midnight">
+          <div className="expect-col p-8 md:p-10 rounded-2xl bg-white border border-earth/10">
+            <h3 className="text-xl font-bold text-dark mb-6 flex items-center gap-3">
+              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-khaki/10 text-dark">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -123,10 +123,10 @@ export function WhatToExpectSection() {
               {youPrepare.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-midnight/60"
+                  className="flex items-start gap-3 text-dark/60"
                 >
                   <svg
-                    className="w-5 h-5 flex-shrink-0 mt-0.5 text-midnight/30"
+                    className="w-5 h-5 flex-shrink-0 mt-0.5 text-dark/30"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

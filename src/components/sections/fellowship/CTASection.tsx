@@ -31,7 +31,7 @@ export function CTASection() {
   return (
     <section
       ref={sectionRef}
-      className="cta-section w-full bg-coral section-padding-large"
+      className="cta-section w-full bg-accent section-padding-large"
     >
       <div className="cta-content max-w-4xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
@@ -43,7 +43,7 @@ export function CTASection() {
         </p>
         <Link
           href={siteConfig.footer.cta.link}
-          className="inline-block px-10 py-4 bg-white text-coral text-lg font-bold rounded-full hover:bg-white/90 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+          className="inline-block px-10 py-4 bg-white text-accent text-lg font-bold rounded-full hover:bg-white/90 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
         >
           {siteConfig.footer.cta.text}
         </Link>

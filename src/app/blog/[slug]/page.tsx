@@ -108,7 +108,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <Header />
 
-      <main className="min-h-screen bg-ice pt-20">
+      <main className="min-h-screen bg-khaki-light pt-20">
         {/* Breadcrumbs */}
         <div className="max-w-4xl mx-auto px-6 pt-8">
           <Breadcrumbs
@@ -142,7 +142,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-sm px-4 py-1.5 bg-white text-midnight rounded-full font-medium"
+                  className="text-sm px-4 py-1.5 bg-white text-dark rounded-full font-medium"
                 >
                   {tag}
                 </span>
@@ -150,12 +150,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-midnight mb-6">
+            <h1 className="text-4xl md:text-6xl font-serif font-bold text-dark mb-6">
               {post.title}
             </h1>
 
             {/* Meta */}
-            <div className="flex items-center gap-4 text-midnight/70">
+            <div className="flex items-center gap-4 text-dark/70">
               <span className="font-medium">{post.author}</span>
               <span>•</span>
               <time dateTime={post.date}>{formatDate(post.date)}</time>

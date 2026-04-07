@@ -13,14 +13,14 @@ export default async function BlogPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-ice pt-20">
+      <main className="min-h-screen bg-khaki-light pt-20">
         {/* Header */}
-        <div className="bg-white border-b border-midnight/10">
+        <div className="bg-white border-b border-earth/10">
           <div className="max-w-7xl mx-auto px-6 py-16 text-center">
-            <h1 className="text-5xl md:text-7xl font-serif font-bold text-midnight mb-6">
+            <h1 className="text-5xl md:text-7xl font-serif font-bold text-dark mb-6">
               Fellowship Insights
             </h1>
-            <p className="text-lg md:text-xl text-midnight/60 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-dark/60 max-w-2xl mx-auto">
               Stories, guides, and perspectives on the STEM-to-AI transition
               and the future of domain expertise in machine learning.
             </p>
@@ -31,7 +31,7 @@ export default async function BlogPage() {
         <section className="max-w-7xl mx-auto px-6 py-16">
           {posts.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-2xl text-midnight/60">
+              <p className="text-2xl text-dark/60">
                 No articles found yet. Check back soon!
               </p>
             </div>
@@ -42,7 +42,7 @@ export default async function BlogPage() {
 
         {/* Newsletter CTA */}
         <section className="max-w-7xl mx-auto px-6 pb-16">
-          <div className="bg-midnight text-white rounded-2xl p-12 text-center">
+          <div className="bg-dark text-white rounded-2xl p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
               Stay Updated
             </h2>
@@ -53,11 +53,11 @@ export default async function BlogPage() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-lg bg-white text-midnight placeholder:text-midnight/50 focus:outline-none focus:ring-2 focus:ring-coral"
+                className="flex-1 px-6 py-3 rounded-lg bg-white text-dark placeholder:text-dark/50 focus:outline-none focus:ring-2 focus:ring-accent"
               />
               <button
                 type="submit"
-                className="px-8 py-3 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors duration-300"
+                className="px-8 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent/80 transition-colors duration-300"
               >
                 Subscribe
               </button>

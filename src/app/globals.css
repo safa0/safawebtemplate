@@ -4,15 +4,13 @@
 
 @layer base {
   :root {
-    --color-midnight: #0A1628;
-    --color-midnight-light: #1A2A4A;
-    --color-midnight-lighter: #2A3A5A;
-    --color-navy: #0F2A4A;
-    --color-coral: #E94560;
-    --color-coral-light: #FF6B81;
-    --color-coral-dark: #C73550;
-    --color-slate: #94A3B8;
-    --color-ice: #F0F4F8;
+    --color-khaki: #C3B091;
+    --color-khaki-light: #E8DCC4;
+    --color-khaki-dark: #8B7355;
+    --color-sand: #D4C4A8;
+    --color-earth: #9C8B6C;
+    --color-dark: #1A1A2E;
+    --color-accent: #E94560;
   }
 
   * {
@@ -32,24 +30,24 @@
 @layer components {
   /* Typography Components */
   .heading-primary {
-    @apply font-serif text-5xl md:text-7xl mb-8 text-midnight;
+    @apply font-serif text-5xl md:text-7xl mb-8 text-dark;
   }
 
   .heading-secondary {
-    @apply font-serif text-4xl md:text-6xl mb-6 text-midnight;
+    @apply font-serif text-4xl md:text-6xl mb-6 text-dark;
   }
 
   .heading-tertiary {
-    @apply font-serif text-3xl md:text-5xl mb-4 text-midnight;
+    @apply font-serif text-3xl md:text-5xl mb-4 text-dark;
   }
 
   /* Button Components */
   .btn-primary {
-    @apply inline-block px-8 md:px-12 py-3 md:py-4 bg-coral text-white rounded-full text-base md:text-lg font-medium hover:-translate-y-1 hover:bg-coral-light hover:shadow-2xl transition-all duration-300;
+    @apply inline-block px-8 md:px-12 py-3 md:py-4 bg-accent text-white rounded-full text-base md:text-lg font-medium hover:-translate-y-1 hover:shadow-2xl transition-all duration-300;
   }
 
   .btn-secondary {
-    @apply inline-block px-6 md:px-8 py-2 md:py-3 bg-midnight text-white rounded-lg text-base md:text-lg font-medium hover:bg-midnight-light transition-colors duration-300;
+    @apply inline-block px-6 md:px-8 py-2 md:py-3 bg-earth text-white rounded-lg text-base md:text-lg font-medium hover:bg-khaki-dark transition-colors duration-300;
   }
 
   .btn-ghost {

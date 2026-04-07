@@ -42,7 +42,7 @@ export function CriteriaSection() {
   return (
     <section
       ref={sectionRef}
-      className="criteria-section w-full bg-midnight section-padding-large"
+      className="criteria-section w-full bg-dark section-padding-large"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -63,7 +63,7 @@ export function CriteriaSection() {
               className="criteria-card p-8 md:p-10 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
             >
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-coral/20 text-coral text-sm font-bold">
+                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-accent/20 text-accent text-sm font-bold">
                   {String(index + 1).padStart(2, "0")}
                 </div>
                 <div>

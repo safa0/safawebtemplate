@@ -46,16 +46,16 @@ export function ApplicationStepsSection() {
       className="w-full bg-white section-padding-large"
     >
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-midnight mb-4 text-center">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4 text-center">
           {siteConfig.applicationProcess.title}
         </h2>
-        <p className="text-lg text-midnight/60 mb-16 text-center max-w-2xl mx-auto">
+        <p className="text-lg text-dark/60 mb-16 text-center max-w-2xl mx-auto">
           {siteConfig.applicationProcess.subtitle}
         </p>
 
         <div className="steps-container relative">
           {/* Vertical line */}
-          <div className="step-line absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-coral via-midnight to-coral" />
+          <div className="step-line absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-dark to-accent" />
 
           {/* Steps */}
           <div className="space-y-8 md:space-y-12">
@@ -65,16 +65,16 @@ export function ApplicationStepsSection() {
                 className="step-card relative flex items-start gap-6 md:gap-8"
               >
                 {/* Step number */}
-                <div className="relative z-10 flex-shrink-0 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-white border-2 border-coral text-coral font-bold text-sm md:text-base">
+                <div className="relative z-10 flex-shrink-0 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-white border-2 border-accent text-accent font-bold text-sm md:text-base">
                   {step.number}
                 </div>
 
                 {/* Content */}
                 <div className="pt-2 md:pt-3">
-                  <h3 className="text-xl md:text-2xl font-bold text-midnight mb-2">
+                  <h3 className="text-xl md:text-2xl font-bold text-dark mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-midnight/60 leading-relaxed">
+                  <p className="text-dark/60 leading-relaxed">
                     {step.description}
                   </p>
                 </div>

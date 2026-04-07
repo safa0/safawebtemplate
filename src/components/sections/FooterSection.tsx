@@ -24,7 +24,7 @@ export function FooterSection() {
   ];
 
   return (
-    <footer className="w-full bg-midnight min-h-[60vh] md:min-h-[80vh] flex flex-col">
+    <footer className="w-full bg-dark min-h-[60vh] md:min-h-[80vh] flex flex-col">
       {/* Main Footer Content */}
       <div className="flex-1 flex flex-col md:flex-row items-start md:items-center py-12 md:py-0">
         {/* Logo Section */}
@@ -36,7 +36,7 @@ export function FooterSection() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
               {siteConfig.name}
             </h2>
-            <p className="text-sm text-slate max-w-xs">
+            <p className="text-sm text-khaki max-w-xs">
               {siteConfig.tagline}
             </p>
           </Link>
@@ -54,14 +54,14 @@ export function FooterSection() {
                   className="group relative overflow-hidden block w-full py-4 sm:py-5 md:py-6 lg:py-8 px-6 sm:px-8 md:px-12 lg:px-16"
                 >
                   <div className="relative z-10 flex items-baseline gap-3 sm:gap-4">
-                    <span className="text-xs sm:text-sm md:text-base text-slate/60 font-light group-hover:text-coral-light transition-colors duration-300">
+                    <span className="text-xs sm:text-sm md:text-base text-khaki/60 font-light group-hover:text-accent transition-colors duration-300">
                       {item.number}
                     </span>
-                    <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white/80 group-hover:text-coral-light transition-colors duration-300">
+                    <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white/80 group-hover:text-accent transition-colors duration-300">
                       {item.label}
                     </span>
                   </div>
-                  <div className="absolute inset-0 bg-midnight-light origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-out z-0" />
+                  <div className="absolute inset-0 bg-dark/80 origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-out z-0" />
                 </Link>
                 {index < navigationItems.length - 1 && (
                   <div className="w-full h-px bg-white/10" />
@@ -77,12 +77,12 @@ export function FooterSection() {
         <div className="flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-row items-start">
           {/* Contact */}
           <div className="flex-1 w-full px-6 sm:px-8 md:px-12 lg:px-16 py-6 sm:py-8 border-b sm:border-b-0 sm:border-r lg:border-r-0 border-white/10">
-            <h3 className="text-xs font-light text-slate/60 mb-3 tracking-wider uppercase">
+            <h3 className="text-xs font-light text-khaki/60 mb-3 tracking-wider uppercase">
               Contact
             </h3>
             <a
               href={`mailto:${siteConfig.contact.email}`}
-              className="text-sm md:text-base text-white/80 hover:text-coral-light transition-colors duration-300 break-all"
+              className="text-sm md:text-base text-white/80 hover:text-accent transition-colors duration-300 break-all"
             >
               {siteConfig.contact.email}
             </a>
@@ -92,7 +92,7 @@ export function FooterSection() {
 
           {/* Stay Updated */}
           <div className="flex-1 w-full px-6 sm:px-8 md:px-12 lg:px-16 py-6 sm:py-8 border-b sm:border-b-0 border-white/10">
-            <h3 className="text-xs font-light text-slate/60 mb-3 tracking-wider uppercase">
+            <h3 className="text-xs font-light text-khaki/60 mb-3 tracking-wider uppercase">
               Stay Updated
             </h3>
             {isMounted ? (
@@ -104,7 +104,7 @@ export function FooterSection() {
                   ref={subscribeRef}
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 bg-transparent border-b border-white/20 py-2 text-sm text-white placeholder:text-slate/40 focus:outline-none focus:border-coral transition-colors duration-300 min-w-0"
+                  className="flex-1 bg-transparent border-b border-white/20 py-2 text-sm text-white placeholder:text-khaki/40 focus:outline-none focus:border-accent transition-colors duration-300 min-w-0"
                   required
                 />
                 <button
@@ -113,7 +113,7 @@ export function FooterSection() {
                   aria-label="Subscribe"
                 >
                   <svg
-                    className="w-4 h-4 text-coral"
+                    className="w-4 h-4 text-accent"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -138,7 +138,7 @@ export function FooterSection() {
 
           {/* Connect */}
           <div className="flex-1 w-full px-6 sm:px-8 md:px-12 lg:px-16 py-6 sm:py-8">
-            <h3 className="text-xs font-light text-slate/60 mb-3 tracking-wider uppercase">
+            <h3 className="text-xs font-light text-khaki/60 mb-3 tracking-wider uppercase">
               Connect
             </h3>
             <div className="flex flex-col gap-2">
@@ -147,7 +147,7 @@ export function FooterSection() {
                   href={siteConfig.social.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/80 hover:text-coral-light transition-colors duration-300"
+                  className="text-sm text-white/80 hover:text-accent transition-colors duration-300"
                 >
                   Twitter / X
                 </a>
@@ -157,7 +157,7 @@ export function FooterSection() {
                   href={siteConfig.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/80 hover:text-coral-light transition-colors duration-300"
+                  className="text-sm text-white/80 hover:text-accent transition-colors duration-300"
                 >
                   LinkedIn
                 </a>
@@ -167,7 +167,7 @@ export function FooterSection() {
                   href={siteConfig.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/80 hover:text-coral-light transition-colors duration-300"
+                  className="text-sm text-white/80 hover:text-accent transition-colors duration-300"
                 >
                   GitHub
                 </a>
@@ -175,7 +175,7 @@ export function FooterSection() {
               {!siteConfig.social.twitter &&
                 !siteConfig.social.linkedin &&
                 !siteConfig.social.github && (
-                  <span className="text-sm text-slate/40">Coming soon</span>
+                  <span className="text-sm text-khaki/40">Coming soon</span>
                 )}
             </div>
           </div>
@@ -183,7 +183,7 @@ export function FooterSection() {
 
         {/* Copyright */}
         <div className="px-6 sm:px-8 md:px-12 lg:px-16 py-6 border-t border-white/10 text-center sm:text-right">
-          <p className="text-xs text-slate/40">
+          <p className="text-xs text-khaki/40">
             {new Date().getFullYear()} {siteConfig.name} &copy;
           </p>
         </div>

@@ -125,10 +125,10 @@ export function BenefitsSection() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="benefits-header text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-midnight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4">
             What You Get
           </h2>
-          <p className="text-lg md:text-xl text-midnight/60 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-dark/60 max-w-2xl mx-auto">
             This isn&apos;t a course. It&apos;s an investment in your future.
             Here&apos;s what comes with it.
           </p>
@@ -139,10 +139,10 @@ export function BenefitsSection() {
           {siteConfig.benefits.map((benefit) => (
             <div
               key={benefit.title}
-              className="benefit-card group p-8 rounded-2xl border border-midnight/10 hover:border-coral/30 hover:shadow-lg transition-all duration-300 bg-white"
+              className="benefit-card group p-8 rounded-2xl border border-earth/10 hover:border-accent/30 hover:shadow-lg transition-all duration-300 bg-white"
             >
               {/* Icon */}
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-coral/10 text-coral mb-6 group-hover:bg-coral group-hover:text-white transition-all duration-300">
+              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-accent/10 text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-300">
                 {iconMap[benefit.icon] || (
                   <svg
                     className="w-6 h-6"
@@ -161,12 +161,12 @@ export function BenefitsSection() {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-midnight mb-3">
+              <h3 className="text-xl font-bold text-dark mb-3">
                 {benefit.title}
               </h3>
 
               {/* Description */}
-              <p className="text-midnight/60 leading-relaxed">
+              <p className="text-dark/60 leading-relaxed">
                 {benefit.description}
               </p>
             </div>

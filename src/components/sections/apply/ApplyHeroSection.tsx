@@ -23,11 +23,11 @@ export function ApplyHeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-midnight pt-32 pb-20 md:pt-40 md:pb-28 px-6 md:px-8 lg:px-12"
+      className="w-full bg-dark pt-32 pb-20 md:pt-40 md:pb-28 px-6 md:px-8 lg:px-12"
     >
       <div className="apply-hero-content max-w-4xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-coral/20 text-coral text-sm font-medium rounded-full mb-6">
-          <span className="w-2 h-2 bg-coral rounded-full animate-pulse" />
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 text-accent text-sm font-medium rounded-full mb-6">
+          <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
           Applications Open
         </div>
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">

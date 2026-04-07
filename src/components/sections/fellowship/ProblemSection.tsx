@@ -58,7 +58,7 @@ export function ProblemSection() {
   return (
     <section
       ref={sectionRef}
-      className="problem-section w-full bg-midnight section-padding-large"
+      className="problem-section w-full bg-dark section-padding-large"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
@@ -79,7 +79,7 @@ export function ProblemSection() {
                 key={`problem-stat-${index}`}
                 className="problem-stat p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors duration-300"
               >
-                <div className="text-3xl md:text-4xl font-bold text-coral mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
                   {point.stat}
                 </div>
                 <div className="text-base md:text-lg text-white/60">

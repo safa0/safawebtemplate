@@ -26,7 +26,7 @@ export function Header() {
       <div
         className={`border-b transition-all duration-300 ${
           scrolled
-            ? "border-midnight/10 bg-white/90 backdrop-blur-md shadow-sm"
+            ? "border-earth/10 bg-white/90 backdrop-blur-md shadow-sm"
             : "border-white/10 bg-white/50 backdrop-blur-sm"
         }`}
       >
@@ -36,7 +36,7 @@ export function Header() {
             href="/"
             className="flex items-center gap-2 md:gap-3 flex-shrink-0"
           >
-            <span className="text-lg md:text-xl font-bold text-midnight">
+            <span className="text-lg md:text-xl font-bold text-dark">
               {siteConfig.name}
             </span>
           </Link>
@@ -51,7 +51,7 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="ml-2 px-5 py-2 bg-coral text-white text-sm font-medium rounded-full hover:bg-coral-light transition-all duration-200"
+                    className="ml-2 px-5 py-2 bg-accent text-white text-sm font-medium rounded-full hover:bg-accent/80 transition-all duration-200"
                   >
                     {item.label}
                   </Link>
@@ -62,7 +62,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="px-4 lg:px-5 py-2 text-midnight/70 text-sm font-medium hover:text-midnight transition-colors duration-200"
+                  className="px-4 lg:px-5 py-2 text-dark/70 text-sm font-medium hover:text-dark transition-colors duration-200"
                 >
                   {item.label}
                 </Link>
@@ -73,7 +73,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-midnight hover:bg-midnight/5 rounded-lg transition-colors"
+            className="md:hidden p-2 text-dark hover:bg-earth/5 rounded-lg transition-colors"
             aria-label="Toggle menu"
           >
             <svg
@@ -112,8 +112,8 @@ export function Header() {
 
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-midnight/10 bg-white/95 backdrop-blur-md shadow-sm">
-          <nav className="flex flex-col divide-y divide-midnight/10 max-w-7xl mx-auto">
+        <div className="md:hidden border-b border-earth/10 bg-white/95 backdrop-blur-md shadow-sm">
+          <nav className="flex flex-col divide-y divide-earth/10 max-w-7xl mx-auto">
             {siteConfig.navigation.map((item) => {
               const isApply = item.href === "/apply";
 
@@ -122,7 +122,7 @@ export function Header() {
                   <div key={item.href} className="px-4 py-4">
                     <Link
                       href={item.href}
-                      className="block w-full text-center px-6 py-3 bg-coral text-white text-sm font-medium rounded-full hover:bg-coral-light transition-colors duration-200"
+                      className="block w-full text-center px-6 py-3 bg-accent text-white text-sm font-medium rounded-full hover:bg-accent/80 transition-colors duration-200"
                       onClick={handleNavClick}
                     >
                       {item.label}
@@ -135,7 +135,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="px-4 py-4 text-midnight/70 text-sm font-medium hover:bg-midnight/5 transition-colors duration-200"
+                  className="px-4 py-4 text-dark/70 text-sm font-medium hover:bg-earth/5 transition-colors duration-200"
                   onClick={handleNavClick}
                 >
                   {item.label}

@@ -153,19 +153,19 @@ export function Preloader() {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-[9999] bg-midnight flex flex-col items-center justify-center"
+      className="fixed inset-0 z-[9999] bg-dark flex flex-col items-center justify-center"
     >
       <div className="flex flex-col items-center justify-center mb-8">
         <span className="text-3xl md:text-4xl font-bold text-white">
           {siteConfig.name}
         </span>
-        <span className="text-sm text-slate mt-2">{siteConfig.tagline}</span>
+        <span className="text-sm text-khaki mt-2">{siteConfig.tagline}</span>
       </div>
 
       {/* Progress bar */}
       <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden">
         <div
-          className="h-full bg-coral transition-all duration-300 ease-out"
+          className="h-full bg-accent transition-all duration-300 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>

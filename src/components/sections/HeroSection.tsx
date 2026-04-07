@@ -121,13 +121,13 @@ export function HeroSection() {
           {/* Left: Content */}
           <div className="flex flex-col gap-6 md:gap-8">
             {/* Badge */}
-            <div className="hero-badge inline-flex items-center self-start gap-2 px-4 py-2 bg-coral/10 text-coral text-sm font-medium rounded-full">
-              <span className="w-2 h-2 bg-coral rounded-full animate-pulse" />
+            <div className="hero-badge inline-flex items-center self-start gap-2 px-4 py-2 bg-accent/10 text-accent text-sm font-medium rounded-full">
+              <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
               {siteConfig.hero.badge}
             </div>
 
             {/* Headline */}
-            <h1 className="hero-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-midnight leading-[1.1]">
+            <h1 className="hero-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-dark leading-[1.1]">
               {siteConfig.hero.headline.map((line, index) => (
                 <span key={`headline-${index}`} className="block">
                   {line}
@@ -136,7 +136,7 @@ export function HeroSection() {
             </h1>
 
             {/* Description */}
-            <p className="hero-description text-lg md:text-xl text-midnight/60 max-w-xl leading-relaxed">
+            <p className="hero-description text-lg md:text-xl text-dark/60 max-w-xl leading-relaxed">
               {siteConfig.hero.description}
             </p>
 
@@ -150,7 +150,7 @@ export function HeroSection() {
               </Link>
               <Link
                 href={siteConfig.hero.secondaryCta.link}
-                className="hero-cta btn-ghost text-midnight/70 hover:text-midnight"
+                className="hero-cta btn-ghost text-dark/70 hover:text-dark"
               >
                 <span>{siteConfig.hero.secondaryCta.text}</span>
                 <span>&darr;</span>
@@ -162,9 +162,9 @@ export function HeroSection() {
           <div className="hero-visual relative hidden lg:flex items-center justify-center">
             <div className="relative w-full aspect-square max-w-lg">
               {/* Abstract gradient mesh */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-midnight via-navy to-midnight-light overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-tr from-coral/20 via-transparent to-coral/10" />
-                <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2 bg-coral/15 rounded-full blur-3xl" />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-dark via-dark to-dark/80 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 via-transparent to-accent/10" />
+                <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2 bg-accent/15 rounded-full blur-3xl" />
                 <div className="absolute bottom-1/4 right-1/4 w-1/3 h-1/3 bg-blue-400/10 rounded-full blur-2xl" />
               </div>
               {/* Floating stats */}
@@ -189,7 +189,7 @@ export function HeroSection() {
 
           {/* Mobile visual - simpler */}
           <div className="hero-visual lg:hidden flex justify-center">
-            <div className="w-full max-w-sm p-8 rounded-2xl bg-gradient-to-br from-midnight to-navy text-center">
+            <div className="w-full max-w-sm p-8 rounded-2xl bg-gradient-to-br from-dark to-dark text-center">
               <div className="text-3xl font-bold text-white mb-2">
                 STEM &rarr; AI
               </div>
