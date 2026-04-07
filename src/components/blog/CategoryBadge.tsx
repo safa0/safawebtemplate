@@ -16,8 +16,8 @@ export function CategoryBadge({ name, slug, variant = 'default', size = 'sm' }: 
   };
 
   const variantClasses = {
-    default: 'bg-earth text-white hover:bg-khaki-dark',
-    outline: 'border border-earth text-earth hover:bg-earth hover:text-white',
+    default: 'bg-coral text-white hover:bg-coral-light',
+    outline: 'border border-midnight text-midnight hover:bg-midnight hover:text-white',
   };
 
   return (
@@ -39,7 +39,7 @@ export function TagBadge({ name, slug }: TagBadgeProps) {
   return (
     <Link
       href={`/blog?tag=${slug}`}
-      className="inline-flex items-center px-2 py-1 text-xs rounded bg-khaki-light text-earth hover:bg-khaki transition-colors"
+      className="inline-flex items-center px-2 py-1 text-xs rounded bg-ice text-midnight/70 hover:bg-midnight/10 transition-colors"
     >
       #{name}
     </Link>

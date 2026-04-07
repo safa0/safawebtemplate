@@ -8,22 +8,21 @@ import { generateMetadata as genMetadata } from '@/config/metadata';
 export const metadata: Metadata = genMetadata('blog');
 
 export default async function BlogPage() {
-  // Get all posts from MDX files
   const posts = getAllPosts();
 
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-khaki-light pt-20">
+      <main className="min-h-screen bg-ice pt-20">
         {/* Header */}
-        <div className="bg-white border-b border-khaki-light">
+        <div className="bg-white border-b border-midnight/10">
           <div className="max-w-7xl mx-auto px-6 py-16 text-center">
-            <h1 className="text-5xl md:text-7xl font-serif font-bold text-[#2F4538] mb-6">
-              Automation Insights
+            <h1 className="text-5xl md:text-7xl font-serif font-bold text-midnight mb-6">
+              Fellowship Insights
             </h1>
-            <p className="text-lg md:text-xl text-[#2F4538]/70 max-w-2xl mx-auto">
-              Explore the latest trends, strategies, and success stories in intelligent
-              automation and process optimization.
+            <p className="text-lg md:text-xl text-midnight/60 max-w-2xl mx-auto">
+              Stories, guides, and perspectives on the STEM-to-AI transition
+              and the future of domain expertise in machine learning.
             </p>
           </div>
         </div>
@@ -32,7 +31,7 @@ export default async function BlogPage() {
         <section className="max-w-7xl mx-auto px-6 py-16">
           {posts.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-2xl text-[#2F4538]/60">
+              <p className="text-2xl text-midnight/60">
                 No articles found yet. Check back soon!
               </p>
             </div>
@@ -43,22 +42,22 @@ export default async function BlogPage() {
 
         {/* Newsletter CTA */}
         <section className="max-w-7xl mx-auto px-6 pb-16">
-          <div className="bg-[#2F4538] text-khaki-light rounded-2xl p-12 text-center">
+          <div className="bg-midnight text-white rounded-2xl p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
               Stay Updated
             </h2>
-            <p className="text-lg mb-8 opacity-90">
-              Get the latest automation insights delivered to your inbox monthly.
+            <p className="text-lg mb-8 text-white/70">
+              Get fellowship updates and STEM-to-AI insights in your inbox.
             </p>
             <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-lg bg-white text-[#2F4538] placeholder:text-[#2F4538]/50 focus:outline-none focus:ring-2 focus:ring-khaki"
+                className="flex-1 px-6 py-3 rounded-lg bg-white text-midnight placeholder:text-midnight/50 focus:outline-none focus:ring-2 focus:ring-coral"
               />
               <button
                 type="submit"
-                className="px-8 py-3 bg-khaki text-[#2F4538] rounded-lg font-semibold hover:bg-khaki-light transition-colors duration-300"
+                className="px-8 py-3 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors duration-300"
               >
                 Subscribe
               </button>
@@ -66,10 +65,8 @@ export default async function BlogPage() {
           </div>
         </section>
 
-        {/* Footer */}
         <FooterSection />
       </main>
     </>
   );
 }
-

@@ -42,7 +42,7 @@ export function BlogCard({ post, index = 0 }: BlogCardProps) {
         <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
           {/* Featured Image */}
           {post.image && (
-            <div className="relative w-full h-64 overflow-hidden bg-khaki-light">
+            <div className="relative w-full h-64 overflow-hidden bg-midnight/5">
               <Image
                 src={post.image}
                 alt={post.title}
@@ -60,7 +60,7 @@ export function BlogCard({ post, index = 0 }: BlogCardProps) {
                 {post.tags.slice(0, 2).map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs px-3 py-1 bg-khaki-light text-[#2F4538] rounded-full font-medium"
+                    className="text-xs px-3 py-1 bg-ice text-midnight/70 rounded-full font-medium"
                   >
                     {tag}
                   </span>
@@ -69,17 +69,17 @@ export function BlogCard({ post, index = 0 }: BlogCardProps) {
             )}
 
             {/* Title */}
-            <h3 className="font-serif text-2xl text-[#2F4538] mb-3 group-hover:text-accent transition-colors line-clamp-2">
+            <h3 className="font-serif text-2xl text-midnight mb-3 group-hover:text-coral transition-colors line-clamp-2">
               {post.title}
             </h3>
 
             {/* Excerpt */}
-            <p className="text-[#2F4538]/70 mb-4 flex-1 line-clamp-3">
+            <p className="text-midnight/70 mb-4 flex-1 line-clamp-3">
               {post.excerpt}
             </p>
 
             {/* Meta */}
-            <div className="flex items-center justify-between text-sm text-[#2F4538]/60 pt-4 border-t border-khaki/30">
+            <div className="flex items-center justify-between text-sm text-midnight/60 pt-4 border-t border-midnight/10">
               <div className="flex items-center gap-3">
                 <span className="font-medium">{post.author}</span>
                 <span>•</span>

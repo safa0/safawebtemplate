@@ -38,9 +38,9 @@ export function RelatedPosts({ posts }: RelatedPostsProps) {
   }
 
   return (
-    <section ref={sectionRef} className="py-16 bg-khaki-light">
+    <section ref={sectionRef} className="py-16 bg-ice">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="related-posts-title font-serif text-4xl text-earth mb-12 text-center">
+        <h2 className="related-posts-title font-serif text-4xl text-midnight mb-12 text-center">
           Related Articles
         </h2>
 
