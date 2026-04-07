@@ -1,21 +1,16 @@
 /**
  * Barrel export for all section components
- * Import sections like: import { HeroSection, MissionSection } from '@/components/sections'
  */
 
 // Home sections
 export { HeroSection } from './HeroSection';
-export { MissionSection } from './MissionSection';
-export { ServicesSection } from './ServicesSection';
-export { FeaturedWorkSection } from './FeaturedWorkSection';
 export { FooterSection } from './FooterSection';
-export { ImpactSection } from './ImpactSection';
 
-// Industry sections
-export { IndustriesHeroSection } from './IndustriesHeroSection';
-export { IndustryCardsSection } from './IndustryCardsSection';
-export { IndustriesCTASection } from './IndustriesCTASection';
-export { CaseStudyTeaserSection } from './CaseStudyTeaserSection';
-
-// Contact section
-export { ContactSection } from './ContactSection';
+// Fellowship sections
+export { ProblemSection } from './fellowship/ProblemSection';
+export { TiersSection } from './fellowship/TiersSection';
+export { BenefitsSection } from './fellowship/BenefitsSection';
+export { CriteriaSection } from './fellowship/CriteriaSection';
+export { TestimonialsSection } from './fellowship/TestimonialsSection';
+export { FAQSection } from './fellowship/FAQSection';
+export { CTASection } from './fellowship/CTASection';
