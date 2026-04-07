@@ -1,5 +1,4 @@
 import { MDXComponents } from 'mdx/types';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export const mdxComponents: MDXComponents = {
@@ -50,7 +49,7 @@ export const mdxComponents: MDXComponents = {
     return (
       <Component
         href={href || '#'}
-        className="text-midnight underline decoration-khaki decoration-2 underline-offset-4 hover:decoration-coral transition-colors"
+        className="text-midnight underline decoration-midnight/20 decoration-2 underline-offset-4 hover:decoration-coral transition-colors"
         {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       >
         {children}
@@ -88,7 +87,7 @@ export const mdxComponents: MDXComponents = {
 
     if (isInline) {
       return (
-        <code className="bg-[#2F4538]/10 text-midnight px-2 py-1 rounded text-sm font-mono">
+        <code className="bg-[#0A1628]/10 text-midnight px-2 py-1 rounded text-sm font-mono">
           {children}
         </code>
       );
@@ -101,7 +100,7 @@ export const mdxComponents: MDXComponents = {
     );
   },
   pre: ({ children }) => (
-    <pre className="bg-[#2F4538] text-ice p-6 rounded-lg overflow-x-auto mb-6 text-sm md:text-base">
+    <pre className="bg-[#0A1628] text-ice p-6 rounded-lg overflow-x-auto mb-6 text-sm md:text-base">
       {children}
     </pre>
   ),
@@ -114,18 +113,18 @@ export const mdxComponents: MDXComponents = {
   // Table
   table: ({ children }) => (
     <div className="overflow-x-auto mb-6">
-      <table className="min-w-full divide-y divide-khaki">
+      <table className="min-w-full divide-y divide-midnight/10">
         {children}
       </table>
     </div>
   ),
   thead: ({ children }) => (
-    <thead className="bg-khaki-light">
+    <thead className="bg-ice">
       {children}
     </thead>
   ),
   tbody: ({ children }) => (
-    <tbody className="divide-y divide-khaki/30">
+    <tbody className="divide-y divide-midnight/10/30">
       {children}
     </tbody>
   ),
