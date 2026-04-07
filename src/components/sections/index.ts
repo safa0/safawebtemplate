@@ -14,3 +14,5 @@ export { CriteriaSection } from './fellowship/CriteriaSection';
 export { TestimonialsSection } from './fellowship/TestimonialsSection';
 export { FAQSection } from './fellowship/FAQSection';
 export { CTASection } from './fellowship/CTASection';
+export { CommitmentsSection } from './fellowship/CommitmentsSection';
+export { CompetitiveSection } from './fellowship/CompetitiveSection';

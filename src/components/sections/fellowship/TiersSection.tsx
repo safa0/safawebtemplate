@@ -127,30 +127,31 @@ export function TiersSection() {
                   {tier.description}
                 </p>
 
-                {/* Highlights */}
-                <ul className="space-y-3">
-                  {tier.highlights.map((highlight) => (
-                    <li
-                      key={highlight}
-                      className="flex items-start gap-3 text-sm text-dark/70"
-                    >
-                      <svg
-                        className={`w-5 h-5 flex-shrink-0 mt-0.5 ${colors.accent}`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                {/* Curriculum */}
+                <div className="mb-6">
+                  <h4 className="text-xs font-bold text-dark/40 uppercase tracking-wider mb-3">
+                    Curriculum
+                  </h4>
+                  <ul className="space-y-2">
+                    {tier.curriculum.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-2 text-sm text-dark/60"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      {highlight}
-                    </li>
-                  ))}
-                </ul>
+                        <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${colors.accent === "text-accent" ? "bg-accent" : "bg-dark"}`} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Gate */}
+                <div className="p-3 rounded-lg bg-white/80 border border-earth/10">
+                  <div className="text-xs font-bold text-dark/40 uppercase tracking-wider mb-1">
+                    Gate to progress
+                  </div>
+                  <p className="text-sm text-dark/70">{tier.gate}</p>
+                </div>
 
                 {/* Arrow indicator between cards (desktop) */}
                 {index < siteConfig.tiers.length - 1 && (

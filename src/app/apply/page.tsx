@@ -4,7 +4,7 @@ import { PageTransition } from "@/components/ui/PageTransition";
 import { ApplyHeroSection } from "@/components/sections/apply/ApplyHeroSection";
 import { ApplicationStepsSection } from "@/components/sections/apply/ApplicationStepsSection";
 import { WhatToExpectSection } from "@/components/sections/apply/WhatToExpectSection";
-import { ApplyFormSection } from "@/components/sections/apply/ApplyFormSection";
+import { ApplicationFormSection } from "@/components/sections/apply/ApplicationFormSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { generateMetadata as genMeta } from "@/config/metadata";
 
@@ -20,7 +20,7 @@ export default function ApplyPage() {
           <ApplyHeroSection />
           <ApplicationStepsSection />
           <WhatToExpectSection />
-          <ApplyFormSection />
+          <ApplicationFormSection />
         </main>
         <FooterSection />
       </div>
