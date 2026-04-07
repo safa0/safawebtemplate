@@ -3,35 +3,24 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
-import { teamMembers } from "@/data/team";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function LeadershipSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".leadership-title", {
+      gsap.from(".founder-content > *", {
+        opacity: 0,
+        y: 30,
+        duration: 0.7,
+        stagger: 0.15,
         scrollTrigger: {
-          trigger: sectionRef.current,
+          trigger: ".founder-content",
           start: "top 80%",
-          end: "top 40%",
-          scrub: 1,
+          toggleActions: "play none none none",
         },
-        y: 40,
-        opacity: 0,
-      });
-
-      gsap.from(".team-member-card", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-          end: "top 20%",
-          scrub: 1,
-        },
-        y: 60,
-        opacity: 0,
-        stagger: 0.1,
       });
     }, sectionRef);
 
@@ -41,35 +30,33 @@ export function LeadershipSection() {
   return (
     <section
       ref={sectionRef}
-      className="leadership-section w-full min-h-screen flex items-center justify-center px-8 md:px-20 py-20 bg-khaki-light"
+      className="w-full bg-white section-padding-large"
     >
-      <div className="max-w-6xl w-full">
-        <h2 className="leadership-title font-serif text-5xl md:text-6xl mb-4 text-earth">
-          Meet Our Leadership
-        </h2>
-        <p className="text-xl text-khaki-dark mb-16 max-w-2xl">
-          Experienced visionaries dedicated to driving transformation through intelligent automation.
-        </p>
+      <div className="max-w-4xl mx-auto">
+        <div className="founder-content">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-midnight mb-8">
+            The Founder
+          </h2>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {teamMembers.map((member) => (
-            <div
-              key={member.name}
-              className="team-member-card group"
-            >
-              <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden mb-6 bg-gray-200">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <h3 className="text-2xl font-semibold text-earth mb-2">{member.name}</h3>
-              <p className="text-lg font-medium text-accent mb-4">{member.title}</p>
-              <p className="text-base text-khaki-dark leading-relaxed">{member.bio}</p>
+          <div className="flex items-start gap-8 md:gap-12">
+            {/* Avatar placeholder */}
+            <div className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-midnight/10 flex items-center justify-center">
+              <span className="text-3xl md:text-4xl text-midnight/20">?</span>
             </div>
-          ))}
+
+            <div className="space-y-4 text-midnight/60 leading-relaxed">
+              <p className="text-lg">
+                This section will be updated with the founder&apos;s story. The
+                person behind [Programme Name] believes that the best AI talent
+                won&apos;t come from traditional CS programmes alone&mdash;it
+                will come from scientists and engineers who bring deep domain
+                expertise to machine learning.
+              </p>
+              <p className="text-midnight/40 text-sm italic">
+                Founder bio coming soon.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

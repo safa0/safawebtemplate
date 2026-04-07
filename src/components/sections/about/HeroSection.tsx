@@ -2,34 +2,18 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".about-hero-headline", {
-        duration: 1.2,
+      gsap.from(".about-hero-content > *", {
         opacity: 0,
         y: 30,
-        ease: "power3.out",
-      });
-
-      gsap.from(".about-hero-subtitle", {
-        duration: 1,
-        opacity: 0,
-        y: 20,
-        delay: 0.3,
-        ease: "power3.out",
-      });
-
-      gsap.from(".about-hero-description", {
-        duration: 1,
-        opacity: 0,
-        y: 20,
-        delay: 0.6,
-        ease: "power3.out",
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power2.out",
       });
     }, sectionRef);
 
@@ -39,21 +23,16 @@ export function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="about-hero-section w-full min-h-screen flex flex-col items-center justify-center px-8 md:px-20 py-20 bg-white"
+      className="w-full bg-midnight pt-32 pb-20 md:pt-40 md:pb-28 px-6 md:px-8 lg:px-12"
     >
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="about-hero-subtitle mb-6">
-          <span className="inline-block px-4 py-2 bg-khaki-light rounded-full text-sm font-semibold text-earth">
-            Our Story
-          </span>
-        </div>
-
-        <h1 className="about-hero-headline font-serif text-5xl md:text-7xl lg:text-8xl leading-tight mb-8 text-earth">
-          Pioneers in Enterprise Automation
+      <div className="about-hero-content max-w-4xl mx-auto text-center">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Why We Exist
         </h1>
-
-        <p className="about-hero-description text-lg md:text-xl text-khaki-dark max-w-2xl mx-auto leading-relaxed">
-          Since 2020, we have been at the forefront of intelligent automation, helping enterprises transform their operations through cutting-edge RPA and AI integration solutions.
+        <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
+          The AI industry needs domain experts. Not more CS
+          graduates&mdash;but scientists and engineers who can apply machine
+          learning to problems that actually matter.
         </p>
       </div>
     </section>

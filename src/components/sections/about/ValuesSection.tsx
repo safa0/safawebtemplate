@@ -3,34 +3,68 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { values } from "@/data/values";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const differentiators = [
+  {
+    label: "Bootcamps",
+    comparison: "You pay $8\u201316k. Generic curriculum. No selectivity.",
+    us: "We pay you $200/month. Curated path. Highly selective.",
+  },
+  {
+    label: "Corporate PhD Fellowships",
+    comparison: "PhD-only. University-partnered. Inaccessible.",
+    us: "Open to any STEM graduate. No PhD required. Global.",
+  },
+  {
+    label: "Free Fellowships",
+    comparison: "No cost, but no stipend. No financial commitment either way.",
+    us: "Micro-stipend signals seriousness from both sides.",
+  },
+  {
+    label: "Master\u2019s in ML",
+    comparison: "$30\u201380k tuition. 1\u20132 years. Academic focus.",
+    us: "No tuition. 3\u201312 months. Job-readiness focus.",
+  },
+  {
+    label: "Regional Programmes",
+    comparison: "Geographically locked. India, Nigeria, or Africa only.",
+    us: "Global from day one. Bogot\u00e1 to Dhaka.",
+  },
+  {
+    label: "Self-study",
+    comparison: "No accountability, no mentorship, no portfolio guidance.",
+    us: "Structured mentorship, monthly deliverables, career support.",
+  },
+];
 
 export function ValuesSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".values-title", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          end: "top 40%",
-          scrub: 1,
-        },
-        y: 40,
+      gsap.from(".diff-header", {
         opacity: 0,
+        y: 40,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: ".diff-header",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
       });
 
-      gsap.from(".value-card", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-          end: "top 25%",
-          scrub: 1,
-        },
-        y: 60,
+      gsap.from(".diff-card", {
         opacity: 0,
-        stagger: 0.15,
+        y: 40,
+        duration: 0.6,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".diff-grid",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
       });
     }, sectionRef);
 
@@ -40,24 +74,67 @@ export function ValuesSection() {
   return (
     <section
       ref={sectionRef}
-      className="values-section w-full min-h-screen flex items-center justify-center px-8 md:px-20 py-20 bg-white"
+      className="w-full bg-ice section-padding-large"
     >
-      <div className="max-w-6xl w-full">
-        <h2 className="values-title font-serif text-5xl md:text-6xl mb-16 text-center text-earth">
-          Our Core Values
-        </h2>
+      <div className="max-w-7xl mx-auto">
+        <div className="diff-header text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-midnight mb-4">
+            What Makes Us Different
+          </h2>
+          <p className="text-lg text-midnight/60 max-w-2xl mx-auto">
+            No existing programme combines all five of our properties: non-CS
+            STEM focus, micro-stipend, tiered commitment, global reach, and
+            venture framing.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          {values.map((value) => (
+        <div className="diff-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {differentiators.map((item) => (
             <div
-              key={value.title}
-              className="value-card p-8 md:p-12 bg-khaki-light rounded-lg border-2 border-khaki hover:border-earth transition-colors duration-300"
+              key={item.label}
+              className="diff-card p-8 rounded-2xl bg-white border border-midnight/10 hover:shadow-lg transition-all duration-300"
             >
-              <div className="text-5xl mb-6">{value.icon}</div>
-              <h3 className="text-3xl font-semibold text-earth mb-4">{value.title}</h3>
-              <p className="text-lg text-khaki-dark leading-relaxed">
-                {value.description}
-              </p>
+              <h3 className="text-lg font-bold text-midnight mb-4">
+                vs. {item.label}
+              </h3>
+              <div className="space-y-3">
+                <div className="flex items-start gap-2">
+                  <svg
+                    className="w-5 h-5 flex-shrink-0 mt-0.5 text-red-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                  <span className="text-sm text-midnight/50">
+                    {item.comparison}
+                  </span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <svg
+                    className="w-5 h-5 flex-shrink-0 mt-0.5 text-coral"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span className="text-sm text-midnight/80 font-medium">
+                    {item.us}
+                  </span>
+                </div>
+              </div>
             </div>
           ))}
         </div>
