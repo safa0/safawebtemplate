@@ -25,7 +25,7 @@ export const siteConfig = {
 
   // SEO & Metadata
   seo: {
-    title: "[Programme Name] — STEM to AI Fellowship",
+    title: "[Programme Name] \u2014 STEM to AI Fellowship",
     description:
       "A talent investment programme for non-CS STEM graduates transitioning into AI & Machine Learning. Micro-stipend, mentorship, and a structured path to your first AI role.",
     keywords: [
@@ -63,6 +63,8 @@ export const siteConfig = {
     title: "The Gap Nobody\u2019s Filling",
     statement:
       "The AI industry has a talent bottleneck, but it\u2019s not where most people think. There is no shortage of computer science graduates who can train a model on MNIST. The shortage is in people who understand real-world domains\u2014materials science, biology, physics, chemistry, engineering\u2014and can apply machine learning to problems that actually matter.",
+    bridgeStatement:
+      "These people already exist. They graduated with strong mathematics, scientific rigour, and systems thinking. They just landed in a job market that doesn\u2019t know what to do with them yet. The bridge from STEM to AI is short\u2014but nobody is building it at the right scale or the right price point.",
     points: [
       {
         stat: "73%",
@@ -74,12 +76,45 @@ export const siteConfig = {
       },
       {
         stat: "3\u201312mo",
-        label: "is all it takes for a strong STEM grad to become job-ready in ML",
+        label:
+          "is all it takes for a strong STEM grad to become job-ready in ML",
+      },
+    ],
+    existingLandscape: [
+      {
+        name: "Corporate PhD fellowships",
+        examples: "Google, Meta, Amazon",
+        limitation:
+          "$42k+ stipends, but exclusively for PhD students at partner universities. Inaccessible to a recent materials engineering graduate.",
+      },
+      {
+        name: "Venture-backed residencies",
+        examples: "Encode, OpenAI",
+        limitation:
+          "Full salaries and compute budgets, but targeting experienced researchers. Not designed for career transitions.",
+      },
+      {
+        name: "Bootcamps",
+        examples: "Springboard, TripleTen, Flatiron",
+        limitation:
+          "The fellow pays $8\u201316k. Volume-based, low selectivity, generic curriculum. Opposite model to ours.",
+      },
+      {
+        name: "Free fellowships",
+        examples: "Fellowship.AI, DSSG",
+        limitation:
+          "No cost but also no stipend. No financial skin in the game from either side.",
+      },
+      {
+        name: "Regional programmes",
+        examples: "Wadhwani in India, DSN in Nigeria, Google ML Africa",
+        limitation:
+          "Strong but geographically locked. A physicist in Colombia or a chemist in Egypt has no equivalent option.",
       },
     ],
   },
 
-  // Tiered Model
+  // Tiered Model (expanded with curriculum & gates)
   tiers: [
     {
       name: "Ignition",
@@ -93,6 +128,14 @@ export const siteConfig = {
         "Bi-weekly mentor sessions",
         "First portfolio project",
       ],
+      curriculum: [
+        "Python for data science",
+        "SQL & data manipulation",
+        "Mathematics refresh (linear algebra, calculus, probability)",
+        "Git & version control",
+        "Introduction to scikit-learn & pandas",
+      ],
+      gate: "First ML project published to GitHub with a clear README.",
     },
     {
       name: "Orbit",
@@ -106,6 +149,14 @@ export const siteConfig = {
         "Open-source contributions",
         "Technical writing",
       ],
+      curriculum: [
+        "Core machine learning algorithms",
+        "Deep learning with PyTorch",
+        "Domain-specific applications (e.g., materials informatics, bioinformatics)",
+        "Model evaluation & experiment design",
+        "Technical blog writing",
+      ],
+      gate: "Deep learning project + domain bridge project completed and published.",
     },
     {
       name: "Escape Velocity",
@@ -119,6 +170,14 @@ export const siteConfig = {
         "Interview preparation",
         "Industry introductions",
       ],
+      curriculum: [
+        "Production ML & MLOps",
+        "Cloud deployment (AWS/GCP)",
+        "Advanced architectures (transformers, GNNs)",
+        "Portfolio polish (5\u20136 projects)",
+        "Interview preparation & mock interviews",
+      ],
+      gate: "Capstone shipped, 5\u20136 portfolio projects, first job applications sent.",
     },
   ],
 
@@ -156,6 +215,40 @@ export const siteConfig = {
     },
   ],
 
+  // What Fellows Commit To
+  commitments: [
+    {
+      title: "50 hours/week",
+      description:
+        "Of focused study and project work. This is their job for the duration of the fellowship.",
+    },
+    {
+      title: "Bi-weekly check-ins",
+      description:
+        "With their mentor. Camera on. Prepared. Non-negotiable.",
+    },
+    {
+      title: "Weekly async updates",
+      description:
+        "\u201CThis week I learned X, built Y, got stuck on Z.\u201D The habit of communicating progress is itself a professional skill.",
+    },
+    {
+      title: "Monthly deliverables",
+      description:
+        "Each month has a defined output: code, a project, a write-up. Stipend is tied to delivery.",
+    },
+    {
+      title: "Public work",
+      description:
+        "Everything goes on GitHub. The portfolio is the product. If it\u2019s not on GitHub, it didn\u2019t happen.",
+    },
+    {
+      title: "Honesty",
+      description:
+        "If you\u2019re lost, say so. If life gets in the way, say so. The worst outcome isn\u2019t struggling\u2014it\u2019s struggling silently.",
+    },
+  ],
+
   // Eligibility Criteria
   criteria: {
     title: "Who We\u2019re Looking For",
@@ -183,6 +276,8 @@ export const siteConfig = {
           "Able to commit 50 hours per week. This is a full-time undertaking, equivalent to a university course load. Not compatible with a full-time job.",
       },
     ],
+    notFor:
+      "People looking for passive income, people collecting certificates, or people who aren\u2019t willing to put in full-time effort. This programme is generous with support but demanding with expectations.",
   },
 
   // Application Process
@@ -216,6 +311,213 @@ export const siteConfig = {
           "Accepted fellows receive a written offer outlining the tier, stipend, expectations, and start date.",
       },
     ],
+  },
+
+  // Application Form Fields
+  applicationForm: {
+    title: "Fellowship Application",
+    subtitle:
+      "This takes about 20\u201330 minutes. Be honest, not polished. We read every application.",
+    sections: [
+      {
+        title: "Personal Information",
+        fields: [
+          { name: "fullName", label: "Full Name", type: "text", required: true },
+          { name: "email", label: "Email Address", type: "email", required: true },
+          { name: "country", label: "Country of Residence", type: "text", required: true },
+          { name: "nationality", label: "Nationality", type: "text", required: true },
+        ],
+      },
+      {
+        title: "Academic Background",
+        fields: [
+          { name: "degree", label: "Degree Title (e.g., BSc Physics)", type: "text", required: true },
+          { name: "university", label: "University / Institution", type: "text", required: true },
+          { name: "graduationYear", label: "Year of Graduation", type: "text", required: true },
+          { name: "fieldOfStudy", label: "Field of Study", type: "text", required: true },
+        ],
+      },
+      {
+        title: "Statement of Purpose",
+        fields: [
+          {
+            name: "whyAI",
+            label: "Why do you want to transition into AI/ML? (200\u2013400 words)",
+            type: "textarea",
+            required: true,
+          },
+          {
+            name: "whatBuild",
+            label: "If you could build anything with ML, what would it be and why? (200\u2013400 words)",
+            type: "textarea",
+            required: true,
+          },
+          {
+            name: "background",
+            label: "Briefly describe your STEM background and any relevant experience. (100\u2013300 words)",
+            type: "textarea",
+            required: true,
+          },
+        ],
+      },
+      {
+        title: "Supporting Documents",
+        fields: [
+          {
+            name: "cv",
+            label: "CV / Resume (PDF, max 2 pages)",
+            type: "file",
+            required: false,
+          },
+          {
+            name: "transcript",
+            label: "Academic Transcript or Degree Certificate (PDF)",
+            type: "file",
+            required: true,
+          },
+          {
+            name: "additionalDocs",
+            label: "Any additional supporting documents (optional)",
+            type: "file",
+            required: false,
+          },
+        ],
+      },
+      {
+        title: "Availability & Commitment",
+        fields: [
+          {
+            name: "startDate",
+            label: "Earliest available start date",
+            type: "text",
+            required: true,
+          },
+          {
+            name: "hoursConfirm",
+            label: "Can you commit 50 hours per week to the programme?",
+            type: "select",
+            required: true,
+            options: ["Yes", "Yes, with part-time work alongside", "I need to discuss this"],
+          },
+          {
+            name: "englishLevel",
+            label: "English proficiency level",
+            type: "select",
+            required: true,
+            options: ["Native", "Fluent (C1/C2)", "Working proficiency (B2)", "Intermediate (B1)"],
+          },
+        ],
+      },
+    ],
+  },
+
+  // Competitive Landscape
+  competitiveLandscape: {
+    title: "Why This, Not That",
+    subtitle:
+      "No existing programme combines all five of our properties.",
+    differentiators: [
+      "Non-CS STEM focus \u2014 targeting physicists, chemists, biologists, engineers, mathematicians",
+      "Micro-stipend model \u2014 $200/month signals seriousness without requiring philanthropic-scale capital",
+      "Tiered commitment \u2014 3 \u2192 6 \u2192 12 months based on performance. No other programme does this.",
+      "Global from day one \u2014 not locked to a country, university, or corporate partner",
+      "Venture framing \u2014 fellows are selected, not enrolled. The psychology is investment, not charity.",
+    ],
+    comparison: [
+      {
+        programme: "Google AI Residency",
+        target: "PhD students",
+        stipend: "Full salary",
+        duration: "12 months",
+        difference: "PhD-only. Corporate. Not accessible to recent STEM grads.",
+      },
+      {
+        programme: "Meta/Amazon PhD Fellowship",
+        target: "PhD students",
+        stipend: "$42k/yr + tuition",
+        duration: "2 years",
+        difference:
+          "PhD-only. University-partnered. Extremely competitive.",
+      },
+      {
+        programme: "Encode: AI for Science",
+        target: "AI researchers",
+        stipend: "\u00a3115k + compute",
+        duration: "12 months",
+        difference:
+          "Targets experienced AI talent, not career transitions.",
+      },
+      {
+        programme: "Wadhwani AI Fellowship",
+        target: "Engineers (India)",
+        stipend: "Paid",
+        duration: "1\u20132 years",
+        difference: "India-only. Social good focus.",
+      },
+      {
+        programme: "Fellowship.AI",
+        target: "ML learners",
+        stipend: "Free (no pay)",
+        duration: "3 months",
+        difference: "No stipend. No financial commitment either direction.",
+      },
+      {
+        programme: "Bootcamps (Springboard, etc.)",
+        target: "Career switchers",
+        stipend: "Student pays $8\u201316k",
+        duration: "6 months",
+        difference:
+          "Opposite model: fellows pay. No selectivity. Volume-based.",
+      },
+      {
+        programme: "[This Programme]",
+        target: "Non-CS STEM grads",
+        stipend: "$200/month",
+        duration: "3\u201312 months",
+        difference:
+          "Only programme combining: micro-stipend + non-CS STEM focus + tiered commitment + global reach + venture framing.",
+        isUs: true,
+      },
+    ],
+  },
+
+  // Governance
+  governance: {
+    stipendMechanics: {
+      title: "Stipend Mechanics",
+      items: [
+        "Payment trigger: mentor reviews deliverables at month-end. If complete, stipend is released within 7 days.",
+        "Incomplete work: stipend is deferred (not forfeited) until deliverables are submitted.",
+        "No clawbacks. Once a stipend is paid, it\u2019s paid. Past performance is not punished retroactively.",
+      ],
+    },
+    progressionDecisions: {
+      title: "Tier Progression",
+      description:
+        "At the end of each tier, one of four decisions is made:",
+      options: [
+        {
+          decision: "Advance",
+          description: "The fellow moves to the next tier. Stipend continues.",
+        },
+        {
+          decision: "Hold",
+          description:
+            "The fellow needs more time at the current tier. An extension of 1\u20132 months can be offered.",
+        },
+        {
+          decision: "Graduate",
+          description:
+            "The fellow has achieved job-readiness ahead of schedule. Celebrate and support their search.",
+        },
+        {
+          decision: "Part Ways",
+          description:
+            "The programme isn\u2019t working for either party. Exit gracefully, no stigma.",
+        },
+      ],
+    },
+    ip: "Everything the fellow creates belongs to the fellow. Code, projects, blog posts, portfolio pieces\u2014all theirs. This is not a work-for-hire arrangement. The programme\u2019s return on investment is impact, not intellectual property.",
   },
 
   // FAQ
@@ -260,6 +562,21 @@ export const siteConfig = {
       answer:
         "You do. 100%. Code, projects, blog posts, portfolio pieces\u2014all yours. This is not a work-for-hire arrangement.",
     },
+    {
+      question: "How are stipends paid?",
+      answer:
+        "Your mentor reviews deliverables at month-end. If complete, the stipend is released within 7 days. If work is incomplete, the stipend is deferred (not forfeited) until deliverables are submitted.",
+    },
+    {
+      question: "What documents do I need to apply?",
+      answer:
+        "A short written application (no CV required), your academic transcript or degree certificate, and honest answers to a few questions. We also include a low-pressure math diagnostic later in the process.",
+    },
+    {
+      question: "What if I don\u2019t have programming experience?",
+      answer:
+        "Some programming exposure helps (MATLAB, Python, R from your degree), but we don\u2019t expect software engineering skills. The first tier (Ignition) covers Python, SQL, and Git from the ground up.",
+    },
   ],
 
   // Testimonials (placeholders)
@@ -296,12 +613,13 @@ export const siteConfig = {
       text: "Apply Now",
       link: "/apply",
     },
+    version: "v0.2 \u2014 April 2026",
   },
 
   // Backgrounds
   backgrounds: {
     hero: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80",
-    neutral: "#F0F4F8",
+    neutral: "#E8DCC4",
   },
 
   // Company Information
@@ -321,14 +639,31 @@ export const siteConfig = {
   contact: {
     email: "hello@programmename.com",
   },
+
+  // Candidate Programme Names (for reference)
+  candidateNames: [
+    "Gradient Fellowship",
+    "Traverse Fellowship",
+    "Tensor Fellowship",
+    "Vector Fellowship",
+    "Influx Fund",
+    "Threshold Fellowship",
+    "Prism Fellowship",
+    "Axiom Fellowship",
+    "Flux Fund",
+    "Apex Fund",
+  ],
 };
 
 // Type definitions
 export type SiteConfig = typeof siteConfig;
 export type Tier = (typeof siteConfig.tiers)[number];
 export type Benefit = (typeof siteConfig.benefits)[number];
+export type Commitment = (typeof siteConfig.commitments)[number];
 export type CriterionItem = (typeof siteConfig.criteria.items)[number];
 export type ApplicationStep =
   (typeof siteConfig.applicationProcess.steps)[number];
 export type FAQItem = (typeof siteConfig.faq)[number];
 export type NavigationItem = (typeof siteConfig.navigation)[number];
+export type CompetitorEntry =
+  (typeof siteConfig.competitiveLandscape.comparison)[number];
