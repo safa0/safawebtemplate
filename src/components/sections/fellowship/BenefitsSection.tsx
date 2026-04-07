@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -171,6 +172,19 @@ export function BenefitsSection() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Mid-page CTA */}
+        <div className="mt-16 text-center">
+          <Link
+            href="/apply"
+            className="inline-block px-8 py-3 bg-accent text-white rounded-full text-base font-medium hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+          >
+            Apply Now &mdash; It&apos;s Free
+          </Link>
+          <p className="text-sm text-dark/40 mt-3">
+            No tuition. No income share. We invest in you.
+          </p>
         </div>
       </div>
     </section>

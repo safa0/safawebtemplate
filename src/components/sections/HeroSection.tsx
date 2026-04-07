@@ -124,7 +124,7 @@ export function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="hero-section relative w-full min-h-screen flex items-center bg-white overflow-hidden"
+      className="hero-section relative w-full min-h-[90vh] flex items-center bg-white overflow-hidden"
     >
       {/* Subtle geometric pattern background */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
@@ -135,7 +135,7 @@ export function HeroSection() {
       <div className="w-full max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-24 md:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Content */}
-          <div className="flex flex-col gap-6 md:gap-8">
+          <div className="flex flex-col gap-4 md:gap-6">
             {/* Badge */}
             <div className="hero-badge inline-flex items-center self-start gap-2 px-4 py-2 bg-accent/10 text-accent text-sm font-medium rounded-full">
               <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />

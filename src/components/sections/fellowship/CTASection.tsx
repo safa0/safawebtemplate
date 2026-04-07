@@ -41,12 +41,20 @@ export function CTASection() {
           Your science degree is already your foundation. Let us help you build
           on it.
         </p>
-        <Link
-          href={siteConfig.footer.cta.link}
-          className="inline-block px-10 py-4 bg-white text-accent text-lg font-bold rounded-full hover:bg-white/90 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
-        >
-          {siteConfig.footer.cta.text}
-        </Link>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href={siteConfig.footer.cta.link}
+            className="inline-block px-10 py-4 bg-white text-accent text-lg font-bold rounded-full hover:bg-white/90 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+          >
+            Start Your Application
+          </Link>
+          <a
+            href={`mailto:${siteConfig.contact.email}`}
+            className="text-white/70 hover:text-white text-sm transition-colors"
+          >
+            or email us at {siteConfig.contact.email}
+          </a>
+        </div>
       </div>
     </section>
   );

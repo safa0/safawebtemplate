@@ -22,15 +22,25 @@ export default function Home() {
         <Header />
 
         <main className="vertical-scroll-container">
+          {/* 1. DESIRE — Hook them */}
           <HeroSection />
+          {/* 2. PROBLEM AWARENESS — Why this matters */}
           <ProblemSection />
-          <TiersSection />
+          {/* 3. VALUE — What you get */}
           <BenefitsSection />
-          <CommitmentsSection />
+          {/* 4. MECHANISM — How it works */}
+          <TiersSection />
+          {/* 5. SELF-QUALIFICATION — Are you the right fit? */}
           <CriteriaSection />
+          {/* 6. DIFFERENTIATION — Why us, not them */}
           <CompetitiveSection />
+          {/* 7. FILTER — What we expect (after buy-in) */}
+          <CommitmentsSection />
+          {/* 8. TRUST — Social proof / launching */}
           <TestimonialsSection />
+          {/* 9. REASSURANCE — Handle objections */}
           <FAQSection />
+          {/* 10. ACTION — Final push */}
           <CTASection />
         </main>
 
