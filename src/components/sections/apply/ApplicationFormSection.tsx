@@ -285,28 +285,25 @@ export function ApplicationFormSection() {
               onClick={() => {
                 if (index < currentStep) setCurrentStep(index);
               }}
-              className={`flex-1 text-left transition-all ${
-                index <= currentStep ? "cursor-pointer" : "cursor-default"
-              }`}
+              className={`flex-1 text-left transition-all ${index <= currentStep ? "cursor-pointer" : "cursor-default"
+                }`}
             >
               <div
-                className={`h-1.5 rounded-full mb-2 transition-colors duration-300 ${
-                  index < currentStep
+                className={`h-1.5 rounded-full mb-2 transition-colors duration-300 ${index < currentStep
                     ? "bg-accent"
                     : index === currentStep
                       ? "bg-accent"
                       : "bg-earth/15"
-                }`}
+                  }`}
               />
               <div className="flex items-center gap-2">
                 <span
-                  className={`w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold transition-colors ${
-                    index < currentStep
+                  className={`w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold transition-colors ${index < currentStep
                       ? "bg-accent text-white"
                       : index === currentStep
                         ? "bg-accent/10 text-accent"
                         : "bg-earth/10 text-dark/30"
-                  }`}
+                    }`}
                 >
                   {index < currentStep ? (
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -317,9 +314,8 @@ export function ApplicationFormSection() {
                   )}
                 </span>
                 <span
-                  className={`text-xs font-medium hidden sm:block ${
-                    index === currentStep ? "text-dark" : "text-dark/40"
-                  }`}
+                  className={`text-xs font-medium hidden sm:block ${index === currentStep ? "text-dark" : "text-dark/40"
+                    }`}
                 >
                   {step.title}
                 </span>
@@ -367,24 +363,22 @@ export function ApplicationFormSection() {
                       onChange={(e) =>
                         handleInputChange(field.name, e.target.value)
                       }
-                      className={`w-full px-4 py-3 rounded-lg border bg-khaki-light/20 text-dark placeholder:text-dark/25 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors resize-none ${
-                        errors[field.name]
+                      className={`w-full px-4 py-3 rounded-lg border bg-khaki-light/20 text-dark placeholder:text-dark/25 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors resize-none ${errors[field.name]
                           ? "border-red-400"
                           : "border-earth/15"
-                      }`}
+                        }`}
                       placeholder={"placeholder" in field ? field.placeholder : ""}
                     />
                     {/* Word count */}
                     {"maxWords" in field && (
                       <div className="flex justify-end mt-1">
                         <span
-                          className={`text-xs ${
-                            countWords(
-                              (formData[field.name] as string) || ""
-                            ) > (field.maxWords || 400)
+                          className={`text-xs ${countWords(
+                            (formData[field.name] as string) || ""
+                          ) > (field.maxWords || 400)
                               ? "text-red-400"
                               : "text-dark/30"
-                          }`}
+                            }`}
                         >
                           {countWords(
                             (formData[field.name] as string) || ""
@@ -398,13 +392,12 @@ export function ApplicationFormSection() {
                   <div>
                     <label
                       htmlFor={field.name}
-                      className={`flex items-center justify-center gap-3 px-4 py-4 rounded-lg border-2 border-dashed cursor-pointer transition-colors ${
-                        formData[field.name]
+                      className={`flex items-center justify-center gap-3 px-4 py-4 rounded-lg border-2 border-dashed cursor-pointer transition-colors ${formData[field.name]
                           ? "border-accent/30 bg-accent/5"
                           : errors[field.name]
                             ? "border-red-400 bg-red-50"
                             : "border-earth/15 bg-khaki-light/20 hover:border-accent/30"
-                      }`}
+                        }`}
                     >
                       {formData[field.name] ? (
                         <>
@@ -451,11 +444,10 @@ export function ApplicationFormSection() {
                     onChange={(e) =>
                       handleInputChange(field.name, e.target.value)
                     }
-                    className={`w-full px-4 py-3 rounded-lg border bg-khaki-light/20 text-dark focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors ${
-                      errors[field.name]
+                    className={`w-full px-4 py-3 rounded-lg border bg-khaki-light/20 text-dark focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors ${errors[field.name]
                         ? "border-red-400"
                         : "border-earth/15"
-                    }`}
+                      }`}
                   >
                     <option value="">Select...</option>
                     {field.options.map((opt: string) => (
@@ -473,11 +465,10 @@ export function ApplicationFormSection() {
                     onChange={(e) =>
                       handleInputChange(field.name, e.target.value)
                     }
-                    className={`w-full px-4 py-3 rounded-lg border bg-khaki-light/20 text-dark placeholder:text-dark/25 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors ${
-                      errors[field.name]
+                    className={`w-full px-4 py-3 rounded-lg border bg-khaki-light/20 text-dark placeholder:text-dark/25 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors ${errors[field.name]
                         ? "border-red-400"
                         : "border-earth/15"
-                    }`}
+                      }`}
                     placeholder={"placeholder" in field ? field.placeholder : ""}
                   />
                 )}
@@ -508,11 +499,10 @@ export function ApplicationFormSection() {
               type="button"
               onClick={handleBack}
               disabled={currentStep === 0}
-              className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all ${
-                currentStep === 0
+              className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all ${currentStep === 0
                   ? "text-dark/20 cursor-not-allowed"
                   : "text-dark/60 hover:text-dark hover:bg-khaki-light"
-              }`}
+                }`}
             >
               &larr; Back
             </button>
