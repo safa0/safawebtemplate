@@ -4,7 +4,7 @@ import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { Preloader } from "@/components/ui/Preloader";
 import { CookieBanner } from "@/components/ui/CookieBanner";
-import { generateMetadata as genMeta, BASE_URL } from "@/config/metadata";
+import { generateMetadata as genMeta, BASE_URL, safeJsonLd } from "@/config/metadata";
 import { siteConfig } from "@/config/site";
 
 const spaceGrotesk = Space_Grotesk({
@@ -37,7 +37,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+            __html: safeJsonLd({
               "@context": "https://schema.org",
               "@graph": [
                 {

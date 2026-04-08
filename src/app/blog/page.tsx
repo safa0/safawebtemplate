@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { getAllPosts } from '@/lib/blog';
-import { BASE_URL } from '@/config/metadata';
+import { BASE_URL, safeJsonLd } from '@/config/metadata';
 import { Header } from '@/components/ui/Header';
 import { BlogGrid } from '@/components/blog/BlogGrid';
 import { FooterSection } from '@/components/sections/FooterSection';
@@ -29,7 +29,7 @@ export default async function BlogPage() {
       {/* Safe: built from trusted server-side blog data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(itemListJsonLd) }}
       />
       <Header />
       <main className="min-h-screen bg-khaki-light pt-20">

@@ -187,4 +187,17 @@ export function createPageMetadata(
   };
 }
 
+/** Safely serialize data for JSON-LD script tags — escapes </script> breakout */
+export function safeJsonLd(data: unknown): string {
+  return JSON.stringify(data)
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+    .replace(/&/g, "\\u0026");
+}
+
+/** Resolve a potentially relative image path to an absolute URL */
+export function resolveImageUrl(imagePath: string): string {
+  return imagePath.startsWith("http") ? imagePath : `${BASE_URL}${imagePath}`;
+}
+
 export { BASE_URL };

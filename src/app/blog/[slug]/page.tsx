@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getAllPostSlugs, getRelatedPosts, formatDate } from '@/lib/blog';
-import { BASE_URL } from '@/config/metadata';
+import { BASE_URL, safeJsonLd, resolveImageUrl } from '@/config/metadata';
 import { Header } from '@/components/ui/Header';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
@@ -39,9 +39,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
   }
 
-  const imageUrl = post.image?.startsWith("http")
-    ? post.image
-    : `${BASE_URL}${post.image}`;
+  const imageUrl = post.image ? resolveImageUrl(post.image) : undefined;
 
   return {
     title: `${post.title} | Gradient Fellows`,
@@ -56,15 +54,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       type: 'article',
       publishedTime: post.date,
       authors: [post.author],
-      images: post.image
-        ? [{ url: imageUrl, alt: post.title }]
-        : [],
+      images: imageUrl ? [{ url: imageUrl, alt: post.title }] : [],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: post.image ? [imageUrl] : [],
+      images: imageUrl ? [imageUrl] : [],
     },
   };
 }
@@ -73,16 +69,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
-  if (!post) {
-    notFound();
-  }
+  if (!post) return notFound();
 
   // Get related posts
   const relatedPosts = getRelatedPosts(post.slug, post.tags, 3);
 
-  const postImageUrl = post.image?.startsWith("http")
-    ? post.image
-    : `${BASE_URL}${post.image}`;
+  const postImageUrl = post.image ? resolveImageUrl(post.image) : undefined;
 
   // Structured Data (JSON-LD) for SEO
   const structuredData = {
@@ -97,7 +89,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         },
         headline: post.title,
         description: post.excerpt,
-        image: { '@type': 'ImageObject', url: postImageUrl },
+        ...(postImageUrl
+          ? { image: { '@type': 'ImageObject', url: postImageUrl } }
+          : {}),
         url: `${BASE_URL}/blog/${post.slug}`,
         datePublished: post.date,
         dateModified: post.date,
@@ -126,7 +120,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(structuredData) }}
       />
 
       <Header />
