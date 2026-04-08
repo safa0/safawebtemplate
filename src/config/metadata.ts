@@ -64,6 +64,18 @@ export const pageMetadata: Record<string, PageMetadata> = {
     description: "Learn how LambdaFlows™ collects, uses, and protects your personal information. Our commitment to privacy and data security.",
     keywords: ["privacy policy", "data protection", "privacy practices", "data security", "information security"],
   },
+  privacy: {
+    title: "Privacy Policy | Gradient Fellows",
+    description:
+      "How Gradient Fellows collects, uses, and protects your personal information. GDPR and CCPA compliant.",
+    keywords: [
+      "privacy policy",
+      "data protection",
+      "GDPR",
+      "fellowship privacy",
+      "Gradient Fellows",
+    ],
+  },
 };
 
 /**

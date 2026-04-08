@@ -229,6 +229,11 @@ export const siteConfig = {
     phoneHref: "tel:+18002886628",
     address: "123 Market St, San Francisco, CA 94103",
   },
+
+  // Privacy Policy
+  privacy: {
+    lastUpdated: "April 8, 2026",
+  },
 };
 
 // Type definitions for better TypeScript support
