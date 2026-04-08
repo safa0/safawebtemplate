@@ -7,7 +7,7 @@
 
 export const siteConfig = {
   // Brand Identity
-  name: "[Programme Name]",
+  name: "Gradient Fellowship",
   tagline: "Preparing the next generation for the AI age",
   description:
     "A talent investment programme for non-CS STEM graduates transitioning into AI & Machine Learning. We identify high-potential scientists and engineers and invest in their transition through mentorship, micro-stipends, and structured learning.",
@@ -20,12 +20,12 @@ export const siteConfig = {
   // Logo & Assets
   logo: {
     path: "/logo.png",
-    alt: "[Programme Name] Logo",
+    alt: "Gradient Fellowship Logo",
   },
 
   // SEO & Metadata
   seo: {
-    title: "[Programme Name] \u2014 STEM to AI Fellowship",
+    title: "Gradient Fellowship \u2014 STEM to AI Fellowship",
     description:
       "A talent investment programme for non-CS STEM graduates transitioning into AI & Machine Learning. Micro-stipend, mentorship, and a structured path to your first AI role.",
     keywords: [
@@ -470,7 +470,7 @@ export const siteConfig = {
           "Opposite model: fellows pay. No selectivity. Volume-based.",
       },
       {
-        programme: "[This Programme]",
+        programme: "Gradient Fellowship",
         target: "Non-CS STEM grads",
         stipend: "$200/month",
         duration: "3\u201312 months",
@@ -625,7 +625,7 @@ export const siteConfig = {
   // Company Information
   company: {
     foundedYear: 2026,
-    legalName: "[Programme Name]",
+    legalName: "Gradient Fellowship",
   },
 
   // Social Links
@@ -637,7 +637,7 @@ export const siteConfig = {
 
   // Contact Info
   contact: {
-    email: "hello@programmename.com",
+    email: "hello@gradientfellows.org",
   },
 
   // Candidate Programme Names (for reference)

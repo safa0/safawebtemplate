@@ -13,7 +13,7 @@ export async function submitApplication(
   const emailTo = process.env.APPLICATION_EMAIL_TO;
   const emailFrom =
     process.env.APPLICATION_EMAIL_FROM ??
-    "Fellowship Applications <onboarding@resend.dev>";
+    "Gradient Fellowship <onboarding@resend.dev>";
 
   if (!apiKey || !emailTo) {
     return {

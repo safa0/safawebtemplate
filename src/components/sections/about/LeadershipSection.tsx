@@ -53,7 +53,7 @@ export function LeadershipSection() {
 
             <div className="space-y-4 text-dark/60 leading-relaxed flex-1">
               <p className="text-lg">
-                The person behind [Programme Name] believes that the best AI
+                The person behind Gradient Fellowship believes that the best AI
                 talent won&apos;t come from traditional CS programmes
                 alone&mdash;it will come from scientists and engineers who bring
                 deep domain expertise to machine learning.
