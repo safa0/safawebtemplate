@@ -58,6 +58,20 @@ export const pageMetadata: Record<string, PageMetadata> = {
       "fellowship blog",
     ],
   },
+  projects: {
+    title: "Fellowship Projects | Gradient Fellows",
+    description:
+      "Explore real AI projects built by Gradient Fellows — from computer vision and NLP to autonomous agents and medical imaging.",
+    keywords: [
+      "AI projects",
+      "fellowship projects",
+      "machine learning",
+      "computer vision",
+      "NLP",
+      "AI agents",
+      "Gradient Fellows",
+    ],
+  },
 };
 
 const defaults = {

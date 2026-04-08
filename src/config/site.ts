@@ -604,9 +604,70 @@ export const siteConfig = {
     completionTarget: "85%",
   },
 
+  // Fellowship Projects
+  projects: [
+    {
+      title: "Real Estate Agent",
+      category: "AI Agents",
+      icon: "agent",
+      description:
+        "An agentic AI app using Large-Action Models to autonomously match properties with user criteria via MLS APIs and CrewAI.",
+    },
+    {
+      title: "Hair Color Modifications",
+      category: "Computer Vision",
+      icon: "vision",
+      description:
+        "AI-powered hair color transformations using MediaPipe segmentation and advanced generative models for styling applications.",
+    },
+    {
+      title: "Fitness Activity Recognition",
+      category: "Pose Estimation",
+      icon: "fitness",
+      description:
+        "Uses MediaPipe BlazePose to analyse fitness videos with a 33-keypoint skeleton system for cost-effective performance tracking.",
+    },
+    {
+      title: "Competitor Analysis",
+      category: "NLP & ML",
+      icon: "analysis",
+      description:
+        "ML-based web scraping tool that categorises competitor products, analyses pricing strategies using embeddings and SKU matching.",
+    },
+    {
+      title: "Music Moderation",
+      category: "Audio ML",
+      icon: "audio",
+      description:
+        "Automatic Music Transcription system that translates audio sequences into symbolic music representation for content moderation.",
+    },
+    {
+      title: "Food Recognition with CLIP",
+      category: "Vision & CLIP",
+      icon: "food",
+      description:
+        "Evaluates OpenAI CLIP model for food type identification and nutritional analysis with custom-curated datasets.",
+    },
+    {
+      title: "Fetal Gender Masking",
+      category: "Medical Imaging",
+      icon: "medical",
+      description:
+        "Deep learning approach for automatically masking fetal gender indicators in ultrasound imagery to support blind studies.",
+    },
+    {
+      title: "Creative Optimizer",
+      category: "Marketing ML",
+      icon: "creative",
+      description:
+        "Predictive tool measuring Click-Through and Open Rates for email creatives, with automated A/B optimisation recommendations.",
+    },
+  ],
+
   // Navigation
   navigation: [
     { label: "About", href: "/about" },
+    { label: "Projects", href: "/projects" },
     { label: "Apply", href: "/apply" },
     { label: "FAQ", href: "/#faq" },
     { label: "Blog", href: "/blog" },
@@ -673,3 +734,4 @@ export type FAQItem = (typeof siteConfig.faq)[number];
 export type NavigationItem = (typeof siteConfig.navigation)[number];
 export type CompetitorEntry =
   (typeof siteConfig.competitiveLandscape.comparison)[number];
+export type Project = (typeof siteConfig.projects)[number];

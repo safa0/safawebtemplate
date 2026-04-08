@@ -162,7 +162,7 @@ export function HeroSection() {
       {/* Right Panel - Image (hidden on mobile) */}
       <div className="hidden md:block relative overflow-hidden h-[35vh] sm:h-[40vh] md:h-full bg-earth z-10 order-1 md:order-2">
         <div
-          className="hero-right-image absolute inset-0 bg-cover bg-center z-0"
+          className="hero-right-image absolute inset-0 bg-cover bg-[center_5%] z-0"
           style={{
             backgroundImage:
               "url('/images/hero-student.jpg')",
@@ -176,7 +176,7 @@ export function HeroSection() {
             src="/images/hero-student.jpg"
             alt="Smiling woman holding folder"
             fill
-            className="object-cover"
+            className="object-cover object-[center_5%]"
             priority
           />
         </div>
