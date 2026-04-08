@@ -43,6 +43,9 @@ next-env.d.ts
 *.jpeg
 *.mp4
 *.gif
+
+# Allow project images
+!public/images/**
 reference_frame_*
 current_*
 fixed_*
