@@ -170,7 +170,10 @@ export function PrivacyContent() {
         {/* Sections */}
         <div className="flex flex-col gap-10">
           {sections.map((section) => (
-            <div key={section.title}>
+            <div
+              key={section.title}
+              id={section.title.includes("Cookies") ? "cookies" : undefined}
+            >
               <h2 className="text-xl md:text-2xl font-semibold text-dark mb-3">
                 {section.title}
               </h2>
