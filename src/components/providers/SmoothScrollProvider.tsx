@@ -36,9 +36,20 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
 
     lenisRef.current = lenis;
 
-    // Reset scroll position to top on route change
-    window.scrollTo(0, 0);
-    lenis.scrollTo(0, { immediate: true });
+    // Handle scroll position on route change
+    const hash = window.location.hash;
+    if (hash) {
+      // Delay to let DOM render, then scroll to hash target
+      setTimeout(() => {
+        const target = document.querySelector(hash);
+        if (target) {
+          lenis.scrollTo(target as HTMLElement, { offset: -80, immediate: false, duration: 1.2 });
+        }
+      }, 300);
+    } else {
+      window.scrollTo(0, 0);
+      lenis.scrollTo(0, { immediate: true });
+    }
 
     // Sync Lenis with GSAP ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
