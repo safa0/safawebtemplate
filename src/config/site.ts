@@ -608,59 +608,51 @@ export const siteConfig = {
   projects: [
     {
       title: "Real Estate Agent",
-      category: "AI Agents",
-      icon: "agent",
       description:
-        "An agentic AI app using Large-Action Models to autonomously match properties with user criteria via MLS APIs and CrewAI.",
+        "Developing an Agentic AI Real Estate Agent app using Large-Action Models (LAMs), designed to transform the property search process by autonomously finding listings that match user-specified criteria. This advanced app will use technologies like CrewAI to facilitate conversational interactions and detailed searches through MLS listing APIs, enhancing the efficiency and user experience in real estate transactions.",
+      image: "/images/projects/real-estate.jpg",
     },
     {
       title: "Hair Color Modifications",
-      category: "Computer Vision",
-      icon: "vision",
       description:
-        "AI-powered hair color transformations using MediaPipe segmentation and advanced generative models for styling applications.",
+        "AI-powered hair color transformation tool using MediaPipe segmentation and advanced generative models. The system accurately isolates hair regions in images and applies realistic color modifications for virtual try-on styling applications.",
+      image: "/images/projects/hair-color.png",
     },
     {
       title: "Fitness Activity Recognition",
-      category: "Pose Estimation",
-      icon: "fitness",
       description:
-        "Uses MediaPipe BlazePose to analyse fitness videos with a 33-keypoint skeleton system for cost-effective performance tracking.",
+        "Uses MediaPipe BlazePose to analyse fitness videos with a 33-keypoint skeleton system for cost-effective performance tracking. The model identifies exercise types, counts repetitions, and provides form feedback in real time.",
+      image: "/images/projects/fitness.png",
     },
     {
       title: "Competitor Analysis",
-      category: "NLP & ML",
-      icon: "analysis",
       description:
-        "ML-based web scraping tool that categorises competitor products, analyses pricing strategies using embeddings and SKU matching.",
+        "ML-based web scraping tool that categorises competitor products, analyses pricing strategies using embeddings and SKU matching. Delivers automated competitive intelligence reports with trend detection and market positioning insights.",
+      image: "/images/projects/competitor-analysis.png",
     },
     {
       title: "Music Moderation",
-      category: "Audio ML",
-      icon: "audio",
       description:
-        "Automatic Music Transcription system that translates audio sequences into symbolic music representation for content moderation.",
+        "Automatic Music Transcription (AMT) translates audio sequences to symbolic music representation. The system enables content moderation at scale by detecting copyrighted material and generating structured metadata for audio catalogues.",
+      image: "/images/projects/music-moderation.jpg",
     },
     {
       title: "Food Recognition with CLIP",
-      category: "Vision & CLIP",
-      icon: "food",
       description:
-        "Evaluates OpenAI CLIP model for food type identification and nutritional analysis with custom-curated datasets.",
+        "Evaluates OpenAI CLIP model for food type identification and nutritional analysis with custom-curated datasets. Tests zero-shot and fine-tuned performance across diverse cuisines and presentation styles.",
+      image: "/images/projects/food-recognition.png",
     },
     {
       title: "Fetal Gender Masking",
-      category: "Medical Imaging",
-      icon: "medical",
       description:
-        "Deep learning approach for automatically masking fetal gender indicators in ultrasound imagery to support blind studies.",
+        "Deep learning approach for automatically masking fetal gender indicators in ultrasound imagery to support blind studies. Uses segmentation networks trained on medical imaging data to ensure privacy compliance in prenatal research.",
+      image: "/images/projects/fetal-masking.png",
     },
     {
       title: "Creative Optimizer",
-      category: "Marketing ML",
-      icon: "creative",
       description:
-        "Predictive tool measuring Click-Through and Open Rates for email creatives, with automated A/B optimisation recommendations.",
+        "Predictive tool measuring Click-Through and Open Rates for email creatives. Uses ML models to score creative variants and provide automated A/B optimisation recommendations, improving campaign performance at scale.",
+      image: "/images/projects/creative-optimizer.png",
     },
   ],
 
