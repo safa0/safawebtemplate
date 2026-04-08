@@ -3,6 +3,7 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { Preloader } from "@/components/ui/Preloader";
+import { CookieBanner } from "@/components/ui/CookieBanner";
 import { siteConfig } from "@/config/site";
 
 const spaceGrotesk = Space_Grotesk({
@@ -43,6 +44,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           {children}
         </SmoothScrollProvider>
+        <CookieBanner />
       </body>
     </html>
   );
