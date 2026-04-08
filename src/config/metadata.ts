@@ -54,6 +54,20 @@ export const pageMetadata: Record<string, PageMetadata> = {
     description: "Discover the transformative benefits of enterprise automation: cost reduction, improved accuracy, scalability, and faster time-to-market. Calculate your ROI.",
     keywords: ["why automate", "automation benefits", "automation ROI", "cost reduction", "process efficiency"],
   },
+  projects: {
+    title: "Fellowship Projects | Gradient Fellows",
+    description:
+      "Explore real AI projects built by Gradient Fellows — from computer vision and NLP to autonomous agents and medical imaging.",
+    keywords: [
+      "AI projects",
+      "fellowship projects",
+      "machine learning",
+      "computer vision",
+      "NLP",
+      "AI agents",
+      "Gradient Fellows",
+    ],
+  },
   "how-we-work": {
     title: "Our Methodology | How We Deliver Automation Excellence",
     description: "Our proven 5-step methodology ensures successful automation implementation: Discover, Design, Develop, Deploy, and Deliver. Partner with confidence.",
