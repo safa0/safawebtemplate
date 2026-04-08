@@ -58,9 +58,9 @@ export function ProblemSection() {
   return (
     <section
       ref={sectionRef}
-      className="problem-section w-full bg-dark section-padding-large"
+      className="problem-section w-full h-full bg-dark flex items-center section-padding-large"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left: Thesis */}
           <div>

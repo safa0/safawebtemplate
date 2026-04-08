@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 export function FooterSection() {
@@ -24,87 +25,92 @@ export function FooterSection() {
   ];
 
   return (
-    <footer className="w-full bg-dark min-h-[60vh] md:min-h-[80vh] flex flex-col">
+    <footer className="footer-section w-full bg-khaki-light min-h-[80vh] md:min-h-screen flex flex-col">
       {/* Main Footer Content */}
       <div className="flex-1 flex flex-col md:flex-row items-start md:items-center py-12 md:py-0">
-        {/* Logo Section */}
+        {/* Logo Section - Top on mobile, Left on desktop */}
         <div className="flex-shrink-0 px-6 sm:px-8 md:px-12 lg:px-16 pb-8 md:py-12 w-full md:w-auto">
-          <Link
-            href="/"
-            className="flex flex-col items-start gap-4"
-          >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+          <Link href="/" className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+            <Image
+              src={siteConfig.logo.path}
+              alt={siteConfig.logo.alt}
+              width={300}
+              height={90}
+              className="w-32 sm:w-40 md:w-48 lg:w-64 xl:w-80 h-auto object-contain"
+              priority
+            />
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-earth">
               {siteConfig.name}
             </h2>
-            <p className="text-sm text-khaki max-w-xs">
-              {siteConfig.tagline}
-            </p>
           </Link>
         </div>
 
-        {/* Navigation */}
+        {/* Right-aligned section with divider and navigation */}
         <div className="flex flex-col md:flex-row items-stretch md:items-center w-full md:w-auto md:ml-auto">
-          <div className="hidden md:block w-px h-64 bg-white/10" />
+          {/* Vertical Divider - Hidden on mobile */}
+          <div className="hidden md:block w-px h-64 bg-earth/20" />
 
+          {/* Navigation Items - Stacked on mobile, vertical on desktop */}
           <nav className="w-full md:w-auto flex flex-col">
-            {navigationItems.map((item, index) => (
-              <div key={item.href}>
-                <Link
-                  href={item.href}
-                  className="group relative overflow-hidden block w-full py-4 sm:py-5 md:py-6 lg:py-8 px-6 sm:px-8 md:px-12 lg:px-16"
-                >
-                  <div className="relative z-10 flex items-baseline gap-3 sm:gap-4">
-                    <span className="text-xs sm:text-sm md:text-base text-khaki/60 font-light group-hover:text-accent transition-colors duration-300">
-                      {item.number}
-                    </span>
-                    <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white/80 group-hover:text-accent transition-colors duration-300">
-                      {item.label}
-                    </span>
-                  </div>
-                  <div className="absolute inset-0 bg-dark/80 origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-out z-0" />
-                </Link>
-                {index < navigationItems.length - 1 && (
-                  <div className="w-full h-px bg-white/10" />
-                )}
-              </div>
-            ))}
+          {navigationItems.map((item, index) => (
+            <div key={item.href}>
+              <Link
+                href={item.href}
+                className="group relative overflow-hidden block w-full py-4 sm:py-5 md:py-6 lg:py-8 px-6 sm:px-8 md:px-12 lg:px-16"
+              >
+                <div className="relative z-10 flex items-baseline gap-3 sm:gap-4">
+                  <span className="text-xs sm:text-sm md:text-base text-khaki font-light group-hover:text-khaki-light transition-colors duration-300">
+                    {item.number}
+                  </span>
+                  <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-earth group-hover:text-khaki-light transition-colors duration-300">
+                    {item.label}
+                  </span>
+                </div>
+                {/* Hover/Active background overlay - animates from top to bottom */}
+                <div className="absolute inset-0 bg-khaki-dark origin-top scale-y-0 group-hover:scale-y-100 group-active:scale-y-100 transition-transform duration-500 ease-out z-0" />
+              </Link>
+              {/* Divider line between items */}
+              {index < navigationItems.length - 1 && (
+                <div className="w-full h-px bg-khaki/20" />
+              )}
+            </div>
+          ))}
           </nav>
         </div>
       </div>
 
       {/* Bottom Footer Section */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-khaki/20">
+        {/* Mobile: Stack vertically, Desktop: Horizontal with dividers */}
         <div className="flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-row items-start">
           {/* Contact */}
-          <div className="flex-1 w-full px-6 sm:px-8 md:px-12 lg:px-16 py-6 sm:py-8 border-b sm:border-b-0 sm:border-r lg:border-r-0 border-white/10">
-            <h3 className="text-xs font-light text-khaki/60 mb-3 tracking-wider uppercase">
+          <div className="flex-1 w-full px-6 sm:px-8 md:px-12 lg:px-16 py-6 sm:py-8 border-b sm:border-b-0 sm:border-r lg:border-r-0 border-khaki/20">
+            <h3 className="text-xs font-light text-khaki mb-3 tracking-wider uppercase">
               Contact
             </h3>
             <a
               href={`mailto:${siteConfig.contact.email}`}
-              className="text-sm md:text-base text-white/80 hover:text-accent transition-colors duration-300 break-all"
+              className="text-sm md:text-base text-earth hover:text-khaki-dark transition-colors duration-300 break-all"
             >
               {siteConfig.contact.email}
             </a>
           </div>
 
-          <div className="hidden lg:block w-px h-24 bg-white/10" />
+          {/* Vertical Divider - Hidden on mobile */}
+          <div className="hidden lg:block w-px h-24 bg-khaki/20" />
 
-          {/* Stay Updated */}
-          <div className="flex-1 w-full px-6 sm:px-8 md:px-12 lg:px-16 py-6 sm:py-8 border-b sm:border-b-0 border-white/10">
-            <h3 className="text-xs font-light text-khaki/60 mb-3 tracking-wider uppercase">
-              Stay Updated
+          {/* Subscribe */}
+          <div className="flex-1 w-full px-6 sm:px-8 md:px-12 lg:px-16 py-6 sm:py-8 border-b sm:border-b-0 border-khaki/20">
+            <h3 className="text-xs font-light text-khaki mb-3 tracking-wider uppercase">
+              Subscribe
             </h3>
             {isMounted ? (
-              <form
-                onSubmit={handleSubscribe}
-                className="flex items-center gap-2"
-              >
+              <form onSubmit={handleSubscribe} className="flex items-center gap-2">
                 <input
                   ref={subscribeRef}
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 bg-transparent border-b border-white/20 py-2 text-sm text-white placeholder:text-khaki/40 focus:outline-none focus:border-accent transition-colors duration-300 min-w-0"
+                  className="flex-1 bg-transparent border-b border-khaki/40 py-2 text-sm text-earth placeholder:text-khaki/60 focus:outline-none focus:border-khaki-dark transition-colors duration-300 min-w-0"
                   required
                 />
                 <button
@@ -113,7 +119,7 @@ export function FooterSection() {
                   aria-label="Subscribe"
                 >
                   <svg
-                    className="w-4 h-4 text-accent"
+                    className="w-4 h-4 text-earth"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -129,65 +135,69 @@ export function FooterSection() {
               </form>
             ) : (
               <div className="flex items-center gap-2 h-8">
-                <div className="flex-1 border-b border-white/20 py-2" />
+                <div className="flex-1 border-b border-khaki/40 py-2" />
               </div>
             )}
           </div>
 
-          <div className="hidden lg:block w-px h-24 bg-white/10" />
+          {/* Vertical Divider - Hidden on mobile */}
+          <div className="hidden lg:block w-px h-24 bg-khaki/20" />
 
           {/* Connect */}
-          <div className="flex-1 w-full px-6 sm:px-8 md:px-12 lg:px-16 py-6 sm:py-8">
-            <h3 className="text-xs font-light text-khaki/60 mb-3 tracking-wider uppercase">
+          <div className="flex-1 w-full px-6 sm:px-8 md:px-12 lg:px-16 py-6 sm:py-8 border-b sm:border-b-0 sm:border-r lg:border-r-0 border-khaki/20">
+            <h3 className="text-xs font-light text-khaki mb-3 tracking-wider uppercase">
               Connect
             </h3>
             <div className="flex flex-col gap-2">
-              {siteConfig.social.twitter && (
-                <a
-                  href={siteConfig.social.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-white/80 hover:text-accent transition-colors duration-300"
-                >
-                  Twitter / X
-                </a>
-              )}
               {siteConfig.social.linkedin && (
                 <a
                   href={siteConfig.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/80 hover:text-accent transition-colors duration-300"
+                  className="text-sm text-earth hover:text-khaki-dark active:text-khaki-dark transition-colors duration-300"
                 >
                   LinkedIn
                 </a>
               )}
-              {siteConfig.social.github && (
+              {siteConfig.social.twitter && (
                 <a
-                  href={siteConfig.social.github}
+                  href={siteConfig.social.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/80 hover:text-accent transition-colors duration-300"
+                  className="text-sm text-earth hover:text-khaki-dark active:text-khaki-dark transition-colors duration-300"
                 >
-                  GitHub
+                  Twitter / X
                 </a>
               )}
-              {!siteConfig.social.twitter &&
-                !siteConfig.social.linkedin &&
-                !siteConfig.social.github && (
-                  <span className="text-sm text-khaki/40">Coming soon</span>
-                )}
+              {!siteConfig.social.linkedin && !siteConfig.social.twitter && (
+                <span className="text-sm text-khaki/60">Coming soon</span>
+              )}
+            </div>
+          </div>
+
+          {/* Vertical Divider - Hidden on mobile */}
+          <div className="hidden lg:block w-px h-24 bg-khaki/20" />
+
+          {/* Others */}
+          <div className="flex-1 w-full px-6 sm:px-8 md:px-12 lg:px-16 py-6 sm:py-8">
+            <h3 className="text-xs font-light text-khaki mb-3 tracking-wider uppercase">
+              Others
+            </h3>
+            <div className="flex flex-col gap-2">
+              <Link
+                href="/privacy"
+                className="text-sm text-earth hover:text-khaki-dark active:text-khaki-dark transition-colors duration-300"
+              >
+                Privacy Policy
+              </Link>
             </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="px-6 sm:px-8 md:px-12 lg:px-16 py-6 border-t border-white/10 text-center sm:text-right">
-          <p className="text-xs text-khaki/40">
+        <div className="px-6 sm:px-8 md:px-12 lg:px-16 py-6 border-t border-khaki/20 text-center sm:text-right">
+          <p className="text-xs text-khaki">
             {new Date().getFullYear()} {siteConfig.name} &copy;
-            {siteConfig.footer.version && (
-              <span className="ml-3 text-khaki/20">{siteConfig.footer.version}</span>
-            )}
           </p>
         </div>
       </div>

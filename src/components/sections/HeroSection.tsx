@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
@@ -10,27 +11,62 @@ export function HeroSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Responsive animation configuration
       const isMobile = window.innerWidth < 640;
+      const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024;
+      const isDesktop = window.innerWidth >= 1024;
 
-      // Badge fade in
-      gsap.from(".hero-badge", {
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        delay: 0.2,
-        ease: "power2.out",
-      });
+      // Only apply parallax scroll effects on desktop
+      if (isDesktop) {
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+          },
+        });
 
-      // Headline slat reveal
-      const numberOfRects = isMobile ? 6 : 8;
-      const clipId = "hero-headline-clip";
+        timeline
+          .to(".floating-card-2", { x: -100, opacity: 0, duration: 1 }, 0)
+          .to(".floating-card-3", { x: -80, opacity: 0, duration: 1 }, 0.1)
+          .to(".hero-right-image", { x: "-20%", duration: 1 }, 0)
+          .to(".hero-headline", { opacity: 0.3, scale: 0.95, duration: 1 }, 0)
+          .to(".hero-bottom", { opacity: 0, x: -30, duration: 1 }, 0.3);
+      } else if (isTablet) {
+        // Reduced parallax for tablet
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+          },
+        });
 
+        timeline
+          .to(".floating-card-2", { x: -50, opacity: 0, duration: 1 }, 0)
+          .to(".hero-right-image", { x: "-10%", duration: 1 }, 0)
+          .to(".hero-headline", { opacity: 0.5, scale: 0.98, duration: 1 }, 0);
+      }
+
+      // Start animations immediately after preloader
+      const delay = 0;
+
+      // Responsive slat count for performance
+      const numberOfRects = isMobile ? 6 : isTablet ? 8 : 8;
+      const elements = [
+        { selector: ".logo-tagline", clipId: "hero-logo-clip", delay: delay },
+        { selector: ".hero-headline", clipId: "hero-headline-clip", delay: delay + 0.2 },
+        { selector: ".hero-bottom", clipId: "hero-bottom-clip", delay: delay + 0.4 },
+        { selector: ".hero-right-image", clipId: "hero-right-clip", delay: delay + 0.1 },
+        { selector: ".floating-card-2", clipId: "hero-card-clip", delay: delay + 0.3 }
+      ];
+
+      // Create SVG element once
       let svg = document.querySelector("#hero-clip-svg") as SVGSVGElement;
       if (!svg) {
-        svg = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "svg"
-        ) as SVGSVGElement;
+        svg = document.createElementNS("http://www.w3.org/2000/svg", "svg") as SVGSVGElement;
         svg.setAttribute("id", "hero-clip-svg");
         svg.setAttribute("width", "0");
         svg.setAttribute("height", "0");
@@ -38,83 +74,80 @@ export function HeroSection() {
         document.body.appendChild(svg);
       }
 
-      const defs =
-        svg.querySelector("defs") ||
-        svg.appendChild(
-          document.createElementNS("http://www.w3.org/2000/svg", "defs")
-        );
+      const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+      svg.appendChild(defs);
 
-      const clipPath = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "clipPath"
-      );
-      clipPath.setAttribute("id", clipId);
-      clipPath.setAttribute("clipPathUnits", "objectBoundingBox");
+      elements.forEach(({ selector, clipId, delay: elementDelay }) => {
+        const element = document.querySelector(selector);
+        if (!element) return;
 
-      const rectWidth = 1 / numberOfRects;
-      for (let i = 0; i < numberOfRects; i++) {
-        const rect = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "rect"
-        );
-        rect.setAttribute("x", String(i * rectWidth));
-        rect.setAttribute("y", "0");
-        rect.setAttribute("width", String(rectWidth));
-        rect.setAttribute("height", "1");
-        clipPath.appendChild(rect);
-      }
+        // Create clipPath with vertical rectangles
+        const clipPath = document.createElementNS("http://www.w3.org/2000/svg", "clipPath");
+        clipPath.setAttribute("id", clipId);
+        clipPath.setAttribute("clipPathUnits", "objectBoundingBox");
 
-      defs.appendChild(clipPath);
+        const rectWidth = 1 / numberOfRects;
 
-      const headline = document.querySelector(".hero-headline");
-      if (headline) {
-        gsap.set(headline, { clipPath: `url(#${clipId})` });
+        // Create vertical rectangles
+        for (let i = 0; i < numberOfRects; i++) {
+          const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+          rect.setAttribute("x", String(i * rectWidth));
+          rect.setAttribute("y", "0");
+          rect.setAttribute("width", String(rectWidth));
+          rect.setAttribute("height", "1");
+          clipPath.appendChild(rect);
+        }
+
+        defs.appendChild(clipPath);
+
+        // Apply clip-path to element
+        gsap.set(element, {
+          clipPath: `url(#${clipId})`
+        });
+
+        // Animate the rectangles with responsive duration
         const rects = clipPath.querySelectorAll("rect");
+        const animDuration = isMobile ? 0.8 : isTablet ? 1.0 : 1.2;
+        const staggerAmount = isMobile ? 0.5 : isTablet ? 0.6 : 0.8;
+
         gsap.from(rects, {
           scaleX: 0,
           transformOrigin: "left center",
-          duration: isMobile ? 0.8 : 1.2,
-          delay: 0.3,
+          duration: animDuration,
+          delay: elementDelay,
           ease: "power2.out",
-          stagger: { amount: isMobile ? 0.5 : 0.8, ease: "none" },
+          stagger: {
+            amount: staggerAmount,
+            ease: "none"
+          }
+        });
+      });
+
+      // Ocean picture slide in from right to left (only on desktop/tablet)
+      if (!isMobile) {
+        gsap.from(".hero-right-image", {
+          x: "100%",
+          duration: isTablet ? 1.2 : 1.5,
+          delay: delay + 0.1,
+          ease: "power3.out",
+        });
+      } else {
+        // Simple fade-in on mobile
+        gsap.from(".hero-right-image", {
+          opacity: 0,
+          duration: 0.8,
+          delay: delay + 0.1,
+          ease: "power2.out",
         });
       }
 
-      // Description and CTAs stagger in
-      gsap.from(".hero-description", {
+      gsap.from(".floating-card", {
+        duration: isMobile ? 0.6 : 1,
         opacity: 0,
-        y: 30,
-        duration: 0.8,
-        delay: 0.6,
-        ease: "power2.out",
-      });
-
-      gsap.from(".hero-cta", {
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        delay: 0.8,
+        scale: isMobile ? 0.95 : 0.8,
         stagger: 0.15,
-        ease: "power2.out",
-      });
-
-      // Right panel reveal
-      gsap.from(".hero-visual", {
-        opacity: 0,
-        scale: isMobile ? 1 : 0.95,
-        duration: 1.2,
-        delay: 0.4,
-        ease: "power2.out",
-      });
-
-      // Animate the data points
-      gsap.from(".hero-data-point", {
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        delay: 1.0,
-        stagger: 0.2,
-        ease: "power2.out",
+        delay: delay + (isMobile ? 0.3 : 0.6),
+        ease: "back.out(1.7)",
       });
     }, sectionRef);
 
@@ -124,143 +157,86 @@ export function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="hero-section relative w-full min-h-[90vh] flex items-center bg-white overflow-hidden"
+      className="hero-section flex flex-col md:grid md:grid-cols-2 w-full h-full relative bg-white z-10 min-h-screen"
     >
-      {/* Subtle geometric pattern background */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, #1A1A2E 1px, transparent 0)`,
-        backgroundSize: '40px 40px',
-      }} />
+      {/* Right Panel - Image (hidden on mobile) */}
+      <div className="hidden md:block relative overflow-hidden h-[35vh] sm:h-[40vh] md:h-full bg-earth z-10 order-1 md:order-2">
+        <div
+          className="hero-right-image absolute inset-0 bg-cover bg-center z-0"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80')",
+            backgroundColor: "#9C8B6C",
+          }}
+        />
 
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-24 md:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Content */}
-          <div className="flex flex-col gap-4 md:gap-6">
-            {/* Badge */}
-            <div className="hero-badge inline-flex items-center self-start gap-2 px-4 py-2 bg-accent/10 text-accent text-sm font-medium rounded-full">
-              <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-              {siteConfig.hero.badge}
+        {/* Full-screen Card - covers entire right side */}
+        <div className="floating-card floating-card-2 absolute inset-0 z-20 overflow-hidden bg-gray-900">
+          <Image
+            src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1920&q=80"
+            alt="Featured Design"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      </div>
+
+      {/* Left Panel - Content (full screen on mobile) */}
+      <div className="bg-khaki-light p-6 sm:p-8 md:p-12 lg:p-20 flex flex-col justify-between relative z-10 min-h-screen md:min-h-full order-2 md:order-1">
+        <div className="logo-tagline mb-6 sm:mb-8 md:mb-12">
+          <div className="logo flex items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3 md:mb-4">
+            <div className="relative w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20 bg-transparent flex-shrink-0">
+              <Image
+                src={siteConfig.logo.path}
+                alt={siteConfig.logo.alt}
+                fill
+                className="object-contain mix-blend-multiply"
+                priority
+                unoptimized
+              />
             </div>
+            <span className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-serif font-bold text-earth leading-tight">{siteConfig.name}</span>
+          </div>
+          <p className="tagline text-xs sm:text-sm md:text-base text-khaki-dark max-w-xs sm:max-w-sm">
+            {siteConfig.tagline}
+          </p>
+        </div>
 
-            {/* Headline */}
-            <h1 className="hero-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-dark leading-[1.1]">
-              {siteConfig.hero.headline.map((line, index) => (
-                <span key={`headline-${index}`} className="block">
-                  {line}
-                </span>
-              ))}
-            </h1>
+        <h1 className="hero-headline font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-[1.1] sm:leading-tight mb-6 sm:mb-8 md:mb-8 text-earth">
+          {siteConfig.hero.headline.map((line, index) => (
+            <span key={`headline-${index}`}>
+              {line}
+              {index < siteConfig.hero.headline.length - 1 && <br />}
+            </span>
+          ))}
+        </h1>
 
-            {/* Description */}
-            <p className="hero-description text-lg md:text-xl text-dark/60 max-w-xl leading-relaxed">
-              {siteConfig.hero.description}
-            </p>
+        <div className="hero-bottom mt-auto">
+          <p className="max-w-md mb-4 sm:mb-6 md:mb-8 text-sm sm:text-base md:text-lg text-khaki-dark leading-relaxed">
+            {siteConfig.hero.description}
+          </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-2">
-              <Link
-                href={siteConfig.hero.cta.link}
-                className="hero-cta inline-block px-8 md:px-12 py-3 md:py-4 bg-accent text-white rounded-full text-base md:text-lg font-medium hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
-              >
-                {siteConfig.hero.cta.text}
-              </Link>
-              <Link
-                href={siteConfig.hero.secondaryCta.link}
-                className="hero-cta inline-flex items-center gap-2 text-base md:text-lg font-medium text-dark/70 hover:text-dark hover:gap-4 transition-all duration-300"
-              >
-                <span>{siteConfig.hero.secondaryCta.text}</span>
-                <span>&darr;</span>
-              </Link>
-            </div>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
+            <Link
+              href={siteConfig.hero.cta.link}
+              className="btn-primary"
+            >
+              {siteConfig.hero.cta.text}
+            </Link>
+            <Link
+              href={siteConfig.hero.secondaryCta.link}
+              className="btn-ghost text-khaki-dark"
+            >
+              <span>{siteConfig.hero.secondaryCta.text}</span>
+              <span>&darr;</span>
+            </Link>
           </div>
 
-          {/* Right: Typographic / Data Visual */}
-          <div className="hero-visual relative hidden lg:flex items-center justify-center">
-            <div className="relative w-full aspect-square max-w-lg">
-              {/* Geometric grid background */}
-              <div className="absolute inset-0 rounded-3xl bg-dark overflow-hidden">
-                {/* Grid lines */}
-                <div className="absolute inset-0 opacity-10" style={{
-                  backgroundImage: `linear-gradient(rgba(233,69,96,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(233,69,96,0.3) 1px, transparent 1px)`,
-                  backgroundSize: '60px 60px',
-                }} />
-                {/* Diagonal accent line */}
-                <div className="absolute top-0 right-0 w-full h-full">
-                  <svg viewBox="0 0 400 400" className="w-full h-full opacity-20">
-                    <line x1="0" y1="400" x2="400" y2="0" stroke="#E94560" strokeWidth="1" />
-                    <line x1="50" y1="400" x2="400" y2="50" stroke="#E94560" strokeWidth="0.5" />
-                    <line x1="0" y1="350" x2="350" y2="0" stroke="#E94560" strokeWidth="0.5" />
-                  </svg>
-                </div>
-                {/* Corner accent */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/20 blur-3xl" />
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-accent/10 blur-2xl" />
-              </div>
-
-              {/* Data points floating on the visual */}
-              <div className="absolute top-8 right-8 hero-data-point">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                  <div className="text-2xl font-bold text-white font-mono">$200</div>
-                  <div className="text-xs text-white/50 uppercase tracking-wider mt-1">monthly stipend</div>
-                </div>
-              </div>
-
-              <div className="absolute bottom-12 left-8 hero-data-point">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                  <div className="text-2xl font-bold text-white font-mono">3&ndash;12</div>
-                  <div className="text-xs text-white/50 uppercase tracking-wider mt-1">months to job-ready</div>
-                </div>
-              </div>
-
-              <div className="absolute top-1/3 left-12 hero-data-point">
-                <div className="bg-accent/20 backdrop-blur-sm rounded-xl p-4 border border-accent/20">
-                  <div className="text-2xl font-bold text-white font-mono">0</div>
-                  <div className="text-xs text-white/50 uppercase tracking-wider mt-1">tuition cost</div>
-                </div>
-              </div>
-
-              {/* Central typographic element */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl font-bold text-white/90 font-mono tracking-tighter">
-                    STEM
-                  </div>
-                  <div className="flex items-center justify-center gap-3 my-2">
-                    <div className="w-8 h-px bg-accent" />
-                    <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                    <div className="w-8 h-px bg-accent" />
-                  </div>
-                  <div className="text-6xl font-bold text-accent font-mono tracking-tighter">
-                    AI
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile visual — compact data strip */}
-          <div className="hero-visual lg:hidden">
-            <div className="grid grid-cols-3 gap-3">
-              {[
-                { value: "$200", label: "monthly stipend" },
-                { value: "3–12mo", label: "to job-ready" },
-                { value: "$0", label: "tuition" },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className="p-4 rounded-xl bg-dark text-center"
-                >
-                  <div className="text-lg font-bold text-white font-mono">
-                    {item.value}
-                  </div>
-                  <div className="text-[10px] text-white/50 uppercase tracking-wider mt-1">
-                    {item.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm text-gray-500">
+            <span className="hidden md:inline">Scroll For More</span>
+            <span className="md:hidden">Explore Below</span>
+            <div className="scroll-arrow animate-pulse">&rarr;</div>
           </div>
         </div>
       </div>

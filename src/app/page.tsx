@@ -21,30 +21,32 @@ export default function Home() {
         <BackgroundManager />
         <Header />
 
-        <main className="vertical-scroll-container">
-          {/* 1. DESIRE — Hook them */}
-          <HeroSection />
-          {/* 2. PROBLEM AWARENESS — Why this matters */}
-          <ProblemSection />
-          {/* 3. VALUE — What you get */}
-          <BenefitsSection />
-          {/* 4. MECHANISM — How it works */}
-          <TiersSection />
-          {/* 5. SELF-QUALIFICATION — Are you the right fit? */}
-          <CriteriaSection />
-          {/* 6. DIFFERENTIATION — Why us, not them */}
-          <CompetitiveSection />
-          {/* 7. FILTER — What we expect (after buy-in) */}
-          <CommitmentsSection />
-          {/* 8. TRUST — Social proof / launching */}
-          <TestimonialsSection />
-          {/* 9. REASSURANCE — Handle objections */}
-          <FAQSection />
-          {/* 10. ACTION — Final push */}
-          <CTASection />
-        </main>
+        {/* Horizontal scroll section */}
+        <div data-horizontal-scroll className="horizontal-wrapper">
+          <main className="horizontal-container">
+            <div data-horizontal-section>
+              <HeroSection />
+            </div>
+            <div data-horizontal-section>
+              <ProblemSection />
+            </div>
+            <div data-horizontal-section className="hidden md:block">
+              <BenefitsSection />
+            </div>
+          </main>
+        </div>
 
-        <FooterSection />
+        {/* Vertical scroll section - transitions from horizontal */}
+        <div className="vertical-scroll-container">
+          <TiersSection />
+          <CriteriaSection />
+          <CompetitiveSection />
+          <CommitmentsSection />
+          <TestimonialsSection />
+          <FAQSection />
+          <CTASection />
+          <FooterSection />
+        </div>
       </div>
     </>
   );

@@ -59,7 +59,7 @@ export function TestimonialsSection() {
         <div className="launch-card relative p-10 md:p-14 rounded-2xl bg-white border border-earth/10 text-center overflow-hidden">
           {/* Subtle pattern */}
           <div className="absolute inset-0 opacity-[0.02]" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #1A1A2E 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, #3E3426 1px, transparent 0)`,
             backgroundSize: '24px 24px',
           }} />
 

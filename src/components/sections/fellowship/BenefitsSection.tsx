@@ -121,9 +121,9 @@ export function BenefitsSection() {
   return (
     <section
       ref={sectionRef}
-      className="benefits-section w-full bg-white section-padding-large"
+      className="benefits-section w-full h-full bg-white flex items-center section-padding-large overflow-y-auto"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto w-full">
         {/* Header */}
         <div className="benefits-header text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4">

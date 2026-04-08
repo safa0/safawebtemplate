@@ -16,8 +16,8 @@ const config: Config = {
         },
         sand: '#D4C4A8',
         earth: '#9C8B6C',
-        accent: '#E94560',
-        dark: '#1A1A2E',
+        accent: '#A89968',
+        dark: '#3E3426',
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
