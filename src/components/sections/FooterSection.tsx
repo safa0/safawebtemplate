@@ -20,8 +20,9 @@ export function FooterSection() {
   const navigationItems = [
     { number: "01.", label: "Home", href: "/" },
     { number: "02.", label: "About", href: "/about" },
-    { number: "03.", label: "Apply", href: "/apply" },
-    { number: "04.", label: "Blog", href: "/blog" },
+    { number: "03.", label: "Projects", href: "/projects" },
+    { number: "04.", label: "Apply", href: "/apply" },
+    { number: "05.", label: "Blog", href: "/blog" },
   ];
 
   return (
@@ -37,7 +38,6 @@ export function FooterSection() {
               width={300}
               height={90}
               className="w-32 sm:w-40 md:w-48 lg:w-64 xl:w-80 h-auto object-contain"
-              priority
             />
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-earth">
               {siteConfig.name}
@@ -51,7 +51,7 @@ export function FooterSection() {
           <div className="hidden md:block w-px h-64 bg-earth/20" />
 
           {/* Navigation Items - Stacked on mobile, vertical on desktop */}
-          <nav className="w-full md:w-auto flex flex-col">
+          <nav aria-label="Footer navigation" className="w-full md:w-auto flex flex-col">
           {navigationItems.map((item, index) => (
             <div key={item.href}>
               <Link
@@ -106,7 +106,9 @@ export function FooterSection() {
             </h3>
             {isMounted ? (
               <form onSubmit={handleSubscribe} className="flex items-center gap-2">
+                <label htmlFor="footer-email" className="sr-only">Email address</label>
                 <input
+                  id="footer-email"
                   ref={subscribeRef}
                   type="email"
                   placeholder="Enter your email"

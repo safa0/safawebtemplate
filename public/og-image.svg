@@ -14,9 +14,9 @@
   <circle cx="1100" cy="100" r="200" fill="#E94560" opacity="0.08"/>
   <circle cx="100" cy="530" r="150" fill="#E94560" opacity="0.05"/>
   <!-- Lambda symbol -->
-  <text x="600" y="280" text-anchor="middle" font-family="system-ui, sans-serif" font-size="180" font-weight="700" fill="white" opacity="0.9">&lambda;</text>
+  <text x="600" y="280" text-anchor="middle" font-family="system-ui, sans-serif" font-size="180" font-weight="700" fill="white" opacity="0.9">&#955;</text>
   <!-- Programme name -->
-  <text x="600" y="370" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="white" letter-spacing="2">[Programme Name]</text>
+  <text x="600" y="370" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="white" letter-spacing="2">Gradient Fellows</text>
   <!-- Tagline -->
   <text x="600" y="420" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="white" opacity="0.5" letter-spacing="3">STEM TO AI FELLOWSHIP</text>
   <!-- Bottom data strip -->

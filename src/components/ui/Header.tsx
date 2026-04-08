@@ -25,7 +25,7 @@ export function Header() {
                 alt={siteConfig.logo.alt}
                 fill
                 className="object-contain"
-                unoptimized
+                sizes="40px"
               />
             </div>
             <span className="text-lg md:text-xl font-serif font-bold text-gray-900 hidden sm:inline">
@@ -34,7 +34,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center divide-x divide-gray-900/10">
+          <nav aria-label="Main navigation" className="hidden md:flex items-center divide-x divide-gray-900/10">
             {siteConfig.navigation.map((item) => (
               <Link
                 key={item.href}
@@ -94,7 +94,7 @@ export function Header() {
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden border-b border-gray-900/10 bg-white/50 backdrop-blur-sm shadow-sm">
-          <nav className="flex flex-col divide-y divide-gray-900/10 max-w-7xl mx-auto">
+          <nav aria-label="Mobile navigation" className="flex flex-col divide-y divide-gray-900/10 max-w-7xl mx-auto">
             {siteConfig.navigation.map((item) => (
               <Link
                 key={item.href}

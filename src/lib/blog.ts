@@ -70,6 +70,11 @@ export function getAllPosts(): BlogPostMetadata[] {
  * Get a single blog post by slug
  */
 export function getPostBySlug(slug: string): BlogPost | null {
+  // Reject slugs with path traversal or unsafe characters
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
+    return null;
+  }
+
   try {
     const filename = `${slug}.mdx`;
     const post = parseBlogFile(filename);

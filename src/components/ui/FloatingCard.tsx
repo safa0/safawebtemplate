@@ -20,6 +20,7 @@ export function FloatingCard({ number, imageUrl, className = "" }: FloatingCardP
           src={imageUrl}
           alt={`Design Preview ${number}`}
           fill
+          sizes="256px"
           className="object-cover"
         />
       </div>

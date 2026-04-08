@@ -40,6 +40,9 @@ next-env.d.ts
 # Screenshots and media (dev files)
 *.png
 *.jpg
+
+# Allow OG image
+!public/og-image.png
 *.jpeg
 *.mp4
 *.gif

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getAllPostSlugs, getRelatedPosts, formatDate } from '@/lib/blog';
+import { BASE_URL, safeJsonLd, resolveImageUrl } from '@/config/metadata';
 import { Header } from '@/components/ui/Header';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
@@ -38,29 +39,28 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
   }
 
+  const imageUrl = post.image ? resolveImageUrl(post.image) : undefined;
+
   return {
-    title: `${post.title} - Gradient Fellows`,
+    title: `${post.title} | Gradient Fellows`,
     description: post.excerpt,
+    keywords: post.tags,
+    alternates: {
+      canonical: `${BASE_URL}/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,
       authors: [post.author],
-      images: post.image
-        ? [
-          {
-            url: post.image,
-            alt: post.title,
-          },
-        ]
-        : [],
+      images: imageUrl ? [{ url: imageUrl, alt: post.title }] : [],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: post.image ? [post.image] : [],
+      images: imageUrl ? [imageUrl] : [],
     },
   };
 }
@@ -69,33 +69,50 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
-  if (!post) {
-    notFound();
-  }
+  if (!post) return notFound();
 
   // Get related posts
   const relatedPosts = getRelatedPosts(post.slug, post.tags, 3);
 
+  const postImageUrl = post.image ? resolveImageUrl(post.image) : undefined;
+
   // Structured Data (JSON-LD) for SEO
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.excerpt,
-    image: post.image,
-    datePublished: post.date,
-    author: {
-      '@type': 'Person',
-      name: post.author,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Gradient Fellows',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://gradientfellows.org/logo.png',
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        '@id': `${BASE_URL}/blog/${post.slug}#article`,
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `${BASE_URL}/blog/${post.slug}#webpage`,
+        },
+        headline: post.title,
+        description: post.excerpt,
+        ...(postImageUrl
+          ? { image: { '@type': 'ImageObject', url: postImageUrl } }
+          : {}),
+        url: `${BASE_URL}/blog/${post.slug}`,
+        datePublished: post.date,
+        dateModified: post.date,
+        author: { '@type': 'Person', name: post.author },
+        publisher: {
+          '@type': 'Organization',
+          '@id': `${BASE_URL}/#organization`,
+          name: 'Gradient Fellows',
+          logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` },
+        },
+        isPartOf: { '@id': `${BASE_URL}/#website` },
       },
-    },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE_URL}/blog` },
+          { '@type': 'ListItem', position: 3, name: post.title, item: `${BASE_URL}/blog/${post.slug}` },
+        ],
+      },
+    ],
   };
 
   return (
@@ -103,7 +120,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(structuredData) }}
       />
 
       <Header />
@@ -129,6 +146,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 src={post.image}
                 alt={post.title}
                 fill
+                sizes="(max-width: 768px) 100vw, 896px"
                 className="object-cover"
                 priority
               />
