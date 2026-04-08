@@ -151,8 +151,8 @@ export function BenefitsSection() {
         </div>
 
         {/* Benefits Grid */}
-        <div className="benefits-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {siteConfig.benefits.map((benefit) => (
+        <div className="benefits-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+          {siteConfig.benefits.slice(0, 3).map((benefit) => (
             <div
               key={benefit.title}
               className="benefit-card group p-8 rounded-2xl border border-earth/10 hover:border-accent/30 hover:shadow-lg transition-all duration-300 bg-white"

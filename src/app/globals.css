@@ -19,6 +19,7 @@
 
   html {
     @apply scroll-smooth;
+    scroll-padding-top: 5rem;
   }
 
   body {
@@ -122,6 +123,7 @@
   height: 100vh;
   flex-shrink: 0;
   position: relative;
+  padding-top: 5rem; /* Clear fixed header */
 }
 
 /* Vertical Scroll Container Styles */

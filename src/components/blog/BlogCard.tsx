@@ -7,6 +7,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BlogPostMetadata, formatDate } from '@/lib/blog-types';
 
+gsap.registerPlugin(ScrollTrigger);
+
 interface BlogCardProps {
   post: BlogPostMetadata;
   index?: number;
