@@ -47,7 +47,7 @@ export function LeadershipSection() {
                 backgroundSize: '12px 12px',
               }} />
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-4xl md:text-5xl font-bold text-white/20 font-mono">&lambda;</span>
+                <span className="text-4xl md:text-5xl font-bold text-white/20 font-mono">∇</span>
               </div>
             </div>
 

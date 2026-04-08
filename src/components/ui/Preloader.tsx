@@ -176,7 +176,7 @@ export function Preloader() {
             priority
           />
         </div>
-        <span className="text-3xl md:text-4xl font-serif font-bold text-earth mt-4">
+        <span className="text-3xl md:text-4xl font-serif font-bold text-earth mt-4 whitespace-nowrap">
           {siteConfig.name}
         </span>
       </div>
