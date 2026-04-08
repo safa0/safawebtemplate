@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Penrose-style impossible inverted triangle for Gradient Fellows -->
+  <!-- Three interlocking bars forming an impossible downward triangle -->
+
+  <!-- Bar 1: Top-left to bottom-center -->
+  <polygon points="
+    60,100  200,100  280,240  256,280  140,280  100,210  160,210  176,240  220,160  120,160
+  " fill="#111111"/>
+
+  <!-- Bar 2: Top-right to bottom-center -->
+  <polygon points="
+    452,100  312,100  232,240  256,280  372,280  412,210  352,210  336,240  292,160  392,160
+  " fill="#111111"/>
+
+  <!-- Bar 3: Bottom horizontal connecting piece -->
+  <polygon points="
+    140,280  372,280  336,340  312,340  256,420  200,340  176,340
+  " fill="#111111"/>
+
+  <!-- Inner cutouts to create the impossible triangle effect -->
+  <!-- Center hollow -->
+  <polygon points="
+    256,200  210,280  302,280
+  " fill="white"/>
+</svg>
