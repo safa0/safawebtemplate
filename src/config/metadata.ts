@@ -72,6 +72,18 @@ export const pageMetadata: Record<string, PageMetadata> = {
       "Gradient Fellows",
     ],
   },
+  faq: {
+    title: "FAQ | Gradient Fellows",
+    description:
+      "Frequently asked questions about the Gradient Fellows fellowship — eligibility, commitment, stipend, and what to expect.",
+    keywords: [
+      "fellowship FAQ",
+      "AI fellowship questions",
+      "STEM to AI FAQ",
+      "Gradient Fellows FAQ",
+      "fellowship eligibility",
+    ],
+  },
   privacy: {
     title: "Privacy Policy | Gradient Fellows",
     description:

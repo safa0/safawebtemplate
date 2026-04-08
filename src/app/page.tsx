@@ -8,7 +8,6 @@ import { CommitmentsSection } from "@/components/sections/fellowship/Commitments
 import { CriteriaSection } from "@/components/sections/fellowship/CriteriaSection";
 import { CompetitiveSection } from "@/components/sections/fellowship/CompetitiveSection";
 import { TestimonialsSection } from "@/components/sections/fellowship/TestimonialsSection";
-import { FAQSection } from "@/components/sections/fellowship/FAQSection";
 import { CTASection } from "@/components/sections/fellowship/CTASection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { BackgroundManager } from "@/components/ui/BackgroundManager";
@@ -43,7 +42,6 @@ export default function Home() {
           <CompetitiveSection />
           <CommitmentsSection />
           <TestimonialsSection />
-          <FAQSection />
           <CTASection />
           <FooterSection />
         </div>

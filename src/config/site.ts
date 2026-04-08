@@ -661,7 +661,7 @@ export const siteConfig = {
     { label: "About", href: "/about" },
     { label: "Projects", href: "/projects" },
     { label: "Apply", href: "/apply" },
-    { label: "FAQ", href: "/#faq" },
+    { label: "FAQ", href: "/faq" },
     { label: "Blog", href: "/blog" },
   ],
 
