@@ -165,7 +165,7 @@ export function HeroSection() {
           className="hero-right-image absolute inset-0 bg-cover bg-center z-0"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1695990200724-8bb04efe2eab?w=1920&q=80')",
+              "url('/images/hero-student.jpg')",
             backgroundColor: "#9C8B6C",
           }}
         />
@@ -173,8 +173,8 @@ export function HeroSection() {
         {/* Full-screen Card - covers entire right side */}
         <div className="floating-card floating-card-2 absolute inset-0 z-20 overflow-hidden bg-gray-900">
           <Image
-            src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1920&q=80"
-            alt="Featured Design"
+            src="/images/hero-student.jpg"
+            alt="Smiling woman holding folder"
             fill
             className="object-cover"
             priority
