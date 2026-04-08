@@ -34,7 +34,7 @@ export function Header() {
                 src={siteConfig.logo.path}
                 alt={siteConfig.logo.alt}
                 fill
-                className="object-contain mix-blend-multiply"
+                className="object-contain"
                 unoptimized
               />
             </div>
