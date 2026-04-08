@@ -4,13 +4,12 @@ import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { siteConfig } from "@/config/site";
+import { submitApplication } from "@/app/apply/actions";
 
 gsap.registerPlugin(ScrollTrigger);
 
 type FormData = Record<string, string | File | null>;
 type FormErrors = Record<string, string>;
-
-const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID;
 
 // Consolidated 3-step form structure
 const formSteps = [
@@ -196,7 +195,6 @@ export function ApplicationFormSection() {
     try {
       const submitData = new FormData();
 
-      // Add all text/select fields
       for (const [key, value] of Object.entries(formData)) {
         if (value instanceof File) {
           submitData.append(key, value);
@@ -205,31 +203,16 @@ export function ApplicationFormSection() {
         }
       }
 
-      // Add metadata
-      submitData.append("_subject", `New Fellowship Application: ${formData.fullName || "Unknown"}`);
+      const result = await submitApplication(submitData);
 
-      if (FORMSPREE_ID) {
-        const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-          method: "POST",
-          body: submitData,
-          headers: { Accept: "application/json" },
-        });
-
-        if (!response.ok) {
-          throw new Error("Submission failed. Please try again.");
-        }
+      if (result.success) {
+        setIsSubmitted(true);
       } else {
-        // Fallback: mailto link if no Formspree ID configured
-        // In development, simulate success
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        setSubmitError(result.error);
       }
-
-      setIsSubmitted(true);
-    } catch (err) {
+    } catch {
       setSubmitError(
-        err instanceof Error
-          ? err.message
-          : "Something went wrong. Please try again or email us directly."
+        "Something went wrong. Please try again or email us directly."
       );
     } finally {
       setIsSubmitting(false);
