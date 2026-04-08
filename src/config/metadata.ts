@@ -86,10 +86,22 @@ export const pageMetadata: Record<string, PageMetadata> = {
   },
 };
 
+const BASE_URL = "https://gradientfellows.org";
+
 const defaults = {
   siteName: "Gradient Fellows",
   defaultImage: "/og-image.png",
   twitterHandle: "",
+};
+
+/** Map page keys to their canonical paths */
+const canonicalPaths: Record<string, string> = {
+  home: "/",
+  about: "/about",
+  apply: "/apply",
+  blog: "/blog",
+  projects: "/projects",
+  privacy: "/privacy",
 };
 
 export function generateMetadata(
@@ -105,11 +117,15 @@ export function generateMetadata(
   const title = customizations?.title || page.title;
   const description = customizations?.description || page.description;
   const keywords = customizations?.keywords || page.keywords;
+  const canonicalPath = canonicalPaths[pageKey];
 
   return {
     title,
     description,
     keywords,
+    alternates: canonicalPath
+      ? { canonical: `${BASE_URL}${canonicalPath}` }
+      : undefined,
     openGraph: {
       title,
       description,
@@ -136,7 +152,8 @@ export function generateMetadata(
 export function createPageMetadata(
   baseTitle: string,
   description: string,
-  keywords: string[] = []
+  keywords: string[] = [],
+  canonicalPath?: string
 ): Metadata {
   const title = `${baseTitle} | ${defaults.siteName}`;
 
@@ -144,6 +161,9 @@ export function createPageMetadata(
     title,
     description,
     keywords,
+    alternates: canonicalPath
+      ? { canonical: `${BASE_URL}${canonicalPath}` }
+      : undefined,
     openGraph: {
       title,
       description,
@@ -166,3 +186,5 @@ export function createPageMetadata(
     },
   };
 }
+
+export { BASE_URL };

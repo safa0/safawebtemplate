@@ -1,0 +1,23 @@
+# Gradient Fellows
+
+> A talent investment programme for non-CS STEM graduates transitioning into AI & Machine Learning. We provide micro-stipends, mentorship, and structured learning paths.
+
+## Key Pages
+
+- [Home](https://gradientfellows.org/): Fellowship overview, programme tiers, eligibility, FAQ
+- [About](https://gradientfellows.org/about): Mission, values, leadership, and company story
+- [Apply](https://gradientfellows.org/apply): Application form and process for prospective fellows
+- [Projects](https://gradientfellows.org/projects): AI projects built by Gradient Fellows
+- [Blog](https://gradientfellows.org/blog): Career guides for STEM-to-AI transitions
+- [Privacy](https://gradientfellows.org/privacy): Privacy policy (GDPR and CCPA compliant)
+
+## Programme Structure
+
+- Ignition (3 months, $200/mo): ML fundamentals, first portfolio project
+- Orbit (6 months, $200/mo): Domain-specific ML, deep learning, open-source contributions
+- Escape Velocity (12 months, $200/mo): Capstone research, interview prep, industry introductions
+
+## Contact
+
+- Email: hello@gradientfellows.org
+- Website: https://gradientfellows.org

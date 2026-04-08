@@ -154,6 +154,8 @@ export const mdxComponents: MDXComponents = {
         <img
           src={src}
           alt={alt || ''}
+          loading="lazy"
+          decoding="async"
           className="w-full h-auto"
         />
         {alt && (

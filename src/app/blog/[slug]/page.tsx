@@ -38,9 +38,17 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
   }
 
+  const imageUrl = post.image?.startsWith("http")
+    ? post.image
+    : `https://gradientfellows.org${post.image}`;
+
   return {
-    title: `${post.title} - Gradient Fellows`,
+    title: `${post.title} | Gradient Fellows`,
     description: post.excerpt,
+    keywords: post.tags,
+    alternates: {
+      canonical: `https://gradientfellows.org/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -48,19 +56,14 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       publishedTime: post.date,
       authors: [post.author],
       images: post.image
-        ? [
-          {
-            url: post.image,
-            alt: post.title,
-          },
-        ]
+        ? [{ url: imageUrl, alt: post.title }]
         : [],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: post.image ? [post.image] : [],
+      images: post.image ? [imageUrl] : [],
     },
   };
 }
@@ -76,26 +79,45 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Get related posts
   const relatedPosts = getRelatedPosts(post.slug, post.tags, 3);
 
+  const postImageUrl = post.image?.startsWith("http")
+    ? post.image
+    : `https://gradientfellows.org${post.image}`;
+
   // Structured Data (JSON-LD) for SEO
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.excerpt,
-    image: post.image,
-    datePublished: post.date,
-    author: {
-      '@type': 'Person',
-      name: post.author,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Gradient Fellows',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://gradientfellows.org/logo.png',
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        '@id': `https://gradientfellows.org/blog/${post.slug}`,
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `https://gradientfellows.org/blog/${post.slug}`,
+        },
+        headline: post.title,
+        description: post.excerpt,
+        image: { '@type': 'ImageObject', url: postImageUrl },
+        url: `https://gradientfellows.org/blog/${post.slug}`,
+        datePublished: post.date,
+        dateModified: post.date,
+        author: { '@type': 'Person', name: post.author },
+        publisher: {
+          '@type': 'Organization',
+          '@id': 'https://gradientfellows.org/#organization',
+          name: 'Gradient Fellows',
+          logo: { '@type': 'ImageObject', url: 'https://gradientfellows.org/logo.png' },
+        },
+        isPartOf: { '@id': 'https://gradientfellows.org/#website' },
       },
-    },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://gradientfellows.org' },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://gradientfellows.org/blog' },
+          { '@type': 'ListItem', position: 3, name: post.title, item: `https://gradientfellows.org/blog/${post.slug}` },
+        ],
+      },
+    ],
   };
 
   return (
@@ -129,6 +151,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 src={post.image}
                 alt={post.title}
                 fill
+                sizes="(max-width: 768px) 100vw, 896px"
                 className="object-cover"
                 priority
               />

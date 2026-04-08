@@ -10,8 +10,26 @@ export const metadata: Metadata = genMetadata('blog');
 export default async function BlogPage() {
   const posts = getAllPosts();
 
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Fellowship Insights — Gradient Fellows Blog',
+    url: 'https://gradientfellows.org/blog',
+    itemListElement: posts.map((post, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: `https://gradientfellows.org/blog/${post.slug}`,
+      name: post.title,
+    })),
+  };
+
   return (
     <>
+      {/* Safe: built from trusted server-side blog data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       <Header />
       <main className="min-h-screen bg-khaki-light pt-20">
         {/* Header */}
@@ -50,7 +68,9 @@ export default async function BlogPage() {
               Get fellowship updates and STEM-to-AI insights in your inbox.
             </p>
             <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <label htmlFor="blog-email" className="sr-only">Email address</label>
               <input
+                id="blog-email"
                 type="email"
                 placeholder="Enter your email"
                 className="flex-1 px-6 py-3 rounded-lg bg-white text-dark placeholder:text-dark/50 focus:outline-none focus:ring-2 focus:ring-accent"
