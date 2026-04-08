@@ -41,10 +41,11 @@ export function CompanyStorySection() {
           <p>{siteConfig.problem.statement}</p>
           <p>
             These people already exist. They graduated with strong mathematics,
-            scientific rigour, and systems thinking. They just landed in a job
-            market that doesn&apos;t know what to do with them yet. The bridge
-            from STEM to AI is short&mdash;but nobody is building it at the
-            right scale or the right price point.
+            scientific rigour, and systems thinking. They don&apos;t need to
+            abandon their discipline&mdash;they need to become AI-enabled within
+            it. The path to AI fluency for a strong STEM graduate is
+            short&mdash;but nobody is building it at the right scale or the
+            right price point.
           </p>
           <p className="text-dark font-medium text-xl md:text-2xl">
             This programme is that bridge.{" "}

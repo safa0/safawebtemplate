@@ -10,7 +10,7 @@ export const siteConfig = {
   name: "Gradient Fellows",
   tagline: "Preparing the next generation for the AI age",
   description:
-    "A talent investment programme for non-CS STEM graduates transitioning into AI & Machine Learning. We identify high-potential scientists and engineers and invest in their transition through mentorship, micro-stipends, and structured learning.",
+    "A talent investment programme that makes STEM graduates AI-enabled. We identify high-potential scientists and engineers and equip them with AI & Machine Learning capabilities through mentorship, micro-stipends, and structured learning.",
 
   // Typography
   fonts: {
@@ -25,20 +25,20 @@ export const siteConfig = {
 
   // SEO & Metadata
   seo: {
-    title: "Gradient Fellows \u2014 STEM to AI Fellowship",
+    title: "Gradient Fellows \u2014 AI-Enabled STEM Fellowship",
     description:
-      "A talent investment programme for non-CS STEM graduates transitioning into AI & Machine Learning. Micro-stipend, mentorship, and a structured path to your first AI role.",
+      "A talent investment programme that makes STEM graduates AI-enabled. Micro-stipend, mentorship, and a structured path to applying AI & Machine Learning in your domain.",
     keywords: [
       "AI fellowship",
-      "STEM to AI",
+      "AI-enabled STEM",
       "machine learning fellowship",
-      "AI career transition",
+      "STEM AI skills",
       "STEM graduates",
       "AI mentorship",
       "ML training programme",
-      "non-CS AI",
-      "physics to AI",
-      "science to machine learning",
+      "domain expertise AI",
+      "AI augmented professionals",
+      "AI skills for scientists",
     ],
   },
 
@@ -47,7 +47,7 @@ export const siteConfig = {
     badge: "Applications Open",
     headline: ["Your Science Degree", "Is Your AI Superpower"],
     description:
-      "We invest in non-CS STEM graduates making the leap into AI & Machine Learning. Stipend. Mentorship. Structure. No tuition. This isn\u2019t a bootcamp\u2014it\u2019s angel investing for human capital.",
+      "We invest in STEM graduates ready to become AI-enabled. Stipend. Mentorship. Structure. No tuition. This isn\u2019t a bootcamp\u2014it\u2019s angel investing for human capital.",
     cta: {
       text: "Apply Now",
       link: "/apply",
@@ -62,22 +62,22 @@ export const siteConfig = {
   problem: {
     title: "The Gap Nobody\u2019s Filling",
     statement:
-      "The AI industry has a talent bottleneck, but it\u2019s not where most people think. There is no shortage of computer science graduates who can train a model on MNIST. The shortage is in people who understand real-world domains\u2014materials science, biology, physics, chemistry, engineering\u2014and can apply machine learning to problems that actually matter.",
+      "The AI industry has a talent bottleneck, but it\u2019s not where most people think. There is no shortage of computer science graduates who can train a model on MNIST. The shortage is in people who understand real-world domains\u2014materials science, biology, physics, chemistry, engineering\u2014and can wield machine learning as a tool within those domains.",
     bridgeStatement:
-      "These people already exist. They graduated with strong mathematics, scientific rigour, and systems thinking. They just landed in a job market that doesn\u2019t know what to do with them yet. The bridge from STEM to AI is short\u2014but nobody is building it at the right scale or the right price point.",
+      "These people already exist. They graduated with strong mathematics, scientific rigour, and systems thinking. They don\u2019t need to abandon their discipline\u2014they need to become AI-enabled within it. McKinsey reports that AI fluency demand has grown sevenfold since 2023, and Bain estimates one in two AI roles could go unfilled by 2027. The talent gap isn\u2019t in pure AI\u2014it\u2019s in domain experts who can actually apply it.",
     points: [
       {
-        stat: "73%",
-        label: "of frontier AI labs report needing more domain experts",
+        stat: "7\u00d7",
+        label: "growth in AI fluency demand since 2023 (McKinsey, 2025)",
       },
       {
-        stat: "$0",
-        label: "stipend programmes exist for non-CS STEM \u2192 AI transitions",
+        stat: "56%",
+        label: "higher earnings for workers with AI skills vs. peers (PwC / WEF)",
       },
       {
-        stat: "3\u201312mo",
+        stat: "1 in 2",
         label:
-          "is all it takes for a strong STEM grad to become job-ready in ML",
+          "AI jobs could go unfilled by 2027 due to the talent gap (Bain & Company)",
       },
     ],
     existingLandscape: [
@@ -91,7 +91,7 @@ export const siteConfig = {
         name: "Venture-backed residencies",
         examples: "Encode, OpenAI",
         limitation:
-          "Full salaries and compute budgets, but targeting experienced researchers. Not designed for career transitions.",
+          "Full salaries and compute budgets, but targeting experienced researchers. Not designed for AI enablement of domain experts.",
       },
       {
         name: "Bootcamps",
@@ -264,7 +264,7 @@ export const siteConfig = {
       {
         label: "STEM Background",
         description:
-          "Non-CS STEM degree: physics, chemistry, biology, materials engineering, mathematics, or equivalent. Recent graduates preferred (0\u20133 years post-graduation).",
+          "A degree in physics, chemistry, biology, materials engineering, mathematics, or a related STEM discipline. Recent graduates preferred (0\u20133 years post-graduation).",
       },
       {
         label: "Mathematical Comfort",
@@ -274,7 +274,7 @@ export const siteConfig = {
       {
         label: "Genuine Motivation",
         description:
-          "Able to articulate why you want to transition into AI/ML, even informally. We\u2019re looking for signal, not polish.",
+          "Able to articulate why becoming AI-enabled matters for your field and career. We\u2019re looking for signal, not polish.",
       },
       {
         label: "Full-Time Commitment",
@@ -283,32 +283,32 @@ export const siteConfig = {
       },
     ],
     notFor:
-      "People looking for passive income, people collecting certificates, or people who aren\u2019t willing to put in full-time effort. This programme is generous with support but demanding with expectations.",
+      "People looking for passive income, people collecting certificates, or anyone unwilling to commit full-time effort. We invest heavily in every fellow we accept\u2014and we expect the same intensity in return.",
   },
 
   // Application Process
   applicationProcess: {
     title: "How to Apply",
     subtitle:
-      "Lightweight but intentional. We filter for signal\u2014curiosity, commitment, thinking ability\u2014not credentials.",
+      "Selective but straightforward. We filter for signal\u2014curiosity, commitment, thinking ability\u2014not credentials.",
     steps: [
       {
         number: "01",
         title: "Written Application",
         description:
-          "Short written application: your background, why AI/ML, and what you\u2019d build if you could build anything. No CV required\u2014just honest answers.",
+          "A focused written application: your background, why AI matters for your field, and what you\u2019d build if you could build anything. Honest, considered answers only.",
       },
       {
         number: "02",
-        title: "Conversation",
+        title: "Interview",
         description:
-          "30-minute informal call. Not an interview\u2014a conversation. We\u2019re assessing curiosity, commitment, and programme fit.",
+          "A 30-minute conversation. We assess curiosity, commitment, and programme fit. Come prepared to discuss your goals and how AI connects to your domain.",
       },
       {
         number: "03",
         title: "Diagnostic",
         description:
-          "A short, low-pressure math and logic exercise (take-home, ~2 hours). Not testing knowledge\u2014testing how you think and learn.",
+          "A take-home math and logic exercise (~2 hours). We\u2019re evaluating how you think and learn under structured conditions.",
       },
       {
         number: "04",
@@ -323,7 +323,7 @@ export const siteConfig = {
   applicationForm: {
     title: "Fellowship Application",
     subtitle:
-      "This takes about 20\u201330 minutes. Be honest, not polished. We read every application.",
+      "This takes about 20\u201330 minutes. Be thorough and considered. We review every application.",
     sections: [
       {
         title: "Personal Information",
@@ -348,7 +348,7 @@ export const siteConfig = {
         fields: [
           {
             name: "whyAI",
-            label: "Why do you want to transition into AI/ML? (200\u2013400 words)",
+            label: "Why does becoming AI-enabled matter for your field? (200\u2013400 words)",
             type: "textarea",
             required: true,
           },
@@ -403,7 +403,7 @@ export const siteConfig = {
             label: "Can you commit 50 hours per week to the programme?",
             type: "select",
             required: true,
-            options: ["Yes", "Yes, with part-time work alongside", "I need to discuss this"],
+            options: ["Yes, this will be my primary commitment", "I need to discuss this"],
           },
           {
             name: "englishLevel",
@@ -423,7 +423,7 @@ export const siteConfig = {
     subtitle:
       "No existing programme combines all five of our properties.",
     differentiators: [
-      "Non-CS STEM focus \u2014 targeting physicists, chemists, biologists, engineers, mathematicians",
+      "STEM AI-enablement focus \u2014 making physicists, chemists, biologists, engineers, and mathematicians AI-capable in their domains",
       "Micro-stipend model \u2014 $200/month signals seriousness without requiring philanthropic-scale capital",
       "Tiered commitment \u2014 3 \u2192 6 \u2192 12 months based on performance. No other programme does this.",
       "Global from day one \u2014 not locked to a country, university, or corporate partner",
@@ -477,11 +477,11 @@ export const siteConfig = {
       },
       {
         programme: "Gradient Fellows",
-        target: "Non-CS STEM grads",
+        target: "STEM graduates",
         stipend: "$200/month",
         duration: "3\u201312 months",
         difference:
-          "Only programme combining: micro-stipend + non-CS STEM focus + tiered commitment + global reach + venture framing.",
+          "Only programme combining: micro-stipend + STEM AI-enablement + tiered commitment + global reach + venture framing.",
         isUs: true,
       },
     ],
@@ -531,7 +531,7 @@ export const siteConfig = {
     {
       question: "Do I need a computer science degree?",
       answer:
-        "No. In fact, this programme is specifically designed for people who don\u2019t have one. We\u2019re looking for physicists, chemists, biologists, engineers, and mathematicians.",
+        "No. This programme is designed for STEM graduates\u2014physicists, chemists, biologists, engineers, mathematicians\u2014who want to become AI-enabled in their own domains, not switch into computer science.",
     },
     {
       question: "Is this free? What\u2019s the catch?",
@@ -541,7 +541,7 @@ export const siteConfig = {
     {
       question: "Can I do this alongside a full-time job?",
       answer:
-        "The programme requires a 50-hour weekly commitment. It\u2019s not compatible with full-time employment. Part-time work is possible, but this should be your primary focus.",
+        "No. The programme requires a 50-hour weekly commitment and must be your primary focus. It is not compatible with full-time or significant part-time employment.",
     },
     {
       question: "What happens if I can\u2019t keep up?",
@@ -667,7 +667,7 @@ export const siteConfig = {
 
   // Footer
   footer: {
-    title: "Ready to Make the Leap?",
+    title: "Ready to Become AI-Enabled?",
     cta: {
       text: "Apply Now",
       link: "/apply",

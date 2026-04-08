@@ -13,25 +13,25 @@ interface PageMetadata {
 
 export const pageMetadata: Record<string, PageMetadata> = {
   home: {
-    title: "Gradient Fellows \u2014 STEM to AI Fellowship",
+    title: "Gradient Fellows \u2014 AI-Enabled STEM Fellowship",
     description:
-      "A talent investment programme for non-CS STEM graduates transitioning into AI & Machine Learning. Micro-stipend, mentorship, and a structured path to your first AI role.",
+      "A talent investment programme that makes STEM graduates AI-enabled. Micro-stipend, mentorship, and a structured path to applying AI & Machine Learning in your domain.",
     keywords: [
       "AI fellowship",
-      "STEM to AI",
+      "AI-enabled STEM",
       "machine learning fellowship",
       "STEM graduates",
-      "AI career transition",
+      "AI skills for scientists",
     ],
   },
   about: {
     title: "About | Gradient Fellows",
     description:
-      "Why we exist: the AI industry needs domain experts, not more CS graduates. Learn about our thesis, our model, and what makes this fellowship different.",
+      "Why we exist: the AI industry needs domain experts who are AI-enabled. Learn about our thesis, our model, and what makes this fellowship different.",
     keywords: [
       "about fellowship",
       "AI talent gap",
-      "STEM to ML",
+      "AI-enabled STEM",
       "fellowship mission",
       "domain experts AI",
     ],
@@ -39,7 +39,7 @@ export const pageMetadata: Record<string, PageMetadata> = {
   apply: {
     title: "Apply | Gradient Fellows",
     description:
-      "Apply to the Gradient Fellows fellowship. We\u2019re looking for non-CS STEM graduates ready to commit full-time to transitioning into AI & Machine Learning.",
+      "Apply to the Gradient Fellows fellowship. We\u2019re looking for STEM graduates ready to commit full-time to becoming AI-enabled in their domain.",
     keywords: [
       "apply AI fellowship",
       "fellowship application",
@@ -50,7 +50,7 @@ export const pageMetadata: Record<string, PageMetadata> = {
   blog: {
     title: "Blog | Gradient Fellows",
     description:
-      "Insights on the STEM-to-AI transition, machine learning careers, and stories from our fellowship community.",
+      "Insights on AI-enabled STEM careers, machine learning applications, and stories from our fellowship community.",
     keywords: [
       "AI career blog",
       "STEM to AI stories",

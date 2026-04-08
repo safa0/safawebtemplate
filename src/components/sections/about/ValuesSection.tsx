@@ -82,8 +82,8 @@ export function ValuesSection() {
             What Makes Us Different
           </h2>
           <p className="text-lg text-dark/60 max-w-2xl mx-auto">
-            No existing programme combines all five of our properties: non-CS
-            STEM focus, micro-stipend, tiered commitment, global reach, and
+            No existing programme combines all five of our properties: STEM
+            AI-enablement, micro-stipend, tiered commitment, global reach, and
             venture framing.
           </p>
         </div>

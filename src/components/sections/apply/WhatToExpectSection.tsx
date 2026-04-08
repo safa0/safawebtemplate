@@ -7,19 +7,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const weSeek = [
-  "A non-CS STEM background (physics, chemistry, biology, engineering, maths)",
-  "Genuine curiosity about AI and machine learning",
-  "Ability to articulate why, even informally",
+  "A STEM background (physics, chemistry, biology, engineering, mathematics)",
+  "Genuine curiosity about applying AI within your domain",
+  "Ability to articulate why becoming AI-enabled matters for your field",
   "Mathematical comfort at the undergraduate level",
-  "Willingness to commit 50 hours per week",
+  "Willingness to commit 50 hours per week as your primary focus",
 ];
 
 const youPrepare = [
-  "A few honest paragraphs about your background and motivation",
+  "Considered paragraphs about your background and motivation",
   "An answer to: what would you build if you could build anything?",
-  "Comfort with a short, low-pressure math/logic diagnostic",
-  "30 minutes for an informal conversation (not an interview)",
-  "No CV, no cover letter, no formal documents required",
+  "Readiness for a math and logic diagnostic (~2 hours, take-home)",
+  "30 minutes for an interview on your goals and programme fit",
+  "Your academic transcript or degree certificate (PDF)",
 ];
 
 export function WhatToExpectSection() {

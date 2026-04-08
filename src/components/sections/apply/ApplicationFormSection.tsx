@@ -27,14 +27,14 @@ const formSteps = [
   },
   {
     title: "Your Story",
-    description: "Be honest, not polished. We read every word.",
+    description: "Be thorough and considered. We read every word.",
     fields: [
       {
         name: "whyAI",
-        label: "Why do you want to transition into AI/ML?",
+        label: "Why does becoming AI-enabled matter for your field?",
         type: "textarea" as const,
         required: true,
-        placeholder: "What drew you to AI? What excites you about machine learning? How does it connect to your STEM background?",
+        placeholder: "How does AI connect to your STEM discipline? What problems in your domain could machine learning help solve? Why now?",
         hint: "200\u2013400 words",
         maxWords: 400,
       },
@@ -79,7 +79,7 @@ const formSteps = [
         label: "Can you commit 50 hours per week?",
         type: "select" as const,
         required: true,
-        options: ["Yes", "Yes, with part-time work alongside", "I need to discuss this"],
+        options: ["Yes, this will be my primary commitment", "I need to discuss this"],
       },
       {
         name: "englishLevel",
@@ -251,7 +251,7 @@ export function ApplicationFormSection() {
           <div className="p-4 rounded-xl bg-khaki-light/50 text-sm text-dark/50">
             <strong className="text-dark/70">What happens next:</strong> If your
             application is a good fit, we&apos;ll invite you for a 30-minute
-            informal conversation. No interview prep needed.
+            interview to discuss your goals and programme fit.
           </div>
         </div>
       </section>
@@ -272,7 +272,7 @@ export function ApplicationFormSection() {
             {siteConfig.applicationForm.title}
           </h2>
           <p className="text-dark/60">
-            Takes about 15 minutes. Be honest, not polished.
+            Takes about 20 minutes. Be thorough and considered.
           </p>
         </div>
 
