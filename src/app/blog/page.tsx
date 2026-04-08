@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { getAllPosts } from '@/lib/blog';
+import { BASE_URL } from '@/config/metadata';
 import { Header } from '@/components/ui/Header';
 import { BlogGrid } from '@/components/blog/BlogGrid';
 import { FooterSection } from '@/components/sections/FooterSection';
@@ -14,11 +15,11 @@ export default async function BlogPage() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Fellowship Insights — Gradient Fellows Blog',
-    url: 'https://gradientfellows.org/blog',
+    url: `${BASE_URL}/blog`,
     itemListElement: posts.map((post, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      url: `https://gradientfellows.org/blog/${post.slug}`,
+      url: `${BASE_URL}/blog/${post.slug}`,
       name: post.title,
     })),
   };

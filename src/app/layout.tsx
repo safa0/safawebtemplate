@@ -4,7 +4,7 @@ import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { Preloader } from "@/components/ui/Preloader";
 import { CookieBanner } from "@/components/ui/CookieBanner";
-import { generateMetadata as genMeta } from "@/config/metadata";
+import { generateMetadata as genMeta, BASE_URL } from "@/config/metadata";
 import { siteConfig } from "@/config/site";
 
 const spaceGrotesk = Space_Grotesk({
@@ -16,7 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   ...genMeta("home"),
-  metadataBase: new URL("https://gradientfellows.org"),
+  metadataBase: new URL(BASE_URL),
 };
 
 export const viewport: Viewport = {
@@ -42,19 +42,19 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "WebSite",
-                  "@id": "https://gradientfellows.org/#website",
-                  url: "https://gradientfellows.org",
+                  "@id": `${BASE_URL}/#website`,
+                  url: BASE_URL,
                   name: "Gradient Fellows",
                   description: siteConfig.description,
                 },
                 {
                   "@type": "Organization",
-                  "@id": "https://gradientfellows.org/#organization",
+                  "@id": `${BASE_URL}/#organization`,
                   name: "Gradient Fellows",
-                  url: "https://gradientfellows.org",
+                  url: BASE_URL,
                   logo: {
                     "@type": "ImageObject",
-                    url: "https://gradientfellows.org/logo.png",
+                    url: `${BASE_URL}/logo.png`,
                   },
                   contactPoint: {
                     "@type": "ContactPoint",
