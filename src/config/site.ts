@@ -699,6 +699,11 @@ export const siteConfig = {
     email: "hello@gradientfellows.org",
   },
 
+  // Privacy Policy
+  privacy: {
+    lastUpdated: "April 8, 2026",
+  },
+
   // Candidate Programme Names (for reference)
   candidateNames: [
     "Gradient Fellows",

@@ -72,6 +72,18 @@ export const pageMetadata: Record<string, PageMetadata> = {
       "Gradient Fellows",
     ],
   },
+  privacy: {
+    title: "Privacy Policy | Gradient Fellows",
+    description:
+      "How Gradient Fellows collects, uses, and protects your personal information. GDPR and CCPA compliant.",
+    keywords: [
+      "privacy policy",
+      "data protection",
+      "GDPR",
+      "fellowship privacy",
+      "Gradient Fellows",
+    ],
+  },
 };
 
 const defaults = {
