@@ -7,7 +7,7 @@
 
 export const siteConfig = {
   // Brand Identity
-  name: "Gradient Fellowship",
+  name: "Gradient Fellows",
   tagline: "Preparing the next generation for the AI age",
   description:
     "A talent investment programme for non-CS STEM graduates transitioning into AI & Machine Learning. We identify high-potential scientists and engineers and invest in their transition through mentorship, micro-stipends, and structured learning.",
@@ -20,12 +20,12 @@ export const siteConfig = {
   // Logo & Assets
   logo: {
     path: "/logo.png",
-    alt: "Gradient Fellowship Logo",
+    alt: "Gradient Fellows Logo",
   },
 
   // SEO & Metadata
   seo: {
-    title: "Gradient Fellowship \u2014 STEM to AI Fellowship",
+    title: "Gradient Fellows \u2014 STEM to AI Fellowship",
     description:
       "A talent investment programme for non-CS STEM graduates transitioning into AI & Machine Learning. Micro-stipend, mentorship, and a structured path to your first AI role.",
     keywords: [
@@ -212,6 +212,12 @@ export const siteConfig = {
       title: "Career Support",
       description:
         "CV review, LinkedIn optimization, interview prep, and introductions where possible. The end goal is a job, not a certificate.",
+    },
+    {
+      icon: "community",
+      title: "Fellow Community",
+      description:
+        "Join a cohort of ambitious STEM graduates on the same journey. Peer accountability, shared resources, and a network that lasts beyond the programme.",
     },
   ],
 
@@ -470,7 +476,7 @@ export const siteConfig = {
           "Opposite model: fellows pay. No selectivity. Volume-based.",
       },
       {
-        programme: "Gradient Fellowship",
+        programme: "Gradient Fellows",
         target: "Non-CS STEM grads",
         stipend: "$200/month",
         duration: "3\u201312 months",
@@ -625,7 +631,7 @@ export const siteConfig = {
   // Company Information
   company: {
     foundedYear: 2026,
-    legalName: "Gradient Fellowship",
+    legalName: "Gradient Fellows",
   },
 
   // Social Links
@@ -642,7 +648,7 @@ export const siteConfig = {
 
   // Candidate Programme Names (for reference)
   candidateNames: [
-    "Gradient Fellowship",
+    "Gradient Fellows",
     "Traverse Fellowship",
     "Tensor Fellowship",
     "Vector Fellowship",

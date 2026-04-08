@@ -13,7 +13,7 @@ interface PageMetadata {
 
 export const pageMetadata: Record<string, PageMetadata> = {
   home: {
-    title: "Gradient Fellowship \u2014 STEM to AI Fellowship",
+    title: "Gradient Fellows \u2014 STEM to AI Fellowship",
     description:
       "A talent investment programme for non-CS STEM graduates transitioning into AI & Machine Learning. Micro-stipend, mentorship, and a structured path to your first AI role.",
     keywords: [
@@ -25,7 +25,7 @@ export const pageMetadata: Record<string, PageMetadata> = {
     ],
   },
   about: {
-    title: "About | Gradient Fellowship",
+    title: "About | Gradient Fellows",
     description:
       "Why we exist: the AI industry needs domain experts, not more CS graduates. Learn about our thesis, our model, and what makes this fellowship different.",
     keywords: [
@@ -37,9 +37,9 @@ export const pageMetadata: Record<string, PageMetadata> = {
     ],
   },
   apply: {
-    title: "Apply | Gradient Fellowship",
+    title: "Apply | Gradient Fellows",
     description:
-      "Apply to the Gradient Fellowship fellowship. We\u2019re looking for non-CS STEM graduates ready to commit full-time to transitioning into AI & Machine Learning.",
+      "Apply to the Gradient Fellows fellowship. We\u2019re looking for non-CS STEM graduates ready to commit full-time to transitioning into AI & Machine Learning.",
     keywords: [
       "apply AI fellowship",
       "fellowship application",
@@ -48,7 +48,7 @@ export const pageMetadata: Record<string, PageMetadata> = {
     ],
   },
   blog: {
-    title: "Blog | Gradient Fellowship",
+    title: "Blog | Gradient Fellows",
     description:
       "Insights on the STEM-to-AI transition, machine learning careers, and stories from our fellowship community.",
     keywords: [
@@ -61,7 +61,7 @@ export const pageMetadata: Record<string, PageMetadata> = {
 };
 
 const defaults = {
-  siteName: "Gradient Fellowship",
+  siteName: "Gradient Fellows",
   defaultImage: "/og-image.png",
   twitterHandle: "",
 };
