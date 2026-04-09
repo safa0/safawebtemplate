@@ -64,7 +64,7 @@ export function CookieBanner() {
           </p>
 
           {/* Buttons */}
-          <div className="flex items-center gap-3 flex-shrink-0">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 flex-shrink-0">
             <button
               onClick={handleDecline}
               className="px-4 py-2 text-sm font-medium text-dark/50 hover:text-dark transition-colors duration-200 rounded-lg"

@@ -29,7 +29,7 @@ export default function Home() {
             <div data-horizontal-section>
               <ProblemSection />
             </div>
-            <div data-horizontal-section className="hidden md:block">
+            <div data-horizontal-section className="md:block">
               <BenefitsSection />
             </div>
           </main>

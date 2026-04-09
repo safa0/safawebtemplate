@@ -28,7 +28,7 @@ export function Header() {
                 sizes="40px"
               />
             </div>
-            <span className="text-lg md:text-xl font-serif font-bold text-gray-900 hidden sm:inline">
+            <span className="text-sm sm:text-lg md:text-xl font-serif font-bold text-gray-900">
               {siteConfig.name}
             </span>
           </Link>

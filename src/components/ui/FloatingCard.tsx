@@ -9,7 +9,7 @@ interface FloatingCardProps {
 export function FloatingCard({ number, imageUrl, className = "" }: FloatingCardProps) {
   return (
     <div
-      className={`absolute w-64 bg-white rounded-xl p-6 shadow-2xl transform perspective-1000 ${className}`}
+      className={`absolute w-48 sm:w-56 md:w-64 bg-white rounded-xl p-4 sm:p-5 md:p-6 shadow-2xl transform perspective-1000 ${className}`}
       style={{
         transform: "perspective(1000px) rotateX(5deg) rotateY(-5deg)",
       }}

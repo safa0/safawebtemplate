@@ -174,7 +174,7 @@ export function HeroSection() {
         <div className="floating-card floating-card-2 absolute inset-0 z-20 overflow-hidden bg-gray-900">
           <Image
             src="/images/hero-student.jpg"
-            alt="Smiling woman holding folder"
+            alt="Woman working on laptop"
             fill
             className="object-cover object-[center_5%]"
             priority
@@ -183,7 +183,7 @@ export function HeroSection() {
       </div>
 
       {/* Left Panel - Content (full screen on mobile) */}
-      <div className="bg-khaki-light p-6 sm:p-8 md:p-12 lg:p-20 flex flex-col justify-between relative z-10 min-h-screen md:min-h-full order-2 md:order-1">
+      <div className="bg-khaki-light p-6 sm:p-8 md:p-12 lg:p-20 flex flex-col justify-between relative z-10 min-h-[80vh] md:min-h-full order-2 md:order-1">
         <div className="logo-tagline mb-6 sm:mb-8 md:mb-12">
           <div className="logo flex items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3 md:mb-4">
             <div className="relative w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20 bg-transparent flex-shrink-0">
