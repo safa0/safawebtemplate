@@ -224,7 +224,7 @@ export const siteConfig = {
   // What Fellows Commit To
   commitments: [
     {
-      title: "50 hours/week",
+      title: "40 hours/week",
       description:
         "Of focused study and project work. This is their job for the duration of the fellowship.",
     },
@@ -255,7 +255,52 @@ export const siteConfig = {
     },
   ],
 
-  // Eligibility Criteria
+  // Eligibility Requirements (hard requirements)
+  eligibility: {
+    title: "Eligibility Requirements",
+    subtitle:
+      "These are non-negotiable. If you meet all of them, we want to hear from you.",
+    items: [
+      {
+        icon: "globe",
+        label: "Based in Asia, Africa, or South America",
+        description:
+          "You must currently reside in an eligible region. This programme is designed to reach high-potential talent in regions underserved by existing AI fellowships.",
+      },
+      {
+        icon: "degree",
+        label: "Bachelor's or Master's degree in a STEM field",
+        description:
+          "Physics, chemistry, biology, materials engineering, mathematics, or a related discipline. PhD holders and current PhD students are not eligible.",
+      },
+      {
+        icon: "calendar",
+        label: "Graduated within the last 3 years",
+        description:
+          "Your degree must have been completed no more than 3 years ago. We're targeting early-career graduates, not mid-career professionals.",
+      },
+      {
+        icon: "age",
+        label: "Under 35 years of age",
+        description:
+          "Applicants must be under 35 at the time of application.",
+      },
+      {
+        icon: "language",
+        label: "English proficiency at B2 level or above",
+        description:
+          "All mentorship, curriculum, and communication is conducted in English. You must be comfortable reading, writing, and speaking at a working proficiency level.",
+      },
+      {
+        icon: "clock",
+        label: "No concurrent full-time employment",
+        description:
+          "The programme requires 40 hours per week and must be your primary commitment. It is not compatible with a full-time job.",
+      },
+    ],
+  },
+
+  // Selection Criteria (soft qualities)
   criteria: {
     title: "Who We\u2019re Looking For",
     subtitle:
@@ -279,7 +324,7 @@ export const siteConfig = {
       {
         label: "Full-Time Commitment",
         description:
-          "Able to commit 50 hours per week. This is a full-time undertaking, equivalent to a university course load. Not compatible with a full-time job.",
+          "Able to commit 40 hours per week. This is a full-time undertaking, equivalent to a university course load. Not compatible with a full-time job.",
       },
     ],
     notFor:
@@ -400,7 +445,7 @@ export const siteConfig = {
           },
           {
             name: "hoursConfirm",
-            label: "Can you commit 50 hours per week to the programme?",
+            label: "Can you commit 40 hours per week to the programme?",
             type: "select",
             required: true,
             options: ["Yes, this will be my primary commitment", "I need to discuss this"],
@@ -541,7 +586,7 @@ export const siteConfig = {
     {
       question: "Can I do this alongside a full-time job?",
       answer:
-        "No. The programme requires a 50-hour weekly commitment and must be your primary focus. It is not compatible with full-time or significant part-time employment.",
+        "No. The programme requires a 40-hour weekly commitment and must be your primary focus. It is not compatible with full-time or significant part-time employment.",
     },
     {
       question: "What happens if I can\u2019t keep up?",
@@ -628,13 +673,13 @@ export const siteConfig = {
       title: "Competitor Analysis",
       description:
         "ML-based web scraping tool that categorises competitor products, analyses pricing strategies using embeddings and SKU matching. Delivers automated competitive intelligence reports with trend detection and market positioning insights.",
-      image: "/images/projects/competitor-analysis.png",
+      image: "/images/projects/music-moderation.jpg",
     },
     {
       title: "Music Moderation",
       description:
         "Automatic Music Transcription (AMT) translates audio sequences to symbolic music representation. The system enables content moderation at scale by detecting copyrighted material and generating structured metadata for audio catalogues.",
-      image: "/images/projects/music-moderation.jpg",
+      image: "/images/projects/competitor-analysis.png",
     },
     {
       title: "Food Recognition with CLIP",
@@ -704,6 +749,22 @@ export const siteConfig = {
     lastUpdated: "April 8, 2026",
   },
 
+  // Partner / Trust Logos
+  partners: {
+    heading: "Our fellows work with leading organizations",
+    logos: [
+      "google",
+      "meta",
+      "nvidia",
+      "openai",
+      "huggingface",
+      "tensorflow",
+      "pytorch",
+      "stanford",
+      "mit",
+    ],
+  },
+
   // Candidate Programme Names (for reference)
   candidateNames: [
     "Gradient Fellows",
@@ -724,6 +785,7 @@ export type SiteConfig = typeof siteConfig;
 export type Tier = (typeof siteConfig.tiers)[number];
 export type Benefit = (typeof siteConfig.benefits)[number];
 export type Commitment = (typeof siteConfig.commitments)[number];
+export type EligibilityItem = (typeof siteConfig.eligibility.items)[number];
 export type CriterionItem = (typeof siteConfig.criteria.items)[number];
 export type ApplicationStep =
   (typeof siteConfig.applicationProcess.steps)[number];

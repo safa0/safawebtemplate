@@ -9,6 +9,7 @@ import { CriteriaSection } from "@/components/sections/fellowship/CriteriaSectio
 import { CompetitiveSection } from "@/components/sections/fellowship/CompetitiveSection";
 import { TestimonialsSection } from "@/components/sections/fellowship/TestimonialsSection";
 import { CTASection } from "@/components/sections/fellowship/CTASection";
+import { LogoBanner } from "@/components/sections/fellowship/LogoBanner";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { BackgroundManager } from "@/components/ui/BackgroundManager";
 
@@ -37,6 +38,7 @@ export default function Home() {
 
         {/* Vertical scroll section - transitions from horizontal */}
         <div className="vertical-scroll-container">
+          <LogoBanner />
           <TiersSection />
           <CriteriaSection />
           <CompetitiveSection />
