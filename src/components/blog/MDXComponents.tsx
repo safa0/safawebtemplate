@@ -1,5 +1,11 @@
 import { MDXComponents } from 'mdx/types';
 import Link from 'next/link';
+import {
+  MarketGrowthChart,
+  SteelIndustryImpactChart,
+  PerformanceComparisonChart,
+  AIMethodsComparisonChart,
+} from './charts/MetallurgyCharts';
 
 export const mdxComponents: MDXComponents = {
   // Headings
@@ -180,4 +186,10 @@ export const mdxComponents: MDXComponents = {
       {children}
     </em>
   ),
+
+  // Charts
+  MarketGrowthChart,
+  SteelIndustryImpactChart,
+  PerformanceComparisonChart,
+  AIMethodsComparisonChart,
 };
