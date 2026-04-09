@@ -16,6 +16,12 @@ export async function submitApplication(
     "Gradient Fellows <onboarding@resend.dev>";
 
   if (!apiKey || !emailTo) {
+    console.error(
+      "Missing env vars — RESEND_API_KEY:",
+      !!apiKey,
+      "APPLICATION_EMAIL_TO:",
+      !!emailTo
+    );
     return {
       success: false,
       error:
