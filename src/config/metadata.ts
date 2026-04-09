@@ -102,7 +102,7 @@ const BASE_URL = "https://gradientfellows.org";
 
 const defaults = {
   siteName: "Gradient Fellows",
-  defaultImage: "/og-image.png",
+  defaultImage: "/opengraph-image",
   twitterHandle: "",
 };
 
