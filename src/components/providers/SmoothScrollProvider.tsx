@@ -17,6 +17,11 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
   const pathname = usePathname();
 
   useEffect(() => {
+    // Disable browser scroll restoration — let Lenis handle it
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
     // Configure ScrollTrigger for better performance
     ScrollTrigger.config({
       limitCallbacks: true,

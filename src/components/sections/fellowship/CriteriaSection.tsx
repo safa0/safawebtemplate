@@ -46,7 +46,7 @@ export function CriteriaSection() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="criteria-header text-center mb-16">
+        <div className="criteria-header text-center mb-8 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             {siteConfig.criteria.title}
           </h2>

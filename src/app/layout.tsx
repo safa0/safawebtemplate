@@ -73,11 +73,6 @@ export default function RootLayout({
             }),
           }}
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `history.scrollRestoration = "manual"`,
-          }}
-        />
       </head>
       <body className={`${spaceGrotesk.className} antialiased`}>
         <Preloader />

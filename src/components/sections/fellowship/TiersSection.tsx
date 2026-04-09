@@ -71,7 +71,7 @@ export function TiersSection() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="tiers-header text-center mb-16 md:mb-20">
+        <div className="tiers-header text-center mb-8 md:mb-16 lg:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4">
             How It Works
           </h2>

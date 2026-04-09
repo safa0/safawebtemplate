@@ -1,12 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const iconMap: Record<string, React.ReactNode> = {
   stipend: (
@@ -102,45 +97,13 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export function BenefitsSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".benefits-header", {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: ".benefits-header",
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
-      });
-
-      gsap.from(".benefit-card", {
-        opacity: 0,
-        y: 40,
-        duration: 0.6,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: ".benefits-grid",
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
       className="benefits-section w-full h-full bg-white flex items-center section-padding-large overflow-y-auto"
     >
       <div className="max-w-7xl mx-auto w-full">
         {/* Header */}
-        <div className="benefits-header text-center mb-16">
+        <div className="benefits-header text-center mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4">
             What You Get
           </h2>
@@ -151,14 +114,14 @@ export function BenefitsSection() {
         </div>
 
         {/* Benefits Grid */}
-        <div className="benefits-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="benefits-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {siteConfig.benefits.slice(0, 3).map((benefit) => (
             <div
               key={benefit.title}
-              className="benefit-card group p-8 rounded-2xl border border-earth/10 hover:border-accent/30 hover:shadow-lg transition-all duration-300 bg-white"
+              className="benefit-card group p-6 rounded-2xl border border-earth/10 hover:border-accent/30 hover:shadow-lg transition-all duration-300 bg-white"
             >
               {/* Icon */}
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-accent/10 text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-accent/10 text-accent mb-4 group-hover:bg-accent group-hover:text-white transition-all duration-300">
                 {iconMap[benefit.icon] || (
                   <svg
                     className="w-6 h-6"
