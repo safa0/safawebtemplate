@@ -55,9 +55,9 @@ export function CompetitiveSection() {
       ref={sectionRef}
       className="competitive-section w-full bg-white section-padding-large"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="competitive-header text-center mb-16">
+        <div className="competitive-header text-center mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4">
             {siteConfig.competitiveLandscape.title}
           </h2>
@@ -67,14 +67,14 @@ export function CompetitiveSection() {
         </div>
 
         {/* Five Differentiators */}
-        <div className="differentiators-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-16">
+        <div className="differentiators-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-12">
           {siteConfig.competitiveLandscape.differentiators.map(
             (item, index) => (
               <div
                 key={`diff-${index}`}
-                className="differentiator-item p-5 rounded-xl bg-khaki-light/60 border border-earth/10 text-center hover:bg-khaki-light transition-colors duration-300"
+                className="differentiator-item p-4 rounded-xl bg-khaki-light/60 border border-earth/10 hover:bg-khaki-light transition-colors duration-300 flex items-start gap-3"
               >
-                <div className="w-8 h-8 mx-auto mb-3 flex items-center justify-center rounded-full bg-accent/10 text-accent text-xs font-bold">
+                <div className="w-7 h-7 flex-shrink-0 flex items-center justify-center rounded-full bg-accent/10 text-accent text-xs font-bold mt-0.5">
                   {String(index + 1).padStart(2, "0")}
                 </div>
                 <p className="text-sm text-dark/70 leading-relaxed">{item}</p>
@@ -85,10 +85,10 @@ export function CompetitiveSection() {
 
         {/* Comparison Table — Card Style */}
         <div className="competitive-table">
-          <h3 className="text-lg font-bold text-dark mb-6 text-center">
+          <h3 className="text-lg font-bold text-dark mb-4 text-center">
             How we compare
           </h3>
-          <div className="space-y-3">
+          <div className="space-y-2">
             {siteConfig.competitiveLandscape.comparison.map((row) => {
               const isUs = "isUs" in row && row.isUs;
               return (
